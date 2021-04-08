@@ -1,5 +1,5 @@
 from extract import extractApple
-from convert import getPDFText
+from convert import convert_pdf_to_txt
 
 
 print("Citation Analysis Main Menu")
@@ -11,5 +11,10 @@ print("5: Extract text from PDF")
 
 o1 = int(input('Choose an option:'))
 
+if o1 == 2:
+    in1 = '[' + str(input('Which reference to count:')) + ']'
+    text = convert_pdf_to_txt('CCRO Citation’s Context & Reasons Ontology (1).pdf')
+    print(text.count(in1))
+
 if o1 == 5:
-    getPDFText('CCRO Citation’s Context & Reasons Ontology (1).pdf')
+    print(convert_pdf_to_txt('CCRO Citation’s Context & Reasons Ontology (1).pdf'))
