@@ -1,0 +1,1525 @@
+Failure Resilience for Device Drivers
+
+Jorrit N. Herder, Herbert Bos, Ben Gras, Philip Homburg, and Andrew S. Tanenbaum
+Computer Science Dept., Vrije Universiteit, Amsterdam, The Netherlands
+{jnherder, herbertb, beng, philip, ast}@cs.vu.nl
+
+Abstract
+
+Studies have shown that device drivers and exten-
+sions contain 3–7 times more bugs than other operating
+system code and thus are more likely to fail. Therefore,
+we present a failure-resilient operating system design
+that can recover from dead drivers and other critical
+components—primarily through monitoring and replac-
+ing malfunctioning components on the ﬂy—transparent
+to applications and without user intervention. This pa-
+per focuses on the post-mortem recovery procedure. We
+explain the working of our defect detection mechanism,
+the policy-driven recovery procedure, and post-restart
+reintegration of the components.
+Furthermore, we
+discuss the concrete steps taken to recover from net-
+work, block device, and character device driver failures.
+Finally, we evaluate our design using performance
+measurements,
+software fault-injection experiments,
+and an analysis of the reengineering effort.
+
+Keywords: Operating System Dependability, Fail-
+ure Resilience, Device Driver Recovery.
+
+1 INTRODUCTION
+
+Perhaps someday software will be bugfree, but for the
+moment all software contains bugs and we had better
+learn to coexist with them. Nevertheless, a question we
+have posed is: “Can we build dependable systems out
+of unreliable, buggy components?” In particular, we ad-
+dress the problem of failures in device drivers and other
+operating system extensions. In most operating systems,
+such failures can disrupt normal operation.
+
+In many other areas, failure-resilient designs are
+common. For example, RAIDs are disk arrays that con-
+tinue functioning even in the face of drive failures. ECC
+memories can detect and correct bit errors transparently
+without affecting program execution. Disks, CD-ROMs,
+
+and DVDs also contain error-correcting codes so that
+read errors can be corrected on the ﬂy. The TCP pro-
+tocol provides reliable data transport, even in the face of
+lost, misordered, or garbled packets. DNS can transpar-
+ently deal with crashed root servers. Finally, init auto-
+matically respawns crashed daemons in the application
+layer of some UNIX variants. In all these cases, soft-
+ware masks the underlying failures and allows the sys-
+tem to continue as though no errors had occurred.
+
+In this paper, we extend these ideas to the operating
+system internals. In particular, we want to tolerate and
+mask failures of device drivers and other extensions. Re-
+covery from such failures is particularly important, since
+extensions are generally written by third parties and tend
+to be buggy [9, 39]. Unfortunately, recovering from
+driver failures is also hard, primarily because drivers are
+closely tied to the rest of the operating system. In addi-
+tion, it is sometimes impossible to tell whether a driver
+crash has led to data loss. Nevertheless, we have de-
+signed an operating system consisting of multiple iso-
+lated user-mode components that are structured in such
+a way that the system can automatically detect and repair
+a broad range of defects [10, 15, 30], without affecting
+running processes or bothering the user. The architec-
+ture of this system is shown in Fig. 1.
+
+App
+
+App
+
+App
+
+Process
+Manager
+
+Fork Drivers
+Notify on Exit
+
+e
+c
+a
+p
+S
+
+ 
+r
+e
+s
+U
+
+Virtual File System
+File Servers
+Network Server
+
+(V)FS
+Servers
+
+Reinc.
+Server
+
+Monitor System
+Repair Defects
+
+Untrusted Drivers
+Expected to Fail
+
+Device
+Drivers
+
+Data
+Store
+
+Publish Config
+Backup State
+
+Microkernel
+
+Figure 1: Architecture of our failure-resilient operating sys-
+tem that can recover from malfunctioning device drivers.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007In this paper, we focus on the post-mortem recov-
+ery procedure that allows the system to continue nor-
+mal operation in the event of otherwise catastrophic fail-
+ures. We rely on a stable set of servers to deal with un-
+trusted components. The reincarnation server manages
+all system processes and constantly monitors the sys-
+tem’s health. When a problem is detected, it executes
+a policy script associated with the malfunctioning com-
+ponent to guide the recovery procedure. The data store
+provides naming services and can be used to recover lost
+state after a crash. Changes in the system are broad-
+cast to dependent components through the data store’s
+publish-subscribe mechanisms in order to initiate further
+recovery and mask the problem to higher levels. This is
+how failure resilience works: a failure is detected, the
+defect is repaired, and the system continues running all
+the time with minimum disturbance to other processes.
+While our design can recover from failures in all
+kinds of components, including the TCP stack and sim-
+ple servers, the focus of our research is to deal with
+buggy device drivers. Studies on software dependability
+report fault densities of 2–75 bugs per 1000 lines of exe-
+cutable code [4, 41], but drivers and other extensions—
+which typically comprise 70% of the operating system
+code—have a reported error rate that is 3 to 7 times
+higher [9], and thus are relatively failure-prone. For ex-
+ample, 85% of Windows XP crashes can be traced back
+to driver failures [39]. Recovery of drivers thus is an ef-
+fective way to improve operating system dependability.
+
+1.1 Contribution
+
+We have built a failure-resilient operating system
+to improve operating system dependability. Our work
+is based on MINIX 3 [28], which runs all servers and
+drivers as isolated user-mode processes, but is also ap-
+plicable to other operating systems. This architecture al-
+lowed us to add mechanisms to detect and transparently
+repair failures, resulting in the design shown in Fig. 1.
+While several aspects of MINIX 3 have been published
+before [19, 20, 18], this is the ﬁrst time we discuss the
+recovery of malfunctioning device drivers in detail.
+
+The remainder of this paper is organized as follows.
+We ﬁrst survey related work in operating system de-
+pendability (Sec. 2). Then we present our failure model
+(Sec. 3), discuss our isolation architecture (Sec. 4), in-
+troduce the defect detection mechanisms and policy-
+driven recovery procedure (Sec. 5). We illustrate our
+ideas with concrete recovery schemes for network, block
+device, and character device drivers (Sec. 6). We also
+evaluate our system using performance measurements,
+software fault-injection, and an analysis of reengineer-
+ing effort (Sec. 7). Finally, we conclude (Sec. 8).
+
+2 DEPENDABILITY CONTEXT
+
+This work needs to be placed in the context of operat-
+ing system dependability. Our failure-resilient design
+represents a special case of microreboots [7, 8], which
+promote reducing the mean time to recover (MTTR) in
+order to increase system availability. We apply this idea
+to drivers and other operating system extensions.
+
+Several failure-resilient designs exist in the context
+of operating systems. Solaris 10 [38] provides tools
+to manage UNIX services running in the application
+layer and can automatically restart crashed daemons.
+Nooks [39, 40] implements in-kernel wrapping of com-
+ponents to isolate driver failures and supports recov-
+ery through shadow drivers that monitor communica-
+tion between the kernel and driver. SafeDrive [44] com-
+bines wrapping of the system API with type safety for
+extensions written in C and provides recovery similar
+to Nooks. QNX [21] provides software watchdogs to
+catch and recover from intermittent failures in memory-
+protected subsystems. Paravirtualization [13, 26] sup-
+ports driver isolation by running each driver in a dedi-
+cated, paravirtualized operating system and can recover
+by rebooting the failed virtual machine. In contrast to
+these approaches, we take the UNIX model to its logical
+conclusion by putting all servers and drivers in unprivi-
+leged user-mode processes and support restarts through
+a ﬂexible, policy-driven recovery procedure.
+Numerous other approaches attempt
+
+to increase
+operating system dependability by isolating compo-
+nents. Virtual machine approaches like VM/370 [35],
+VMware [36], and Xen [3] are powerful tools for run-
+ning multiple services in isolation, but cannot prevent a
+bug in a device driver from crashing the hosted operating
+system. User-mode drivers have been used before, but,
+for example, Mach [12] leaves lots of code in the ker-
+nel, whereas L4Linux [16] runs the operating system in
+a single server on top of L4 [24]. Other designs compart-
+mentalize the entire operating system, including GNU
+Hurd [6], SawMill Linux [14], and NIZZA [17]. Re-
+cently, user-mode drivers also made their way into com-
+modity systems such as Linux [25] and Windows [27].
+These systems differ from our work in that we combine
+proper isolation in user space with driver recovery.
+
+Finally, language-based protection and formal veri-
+ﬁcation can also be used to build dependable systems.
+OKE [5] uses instrumented object code to load safely
+kernel extensions. VFiasco [22] is an attempt at for-
+mal veriﬁcation of the L4 microkernel. Singularity [23]
+uses type safety to provide software isolated processes.
+These techniques are complementary to our approach,
+since our user-mode servers and drivers can be imple-
+mented in a programming language of choice.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 20073 FAILURE MODEL
+
+4 ISOLATION ARCHITECTURE
+
+In our work, we are interested in the notion of a failure,
+that is, a deviation from the speciﬁed service [31], such
+as a driver crash. We are less interested in erroneous sys-
+tem states or the exact underlying faults. Once a failure
+has been detected, as described in Sec. 5.1, we perform a
+microreboot [7] of the failing or failed component in an
+attempt to repair the system. The underlying idea is that
+a large fraction of software failures are cured by reboot-
+ing, even when the exact failure causes are unknown.
+
+Our system is designed to deal with intermittent
+and transient failures in device drivers. We believe
+that this focus has great potential to improve operat-
+ing system dependability, because (1) transient failures
+represent a main source of downtime in software sys-
+tems [10, 15, 30] and (2) device drivers are relatively
+failure-prone [9, 39]. Failures that can be handled by
+our design include failstop and crash failures, such as
+exceptions triggered by unexpected input; panics due to
+internal inconsistencies; race conditions caused by un-
+expected hardware timing issues; and aging bugs that
+cause a component to fail over time, for example, due
+to memory leaks. While hard to track down, these kinds
+of problems tend to go away after a restart and can be
+cured by replacing the malfunctioning component with
+a fresh copy. In fact, our design can deal with a some-
+what broader range of failures, since we can also start a
+newer or patched version of the driver, if available.
+
+Of course, there are limits to the failures our de-
+sign can deal with. To start with, we cannot deal with
+Byzantine failures, including random or malicious be-
+havior. For example, consider a disk driver that ac-
+cepts a write request and responds normally, but, in fact,
+writes garbage to the disk or nothing at all. Such bugs
+are virtually impossible to catch in any system. In gen-
+eral, end-to-end checksums are required to prevent silent
+data corruption [33]. Furthermore, algorithmic and de-
+terministic failures that repeat after a restart cannot be
+cured, but these can be found more easily through test-
+ing. Our design also cannot deal with performance fail-
+ures where timing speciﬁcations are not met, although
+the use of heartbeat messages helps to detect unrespon-
+sive components. Finally, our system cannot recover
+when the hardware is broken or cannot be reinitialized
+by a restarted driver.
+It may be possible, however, to
+perform a hardware test and switch to a redundant hard-
+ware interface, if available. More research in this area is
+needed, though.
+
+In the remainder of this paper we focus on the re-
+covery from transient driver failures, which, as argued
+above, represent an important area where our design
+helps to improve system dependability.
+
+Strict isolation of components is a crucial prerequisite
+to enable recovery, since it prevents problems in one
+server or driver from spreading to a different one, in
+the same way that a bug in a compiler process cannot
+normally affect a browser process. Taking this notion
+to our compartmentalized operating system design, for
+example, a user-mode sound driver that dereferences an
+invalid pointer is killed by the process manager, causing
+the sound to stop, but leaving the rest of the system un-
+affected. Although the precise mechanisms are outside
+the scope of this paper, a brief summary of MINIX 3’s
+isolation architecture is in place.
+
+To start with, each server and driver is encapsulated
+in a private, hardware-protected address space to pre-
+vent memory corruption through bad pointers and unau-
+thorized access attempts, just like for normal applica-
+tions. Because the memory management unit (MMU)
+denies access to other address spaces, the kernel pro-
+vides a virtual copy call that enables processes to copy
+data between address spaces in a capability-protected
+manner. A process that wants to grant selective access
+to its memory needs to create a capability describing the
+precise memory area and access rights and pass an index
+to it to the other party.
+
+Direct memory access (DMA) is a powerful I/O
+mechanisms that potentially can be used to bypass the
+memory protection offered by our system. On com-
+modity hardware, we can deny access to the DMA con-
+troller’s I/O ports, and have a trusted driver mediate all
+access attempts. However, this requires manual check-
+ing of each device to see if it uses DMA. Modern hard-
+ware provides effective protection in the form of an I/O
+MMU [1]. To perform DMA safely a driver should ﬁrst
+request the kernel to set up the I/O MMU by passing
+an index to a memory capability similar to the one de-
+scribed above. The overhead of this protection is a few
+microseconds to perform the kernel call, which is gen-
+erally amortized over the costs of the I/O operation.
+
+In addition, we have reduced the privileges of each
+component to a minimum according to the principle of
+least authority [34]. The privileges are passed to the
+trusted reincarnation server when a component is loaded
+through the service utility, which, in turn, informs the
+other servers, drivers, and microkernel so that the re-
+strictions can be enforced at run-time. System processes
+are given an unprivileged user and group ID to restrict
+among other things ﬁle system access. For servers, we
+restrict the use of IPC primitives, system calls, and ker-
+nel calls. For device drivers, the same restrictions ap-
+ply, and in addition, we restrict access to I/O ports, IRQ
+lines, and device memory such as the video memory.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 20075 RECOVERY PROCEDURE
+
+In this section, we describe the general recovery proce-
+dure in the event of failures. The ability of our system
+to deal with dead drivers implies that we can dynami-
+cally start and stop drivers while the operating system is
+running. Starting a new device driver is done through the
+service utility, which forwards the request to the reincar-
+nation server. The following arguments are passed along
+with the request: the driver’s binary, a stable name, the
+process’ precise privileges, a heartbeat period, and, op-
+tionally, a parametrized policy script—a shell script that
+is called after a driver failure to manage the recovery
+procedure. If all arguments make sense, the reincarna-
+tion server forks a new process, sets the process’ privi-
+leges, and executes the driver’s binary. From that point
+on, the driver will be constantly guarded to ensure con-
+tinuous operation—even in the event of a failure. How
+the reincarnation server can detect defects and how the
+recovery procedure works is described below.
+
+5.1 Defect Detection
+
+While a human user observes driver defects when
+the system crashes, becomes unresponsive, or starts to
+behave in strange ways,
+the operating system needs
+other ways to detect failures. Therefore, the reincar-
+nation server monitors the system at run-time to ﬁnd
+defects. The various inputs that can cause the recovery
+procedure to be initiated are:
+
+1. Process exit or panic.
+2. Crashed by CPU or MMU exception.
+3. Killed by user.
+4. Heartbeat message missing.
+5. Complaint by other component.
+6. Dynamic update by user.
+
+At any point in time the reincarnation server has ac-
+curate information about the presence of all servers and
+drivers, since it is the parent of all system processes.
+When a server or driver crashes, panics or exits for an-
+other reason, the process manager will notify the rein-
+carnation server with a SIGCHLD signal, according to
+the POSIX speciﬁcation. At that point it collects and
+inspects the exit status of the exitee, which leads to the
+ﬁrst three defect classes. Since a process exit is directly
+reported by the process manager, immediate action can
+be taken by the reincarnation server.
+
+In addition, the reincarnation server can proactively
+check the system’s state. Depending on the conﬁgura-
+tion passed upon loading, the reincarnation server can
+periodically request drivers to send a heartbeat message.
+
+Failing to respond N consecutive times causes recov-
+ery to be initiated. Heartbeats help to detect processes
+that are ‘stuck,’ for example, in an inﬁnite loop, but
+do not protect against malicious code. To prevent bog-
+ging down the system status requests and the consequent
+replies are sent using nonblocking messages.
+
+Furthermore, the reincarnation server can be used
+as an arbiter in case of conﬂicts, allowing authorized
+servers to report malfunctioning components. How a
+malfunction is precisely deﬁned depends on the com-
+ponents at hand, but in general has to do with protocol
+violations. For example, the ﬁle server can request re-
+placement of a disk driver that sends unexpected request
+messages or fails to respond to a request. The authority
+to replace other components is part of the protection ﬁle
+that speciﬁes a process’ privileges.
+
+Finally, faulty behavior also can be noticed by the
+user, for example, if the audio sounds weird. In such
+a case, the user can explicitly instruct the reincarnation
+server to restart a driver or replace it with a newly com-
+piled one. As another example, latent bugs or vulnera-
+bilities may lead to a dynamic update as soon as a patch
+is available. Since about a quarter of downtime is caused
+by reboots due to maintenance [42], such dynamic up-
+dates that allow patching the system on the ﬂy can sig-
+niﬁcantly increase system availability.
+
+5.2 Policy-Driven Recovery
+
+By default, the reincarnation server directly restarts
+a crashed component, but if more ﬂexibility is wanted,
+the administrator can instruct it to use a parametrized
+policy script that governs the actions to be taken after a
+failure. Policy scripts can be shared, but dedicated re-
+covery scripts can be associated with individual servers
+and drivers as well. When a malfunctioning component
+is detected, the reincarnation server looks up the associ-
+ated policy script and executes it. Input arguments are
+which component failed, the kind of failure as indicated
+in Sec. 5.1, the current failure count, and the parameters
+passed along with the script. The primary goal of the
+policy script is to decide when to restart the malfunction-
+ing component, but other actions can be taken as well.
+Restarting is always done by requesting the reincarna-
+tion server to do so, since that is the only process with
+the privileges to create new servers and drivers.
+
+The simplest policy script immediately tries to restart
+the failed component, but the policy-driven recovery
+procedure can use the information passed by the rein-
+carnation server to make decisions about the precise re-
+covery steps taken. For example, consider the generic
+policy script in Fig. 2. Lines 1–4 process the arguments
+passed by the reincarnation server. Then, lines 6–10
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007agenericrecoveryscript
+
+5.3 Post-Restart Reintegration
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+component=$1
+reason=$2
+repetition=$3
+shift 3
+
+# component name
+# numbers as in Sec. 3.1
+# current failure count
+# get to script parameters
+
+if [ ! $reason -eq 6 ]; then
+
+sleep $((1 << ($repetition - 1)))
+
+ﬁ
+service restart $component
+status=$?
+
+while getopts a: option; do
+case $option in
+a)
+
+cat << END | mail -s ”Failure Alert” ”$OPTARG”
+
+failure: $component, $reason, $repetition
+restart status: $status
+
+END
+;;
+esac
+done
+
+Figure 2: A parametrized, generic recovery script. Binary ex-
+ponential backoff is used before restarting, except for dynamic
+updates. Optionally, a failure alert is sent.
+
+restart the component, possibly after an exponentially
+increasing delay to prevent bogging down the system in
+the event of repeated failures. The backoff protocol is
+not used for dynamic updates that are requested explic-
+itly. Finally, lines 12–21 optionally send an e-mail alert
+if the parameter ’-a’ and an e-mail address are passed.
+
+Using shell scripts provides a lot of ﬂexibility and
+power for expressing policies. For example, a dedicated
+policy script can help the administrator recover from
+failures in the network server. Such a failure closes all
+open network connections, including the sockets used
+by the X Window System. Among other things, recov-
+ery requires restarting the DHCP client and X Window
+System, which can be speciﬁed in a dedicated policy
+script. As another example, when a required component
+cannot be recovered or fails too often, the policy script
+may reboot the entire system, which clearly is better
+than leaving the system in an unusable state. At the very
+least, the policy script can log the failing component and
+its execution environment for future inspection. As an
+aside, the ability of our system to pinpoint precisely the
+responsible components might have legal consequences
+for software vendors (since it can help determine liabil-
+ity for damage caused by a crash), which may help in
+building more dependable systems [43].
+
+A restart of an operating system process is similar to
+the steps taken when a new component is started through
+the service utility, although the details differ. Some extra
+work needs to be done, mainly because the capabilities
+of processes that refer to the restarted component need
+to be reset. In general, simple update requests sufﬁce,
+but these issues illustrate that interprocess dependencies
+complicate the recovery. For example, our design uses
+temporarily unique IPC endpoints, so that messages can-
+not be delivered to the wrong process during a failure.
+As a consequence, a component’s endpoint changes with
+each restart, and the IPC capabilities of dependent pro-
+cesses must be updated accordingly. Such updates are
+done by the reincarnation server before the dependent
+components learn about the restart, as discussed next.
+
+Once a component has been restarted, it needs to be
+reintegrated into the system. Two steps need to be dis-
+tinguished here. First, changes in the operating sys-
+tem conﬁguration need to be communicated to depen-
+dent components in order to initiate further recovery and
+mask the problem to higher levels. This information
+is disseminated through the data store, a simple name
+server that stores stable component names along with
+the component’s current IPC endpoint. The reincarna-
+tion server is responsible for keeping this naming infor-
+mation up to date. The data store implements a publish-
+subscribe mechanism, so that components can subscribe
+to naming information of components they depend on.
+This design decouples producers and consumers and
+prevents intricate interaction patterns of components
+that need to inform each other. For example, the network
+server subscribes to updates about the conﬁguration of
+Ethernet drivers by registering the expression ‘eth.∗’.
+
+Second, a restarted component may need to retrieve
+state that is lost when it crashed. The data store also
+serves as a database server that can be used by system
+processes to privately store a backup copy of certain
+data. By using the data store, lost state can be retrieved
+after a restart. Authentication of restarted components
+is done with help of the naming information that is also
+kept in the data store. When private data is stored, a
+reference to the stable name is included in the record,
+so that authentication of the owner is possible even if
+its endpoint changes. In our prototype implementation,
+state management turns out to be a minor problem for
+device drivers, but is crucial for more complex services.
+In fact, none of our device drivers currently uses the data
+store to backup internal state. However, all mechanisms
+needed to recover from failures in stateful components,
+such as servers, are present. Transparent recovery of
+servers is part of our future work.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 20076 DRIVER RECOVERY SCHEMES
+
+Although in principle our design can handle both server
+and driver failures, our current focus is to reincar-
+nate dead drivers, since such failures are more com-
+mon [9, 39].
+If a driver failure cannot be handled at
+the server level, it will be reported to the application
+that made the I/O request, which notiﬁes the user of the
+problem, if need be. Different recovery schemes exist
+depending on the type of driver, as summarized in Fig. 3.
+Full, transparent recovery without bothering the user is
+possible for both network and block device drivers.
+
+Driver
+Network
+Block
+Character
+
+Recovery
+Yes
+Yes
+Maybe
+
+Where
+Network server
+File server
+Application
+
+Section
+Sec. 6.1
+Sec. 6.2
+Sec. 6.3
+
+Figure 3: Driver recovery schemes. Only network and block
+device drivers allow transparently recovery.
+
+The recovery schemes discussed here pertain not only
+to failures, but also allows the administrator to dynami-
+cally update drivers—even if I/O is in progress. In this
+case, the reincarnation server ﬁrst requests the driver
+to exit by sending it a SIGTERM signal, followed by a
+SIGKILL signal, if the driver does not comply. The steps
+that are taken after the reincarnation server caused the
+driver to exit are similar to those for a failure. Most
+other operating system cannot dynamically replace ac-
+tive drivers on the ﬂy like we do.
+
+6.1 Recovering Network Drivers
+
+If a network driver fails, full recovery transparent to
+the application is possible. We have implemented sup-
+port for Ethernet driver recovery in MINIX 3’s network
+server, INET. If the application uses a reliable transport
+protocol, such as TCP, the protocol handles part of the
+recovery. If data is lost or corrupted, the network server
+(or its peer at the other end of the connection) will notice
+and reinsert the missing packets in the data stream. If an
+unreliable protocol, such as UDP, is used, loss of data
+is explicitly tolerated, but if need be, application-level
+recovery is possible, as illustrated in Fig. 4.
+
+The recovery procedure starts when the process man-
+ager informs the reincarnation server about the exit of
+one of its children, as discussed in Sec. 5.1. The reincar-
+nation server looks up the details about the failed driver
+in its internal tables and runs the associated policy script
+to restart it. Because the network server subscribes to
+information about Ethernet drivers, it is automatically
+notiﬁed by the data store if the conﬁguration changes. If
+the network server tries to send data in the short period
+
+End User
+
+Applications
+
+wget
+
+ftp
+
+rsync
+
+UDP
+recovery
+
+Virtual File System
+
+Network Server
+
+resend
+packet
+
+VFS
+
+INET
+
+Error
+
+Network Drivers
+
+Realtek
+
+IntelPro
+
+3COM
+
+I/O 
+
+Figure 4: Network driver recovery is done by the network
+server or application, transparent to the user.
+
+between the driver crash and the consequent restart, the
+request fails and is postponed until the driver is back.
+Upon notiﬁcation by the data store, the network server
+checks its tables to ﬁnd out if the driver update concerns
+a new driver or a recovered one, and in the latter case,
+starts its internal recovery procedure. This procedure
+closely mimics the steps that are taken when the driver
+is ﬁrst started. The Ethernet driver is reinitialized to put
+it in promiscuous mode and told to resume I/O. The Eth-
+ernet driver is stateless and does not need to retrieve lost
+state from the data store—although it could do so, were
+that necessary.
+
+6.2 Recovering Block Drivers
+
+We now zoom in on block device driver crashes and
+describe the recovery procedure as implemented by the
+native MINIX 3 ﬁle server, MFS. If a disk driver (such
+as the hard disk, RAM disk, CD-ROM, or ﬂoppy driver)
+crashes, transparent recovery without loss of data is pos-
+sible, since disk block I/O is idempotent. If I/O was in
+progress at the time of the failure, the IPC rendezvous
+will be aborted by the kernel, and the ﬁle server marks
+the request as pending. Then, the ﬁle server blocks and
+waits until the disk driver has been restarted and pending
+I/O requests can be retried, as illustrated in Fig. 5.
+
+In contrast to other drivers, disk driver recovery is
+currently not policy driven, since that would require
+reading the recovery script from disk. Instead, the rein-
+carnation server directly restarts failed disk drivers from
+a copy in RAM.1 Like the other drivers in our system,
+disk drivers are stateless and do not need to retrieve lost
+state from the data store, although they could were that
+necessary. Once the driver has been restarted, the rein-
+carnation server publishes the new IPC endpoint in the
+data store and the ﬁle server is notiﬁed. At this point,
+the ﬁle server updates its device–driver mappings, and
+
+1If policy-driven recovery is needed for disk drivers, the system can
+be conﬁgured with a dedicated RAM disk to provide trusted storage for
+crucial data, such as the driver binaries, the shell, and policy scripts.
+We have written a small 450-line RAM disk driver for this purpose.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007End User
+
+Applications
+
+vim
+
+ls
+
+find
+
+Virtual File System
+
+VFS
+
+File Servers
+
+MFS
+
+FAT
+
+Error
+
+redo
+I/O
+
+redo
+I/O
+
+Block Drivers
+
+S−ATA
+
+RAM
+
+Floppy
+
+I/O 
+
+Figure 5: Block device driver recovery is done by the ﬁle
+server, transparent to applications and users.
+
+reinitializes the disk driver by reopening minor devices,
+if needed. Finally, the ﬁle server checks whether there
+are any pending I/O requests, and if so, it reissues the
+failed disk operations. At this point the ﬁle server re-
+sumes normal operation and continues to handle pend-
+ing I/O requests from other user applications.
+
+As an aside, our design is meant to provide recov-
+ery in the event of driver crashes, but is not designed
+to detect silent data corruption, as discussed in Sec. 3.
+While the TCP protocol automatically eliminates this
+problem for network driver crashes, disk driver crashes
+can potentially corrupt the data on disk. However, our
+design may be combined with end-to-end checksums,
+as in IRON ﬁle systems [33], to prevent data corruption.
+
+6.3 Recovering Character Drivers
+
+Character device drivers cannot be transparently re-
+covered, since it is impossible to tell whether data was
+lost. Deciding which part of the data stream was suc-
+cessfully processed and which data is missing is an un-
+decidable problem. If an input stream is interrupted due
+to a device driver crash, input might be lost because it
+can only be read from the controller once. Likewise, if
+an output stream is interrupted, there is no way to tell
+how much data has been output to the controller, and
+full recovery is also not possible. Therefore, such fail-
+ures are reported to the application layer where further
+recovery might be possible, as illustrated in Fig. 6.
+
+End User
+
+Applications
+
+hiccups
+
+cd burn
+failed
+
+retry
+
+mp3
+
+cdr
+
+lpd
+
+redo
+job
+
+Virtual File System
+
+VFS
+
+Error
+
+Character Drivers
+
+Audio
+
+SCSI
+
+Printer
+
+I/O 
+
+Figure 6: Recovery for character device drivers. Errors are
+always pushed up, but need to be reported the user only if the
+application cannot recover.
+
+For historical reasons, most applications assume that
+a driver failure is fatal and immediately give up, but our
+prototype in fact supports continuous operation when
+applications are made recovery-aware. For example, it
+may be possible to modify the printer daemon such that
+it automatically reissues failed print requests (without
+bothering the user). While transparent recovery is not
+possible—duplicate printouts may result in this case—
+the user beneﬁts from this approach. As another exam-
+ple, an MP3 player could continue playing a song after a
+driver recovery at the risk of small hiccups. Only when
+the application layer cannot handle the failure, the user
+needs to be informed. For example, continuing the CD
+or DVD burn process if the SCSI driver fails will most
+certainly produce a corrupted disc, so the error must be
+reported to the user.
+
+7 EXPERIMENTAL EVALUATION
+
+We have evaluated our recovery mechanisms in various
+ways. First, we discuss the performance overhead intro-
+duced by our recovery mechanisms. Then, we report on
+the results of software fault-injection. Finally, we quan-
+tify the reengineering effort needed to prototype our re-
+covery mechanisms in MINIX 3.
+
+7.1 Performance Overhead
+
+To determine the performance overhead introduced
+by our
+recovery mechanisms we simulated driver
+crashes while I/O was in progress and compared the
+performance to the performance of an uninterrupted I/O
+transfer. We performed this test for both block device
+and network drivers. The crash simulation was done us-
+ing a tiny shell script that ﬁrst initiates the I/O transfer,
+and then repeatedly looks up the driver’s process ID and
+kills the driver using a SIGKILL signal. The test was run
+with varying intervals between the simulated crashes.
+The recovery policy that was used for these tests directly
+restarts the driver without introducing delays. After the
+transfer we veriﬁed that no data corruption took place.
+In all cases, full recovery transparent to the application
+and without user intervention was possible.
+
+We ﬁrst measured the overhead for the recovery of
+network drivers using the RealTek 8139 Ethernet driver.
+In this case, we initiated a TCP transfer using the wget
+utility to retrieve a 512-MB ﬁle from the Internet. We
+ran multiple tests with the period between the simulated
+crashes ranging from 1 to 15 seconds. In all cases, wget
+successfully completed, with the only noticeable differ-
+ence being a small performance degradation as shown
+in Fig. 7. To verify that the data integrity was preserved,
+we compared the MD5 checksums of the received data
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007the original ﬁle. The mean recovery time for the Real-
+Tek 8139 driver failures is 0.48 sec, which is, in part,
+due to the TCP retransmission timeout. The uninter-
+rupted transfer time is 47.41 sec with a throughput of
+10.8 MB/s. The interrupted transfer times range from
+47.85 sec to 62.98 sec with a throughput of 10.7 MB/s
+and 8.1 MB/s, respectively. The loss in throughput due
+to Ethernet driver failures ranges from 25% to just 1%
+in the best case.
+
+ Uninterrupted Transfer
+ With Driver Recovery
+
+ 0
+
+ 2
+
+ 4
+
+ 6
+
+ 8
+
+ 10
+
+ 12
+
+ 14
+
+ 16
+
+Network Driver Kill Interval (s)
+
+Figure 7: Networking throughput when using wget retrieve
+a 512-MB ﬁle from the Internet while repeatedly killing an
+Ethernet driver with various time intervals.
+
+We also measured the overhead of disk driver recov-
+ery by repeatedly sending a SIGKILL signal to the SATA
+hard disk driver while reading a 1-GB ﬁle ﬁlled with
+random data using dd. The input was immediately redi-
+rected to sha1sum to calculate the SHA-1 checksum.
+Again, we killed the driver with varying intervals be-
+tween the simulated crashes. The data transfer success-
+fully completed in all cases with the same SHA-1 check-
+sum. The transfer rates are shown in Fig. 8. The un-
+interrupted disk transfer completed in 31.33 sec with
+a throughput of 32.7 MB/sec. The interrupted trans-
+fer shows a transmission time ranging from 83.06 sec
+to 34.73 sec, with a throughput of 12.3 MB/s and 30.5
+MB/s, for simulated crashes every 1 and 15 sec, respec-
+tively. The performance overhead of disk driver recov-
+ery ranges from 62% to about 7% in this test. The higher
+recovery overhead compared to the previous experiment
+is due to the much higher I/O transfer rates.
+
+)
+s
+/
+B
+M
+
+(
+ 
+e
+t
+a
+R
+
+ 
+r
+e
+f
+s
+n
+a
+r
+T
+
+ 12
+ 10
+ 8
+ 6
+ 4
+ 2
+ 0
+
+)
+s
+/
+B
+M
+
+(
+ 
+
+t
+
+e
+a
+R
+
+ 
+r
+e
+
+f
+s
+n
+a
+r
+T
+
+ 40
+ 35
+ 30
+ 25
+ 20
+ 15
+ 10
+ 5
+ 0
+
+Uninterrupted Transfer
+With Driver Recovery
+
+ 0
+
+ 2
+
+ 4
+
+ 6
+
+ 8
+
+ 10
+
+ 12
+
+ 14
+
+ 16
+
+Disk Driver Kill Interval (s)
+
+Figure 8: Throughput of uninterrupted disk transfers and
+throughput in case of repeated disk driver failures while read-
+ing a 1-GB ﬁle using dd.
+
+7.2 Fault-Injection Testing
+
+To test the capability of our system to withstand and
+recover from driver failures, we also simulated failures
+in our drivers by means of software fault-injection. We
+based our experiments on two existing fault injectors
+that mutate binary code [32, 39, 40]. This kind of fault
+injection was shown to be most representative for real
+failures [29]. We used the following seven fault types:
+(1) change source register, (2) change destination reg-
+ister, (3) garble pointer, (4) use current register value
+instead of paramater passed, (5) invert termination con-
+dition of a loop, (6) ﬂip a bit in an instruction, or (7)
+elide an instruction. These faults emulate programming
+errors common to operating system code [11, 37].
+
+The fault-injection experiments demonstrated that
+our design can successfully recover from common, tran-
+sient failures and provide continuous operation. One ex-
+periment run inside the Bochs PC emulator 2.2.6 tar-
+geted the DP8390 Ethernet driver and repeatedly in-
+jected 1 randomly selected fault into the running driver
+until it crashed. In total, we injected over 12,500 faults,
+which led to 347 detectable crashes: 226 exits due to an
+internal panic (65%), 109 kill signals due to CPU and
+MMU exceptions (31%), and 12 restarts due to missing
+heartbeat messages (4%). The subsequent recovery was
+successful in 100% of the induced failures.
+
+Preliminary tests on the real hardware showed suc-
+cess for more than 99% of the detectable failures.
+In
+a very small number of cases (less than 5) the network
+card was confused by the faulty driver and could not be
+reininitialized by the restarted driver. Instead a low-level
+BIOS reset was needed. If the card had a ’master reset’
+command the problem could be solved by our driver, but
+our card did not have this. Further testing with different
+kinds of drivers and hardware conﬁgurations is needed,
+however, in order to get more insight in possible hard-
+ware limitations. This will be part of our future work.
+
+7.3 Reengineering Eﬀort
+
+An important lesson that we have learned during our
+prototype implementation is that the recovery proce-
+dure requires an integrated approach for optimal results,
+meaning that certain components need to be recovery-
+aware. As a metric for the reengineering effort we
+counted the number of lines of executable code (LoC)
+that is needed to support recovery. Blank lines, com-
+ments, and deﬁnitions in header ﬁles do not add to the
+code complexity, so these were omitted in the counting
+process. Line counting was done using the sclc.pl Perl
+script [2]. Fig. 9 summarizes the results.
+
+Fortunately, the changes required to deal with driver
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007failures are both very limited and local. The reincarna-
+tion server and service utility’s logic to dynamically start
+servers and drivers is reused to support recovery. Most
+of the new code relates to defect detection and execution
+of the recovery scripts. The virtual ﬁle system and ﬁle
+server stay mostly the same, with changes centralized in
+the device I/O routines. Furthermore, the recovery code
+in the network server represents a minimal extension to
+the code needed to start a new driver. Finally, the pro-
+cess manager and microkernel are not affected at all.
+
+Most importantly, the device drivers in our system are
+hardly affected. In general, only a minimal change to
+reply to heartbeat and shutdown requests from the rein-
+carnation server is needed. For most drivers this change
+comprises exactly 5 lines of code in the shared driver li-
+brary to handle the new request types. Device-speciﬁc
+driver code almost never needs to be changed. For a few
+drivers, however, the code to initialize the hardware had
+to be modiﬁed in order to support reinitialization. Over-
+all, the changes are negligible compared to the amount
+of driver code that can be guarded by our design.
+
+7.4 General Applicability
+
+The ideas put forward in this paper are generally ap-
+plicable, and may, for example, be used in commodity
+operating systems. While the degree of isolation pro-
+vided by our prototype platform, MINIX 3, enabled us to
+implement and test our ideas with relatively little effort,
+we believe that other systems can also beneﬁt from our
+ideas. Especially, since there is a trend towards isola-
+tion of untrusted extensions on other operating systems.
+For example, user-mode drivers have been successfully
+tested on Linux [25] and adopted by Windows [27].
+If the drivers are properly isolated, these systems can
+build on the principles presented here in order to pro-
+vide policy-driven recovery services like we do.
+
+8 CONCLUSION
+
+Our research explores whether it is possible to build a
+dependable operating system out of unreliable, buggy
+components. We have been inspired by other hardware
+and software failure-resilient designs that mask failures
+so that the system can continue as though no errors had
+occurred, and attempted to extend this idea to device
+driver failures. Recovery from such failures is partic-
+ularly important, since device drivers form a large frac-
+tion of the operating system code and tend to be buggy.
+In this paper, we presented an operating system ar-
+chitecture in which common failures in drivers and
+other critical extensions can be transparently repaired.
+The system is constantly monitored by the reincarnation
+server and malfunctioning components may be replaced
+in a policy-driven recovery procedure to masks failures
+for both users and applications. We illustrated our ideas
+with concrete recovery schemes for failures in network,
+block device, and character device drivers.
+
+We also evaluated our design in various ways. We
+measured the performance overhead due to our recovery
+mechanisms, which can be as low as 1%. Fault-injection
+experiments demonstrated that our design can recover
+from realistic failures and provide continuous operation
+in more than 99% of the detectable failures. Source code
+analysis showed that the reengineering effort needed is
+both limited and local. All in all, we believe that our
+work on failure resilience for device drivers represents a
+small step towards more dependable operating systems.
+
+9 AVAILABILITY
+
+MINIX 3 is free, open-source software, available via the
+Internet. You can download MINIX 3 from the ofﬁcial
+homepage at: http://www.minix3.org/, which also contains
+the source code, documentation, news, and more.
+
+Component
+Reinc. Server
+Data Store
+VFS Server
+File Server
+SATA Driver
+RAM Disk
+Network Server
+RTL8139 Driver
+DP8390 Driver
+Process Manager
+Microkernel
+Total
+
+Total LoC
+2,002
+384
+5,464
+3,356
+2,443
+454
+20,019
+2,398
+2,769
+2,954
+4,832
+39,011
+
+Recovery LoC
+593
+59
+274
+22
+5
+0
+124
+5
+5
+0
+0
+1,072
+
+%
+30%
+15%
+5%
+<1%
+<1%
+0%
+<1%
+<1%
+<1%
+0%
+0%
+-
+
+Figure 9: Source code statistics on the total code base and
+reengineering effort speciﬁc to recovery expressed in lines of
+executable code (LoC).
+
+10 ACKNOWLEDGMENTS
+
+We would like to thank the anonymous reviewers for
+their suggestions that improved this paper. This work
+was supported by Netherlands Organization for Scien-
+tiﬁc Research (NWO) under grant 612-060-420.
+
+REFERENCES
+
+[1] D. Abramson, J. Jackson, S. Muthrasanallur, G. Neiger, G. Reg-
+nier, R. Sankaran, I. Schoinas, R. Uhlig, B. Vembu, and
+J. Wiegert. Intel Virtualization Technology for Directed I/O. In-
+tel Technology Journal, 10(3), Aug. 2006.
+
+[2] B. Appleton. Source Code Line Counter (sclc.pl), Last Modiﬁed:
+
+April 2003. Available Online.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007[3] P. T. Barham, B. Dragovic, K. Fraser, S. Hand, T. L. Harris,
+A. Ho, R. Neugebauer, I. Pratt, and A. Warﬁeld. Xen and the
+Art of Virtualization. In Proc. 19th Symp. on Oper. Syst. Prin.,
+pages 164–177, 2003.
+
+[4] V. Basili and B. Perricone. Software Errors and Complexity: An
+Empirical Investigation. Comm. of the ACM, 21(1):42–52, Jan.
+1984.
+
+[5] H. Bos and B. Samwel. Safe Kernel Programming in the OKE.
+In Proc. of the 5th IEEE Conf. on Open Architectures and Net-
+work Programming, pages 141–152, June 2002.
+
+[6] M. I. Bushnell. The HURD: Towards a New Strategy of OS
+
+Design. GNU’s Bulletin, 1994.
+
+[7] G. Candea, J. Cutler, and A. Fox. Improving Availability with
+Recursive Microreboots: A Soft-State System Case Study. Per-
+formance Evaluation Journal, 56(1):213–248, .
+
+[8] G. Candea, S. Kawamoto, Y. Fujiki, G. Friedman, and A. Fox.
+In Proc. 6th
+
+Microreboot–A Technique for Cheap Recovery.
+Symp. on Oper. Syst. Design and Impl., pages 31–44, .
+
+[9] A. Chou, J. Yang, B. Chelf, S. Hallem, and D. Engler. An Em-
+pirical Study of Operating System Errors. In Proc. 18th Symp.
+on Oper. Syst. Prin., pages 73–88, 2001.
+
+[10] T. C. K. Chou. Beyond Fault Tolerance. IEEE Computer, 30(4),
+
+Apr. 1997.
+
+[11] J. Christmansson and R. Chillarege. Generation of an Error Set
+that Emulates Software Faults – Based on Field Data. In Proc.
+26th IEEE Int’l Symp. on Fault Tolerant Computing, June 1996.
+[12] A. Forin, D. Golub, and B. Bershad. An I/O System for Mach
+
+3.0. In Proc. 2nd USENIX Mach Symp., pages 163–176, 1991.
+
+[13] K. Fraser, S. Hand, R. Neugebauer, I. Pratt, A. Warﬁeld, and
+M. Williamson. Safe Hardware Access with the Xen Virtual
+Machine Monitor. In Proc. 1st Workshop on Oper. Sys. and Arch.
+Support for the On-Demand IT InfraStructure, Oct. 2004.
+[14] A. Gefﬂaut, T. Jaeger, Y. Park, J. Liedtke, K. Elphinstone, V. Uh-
+lig, J. Tidswell, L. Deller, and L. Reuther. The SawMill Multi-
+server Approach. In Proc. 9th ACM SIGOPS European Work-
+shop, pages 109–114, Sept. 2000.
+
+[15] J. Gray. Why Do Computers Stop and What Can Be Done About
+It? In Proc. 5th Symp. on Reliability in Distributed Software and
+Database Systems, pages 3–12, 1986.
+
+[16] H. H¨artig, M. Hohmuth, J. Liedtke, S. Sch¨onberg, and J. Wolter.
+In Proc. 6th
+
+The Performance of µ-Kernel-Based Systems.
+Symp. on Oper. Syst. Prin., pages 66–77, Oct. 1997.
+
+[17] H. H¨artig, M. Hohmuth, N. Feske, C. Helmuth, A. Lackorzynski,
+F. Mehnert, and M. Peter. The Nizza Secure-System Architec-
+ture. In Proc. 1st Conf. on Collaborative Computing, Dec. 2005.
+[18] J. N. Herder, H. Bos, B. Gras, P. Homburg, and A. S. Tanenbaum.
+Reorganizing UNIX for Reliability. In Proc. 11th Asia-Paciﬁc
+Comp. Sys. Arch. Conf., Sept. 2006.
+
+[19] J. N. Herder, H. Bos, B. Gras, P. Homburg, and A. S. Tanen-
+baum. Construction of a Highly Dependable Operating System.
+In Proc. 6th European Dependable Computing Conf., Oct. 2006.
+[20] J. N. Herder, H. Bos, B. Gras, P. Homburg, and A. S. Tanenbaum.
+MINIX 3: A Highly Reliable, Self-Repairing Operating System.
+ACM SIGOPS Operating System Review, 40(3), July 2006.
+[21] D. Hildebrand. An Architectural Overview of QNX. In Proc.
+USENIX Workshop on Microkernels and Other Kernel Architec-
+tures, pages 113–126, Apr. 1992.
+
+[22] M. Hohmuth and H. Tews. The VFiasco Approach for a Veriﬁed
+In Proc. 2nd ECOOP Workshop on Prog.
+
+Operating System.
+Lang. and Oper. Sys., July 2005.
+
+[23] G. Hunt, C. Hawblitzel, O. Hodson, J. Larus, B. Steensgaard,
+and T. Wobber. Sealing OS Processes to Improve Dependability
+and Safety. In Proc. 2nd EuroSys Conf., 2007.
+
+[24] J. Liedtke. On µ-Kernel Construction. In Proc. 15th Symp. on
+
+Oper. Syst. Prin., pages 237–250, Dec. 1995.
+
+[25] B. Leslie, P. Chubb, N. Fitzroy-Dale, S. Gotz, C. Gray,
+L. Macpherson, D. Potts, Y.-T. Shen, K. Elphinstone, and
+
+G. Heiser. User-Level Device Drivers: Achieved Performance.
+Journal of Computer Science and Technology, 20(5):654–664,
+Sept. 2005.
+
+[26] J. LeVasseur, V. Uhlig, J. Stoess, and S. Gotz. Unmodiﬁed De-
+vice Driver Reuse and Improved System Dependability via Vir-
+In Proc. 6th Symp. on Oper. Syst. Design and
+tual Machines.
+Impl., pages 17–30, Dec. 2004.
+
+[27] Microsoft Corporation. Architecture of the User-Mode Driver
+
+Framework. In Proc. 15th WinHEC Conf., May 2006.
+Ofﬁcial Website and Download:.
+
+[28] MINIX 3.
+
+URL
+
+http://www.minix3.org/.
+
+[29] R. Moraes, R. Barbosa, J. Dures, N. Mendes, E. Martins, and
+H. Madeira.
+Injection of Faults at Component Interfaces and
+Inside the Component Code: Are They Equivalent? In Proc. 6th
+Eur. Dependable Computing Conf., pages 53–64, Oct. 2006.
+[30] B. Murphy and N. Davies. System Reliability and Availability
+In Proc. 29th Int’l Symp. on Fault-
+
+Drivers of Tru64 UNIX.
+Tolerant Computing, June 1999. Tutorial.
+
+[31] V. P. Nelson. Fault-Tolerant Computing: Fundamental Concepts.
+
+IEEE Computer, 23(7):19–25, July 1990.
+
+[32] W. T. Ng and P. M. Chen. The Systematic Improvement of Fault
+Tolerance in the Rio File Cache. In Proc. 29th Int’l Symp. on
+Fault-Tolerant Computing, pages 76–83, June 1999.
+
+[33] V. Prabhakaran, L. N. Bairavasundaram, N. Agrawal, H. S. Gu-
+nawi, A. C. Arpaci-Dusseau, and R. H. Arpaci-Dusseau. IRON
+In Proc. 20th Symp. on Oper. Sys. Prin., pages
+File Systems.
+206–220, Oct. 2005.
+
+[34] J. Saltzer and M. Schroeder. The Protection of Information in
+Computer Systems. Proc. of the IEEE, 63(9), Sept. 1975.
+[35] L. Seawright and R. MacKinnon. VM/370—A Study of Multi-
+plicity and Usefulness. IBM Systems Journal, 18(1):4–17, 1979.
+[36] J. Sugerman, G. Venkitachalam, and B.-H. Lim. Virtualizing
+I/O Devices on VMware Workstation’s Hosted Virtual Machine
+Monitor. In Proc. USENIX Ann. Tech. Conf., pages 1–14, 2001.
+[37] M. Sullivan and R. Chillarege. Software Defects and their Im-
+pact on System Availability – A Study of Field Failures in Oper-
+ating Systems. In Proc. 21st Int’l Symp. on Fault-Tolerant Com-
+puting, June 1991.
+
+[38] Sun Microsystems. Predictive Self-Healing in the Solaris 10 Op-
+
+erating System, June 2004. Available Online.
+
+[39] M. Swift, M. Annamalai, B. Bershad, and H. Levy. Recovering
+Device Drivers. In Proc. 6th Symp. on Oper. Syst. Design and
+Impl., pages 1–15, Dec. 2004.
+
+[40] M. Swift, B. Bershad, and H. Levy. Improving the Reliability of
+Commodity Operating Systems. ACM Trans. on Comp. Syst., 23
+(1):77–110, 2005.
+
+[41] T.J. Ostrand and E.J. Weyuker. The Distribution of Faults in a
+Large Industrial Software System. In Proc. Symp. on Software
+Testing and Analysis, pages 55–64, July 2002.
+
+[42] J. Xu, Z. Kalbarczyk, and R. K. Iyer. Networked Windows NT
+In Proc. 6th Paciﬁc Rim
+
+System Field Failure Data Analysis.
+Symp. on Dependable Computing, pages 178–185, Dec. 1999.
+
+[43] A. R. Yumerefendi and J. S. Chase. The Role of Accountability
+in Dependable Distributed Systems. In Proc. 1st Workshop on
+Hot Topics in System Dependability, June 2005.
+
+[44] F. Zhou, J. Condit, Z. Anderson, I. Bagrak, R. Ennals, M. Harren,
+G. Necula, and E. Brewer. SafeDrive: Safe and Recoverable Ex-
+tensions Using Language-Based Techniques. In Proc. 7th Symp.
+on Oper. Sys. Design and Impl., pages 45–60, Nov. 2006.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+
+37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007

@@ -1,6 +1,7 @@
 import re
 
-def extractApple():
-    txt="I like to eat apple. Me too. Let's go buy some apples."
-    txt = "." + txt
-    print(re.findall(r"([^.]*?apple[^.]*\.)",txt))
+def extractSentence(path,ref):
+    f = open('sample/' + path, "r")
+    data = f.read()
+    print([sentence + '.' for sentence in data.split('.') if ref in sentence])
+    f.close()
