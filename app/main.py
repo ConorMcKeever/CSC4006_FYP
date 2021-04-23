@@ -67,7 +67,9 @@ while menu2 == True:
     o3 = int(input('Choose an option:'))
 
     if o3 == 1:
-        getReferences(chFile)
+        print(chFile)
+        value = getReferences(chFile, 'Software Errors and Complexity')
+        print(value + '  test')
 
     if o3 == 2:
         in1 = '[' + str(input('Which reference to count:')) + ']'

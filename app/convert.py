@@ -5,7 +5,7 @@ from pdfminer.pdfpage import PDFPage
 from io import StringIO
 import os
 
-def convert_pdf_to_txt(path):
+def convert_pdf_to_txt(path, dest):
 
     pagenums = set()
     output = StringIO()
@@ -13,13 +13,17 @@ def convert_pdf_to_txt(path):
     converter = TextConverter(manager, output, laparams=LAParams())
     interpreter = PDFPageInterpreter(manager, converter)
 
-    infile = open('pdf/' +path+'.pdf', 'rb')
-    for page in PDFPage.get_pages(infile, pagenums):
-        interpreter.process_page(page)
-    infile.close()
-    converter.close()
-    text = output.getvalue()
-    output.close()
-    f = open('sample/' + path + '.txt', "x")
-    f.write(text)
-    f.close()
+
+    try:
+        f = open(dest + '/' + path + '.txt', "x")
+        infile = open('pdf/' +path+'.pdf', 'rb')
+        for page in PDFPage.get_pages(infile, pagenums):
+            interpreter.process_page(page)
+        infile.close()
+        converter.close()
+        text = output.getvalue()
+        output.close()
+        f.write(text)
+        f.close()
+    except FileExistsError:
+        print('Directory already exists')
