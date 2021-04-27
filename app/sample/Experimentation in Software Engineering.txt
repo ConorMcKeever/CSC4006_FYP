@@ -1,0 +1,1863 @@
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING, VOL. SE-12, NO.7, JULY 1986
+
+733
+
+Experimentation in Software Engineering
+
+VICTOR R. BASILI, SENIOR MEMBER,
+
+IEEE, RICHARD W. SELBY, MEMBER,
+
+IEEE, AND
+
+DAVID H. HUTCHENS, MEMBER,
+
+IEEE
+
+Abstract-Experimentation in software engineering supports the ad 
+vancement of the field through an iterative learning process. In this
+paper we present a framework for analyzing most of the experimental
+work performed in software engineering over the past several years.
+We describe a variety of experiments in the framework and discuss
+their contribution to the software engineering discipline. Some useful
+recommendations for the application of the experimental process in
+software engineering are included.
+
+Index Terms-Controlled experiment, data collection and analysis,
+empirical study, experimental design, software metrics, software tech 
+nology measurement and evaluation.
+
+I.
+
+INTRODUCTION
+
+A s any area matures, there is the need to understand
+
+its components and their relationships. An experi 
+mental process provides a basis for the needed advance 
+ment in knowledge and understanding. Since software en 
+gineering is in its adolescence, it is certainly a candidate
+for the experimental method of analysis. Experimentation
+is performed in order to help us better evaluate, predict,
+understand, control, and improve the software develop 
+ment process and product.
+
+Experimentation in software engineering, as with any
+other experimental procedure,
+involves an iteration of a
+hypothesize and test process. Models of the software pro 
+cess or product are built, hypotheses about these models
+are tested, and the information learned is used to refine
+the old hypotheses or develop new ones. In an area like
+software engineering, this approach takes on special im 
+portance because we greatly need to improve our knowl 
+edge of how software is developed, the effect of various
+technologies, and what areas most need improvement.
+There is a great deal
+to be learned and intuition is not
+always the best teacher.
+
+In this paper we layout a framework for analyzing most
+of the experimental work that has been performed in soft-
+
+Manuscript received July 15. 1985 ~ revised January 15, 1986. This work
+was supported in part by the Air Force Office of Scientific Research under
+Contract AFOSR-F49620-80-C-00 1 and by the National Aeronautics and
+Space Administration under Grant NSG-5123 to the University of ~ary­
+land. Computer support was provided in part by the Computer SCience
+Center at the University of Maryland.
+
+V. R. Basili is with the Department of Computer Science. University of
+
+Maryland. College Park. MD 20742.
+
+"
+
+.
+
+R. W. Selby was with the Department of Computer SCience. University,
+of Maryland. College Park. MD 20742. He is now with the Department of
+Information and Computer Science. University of California. Irvine, CA
+92717.
+
+D. H. Hutchens is with the Department of Computer Science. Clemson
+
+University. Clemson. SC 29634.
+IEEE Log Number 8608188.
+
+ware engineering over the past several years. We then dis 
+cuss a variety of these experiments, their results, and the
+impact they have had on our knowledge of the software
+engineering discipline.
+
+II. OBJECTIVES
+
+There are three overall goals for this work. The first
+objective is to describe a framework for experimentation
+in software engineering. The framework for experimen 
+tation is intended to help structure the experimental pro 
+cess and to provide a classification scheme for under 
+standing and evaluating experimental studies. The second
+objective is to classify and discuss a variety of experi 
+ments from the literature according to the framework. The
+description of several software engineering studies is in 
+tended to provide an overview of the knowledge resulting
+from experimental work, a summary of current research
+directions, and a basis for learning from past experience
+with experimentation. The third objective is to identify
+problem areas and lessons learned in experimentation in
+software engineering. The presentation of problem areas
+and lessons learned is intended to focus attention on gen 
+trends in the field and to provide the experimenter
+eral
+with useful recommendations for performing future stud 
+ies. The following three sections address these goals.
+
+III. EXPERIMENTATION FRAMEWORK
+
+The framework of experimentation, summarized in Fig.
+1, consists of four categories corresponding to phases of
+the experimentation process: 1) definition, 2) planning, 3)
+operation, and 4) interpretation. The following sections
+discuss each of these four phases.
+
+A. Experiment Definition
+
+The first phase of the experimental process is the study
+definition phase. The study definition phase contains six
+parts: 1) motivation, 2) object, 3) purpose, 4) perspec 
+tive, 5) domain, and 6) scope. Most study definitions con 
+tain each of the six parts; an example definition appears
+in Fig. 2.
+
+There can be several motivations, objects, purposes, or
+perspectives in an experimental study. For example, the
+motivation of a study may be to understand, assess, or
+improve the effect of a certain technology. The' 'object
+of study"
+is the primary entity examined in a study. A
+study may examine the final software product, a devel 
+opment process (e.g.,
+inspection process, change pro 
+cess), a model (e.g., software reliability model), etc. The
+
+0098-5589/86/0700-0733$01.00 © 1986 IEEE
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+734
+
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING, VOL. SE-12, NO.7, JULY 1986
+
+Design
+
+Criteria
+
+Measurement
+
+Direct reflections of cost/quality
+
+Metric definition
+
+I. Definition
+Perspective
+
+Developer
+Modifier
+Maintainer
+Project manager
+Corporate manager
+Customer
+User
+Researcher
+
+II. Planning
+
+Object
+
+Product
+Process
+Model
+Metric
+Theory
+
+Purpose
+Characterize
+Evaluate
+Predict
+Motivate
+
+Motivation
+Understand
+Assess
+Manage
+Engineer
+Learn
+Improve
+Validate
+Assure
+
+Experimental designs
+Incomplete block
+Completely randomized
+Randomized block
+Fractional factorial
+
+Multivariate analysis
+
+Cost
+Errors
+Changes
+Reliability
+Correc tness
+
+Correlation
+Factor analysis
+Regression
+Statistical models
+Non-parametric
+Sampling
+
+Preparation
+
+Pilot study
+
+Indirect reflections of cost/quality
+
+Data coupling
+Information visibility
+Programmer comprehension
+Execution coverage
+Size
+Complexity
+
+III. Operation
+
+Execution
+
+Data collection
+Data validation
+
+Scope
+Domain
+Single project
+Programmer
+Program/project Multi-project
+
+Replicated project
+Blocked subject-project
+
+Goal-question-metric
+Factor-criteria-metric
+
+Metric validation
+Data collection
+
+Automatability
+Form design and test
+Objective vs. subjective
+Level of measurement
+
+Nominal/classificatory
+Ordinal/ranking
+Interval
+Ratio
+
+Analysis
+
+Quantitative vs. qualitative
+Preliminary data analysis
+Plots and histograms
+Model assumptions
+Primary data analysis
+Model application
+
+Visibility
+Replication
+Application
+
+Interpretation context
+
+Extrapolation
+
+Impact
+
+IV. Interpretation
+
+Sample representativeness
+
+Statistical framework
+Study purpose
+Field of research
+
+Fig.
+
+I. Summary of the framework of experimentation.
+
+Definition element
+
+Motivation
+Purpose
+Object
+Perspective
+Domain: programmer
+Domain: program
+Scope
+
+example
+
+To improve the unit testing process
+characterize and evaluate
+the processes of functional and structural testing
+from the perspective of the developer
+as they are applied by experienced programmers
+to unit-size software
+in a blocked subject-project study.
+
+Fig. 2. Study definition example.
+
+#Teams per
+project
+
+# Projects
+
+one
+
+more than one
+
+one
+
+Single project
+
+Multi-project
+variation
+
+more than
+one
+
+Replicated
+project
+
+Blocked
+subject-project
+
+Fig. 3. Experimental scopes.
+
+purpose of a study may be to characterize the change in a
+system over time, to evaluate the effectiveness of testing
+processes, to predict system development cost by using a
+cost model, to motivate) the validity of a theory by ana 
+In experimental studies
+lyzing empirical evidence, etc.
+that examine' 'software quality,"
+the interpretation usu 
+ally includes correctness if it is from the perspective of a
+developer or reliability if it is from the perspective of a
+customer. Studies that examine metrics for a given project
+type from the perspective of the project manager may in 
+terest certain project managers, while corporate managers
+may only be interested if the metrics apply across several
+project types.
+
+I For clarification. the usage of the word '"motivate" as a study purpose
+
+is distinct from the study .... motivation."
+
+"Teams
+
+Two important domains that are considered in experi 
+mental studies of software are 1) the individual program 
+mers or programming teams (the 44teams") and 2) the
+programs or projects (the "projects").
+are
+(possibly single-person) groups that work separately, and
+"projects"
+are separate programs or problems on which
+teams work. Teams may be characterized by experience,
+size, organization, etc., and projects may be character 
+ized by size, complexity, application, etc. A general clas 
+sification of the scopes of experimental studies can be ob 
+tained by examining the sizes of these two domains
+considered (see Fig. 3). Blocked subject-project studies
+examine one or more objects across a set of teams and a
+set of projects. Replicated project studies examine ob-
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+BASILI et al.: EXPERIMENTATION IN SOFTWARE ENGINEERING
+
+735
+
+ject(s) across a set of teams and a single project, while
+multiproject variation studies examine object(s) across a
+single team and a set of projects. Single project studies
+examine object(s) on a single team and a single project.
+As the representativeness of the samples examined and
+the scope of examination increase, the wider-reaching a
+study's conclusions become.
+
+B. Experiment Planning
+
+The second phase of the experimental process is the
+study planning phase. The following sections discuss as 
+pects of the experiment planning phase: 1) design, 2) cri 
+teria, and 3) measurement.
+
+The design of an experiment couples the study scope
+with analytical methods and indicates the domain samples
+to be examined. Fractional factorial or randomized block
+designs usually apply in blocked subject-project studies,
+while completely randomized or incomplete block designs
+usually apply in multiproject and replicated project stud 
+ies [33], [41]. Multivariate analysis methods, including
+correlation, factor analysis, and regression [75],
+[80],
+[89], generally may be used across all experimental
+scopes. Statistical models may be formulated and custom 
+ized as appropriate [89]. Nonparametric methods should
+be planned when only limited data may be available or
+distributional assumptions may not be met [100]. Sam 
+pling techniques [40] may be used to select representative
+programmers and programs/projects to examine.
+
+Different motivations, objects, purposes, perspectives,
+domains, and scopes require the examination of different
+criteria. Criteria that tend to be direct reflections of cost/
+quality include cost [114], [108], [86], [5], [28], errors/
+changes [49], [24], [112], [2], [81], [13], reliability [42],
+[64], [56], [69], [70], [76], [77], [95], and correctness
+[51], [61], [68]. Criteria that tend to be indirect reflec 
+tions of cost/quality include data coupling [62],
+[48],
+[104], [78], information visibility [85], [83], [55], pro 
+[103],
+grammer understanding [99],
+[109] , [113], exe 
+[18], and size/complexity
+[15],
+cution coverage [105],
+[11], [59], [71].
+
+The concrete manifestations of the cost/quality aspects
+examined in the experiment are captured through mea 
+surement. Paradigms assist in the metric definition pro 
+cess: the goal-question-metric paradigm [17], [25], [19],
+[93] and the factor-criteria-metric paradigm [39], [72].
+Once appropriate metrics have been defined, they may be
+validated to show that they capture what is intended [7],
+[21], [45], [50], [108], [116]. The data collection process
+includes developing automated collection schemes [16]
+and designing and testing data collection forms [25], [27].
+The required data may include both objective and subjec 
+tive data and different levels of measurement: nominal (or
+classificatory), ordinal
+interval, or ratio
+[100].
+
+(or ranking),
+
+c. Experiment Operation
+
+The third phase of the experimental process is the study
+operation phase. The operation of the experiment consists
+
+[44],
+
+of 1) preparation, 2) execution, and 3) analysis. Before
+conducting the actual experiment, preparation may in 
+clude a pilot study to confirm the experimental scenario,
+help organize experimental factors (e.g., subject exper 
+tise), or inoculate the subjects [45],
+[18],
+[113], [73]. Experimenters collect and ·validate the de 
+fined data during the execution of the study [21], [112].
+The analysis of the data may include a combination of
+quantitative and qualitative methods [30]. The prelimi 
+nary screening of the data, probably using plots and his 
+tograms, usually precedes the formal data analysis. The
+process of analyzing the data requires the investigation of
+any underlying assumptions (e.g., distributional)' before
+the application of the statistical models and tests.
+
+[63],
+
+D. Experiment Interpretation
+
+The fourth phase of the experimental process is the
+study interpretation phase. The interpretation of the ex 
+periment consists of 1) interpretation context, 2) extrap 
+olation, and 3) impact. The results of the data analysis
+from a study are interpreted in a broadening series of con 
+texts. These contexts of interpretation are the statistical
+framework in which the result is derived, the purpose of
+the particular study, and the knowledge in the field of re 
+search [16]. The representativeness of the sampling ana 
+lyzed in a study qualifies the extrapolation of the results
+to other environments [17]. Several follow-up activities
+contribute to the impact of a study: presenting/publishing
+the results for feedback, replicating the experiment [33],
+[41], and actually applying the results by modifying
+methods for software development, maintenance, man 
+agement, and research.
+
+IV . CLASSIFICATION OF ANALYSES
+Several investigators have published studies in the four
+general scopes of examination: blocked subject-project,
+replicated project, multiproject variation, or single proj 
+ect. The following sections cite studies from each of these
+categories. Note that surveys on experimentation meth 
+odology in empirical studies include [35], [96], [74], [98].
+Each of the sections first discusses one experiment in
+moderate depth, using italicized keywords
+from the
+framework for experimentation, and then chronologically
+presents an overview of several others in the category. In
+any survey of this type it is almost certain that some de 
+serving work has been accidentally omitted. For this, we
+apologize in advance.
+
+A. Blocked Subject-Project Studies
+
+With a motivation to improve and better understand unit
+testing, Basili and Selby [18] conducted a study whose
+purpose was to characterize and evaluate the processes
+(i.e., objects) of code reading, functional
+testing, and
+structural testing from the perspective of the developer.
+The testing processes were examined in a blocked sub 
+ject-project scope, where 74 student through professional
+programmers (from the programmer domain) tested four
+unit-size programs (from the program domain) in a rep-
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+736
+
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING, VOL. SE-12, NO.7, JULY 1986
+
+licated fractional factorial design. Objective measurement
+of the testing processes was in several criteria areas: fault
+detection effectiveness, fault detection cost, and classes
+of faults detected. Experiment preparation included a pi 
+lot study [63], execution incorporated both manual and
+automated monitoring of testing activity, and analysis
+used analysis of variance methods [33], [90]. The major
+results (in the interpretation context of the study purpose)
+included: 1) with the professionals, code reading detected
+more software faults and had a higher fault detection rate
+than did the other methods; 2) with the professionals,
+functional testing detected more faults than did structural
+testing, but they were not different in fault detection rate;
+3) with the students, the three techniques were not differ 
+ent in performance, except that structural testing detected
+fewer faults than did the others in one study phase; and
+4) overall, code reading detected more interface faults and
+functional testing detected more control faults than did the
+other methods. A major result (in the interpretation con 
+text of the field of research) was that the study suggested
+that nonexecution based fault detection, as in code read 
+ing, is at least as effective as on-line methods. The par 
+ticular programmers and programs sampled qualify the
+extrapolation of the results. The impact of the study was
+an advancement in the understanding of effective software
+testing methods.
+
+[58] evaluated several related factors,
+
+In order to understand program debugging, Gould and
+Drongowski
+in 
+cluding effect of debugging aids, effect of fault type, and
+effect of particular program debugged from the perspec 
+tive of the developer and maintainer. Thirty experienced
+programmers independently debugged one of four one 
+page programs that contained a single fault from one of
+three classes. The major results of these studies were: 1)
+debugging is much faster if the programmer has had pre 
+vious experience with the program, 2) assignment bugs
+were harder to find than other kinds, and 3) debugging
+aids did not seem to help programmers debug faster. Con 
+sistent results were obtained when the study was con 
+ducted on ten additional experienced programmers [57].
+These results and the identification of possible' 'princi 
+pies" of debugging contributed to the understanding of
+debugging methodology.
+
+.
+
+In order to improve experimentation methodology and
+its application, Weissman [113] evaluated programmers'
+ability to understand and modify a program from the per 
+spective of the developer and modifier. Various measures
+of programmer understanding were calculated, in a series
+of factorial design experiments, on groups of 16-48 uni 
+versity students performing tasks on two small programs.
+The study emphasized the need for well-structured and
+well-documented programs and provided valuable testi 
+mony on and worked toward a suitable experimentation
+methodology.
+
+In order to assess the impact of language features on
+the programming process, Gannon and Homing [54] char 
+acterized the relationship of language features to software
+reliability from the perspective of the developer. Based
+
+on an analysis of the deficiencies in a programming lan 
+guage, nine different features were modified to produce a
+new version. Fifty-one advanced students were divided
+into two groups and asked to complete implementations
+of two small but sophisticated programs (75-200 line) in
+the original language and its modified version. /The rede 
+signed features in the two languages were contrasted in
+program fault frequency, type, and persistence. The ex 
+periment identified several language-design decisions that
+significantly affected reliability, which contributed to the
+understanding of language design for reliable software.
+
+In order to understand the unit testing process better,
+Hetzel [60] evaluated a reading technique and functional
+and "selective" testing (a composite approach) from the
+perspective of the developer. Thirty-nine university stu 
+dents applied the techniques to three unit-size programs
+in a Latin square design. Functional and "selective" test 
+ing were equally effective and both superior to the reading
+technique, which contributed to our understanding of test 
+ing methodology.
+
+In order to improve and better understand the mainte 
+nance process, Curtis et ale [44] conducted two experi 
+ments to evaluate factors that influence two aspects of
+software maintenance, program understanding, and mod 
+ification, from the perspective of the developer and main 
+tainer. Thirty-six junior through advanced professional
+programmers in .each experiment examined three classes
+of small (36-57 source line) programs in a factorial de 
+sign. The factors examined include control flow complex 
+ity, variable name mnemonicity, type of modification, de 
+gree of commenting, and the relationship of programmer
+performance to various complexity metrics. In [45] they
+continued the investigation of how software characteris 
+tics relate to psychological complexity and presented a
+third experiment to evaluate the ability of 54 professional
+programmers to detect program bugs in three programs in
+a factorial design. The series of experiments suggested
+that software science [59] and cyclomatic complexity [71]
+measures were related to the difficulty experienced by
+programmers in locating errors in code.
+
+In order to improve and better understand program de 
+bugging, Weiser [110] evaluated the theory that "pro 
+grammers use 'slicing' (stripping away a program's state 
+ments that do not influence a given variable at a given
+statement) when debugging" from the perspective of the
+developer, maintainer, and researcher. Twenty-one uni 
+versity graduate students and programming staff de 
+bugged a fault in three unit-size (75-150 source line) pro 
+grams in a nonparametric design. The study results
+supported the slicing theory, that is, programmers during
+debugging routinely partitioned programs into a coherent,
+discontiguous piece (or slice). The results advanced the
+understanding of software debugging methodology.
+
+In order to improve design techniques, Ramsey, At 
+wood, and Van Doren [87] evaluated flowcharts and pro 
+gram design languages (POL) from the perspective of the
+developer. Twenty-two graduate students designed two
+small (approximately 1000 source line) projects, one using
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+BASILI et al.: EXPERIMENTATION IN SOFTWARE ENGINEERING
+
+737
+
+flowcharts and the other using PDL. Overall, the results
+suggested that design performance and designer-pro 
+grammer communication were better for projects using
+PDL.
+
+In order to validate a theory of programming knowl 
+edge, Soloway and Ehrlich [102] conducted two studies,
+using 139 novices and 41 professional programmers, to
+evaluate programmer behavior from the perspective of the
+researcher. The theory was that programming knowledge
+contained programming plans (generic program fragments
+representing common sequences of actions) and rules of
+programming discourse (conventions used in composing
+plans into programs). The results supported the existence
+and use of such plans and rules by both novice and ad 
+vanced programmers.
+
+Other blocked subject-project studies include [82],
+
+[115], and [111].
+
+B. Replicated Project Studies
+
+With a motivation to assess and better understand team
+software development methodologies, Basili and Reiter
+[16] conducted a study whose purpose was to characterize
+and evaluate the development processes (Le., objects) of
+a 1) disciplined-methodology team approach, 2) ad hoc
+team approach, and 3) ad hoc individual approach from
+the perspective of the developer and project manager. The
+development processes were examined in a replicated
+project scope,
+in which advanced university students
+comprising seven three-person teams, six three-person
+teams, and six individuals (from the programmer domain)
+used the approaches, respectively. They separately de 
+veloped a small (600-2200 line) compiler (from the pro 
+gram domain) in a nonparametric design. Objective mea 
+surement of the development approaches was in several
+criteria areas: number of changes, number of program
+runs, program data usage, program data coupling/bind 
+ing, static program size/complexity metrics,
+language
+usage, and modularity. Experiment preparation included
+presentation of relevant material [68], [8], [34], execution
+included automated monitoring of on-line development
+activity and analysis used nonparametric comparison
+methods. The major results (in the interpretation context
+of the study purpose) included: 1) the methodological dis 
+cipline was a key influence on the general efficiency of
+the software development process; 2) the disciplined team
+methodology significantly reduced the costs of software
+development as reflected in program runs and changes;
+and 3) the examination of the effect of the development
+approaches was accomplished by the use of quantitative,
+objective, unobtrusive, and automatable process and
+product metrics. A major result (in the interpretation con 
+text of the field of research) was that the study supported
+the belief that incorporating discipline in software devel 
+opment reflects positively on both the development pro 
+cess and final product. The particular programmers and
+program sampled qualify the extrapolation of the results.
+The impact of the study was an advancement in the un-
+
+derstanding of software development methodologies and
+their evaluation.
+
+In order to improve the design and implementation pro 
+cesses, Parnas [84] evaluated system modularity from the
+perspective of the developer. Twenty university under 
+graduates each developed one of four different types of
+implementations for one of five different small modules.
+Then each of the modules were combined with others to
+form several versions of the whole system. The results
+were that minor effort was required in assembling the sys 
+tems and that major system changes were confined to
+small, well-defined subsystems. The results supported the
+ideas on formal specifications and modularity discussed
+in [83] and [85], and advanced the understanding of de 
+sign methodology.
+
+In order to assess the impact of static typing of pro 
+gramming languages in the development process, Gannon
+[53] evaluated the use of a statically typed language (hav 
+ing integers and strings) and a "typeless" language (e.g.,
+arbitrary subscripting of memory) from the perspective of
+the developer. Thirty-eight students programmed a small
+(48-297 source line) problem in both languages, with half
+doing it in each order. The two languages were compared
+in the resulting program faults, the number of runs con 
+taining faults, and the relation of subject experience to
+fault proneness. The major result was that the use of a
+statically typed language can increase programming reli 
+ability, which improved our understanding of the design
+and use of programming languages.
+
+In order to improve program composition, comprehen 
+sion, debugging, and modification, Shneiderman [99]
+evaluated the use of detailed flowcharts in these tasks from
+the perspective of the developer, maintainer, modifier, and
+researcher. Groups of 53-70 novice through intermediate
+subjects, in a series of five experiments, performed var 
+ious tasks using small programs. No significant differ 
+ences were found between groups that used and those that
+did not use flowcharts, questioning the merit of using de 
+tailed flowcharts.
+
+In order to improve and better understand the unit test 
+ing process, Myers [79] evaluated the techniques of three 
+person walk-throughs, functional
+testing, and a control
+group from the perspective of the developer. Fifty-nine
+junior through advanced professional programmers ap 
+plied the techniques to test a small (100 source line) but
+nontrivial program. The techniques were not different in
+the number of faults they detected, all pairings of tech 
+niques were superior to single techniques, and code re 
+views were less cost-effective than the others. These re 
+sults improved our understanding of the selection of
+appropriate software testing techniques.
+
+In order to validate a particular metric family, Basili
+and Hutchens [11] evaluated the ability of a proposed
+metric family to explain differences in system develop 
+ment methodologies and system changes from the per 
+the developer, project manager, and re 
+spective of
+searcher. The metrics were applied to 19 versions of a
+small (600-2200) compiler, which were developed by
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+738
+
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING, VOL. SE-12, NO.7, JULY 1986
+
+teams of advanced university students using three differ 
+ent development approaches (see the first study [16] de 
+scribed in this section). The major results included: 1) the
+metrics were able to differentiate among projects devel 
+oped with different development methodologies; and 2)
+the differences among individuals had a large effect on the
+relationships between the metrics and aspects of system
+development. These results provided insights into the for 
+mulation and appropriate use of software metrics.
+
+In order to improve the understanding of why software
+errors occur, Soloway et al. [65], [101] characterized pro 
+grammer misconceptions, cognitive strategies, and their
+manifestations as bugs in programs from the perspective
+of the developer and researcher. Two hundred and four
+novice programmers separately attempted implementa 
+tions of an elementary program. The results supported the
+programmers'
+intended use of "programming plans"
+[103] and revealed that most people preferred a read-pro 
+cess strategy over a process-read strategy. The results ad 
+vanced the understanding of how individuals write pro 
+grams, why. they sometimes make errors, and what
+programming language constructs should be available.
+
+In order to understand the effect of coding conventions
+on program comprehensibility, Miara et al.
+[73] con 
+ducted a study to evaluate the relationship between inden 
+tation levels and program comprehension from the per 
+spective of the developer. Eighty-six novice through
+professional subjects answered questions about one of
+seven program variations with different level and type of
+indentation. The major result was that an indentation level
+of two or four spaces was preferred over zero or six
+spaces.
+
+In order to improve software development approaches,
+Boehm, Gray, and Seewaldt [29] characterized and eval 
+uated the prototyping and specifying development ap 
+proaches from the perspective of the developer; project
+manager, and user. Seven two- and three-person teams,
+consisting of university graduate students, developed ver 
+sions of the same application software system (2000-4000
+line); four teams used a requirement/design specifying
+approach and three teams used a prototyping approach.
+The systems developed by prototyping were smaller, re 
+quired less development effort, and were easier to use.
+The systems developed by specifying had more coherent
+designs, more complete functionality, and software that
+was easier to integrate. These results contributed to the
+understanding of the merits and appropriateness of soft 
+ware development approaches.
+
+In order to validate the-theoretical model for N-version
+programming [3], [66], Knight and Leveson [67] con 
+ducted a study to evaluate the effectiveness of N-version
+programming for reliability from the perspective of the
+customer and user. N-version programming uses a high 
+level driver to connect several separately designed ver 
+sions of the same system, the systems "vote" on the cor 
+rect solution, and the solution provided by the majority of
+the systems is output. Twenty-seven graduate students
+were asked to independently design an 800 source line
+
+system. The factors examined included individual system
+reliability, total N-version system reliability, and classes
+of faults that occurred in systems simultaneously. The
+major result was that the assumption of independence of
+the faults in the programs was not justified, and therefore,
+the reliability of the combined' 'voting"
+system was not
+as high as given by the model.
+
+In order to improve and better understand software de 
+velopment approaches, Selby, Basili, and Baker
+[94]
+characterized and evaluated the Cleanroom development
+approach [46], [47], in which software is developed with 
+out execution (Le., completely off-line), from the per 
+spective of the developer, project manager, and customer.
+Fifteen three-person teams of advanced university stu 
+dents separately developed a small system (800-2300
+source line); ten teams used Cleanroom and five teams
+used a traditional development approach in a nonpara 
+metric design. The major results included: 1) most devel 
+opers using the Cleanroom approach were able to build
+systems without program execution; and 2) the Clean 
+room teams' products met system requirements more
+completely and succeeded on more operational test cases
+than did those developed with a traditional approach. The
+results suggested the feasibility of complete off-line de 
+velopment, as in Cleanroom, and advanced the under 
+standing of software development methodology.
+
+Other replicated project studies include [37], [4], and
+
+[63].
+
+c. Multiproject Variation Studies
+
+[38],
+
+[27],
+
+[26],
+
+With a motivation to improve the understanding of re 
+source usage during software development, Bailey and
+Basili [5] conducted a study whose purpose was to predict
+development cost by using a particular model (i.e., ob 
+ject) and to evaluate it from the perspective of the project
+manager, corporate manager, and researcher. The partic 
+ular model generation method was examined in a multi 
+project scope, with baseline data from 18 large (2500 
+100 000 source line) software projects in the NASA
+[91] production environment
+S.E.L.
+(from the program domain),
+in which teams contained
+from two to ten programmers (from the programmer do 
+main). The study design incorporated multivariate meth 
+ods to parameterize the model. Objective and subjective
+measurement of the projects was based on 21 criteria' in
+three areas: methodology, complexity, and personnel ex 
+perience. Study preparation included preliminary work
+[52], execution included an established set of data collec 
+tion forms [27], and analysis used forward multivariate
+regression methods. The major results (in the interpreta 
+tion context of the study purpose) included 1) the esti 
+mation of software development resource usage improved
+by considering a set of both baseline and customization
+factors; 2) the application in the NASA environment of
+
+2 Twenty-one factors were selected after examining a total of 82 factors
+that possibly contributed to project resource expenditure, including 36 from
+[l08] and 16 from [28].
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+BASILI et al.: EXPERIMENTATION IN SOFTWARE ENGINEERING
+
+739
+
+the proposed model generation method, which considers
+both types of factors, produced a resource usage estimate
+for a future project within one standard deviation of the
+actual; and 3) the confirmation of the NASA S.B.L. for 
+mula that the cost per line of reusing code is 20 percent
+of that of developing new code. A major result (in the
+interpretation context of the field of research) was that the
+study highlighted the difference of each software devel 
+opment environment, which improved the selection and
+use of resource estimation models. The particular pro 
+gramming environment and projects sampled qualify the
+extrapolation of the results. The impact of the study was
+an advancement in the understanding of estimating soft 
+ware development resource expenditure.
+
+In order to assess, manage, and improve multiproject
+environments, several researchers [28], [20], [108], [10],
+[36], [21], [62],
+[112], [97], [107] have characterized,
+evaluated, and/or predicted the effect of several factors
+from the perspective of the developer, modifier, project
+manager, and corporate manager. All the studies exam 
+ined moderate to large projects from production environ 
+ments. The relationships investigated were among various
+factors,
+including structured programming, personnel
+background, development process and product con 
+straints, project complexity, human and computer re 
+source consumption, error-prone software identification,
+error/change distributions, data coupling/binding, project
+duration, staff size, degree of management control, and
+productivity. These studies have provided increased proj 
+ect visibility, greater understanding of classes of factors
+sensitive to project performance, awareness of the need
+for project measurement, and efforts for standardization
+of definitions. Analysis has begun on incorporating proj 
+ect variation information into a management tool [9], [14].
+In order to improve and better understand the software
+maintenance process, Vessey and Weber [106] conducted
+an experiment to evaluate the relationship between the rate
+of maintenance repair and various product and process
+metrics from the perspective of the developer, user, and
+the project manager. A total of 447 small (up to 600 state 
+ments) commercial and clerical Cobol programs from one
+Australian organization and two U. S. organizations were
+analyzed. The product and process metrics included pro 
+gram complexity, programming style, programmer qual 
+ity, and number of system releases. The major results
+were: 1) in the Australian organization, program com 
+plexity and programming style significantly affected the
+maintenance repair rate; and 2) in the U. S. organizations,
+the number of times a system was released significantly
+affected the maintenance repair rate.
+
+In order to improve the software maintenance process,
+Adams [1] evaluated operational faults from the perspec 
+tive of the user, customer, project manager, and corporate
+manager. The fault history for nine large production prod 
+ucts (e.g., operating system releases or their major com 
+ponents) were empirically modeled. He developed an ap 
+proach for estimating whether and under what circum 
+stances preventively fixing faults in operational software
+
+in the field was appropriate. Preventively fixing faults
+consisted of installing fixes to faults that had yet to be
+discovered by particular users', but had been discovered
+by the vendor or other users. The major result was that
+for the typical user, corrective service was a reasonable
+way of dealing with most faults after the code had been
+, in use for a fairly long period of time, while preventively
+fixing high-rate faults was advantageous during the time
+immediately following initial release.
+
+In order to assess the effectiveness of the testing pro 
+cess, Bowen [31] evaluated estimations of the number of
+residual faults in a system from the perspective of the cus 
+tomer, developer, and project manager. The study was
+based on fault data collected from three large (2000-6000
+module) systems developed in the Hughes-Fullerton en 
+vironment. The study partitioned the faults based on se 
+verity and analyzed the differences in estimates of re 
+maining faults according to stage of testing. Insights were
+gained into relationships between fault detection rates and
+residual faults.
+
+D. Single Project Studies
+
+With a motivation to improve software development
+methodology, Basili and Turner [22] conducted a study
+whose purpose was to characterize the process (Le., ob-
+ject) of iterative 'enhancement in conjunction with a top 
+down, stepwise refinement development approach from
+the perspective of the developer. The development pro 
+cess was examined in a single project scope, where the
+authors, two experienced individuals (from the program 
+mer domain), built a 17 000 line compiler (from the pro 
+gram domain). The study design incorporated descriptive
+methods to capture system evolution. Objective measure 
+ment of the system was in several criteria areas: size,
+local/global data usage, and data binding/
+modularity,
+[104]. Study preparation included lan 
+coupling [62],
+guage design [23], execution incorporated static analysis
+of system snapshots, and analysis used descriptive statis 
+tics. The results (in the interpretation context of the sta 
+tistical framework) included: 1) the percentage of global
+variables decreased over time while the percentage of ac 
+tual versus possible data couplings across modules in 
+creased, suggesting the usage of global data became more
+appropriate over time; and 2) the number of procedures
+and functions rose over time while the number of state 
+ments per procedure or function decreased, suggesting in 
+creased modularity. The major result of the study (in the
+interpretation context of the study purpose) was that the
+iterative enhancement technique encouraged the devel 
+opment of a software product that had several generally
+desirable aspects of system structure. A major result (in
+the interpretation context of the field of research) was that
+the study demonstrated the feasibility of iterative en 
+hancement. The particular programming team and project
+examined qualify the extrapolation of the results. The im 
+pact of the study was an advancement in the understand 
+ing of software development approaches.
+
+In order to improve, better understand, and manage the
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+740
+
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING, VOL. SE-12, NO.7, JULY 1986
+
+software development process, Baker [6] evaluated the ef 
+fect of applying chief programming teams and structured
+programming in system development from the' perspective
+of the user, developer, project manager, and corporate
+manager. The large (83 000 line) system, known as "The
+New York Times Project," was developed by a team of
+professionals organized as a chief programmer team, using
+structured code,
+top-down design, walk-throughs, and
+program libraries. Several benefits were identified,
+in 
+cluding reduced development time and cost, reduced time
+in system integration, and reduced fault detection in ac 
+ceptance testing and field use. The results of the study
+demonstrated the feasibility of the chief programmer team
+concept and the accompanying methodologies in a pro 
+duction environment.
+
+In order to improve their development environments,
+several researchers [49], [24], [2], [81], [13] have each
+conducted single project studies to characterize the errors
+and changes made during a development project. They
+examined the development of a moderate to large soft 
+ware project, done by a multiperson team, in a production
+environment. They analyzed the frequency and distribu 
+tion of errors during development and their relationship
+with several
+including module size, software
+complexity, developer experience, method of detection
+and isolation, effort for isolation and correction, phase of
+entrance into the system and observance, reuse of existing
+design and code, and role of the requirements document.
+Such analyses have produced fault categorization schemes
+and have been useful in understanding and improving a
+development environment.
+
+factors,
+
+In order to better understand and improve the use of the
+Ada® language, Basili et al. [55], [12] examined a ground 
+support system written in Ada to characterize the use of
+Ada packages from the perspective of the developer. Four
+professional programmers developed a project of 10 000
+source lines of code. Factors such as how package use
+affected the ease of system modification and how to mea 
+sure module change resistance were identified, as well as
+how these observations related to aspects of development
+and training. The major results were 1) several measures
+of Ada programs were developed, and 2) there was an
+indication that a lot of training will be necessary if we are
+to expect the facilities of Ada to be properly used.
+
+In order to assess and improve software testing meth 
+odology, Basili and Ramsey [15], [88] characterized and
+evaluated the relationship between system acceptance tests
+and operational usage from the perspective of the devel 
+oper, project manager, customer, and researcher. The ex 
+ecution coverage of functionally generated acceptance test
+cases and a sample of 'operational usage cases was moni 
+tored for a medium-size (10 000 line) software system de 
+veloped in a production environment. The results calcu 
+lated that 64 percent of the program statements were
+executed during system operation and that the acceptance
+test cases corresponded reasonably well to the operational
+
+®Ada is a registered trademark of the U. S. Department of Defense (Ada
+
+Joint Program Office).
+
+usage. The results gave insights into the relationships
+among structural coverage, fault detection, system test 
+ing, and system usage.
+
+V. PROBLEM AREAS IN EXPERIMENTATION
+
+The following sections identify several problem areas
+of experimentation in software engineering. These areas
+may serve as guidelines in the performance of future stud 
+ies. After mentioning some overall observations, consid 
+erations in each of the areas of experiment definition,
+planning, operation, and interpretation are discussed.
+
+A. Experimentation Overall
+
+There appears to be no "universal model" or "silver
+bullet"
+in software engineering. There are an enormous
+number of factors that differ across environments, in terms
+of desired cost/quality goals, methodology, experience,
+problem domain, constraints, etc. [108], [20], [5], [10],
+[28]. This results in every software development/main 
+tenance environment being different. Another area of wide
+variation is the many-to-one (e.g., 10: 1) differential in
+human performance [11], [43], [18]. The particular indi 
+viduals examined in an empirical study can make an enor 
+mous difference. Among other considerations, these vari 
+ations suggest
+that metrics need to be validated for a
+particular environment and a particular person to show
+that they capture what is intended [11], [21]. Thus, ex 
+perimental studies should consider the potentially vast dif 
+ferences among environments and among people.
+
+B. Experiment Definition
+
+In the definition of the purpose for the experiment, the
+formulation of intuitive problems into precisely stated
+goals is a nontrivial task [17], [25]. Defining the purpose
+of a study often requires the articulation of what is meant
+by "software quality. " The many interpretations and per 
+ceptions of quality [32], [39], [72] highlight the need for
+considering whose perspective of quality is being exam 
+ined. Thus, a precise specification of the problem to be
+investigated is a major step toward its solution.
+
+c. Experiment Planning
+
+Experimental planning should have a horizon beyond a
+first experiment. Controlled studies may be used to focus
+on the effect of certain factors, while their results may be
+confirmed in replications [92], [99], [102], [113], [58],
+[57], [45], [44], [18] and/or larger case studies [5], [16].
+When designing studies, consider that a combination of
+factors may be effective as a "critical mass, " even though
+the particular factors may be ineffective when treated in
+.isolation [16], [107]. Note that formal designs and the
+resulting statistical robustness are desirable, but we should
+not be driven exclusively by the achievement of statistical
+significance. Common sense must be maintained, which
+allows us, for example, to experiment just to help develop
+and refine hypotheses [13], [112]. Thus, the experimental
+planning process should include a series of experiments
+for exploration, verification, and application.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+BASILI et al.: EXPERIMENTATION IN SOFTWARE ENGINEERING
+
+741
+
+D. Experiment Operation
+
+The collection of the required data constitutes the pri 
+mary result of the study operation phase. The data must
+be carefully defined, validated, and communicated to en 
+sure their consistent interpretation by all persons associ 
+ated with the experiment: subjects under observation, ex 
+perimenters, and literature audience [21]. There have been
+papers in the literature that do not define their data well
+enough to enable a comparison of results across many
+projects and environments. We have often contacted ex 
+perimenters and discovered that different entities were
+being measured in different studies. Thus, the experimen 
+ter should be cautious about the definition, validation, and
+communication of data, since they playa fundamental role
+in the experimental process.
+
+E. Experiment Interpretation
+
+The appropriate presentation of results from experi 
+ments contributes to their correct interpretation. Experi 
+mental results need to be qualified by the particular sam 
+ples (e.g., programmers, programs) analyzed [17]. The
+extrapolation of results from a particular sample must
+consider the representativeness of the sample to other en 
+vironments [40], [114], [108], [86], [5], [28]. The visi 
+bility of the experimental results in professional forums
+and the open literature provides valuable feedback and
+constructive criticism. Thus, the presentation of experi 
+mental results should include appropriate qualification and
+adequate exposure to support their proper interpretation.
+
+VI. CONCLUSION
+Experimentation in software engineering supports the
+advancement of the field through an iterative learning pro 
+cess. The experimental process has begun to be applied
+in a multiplicity of environments to study a variety of
+software technology areas. From the studies presented, it
+is clear that experimentation has proven effective in pro 
+viding insights and furthering our domain of knowledge
+there is
+about the software process and product. In fact,
+a learning process in the experimentation approach itself,
+as has been shown in this paper.
+
+We have described a framework for experimentation to
+provide a structure for presenting previous studies . We
+also recommend the framework as a mechanism to facil 
+itate the definition, planning, operation, and interpreta 
+tion of past and future studies. The problem areas dis 
+cussed are meant to provide some useful recommendations
+for the application of the experimental process in software
+engineering. The experimental framework cannot be used
+in a vacuum; the framework and the lessons learned com 
+plement one another and should be used in a synergistic
+fashion.
+
+REFERENCES
+
+[1] E. N. Adams, "Optimizing preventive service of software prod 
+ucts," IBM J. Res. Develop., vol. 28, no. 1, pp. 2-14, Jan. 1984.
+[2] J .-L. Albin and R. Ferreol, "Collecte etanalyse de mesures de log 
+iciel (Collection and analysis of software data)," Technique et Sci 
+ence Informatiques, vol. 1, no. 4, pp. 297-313, 1982 (Rairo ISSN
+0752-4072) .
+
+[3] A. Avizienis, P. Gunningberg, J. P. J. Kelly, L. Strigini, P. J.
+Traverse, K. S. Tso, and V. Voges, "The VCLA Dedix system: A
+distributed testbed for multiple-version software," in Dig. 15th Int.
+Symp. Fault-Tolerant Comput., Ann Arbor, MI, June 19-21, 1985.
+[4] J. W. Bailey, "Teaching Ada: A comparison of two approaches,"
+
+in Proc. Washington Ada Symp., Washington, DC, 1984.
+
+[5] J. W. Bailey and V. R. Basili, "A meta-model for software devel 
+in Proc. 5th Int. Con! Software
+
+opment resource expenditures,"
+Eng., San Diego, CA, 1981, pp. 107-116.
+
+[6] F. T. Baker, "System quality through structured programming,"
+in AFIPS Proc. 1972 Fall Joint Comput. Conf., vol. 41, 1972, pp.
+339-343.
+
+[7] V. R. Basili, Tutorial on Models and Metrics for Software Manage 
+ment and Engineering. New York: IEEE Computer Society, 1980.
+[8] V. R. Basili and F. T. Baker, "Tutorial of structured program 
+ming," in Proc. 11th IEEE COMPCON, IEEE Cat. No. 75CHI049 
+6, 1975.
+
+[9] V. R. Basili and C. Doerflinger, "Monitoring software development
+in Proc. COMPSAC, Chicago, IL,
+
+through dynamic variables,"
+1983.
+
+[10] V. R. Basili and K. Freburger, "Programming measurement and
+estimation in the software engineering laboratory," J. Syst. Soft 
+ware, vol. 2, pp. 47-57,1981.
+
+[11] V. R. Basili and D. H. Hutchens, "An empirical study ofa syntactic
+metric family," IEEE Trans. Software Eng., vol. SE-9, pp. 664 
+672, Nov. 1983.
+
+[12] V. R. Basili, E. E. Katz, N. M. Panilio-Yap, C. L. Ramsey, and
+S. Chang, "A quantitative characterization and evaluation of a soft 
+ware development in Ada," Computer, Sept. 1985.
+
+[13] V. R. Basili and B. T. Perricone, "Software errors and complexity:
+An empirical investigation," Commun. ACM, vol. 27, no. 1, pp.
+42-52, Jan. 1984.
+
+[14] V. R. Basili and C. L. Ramsey, "Arrowsmith-P-A prototype ex 
+pert system for software engineering management, " in Proc. Symp.
+Expert Systems in Government, Mclean, VA, Oct. 1985.
+
+[15] V. R. Basili and J. R. Ramsey, "Analyzing the test process using
+in Proc. 8th Int. Con! Software Eng., Lon 
+
+structural coverage,"
+don, Aug. 28-30, 1985, pp. 306-312.
+
+[16] V. R. Basili and R. W. Reiter, "A controlled experiment quantita 
+tively comparing software development approaches," IEEE Trans.
+Software Eng. , vol. SE-7, May 1981.
+
+[17] V. R. Basili and R. W. Selby, "Data collection and analysis in soft 
+ware research and management," Proc. Amer. Statistical Associa 
+tion and Biometric Society Joint Statistical Meetings, Philadelphia,
+PA, August 13-16, 1984.
+
+[18] - , "Comparing the effectiveness of software testing strategies,"
+Dep. Comput. Sci., Univ. Maryland, College Park, Tech. Rep. TR 
+1501, May 1985.
+
+[19] - , "Four applications of a software data collection and analysis
+methodology," in Proc. NATO Advanced Study Institute: The Chal 
+lenge of Advanced Computing Technology to System Design Meth 
+ods, Durham, U. K., July 29-Aug. 10, 1985.
+
+[20] - , "Calculation and use of ap environment's characteristic soft 
+in Proc. 8th Int. Con! Software Eng., London,
+
+ware metric set,"
+Aug. 28-30, 1985, pp. 386-393.
+
+[21] V. R. Basili, R. W. Selby, and T. Y. Phillips, "Metric analysis and
+IEEE Trans. Software
+
+data validation across FORTRAN projects,"
+Eng., vol. SE-9, pp. 652-663, Nov. 1983.
+
+[22] V. R. Basili and A. J. Turner, "Iterative enhancement: A practical
+technique for software development," IEEE Trans. Software Eng. ,
+vol. SE-l, Dec. 1975.
+
+[23] - , SIMPL-T: A Structured Programming Language. Geneva,IL:
+
+Paladin House, 1976.
+
+[24] V. R. Basili and D. M. Weiss, "Evaluation of a software require 
+ments document by analysis of change data," in Proc. 5th Int. Con!
+Software Eng., San Diego, CA, Mar. 9-12, 1981, pp. 314-323.
+[25] - , "A methodology for collecting valid software engineering
+data*," IEEE Trans. Software Eng., vol. SE-10, pp. 728-738, Nov.
+1984.
+
+[26] V. R. Basili and M. V. Zelkowitz, "Analyzing medium-scale soft 
+ware developments," in Proc. 3rd Int. Con! Software Eng., At 
+lanta, GA, May 1978, pp. 116-123.
+
+[27] V. R. Basili, M. V. Zelkowitz, F. E. McGarry, R. W. Reiter, Jr.,
+W. F. Truszkowski, and D. L. Weiss,. "The software engineering
+laboratory," Software Eng. Lab., NASA/Goddard Space Flight
+Center, Greenbelt, MD, Rep. SEL-77-001, May 1977.
+
+[28] B. W. Boehm, Software Engineering Economics.
+
+Englewood
+
+Cliffs, NJ: Prentice-Hall, 1981.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+742
+
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING, VOL. SE-12, NO.7, JULY 1986
+
+[29] B. W. Boehm, T. E. Gray, and T. Seewaldt, "Prototyping versus
+IEEE Trans. Software
+
+specifying: A multiproject experiment,"
+Eng., vol. SE-I0, pp. 290-303, May 1984.
+
+[30] R. C. Bogdan and S. K. Biklen, Qualitative Research for Education:
+Boston, MA: Allyn and
+
+An Introduction to Theory and Methods.
+Bacon, 1982.
+
+[31] J. Bowen, "Estimation of residual faults and testing effectiveness,"
+in Proc. 7th Minnowbrook Workshop Software Performance Eval 
+uation, Blue Mountain Lake, NY, July 24-27, 1984.
+
+[32] T. P. Bowen, G. B. Wigle, and J. T. Tsai, "Specification of soft 
+ware quality attributes," Rome Air Development Center, Griffiss
+Air Force Base, NY, Tech. Rep. RADC-TR-85-37 (3 vols.), Feb.
+1985.
+
+[33] G. E. P. Box, W. G. Hunter, and J. S. Hunter, Statistics for Ex 
+
+perimenters. New York: Wiley, 1978.
+
+[34] F. P. Brooks, Jr., The Mythical Man-Month. Reading, MA: Ad 
+
+dison-Wesley, 1975.
+
+[35] R. E. Brooks, "Studying programmer behavior: The problem of
+proper methodology, Commun. ACM, vol. 23, no. 4, pp. 207-213,
+1980.
+
+[36] W. D. Brooks, "Software technology payoff: Some statistical evi 
+
+dence," J. Syst. Software, vol. 2, pp. 3-9, 1981.
+
+[37] F. O. Buck, "Indicators of quality inspections," IBM Systems
+Products Division, Kingston, NY, Tech. Rep. 21.802, Sept. 1981.
+[38] D. N. Card, F. E. McGarry, J. Page, S. Eslinger, and V. R. Basili,
+"The software engineering laboratory,"
+Software Eng. Lab.,
+NASA/Goddard Space Flight Center, Greenbelt, MD, Rep. SEL 
+81-104, Feb. 1982.
+
+[39] J. P. Cavano and J. A. McCall, "A Framework for the measurement
+in Proc. Software Quality and Assurance
+
+of software quality,"
+Workshop, San Diego, CA, Nov. 1978, pp. 133-139.
+
+[40] W. G. Cochran, Sampling Techniques. New York: Wiley, 1953.
+[41] W. G. Cochran and G. M. Cox, Experimental Designs. New York:
+
+Wiley, 1950.
+
+[42] P. A. Currit, M. Dyer, and H. D. Mills, "Certifying the reliability
+of software," IEEE Trans. Software Eng., vol. SE-12, pp. 3-11,
+Jan. 1986.
+
+[43] B. Curtis, "Cognitive science of programming," 6th Minnowbrook
+Workshop Software Performance Evaluation, Blue Mountain Lake,
+NY, July 19-22, 1983.
+
+[44] B. Curtis, S. B. Sheppard, P. Milliman, M. A. Borst, and T. Love,
+"Measuring the psychological complexity of software maintenance
+IEEE Trans. Soft 
+tasks with the Halstead and McCabe metrics,"
+ware Eng., pp. 96-104, Mar. 1979.
+
+[45] B. Curtis, S. B. Sheppard, and P. M. Milliman, "Third time charm:
+Stronger replication of the ability of software complexity metrics to
+predict programmer performance," in Proc. 4th Int. Con! Software
+Eng., Sept. 1979, pp. 356-360.
+
+[46] M. Dyer, "Cleanroom software development method," IBM Fed 
+
+[47] M. Dyer and H. D. Mills, "Developing electronic systems with cer 
+
+tifiable reliability," in Proc. NATO Conf., Summer 1982.
+
+[48] T. Emerson, "A discriminant metric for module cohesion," in Proc.
+7th Int. Con! Software Eng., Orlando, FL, 1984, pp. 294-303.
+[49] A. Endres, "An analysis of errors and their causes in systems pro 
+grams," IEEE Trans. Software Eng., pp. 140-149, vol. SE-l, June
+1975.
+
+[50] A. R. Feuer and E. B. Fowlkes, "Some results from an empirical
+study of computer software," in Proc. 4th Int. Con! Software Eng. ,
+1979, pp. 351-355.
+
+[51] R. W. Floyd, "Assigning meaning to programs," Amer. Math. Soc.,
+
+vol. 19, J. T. Schwartz, Ed., Providence, RI, 1967.
+
+[52] K. Freburger and V. R. Basili, "The software engineering labora 
+tory: Relationship equations," Dep. Comput. Sci., Univ. Mary 
+land, College Park, Tech. Rep. TR-764, May 1979.
+
+[53] J. D. Gannon, "An experimental evaluation of data type conven 
+tions," Commun. ACM, vol. 20, no. 8, pp. 584-595,1977.
+[54] J. D. Gannon and J. J. Homing, "The impact of language design
+on the production of reliable software," IEEE Trans. Software Eng.,
+vol. SE-l, pp. 179-191,1975.
+
+[55] J. D. Gannon, E. E. Katz, and V. R. Basili, "Characterizing Ada
+programs: Packages," in The Measurement of Computer Software
+Performance, Los Alamos Nat. Lab., Aug. 1983.
+
+[56] A. L. Goel, "Software reliability and estimation techniques," Rome
+Air Development Center, Griffiss Air Force Base, NY, Rep. RADC 
+TR-82-263, Oct. 1982.
+
+[57] J. D. Gould, "Some psychological evidence on how people debug
+
+computer programs," Int. J. Man-Machine Studies, vol. 7, pp. 151 
+182, 1975.
+
+[58] J. D. Gould and P. Drongowski, "An exploratory study of computer
+program debugging," Human Factors, vol. 16, no. 3, pp. 258-277,
+1974.
+
+[59] M. H. Halstead, Elements of Software Science. New York: North 
+
+Holland, 1977.
+
+[60] W. C. Hetzel, "An experimental analysis of program verification
+methods," Ph.D. dissertation, Univ. North Carolina, Chapel Hill,
+1976.
+
+[61] C. A. R. Hoare, "An axiomatic basis for computer programming,"
+
+Commun. ACM, vol. 12, no. 10, pp. 576-583, Oct. 1969.
+
+[62] D. H. Hutchens and V. R. Basili, "System structure analysis: Clus 
+IEEE Trans. Software Eng., vol. SE 
+
+tering with data bindings,"
+11, Aug. 1985.
+
+[63] S.-S. V. Hwang, "An empirical study in functional testing, struc 
+tural testing, and code reading/inspection*," Dep. Comput. Sci.,
+Univ. Maryland, College Park, Scholarly Paper 362, Dec. 1981.
+
+[64] Z. Jelinski and P. B. Moranda, "Applications of a probability-based
+in Proc. IEEE Symp. Com 
+
+model to a code reading experiment,"
+put. Software Rel., New York, 1973, pp. 78-81.
+
+[65] W. L. Johnson, S. Draper, and E. Soloway, "An effective bug clas 
+sification scheme must take the programmer into account, " in Proc.
+Workshop High-Level Debugging, Palo Alto, CA, 1983.
+
+[66] J. P. J. Kelly, "Specification of fault-tolerant multi-version soft 
+ware: Experimental studies of a design diversity approach," Ph.D.
+dissertation, Univ. California, Los Angeles, 1982.
+
+[67] J. C. Knight and N. G. Leveson, "An experimental evaluation of
+the assumption of independence in multiversion programming,"
+IEEE Trans. Software Eng., vol. SE-12, pp. 96-109, Jan. 1986.
+[68] R. C. Linger, H. D. Mills, and Be: I. Witt, Structured Programming:
+Theory and Practice. Reading, MA: Addison-Wesley, 1979.
+[69] B. Littlewood, "Stochastic reliability growth: A model for fault ren 
+ovation computer programs and hardware designs," IEEE Trans.
+Rei., vol. R-30, Oct. 1981.
+
+[70] B. Littlewood and J. L. Verrall, "A Bayesian reliability growth
+model for computer software," Appl. Statist., vol. 22, no. 3, 1973.
+IEEE Trans. Software
+
+[71] T. J. McCabe, "A complexity measure,"
+Eng., vol. SE-2, pp. 308-320, Dec. 1976.
+
+[72] J. A. McCall, P. Richards, and G. Walters, "Factors in software
+quality," Rome Air Development Center, Griffiss Air Force Base,
+NY, Tech. Rep. RADC-TR-77-369, Nov. 1977.
+
+[73] R. J. Miara, J. A. Musselman, J. A. Navarro, and B. Shneiderrnan,
+"Program indentation and comprehensibility," Commun. ACM,
+vol. 26, no. 11, pp. 861-867, Nov. 1983.
+
+[74] T. Moher and G. M. Schneider, "Methodology and experimental
+Int. J. Man-Machine Studies,
+
+research in software engineering,"
+vol. 16, no. 1, pp. 65-87, 1982.
+
+[75] S. A. Mulaik, The Foundations of Factor Analysis. New York:
+
+[76] J. D. Musa, "A theory of software reliability and its application,"
+IEEE Trans. Software Eng., vol. SE-l, pp. 312-327, 1975.
+[77] - , "Software reliability measurement," J. Syst. Software, vol.
+
+[78] G. L. Myers, Composite/Structured Design. New York: Van Nos 
+
+1, no. 3, pp. 223-241, 1980.
+
+trand Reinhold, 1978.
+
+[79] - , "A controlled experiment in program testing and code walk 
+throughs/inspections," Commun. ACM, pp. 760-768, Sept. 1978.
+[80] J. Neter and W. Wasserman, Applied Linear Statistical Models.
+
+Homewood, IL: Richard D. Irwin, 1974.
+
+[81] T. J. Ostrand and E. J. Weyuker, "Collecting and categorizing soft 
+ware error data in an industrial environment*," J. Syst. Software,
+vol. 4, pp. 289-300, 1983.
+
+[82] D. J. Panzl, "Experience with automatic program testing," in Proc.
+NBS Trends and Applications, Nat. Bureau Standards, Gaithers 
+burg, MD, May 28, 1981, pp. 25-28.
+
+[83] D. L. Parnas, "On the criteria to be used in decomposing systems
+into modules," Commun. ACM, vol. 15, no. 12, pp. 1053-1058,
+1972.
+
+[84] - , "Some conclusions from an experiment in software engineer 
+in AFIPS Proc. 1972 Fall Joint Comput. Conf.;
+
+ing techniques,"
+vol. 41,1972, pp. 325-329.
+
+[85] - , "A technique for module specification with examples," Com 
+
+mun. ACM, vol. 15, May 1972.
+
+[86] L. Putnam, "A general empirical solution to the macro software
+sizing and estimating problem, " IEEE Trans. Software Eng., vol.
+SE-4, July 1978.
+
+eral Systems Division, Bethesda, MD, Oct. 14, 1982.
+
+McGraw-Hill, 1972.
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+BASILI et al.: EXPERIMENTATION IN SOFTWARE ENGINEERING
+
+743
+
+[87] H. R. Ramsey, M. E. Atwood, and J. R. Van Doren, "Flowcharts
+versus program design languages: An experimental comparison,"
+Commun. ACM, vol. 26, no.6, pp. 445-449, June 1983.
+
+[88] J. Ramsey, "Structural coverage of functional testing, " in Proc. 7th
+Minnowbrook Workshop Software Perform. Eval., Blue Mountain
+Lake, NY, July 24-27, 1984.
+
+[89] Statistical Analysis System (SAS) User's Guide, SAS Inst. Inc., Box
+
+[115] S. N. Woodfield, H. E. Dunsmore, and V. Y. Shen, "The effect of
+modularization and comments on program comprehension," Dep.
+Comput. Sci., Arizona State Univ., Tempe, AZ, Working Paper,
+1981.
+
+[116] J. C. Zolnowski and D. B. Simmons, "Taking the measure of pro 
+in Proc. Nat. Comput. Conf., 1981, pp. 329 
+
+gram complexity,"
+336.
+
+8000, Cary, NC 27511, 1982.
+
+[90] H. Scheffe, The Analysis of Variance. New York: Wiley, 1959.
+[91] "Annotated bibliography of software engineering laboratory (SEL)
+literature," Software Eng. Lab., NASA/Goddard Space Flight Cen 
+ter, Greenbelt, MD, Rep. SEL-82-006, Nov. 1982.
+
+[92] R. W. Selby, "An empirical study comparing software testing tech 
+in Proc. 6th Minnowbrook Workshop Software Perform.
+
+niques,"
+Eval., Blue Mountain Lake, NY, July 19-22, 1983.
+
+[93] - , "Evaluations of software technologies: Testing, CLEAN 
+ROOM, and metrics," Ph.D. dissertation, Dep. Comput. Sci., Univ.
+Maryland, College Park, Tech. Rep. TR-1500, 1985.
+
+[94] R. W. Selby, V. R. Basili, and F. T. Baker, "CLEANROOM soft 
+ware development: An empirical evaluation," Dep. Comput. Sci.,
+Univ. Maryland, College Park, Tech. Rep. TR-1415, Feb. 1985.
+
+[95] J. G. Shanthikumar, "A statisical time dependent error occurrence
+rate software reliability model with imperfect debugging," in Proc.
+1981 Nat. Comput. Conf., June 1981.
+
+[96] B. A. Sheil, "The psychological study of programming," Comput.
+
+Surveys, vol. 13, pp. 101-120, Mar. 1981.
+
+[97] V. Y. Shen, T. J. Yu, S. M. Thebaut, and L. R. Paulsen, "Iden 
+IEEE Trans.
+
+tifying error-prone software-An empirical study,"
+Software Eng., vol. SE-ll, pp. 317-324, Apr. 1985.
+
+[98] B. Shneiderman, Software Psychology: Human Factors in Computer
+
+and Information Systems. Winthrop, 1980.
+
+[99] B. Shneiderman, R. E. Mayer, D. McKay, and P. Heller, "Exper 
+imental investigations of the utility of detailed flowcharts in pro 
+gramming," Commun. ACM, vol. 20, no. 6, pp. 373-381, 1977.
+
+[100] S. Siegel, Nonparametric Statistics for the Behavioral Sciences.
+
+New York: McGraw-Hill, 1955.
+
+[101] E. Soloway, J. Bonar, and K. Ehrlich, "Cognitive strategies and
+looping constructs: An empirical study," Commun. ACM, vol. 26,
+no.ll, pp. 853-860, Nov. 1983.
+
+[102] E. Soloway and K. Ehrlich, "Empirical studies of programming
+knowledge," IEEE Trans. Software Eng., vol. SE-I0, pp. 595-609,
+Sept. 1984.
+
+[103] E. Soloway, K. Ehrlich, J. Bonar, and J. Greenspan, "What do
+novices know about programming?" in Directions in Human-Com 
+puter Interactions, A. Badre and B. Shneiderman, Eds. Norwood,
+NJ: Ablex, 1982.
+
+[104] W. P. Stevens, G. L. Myers, and L. L. Constantine, "Structural
+design, " IBM Syst. J., vol. 13, no. 2, pp. 115-139, 1974.
+[105] L. G. Stucki, "New directions in automated tools for improving
+in Current Trends in Programming Methodol 
+Englewood Cliffs, NJ: Prentice-Hall, 1977.
+[106] I. Vessey and R. Weber, "Some factors affecting program repair
+maintenance: An empirical study," Commun. ACM, vol. 26, no. 2,
+pp. 128-134, Feb. 1983.
+
+software quality,"
+ogy, R. T. Yeh, Ed.
+
+[107] J. Vosburgh, B. Curtis, R. Wolverton, B. Albert, H. Malec, S.
+Hoben, and Y. Liu, "Productivity factors and programming envi 
+in Proc. 7th Int. Conf. Software Eng., Orlando, FL,
+ronments,"
+1984, pp. 143-152.
+
+[108] C. E. Walston and C. P. Felix, "A method of programming mea 
+surement and estimation," IBM Syst. J., vol. 16, no. 1, pp. 54-73,
+1977.
+
+[109] G. Weinberg, The Psychology of Computer Programming. New
+
+York: Van Nostrand Rheinhold, 1971.
+
+[110] M. Weiser, "Programmers use slices when debugging," Commun.
+
+ACM, vol. 25, pp. 446-452, July 1982.
+
+[111] M. Weiser and J. Shertz, "Programming problem representation in
+novice and expert programmers," Int. J. Man-Machine Studies, vol.
+19, pp. 391-398, 1983.
+
+[112] D. M. Weiss and V. R. Basili, "Evaluating software development
+by analysis of changes: Some data from the software engineering
+laboratory," IEEE Trans. Software Eng. , vol. SE-ll, pp. 157-168,
+Feb. 1985.
+
+[113] L. Weissman, "Psychological complexity of computer programs:
+An experimental methodology," SIGPLAN Notices, vol. 9, no. 6,
+pp. 25-36, June 1974.
+
+[114] R. Wolverton, "The cost of developing large scale software," IEEE
+
+Victor R. Basili (M'83-SM'84) is Professor and
+Chairman of the Department of Computer Science
+at the University of Maryland, College Park. He
+was involved in the design and development of
+several software projects,
+including the SIMPL
+family of programming languages. He is currently
+measuring and evaluating software development
+in industrial settings and has consulted with many
+agencies and organizations, including IBM, GE,
+CSC, GTE, MCC, AT&T Bell Laboratories,
+NRL, NSWC, and NASA. He is one of the found 
+ers and principals in the Software Engineering Laboratory, a joint venture
+established in 1976 between NASA/Goddard Space Flight Center, the Uni 
+versity of Maryland, and Computer Sciences Corporation. In this context
+he has worked closely with CSE in developing models and metrics for the
+software development process and product. He has authored over 70 pub 
+lished papers on the methodology, the quantitative analysis, and the eval 
+uation of the software development process and product.
+
+In 1982 Dr. Basili received the Outstanding Paper Award from the IEEE
+TRANSACTIONS ON SOFTWARE ENGINEERING for his paper on the evaluation
+of methodologies. He was Program Chairman for the Sixth International
+Conference on Software Engineering, and the First ACM SIGSOFT Soft 
+ware Engineering Symposium on Tools and Methodology Evaluation. He
+serves on the editorial boards of the Journal of Systems and Software and
+the IEEE TRANSACTIONS ON SOFTWARE ENGINEERING. He is a member of
+the Association for Computing Machinery and the Executive Committee of
+the Technical Committee on Software Engineering, and is a senior member
+of the IEEE Computer Society.
+
+Richard W. Selby (M'85) was born in Chicago,
+IL, in 1959. He received the B.A. degree in math 
+ematics and computer science from Saint Olaf
+in 1981 and the M.S.
+College, Northfield, MN,
+and Ph. D. degrees in computer science from the
+University of Maryland, College Park, in 1983 and
+1985, respectively.
+
+Since 1985 he has been an Assistant Professor
+of Information and Computer Science at the Uni 
+versity of California, Irvine. His research inter 
+ests include methodologies for developing and
+testing software, techniques for empirically evaluating software methodol 
+ogies, and software metrics. He is currently involved with the development
+and evaluation of the Arcadia software development environment.
+
+Dr. Selby is a member of the Association for Computing Machinery and
+
+the IEEE Computer Society.
+
+David H. Hutchens (M'84) received the B.S. de 
+gree in mathematics from Western Carolina Uni 
+versity, Cullowhee, NC,
+the M.S. de 
+gree
+sciences from Clemson
+University, Clemson, SC, in 1979, and the Ph.D.
+degree in computer science from the University of
+Maryland, College Park, in 1983.
+
+in mathematical
+
+in 1977,
+
+He is currently an Assistant Professor of Com 
+puter Science at Clemson University. His research
+interests include measurement, evaluation, and
+modeling of the software development process and
+its product.
+
+Trans. Comput., vol. C-23, June 1974.
+
+and the IEEE Computer Society.
+
+Dr. Hutchens is a member of the Association for Computing Machinery
+
+Authorized licensed use limited to: Queens University Belfast. Downloaded on April 26,2021 at 22:30:14 UTC from IEEE Xplore.  Restrictions apply. 
+
+

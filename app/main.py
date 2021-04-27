@@ -3,7 +3,6 @@ from convert import convert_pdf_to_txt
 from references import getReferences
 from refextract import extract_references_from_file
 import pdfminer
-import csv
 import glob
 import pathlib
 import os

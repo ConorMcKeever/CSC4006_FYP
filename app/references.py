@@ -1,6 +1,6 @@
 from refextract import extract_references_from_file
 import pdfminer
-import csv
+
 
 def getReferences(path, title):
     references = extract_references_from_file(path)

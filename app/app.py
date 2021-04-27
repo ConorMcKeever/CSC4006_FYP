@@ -25,8 +25,8 @@ def main(argv):
             inputfolder = arg
        elif opt in ("-o", "--ofolder"):
             outputfolder = arg
-   print('Input folder is "', inputfolder)
-   print('Output folder is "', outputfolder)
+   print('Input folder is ', inputfolder)
+   print('Output folder is ', outputfolder)
 
 
    #Begin converting the source folder to the output folder
@@ -47,13 +47,20 @@ def main(argv):
        print('Searching in: \'' + str(os.path.basename(file)) + '\'')
        ref = getReferences(str(file), 'Software Errors and Complexity')
        print('Reference number is : ' + str(ref) +'\n')
-       print('Begin extracting sentences containing reference...')
 
+       #Begin searching txt files for occurances of the reference
+       print('Begin extracting sentences containing reference...')
        if ref > 0:
-           print(extractCitation(str(file), str(ref)))
+           print("Extraction found n occurances of reference")
+           extractedText = str(extractCitation(str(file), str(ref)))
+           tokenize(extractedText)
+
 
        print("===========END SEARCH===========\n\n")
-       tokenize()
+
+
+    #Compile data for reference to csv
+
 
 
 
