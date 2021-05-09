@@ -1,0 +1,2216 @@
+This article was downloaded by: [143.117.255.86] On: 09 May 2021, At: 08:42
+Publisher: Institute for Operations Research and the Management Sciences (INFORMS)
+INFORMS is located in Maryland, USA
+
+Management Science
+
+Publication details, including instructions for authors and subscription information:
+http://pubsonline.informs.org
+
+Effects of Process Maturity on Quality, Cycle Time, and
+Effort in Software Product Development
+
+Donald E. Harter, Mayuram S. Krishnan, Sandra A. Slaughter,
+
+To cite this article:
+Donald E. Harter, Mayuram S. Krishnan, Sandra A. Slaughter,  (2000) Effects of Process Maturity on Quality, Cycle Time, and
+Effort in Software Product Development. Management Science 46(4):451-466. https://doi.org/10.1287/mnsc.46.4.451.12056
+
+Full terms and conditions of use: https://pubsonline.informs.org/Publications/Librarians-Portal/PubsOnLine-Terms-and-
+Conditions
+
+This article may be used only for the purposes of research, teaching, and/or private study. Commercial use
+
+or systematic downloading (by robots or other automatic processes) is prohibited without explicit Publisher
+approval, unless otherwise noted. For more information, contact permissions@informs.org.
+
+The Publisher does not warrant or guarantee the article’s accuracy, completeness, merchantability, fitness
+
+for a particular purpose, or non-infringement. Descriptions of, or references to, products or publications, or
+inclusion of an advertisement in this article, neither constitutes nor implies a guarantee, endorsement, or
+support of claims made of that product, publication, or service.
+
+© 2000 INFORMS
+
+Please scroll down for article—it is on subsequent pages
+
+With 12,500 members from nearly 90 countries, INFORMS is the largest international association of operations research (O.R.)
+and analytics professionals and students. INFORMS provides unique networking and learning opportunities for individual
+professionals, and organizations of all types and sizes, to better understand and use O.R. and analytics tools and methods to
+transform strategic visions and achieve better outcomes.
+For more information on INFORMS, its publications, membership, or meetings visit http://www.informs.org
+
+Effects of Process Maturity on Quality,
+Cycle Time, and Effort in Software Product
+Development
+
+Donald E. Harter • Mayuram S. Krishnan • Sandra A. Slaughter
+University of Michigan Business School, Ann Arbor, Michigan 48109-1234
+University of Michigan Business School, Ann Arbor, Michigan 48109-1234
+Graduate School of Industrial Administration, Carnegie Mellon University, Pittsburgh, Pennsylvania 15213
+harter@umich.edu • mskrish@umich.edu • sandras@andrew.cmu.edu
+
+The information technology (IT) industry is characterized by rapid innovation and intense
+
+competition. To survive, IT ﬁrms must develop high quality software products on time
+and at low cost. A key issue is whether high levels of quality can be achieved without
+adversely impacting cycle time and effort. Conventional beliefs hold that processes to
+improve software quality can be implemented only at the expense of longer cycle times and
+greater development effort. However, an alternate view is that quality improvement, faster
+cycle time, and effort reduction can be simultaneously attained by reducing defects and
+rework. In this study, we empirically investigate the relationship between process maturity,
+quality, cycle time, and effort for the development of 30 software products by a major IT ﬁrm.
+We ﬁnd that higher levels of process maturity as assessed by the Software Engineering
+Institute’s Capability Maturity Model™ are associated with higher product quality, but also
+with increases in development effort. However, our ﬁndings indicate that the reductions in
+cycle time and effort due to improved quality outweigh the increases from achieving higher
+levels of process maturity. Thus, the net effect of process maturity is reduced cycle time and
+development effort.
+(Software Process Improvement; Software Economics; Software Productivity; Software Quality;
+Software Costs; Software Cycle Time; Capability Maturity Model)
+
+1. Introduction
+Over the past decades, effective deployment of com-
+puter software has emerged as one of the most impor-
+tant determinants of success in the business world.
+Firms are investing heavily in software as information
+technology (IT) inﬁltrates and plays a critical role in all
+aspects of the value chain. In consequence, the IT
+industry has experienced more than 500% growth
+worldwide over the past decade (Wall Street Journal
+1997, Mowrey 1996). As the number of software de-
+velopment ﬁrms increases, competition intensiﬁes. To
+
+survive, IT ﬁrms must accelerate the time to market
+for their software products. However, reduced cycle
+times cannot be achieved at the expense of low quality
+and high development costs.
+
+In an effort to keep costs within budget and deliver
+quality products to customers, IT ﬁrms adopt various
+quality practices in their software development pro-
+cesses. However, IT ﬁrms may not consistently follow
+these practices because of the dynamic nature of the
+commercial software development environment. Cus-
+tomers frequently change their requirements after
+
+0025-1909/00/4604/0451$05.00
+1526-5501 electronic ISSN
+
+Management Science © 2000 INFORMS
+Vol. 46, No. 4, April 2000 pp. 451– 466
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+product design has begun, but they expect the soft-
+ware to be delivered without delay. As a consequence,
+to satisfy customer needs under severe schedule pres-
+sure and yet control development costs, IT ﬁrms may
+deviate from disciplined practices in their develop-
+ment process and cut corners by shipping the prod-
+ucts without adequate testing (Kemerer 1997). Such
+behavior can result in a higher number of defects at
+the customer site that delay the acceptance of the
+product, and the cost of ﬁxing these defects can be
+signiﬁcant. These dynamics suggest the importance of
+delivering software products on time without com-
+promising quality and cost.
+
+intensity of
+
+change and the
+
+In manufacturing, reduction of product develop-
+ment cycle time has become the focal point of compe-
+tition in many industries. The fast pace of technolog-
+ical
+international
+competition place a premium on a ﬁrm’s ability to
+respond quickly to customer demands. Many ﬁrms
+have adopted time-based competition strategies to
+reduce product development time and deliver higher
+quality products and services to their respective cus-
+tomers at lower cost. Under time-based competition,
+ﬁrms strive to streamline and constantly improve the
+reliability and capability of their manufacturing pro-
+cesses. A key premise underlying process improve-
+ment in manufacturing is the elimination of waste and
+rework in manufacturing activities by reducing prod-
+uct defects (Bockerstette and Shell 1993).
+
+In software development, an important issue is
+whether process improvement pays off in terms of
+higher quality, reduced cycle time, and lower cost.
+Under the conventional paradigm, higher quality can
+be achieved only at the expense of increased develop-
+ment expenditures and longer cycle times. From this
+perspective, effort expended to improve software de-
+velopment processes varies with the level of quality
+attained. A typical view of software managers operat-
+ing from this paradigm is: “I’d rather have it wrong
+than have it late. We can always ﬁx it later.” (Paulk et
+al. 1995, p. 4)
+
+An alternative view from manufacturing is that
+quality, cost, and cycle time are complementary, i.e.,
+improvements in quality directly relate to improved
+cycle time and productivity (Crosby 1979, Deming
+
+1986, Nandakumar et al. 1993). This view is also
+espoused by advocates for software process improve-
+ment (Humphrey 1995). These advocates have pro-
+vided frameworks for software ﬁrms to characterize
+the capability of their software development practices
+(El Emam and Goldenson 1996, Paulk et al. 1995). One
+of the widely adopted frameworks is the Capability
+Maturity Model™ (CMM™) developed by the Soft-
+ware Engineering Institute (SEI) at Carnegie Mellon
+University (Paulk et al. 1995). Based on the speciﬁc
+software practices adopted, the CMM classiﬁes the
+software process into ﬁve maturity levels. Analogous
+to concepts of time-based competition in manufactur-
+ing, the basic premise of this framework is that im-
+provements in cycle time, cost, and quality can be
+simultaneously attained by improving software pro-
+cess capability. These improvements are thought to
+arise from reduced defects and rework in a mature
+software development process. However, it is impor-
+tant to provide empirical evidence to substantiate
+these beliefs.
+
+In this study, we empirically investigate the rela-
+tionships between process maturity measured on the
+CMM maturity scale, product quality, development
+cycle time, and effort for 30 software products created
+by a major IT ﬁrm over a period of 12 years. Size and
+design complexity are reported as additional signiﬁ-
+cant variables that explain quality in the delivered
+software products.
+
+We ﬁnd that improvements in process maturity lead
+to higher quality but also increased effort in our
+sample of software products. However, higher quality
+in turn leads to reduced cycle time and development
+effort in the software products. The net effect of
+improvement in process maturity on development
+cycle time and effort is negative. At the average values
+for process maturity and software quality, a 1% im-
+provement in process maturity leads to a 0.32% net
+reduction in cycle time, and a 0.17% net reduction in
+development effort (taking into account the positive
+direct effects and the negative indirect effects through
+quality). These ﬁndings provide empirical support in
+the context of software production for theories of the
+cycle time and cost beneﬁts of improved quality
+deriving from process improvement.
+
+452
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+The rest of our paper is organized as follows. A brief
+review of the relevant literature is presented in §2.
+Section 3 contains the development of our model and
+theory. Section 4 provides details about the research
+site and data collection. Model estimation and results
+are presented in §5. In the ﬁnal sections, we discuss
+the managerial implications of our results and provide
+directions for future research.
+
+2. Prior Literature
+The increasing dependence on software and the severe
+consequences of software failures have mandated IT
+ﬁrms to deliver higher quality products. In addition,
+with the increased competition in the global IT indus-
+try, attention has turned more recently to problems of
+economically delivering defect-free products to cus-
+tomers in a shortened development cycle time. The
+software quality literature has approached these prob-
+lems from the perspective of predicting and prevent-
+ing software defects. A primary focus has been the
+development of models to analyze and prevent defects
+and to predict the reliability of software products (e.g.,
+Lyu 1996, Basili and Perricone 1984).
+
+The cycle time and cost implications of product
+quality have been addressed in manufacturing re-
+search. Kaplan (1986), for example, discusses the im-
+pact of product quality on the direct costs of labor and
+materials. Nandakumar et al. (1993) argue that poor
+quality in manufacturing systems not only leads to
+higher defect rates but also affects product develop-
+ment time. Hence, they emphasize that it is important
+to include both direct costs and indirect opportunity
+costs of the decrease in demand and price resulting
+from delayed product delivery in the cost of quality
+analysis. Their analytical model captures both the
+direct and indirect (through delayed product develop-
+ment time) costs of poor quality, and indicates that
+costs of poor quality are a convex and increasing
+function of defects.
+
+In software engineering research, the life-cycle cost
+impact of quality in software products has been exam-
+ined by Krishnan et al. (2000). They ﬁnd that im-
+proved conformance quality in system software prod-
+ucts leads to signiﬁcant improvement in life-cycle
+productivity, and that factors such as deployment of
+
+resources in the initial stages of product design drive
+increased quality. However, this study does not con-
+sider the cycle time impact of quality improvement.
+
+New technologies are emerging at an increasing rate
+in the software industry, rapidly rendering the exist-
+ing products obsolete. As a consequence, product
+life-cycles are getting shorter, and cycle time reduction
+is imperative for software ﬁrms. Although a number
+of commercial computer-aided software engineering
+(CASE) tools have been introduced to facilitate cycle
+time reduction, from a software engineering research
+perspective the quality impacts of delays in product
+development are not well understood. The effect of
+development cycle time on total effort has been indi-
+rectly addressed in software cost models through the
+effect of schedule pressure in projects (Boehm 1981,
+Abdel-Hamid and Madnick 1991).
+
+The streams of research on software cost, quality,
+and cycle time have often considered one factor in the
+absence of one or more of the other factors. That is,
+many cost models ignore the quality or time to market
+of the delivered product, and quality models often
+ignore cycle time or the cost incurred in product
+development. In the absence of an understanding of
+the interrelationships between these factors, software
+managers eliminate important process steps such as
+front-end inspections in the erroneous belief that they
+are saving time. However, this can result in major
+delays in product development resulting from the
+additional time required to ﬁx errors detected during
+customer acceptance testing (Humphrey 1995). With
+the focus in the IT industry on simultaneously reduc-
+ing product cycle time, cost, and defects, it is impor-
+tant to examine the interrelationships among all these
+factors.
+
+The quality, cycle time, and cost problems associ-
+ated with software are partly a result of the nature of
+software and partly of the practices adopted in soft-
+ware development (Brooks 1995). As noted earlier,
+software process is viewed as an important determi-
+nant of product quality, effort, and cycle time. The
+importance of process maturity has been demon-
+strated in manufacturing contexts. For example, Bohn
+(1995) has reported a ﬁeld study that provides evi-
+dence for the signiﬁcance of process maturity and
+
+Management Science/Vol. 46, No. 4, April 2000
+
+453
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+controlling process variability in enhancing process
+yield and product quality. Even if a manufacturer has
+a low-quality supplier, it has been shown that the cost
+impact of higher defects can be controlled by improve-
+ment in the manufacturing process (Tagaras and Lee
+1996).
+
+The disciplined methods and practices described in
+the CMM and various other software process models
+are believed to provide various beneﬁts to software
+ﬁrms, such as improved quality and reduced cycle
+time and cost. Informal studies such as anecdotal case
+reports and surveys (Herbsleb et al. 1997) suggest
+positive impacts of software process improvement. In
+light of the signiﬁcant investment required to improve
+software processes, it is important to rigorously study
+and quantify empirically the beneﬁts of process ma-
+turity for quality, cycle time, and effort.
+
+3. Research Models and
+
+Hypotheses
+
+The conceptual framework for our study (Figure 1)
+integrates three models that interrelate process matu-
+rity, quality, cycle time, and effort for software prod-
+uct development. The ﬁrst model relates the maturity
+of the development process to product quality, con-
+trolling for the size and design complexity of the
+software products. In the second and third models,
+cycle time and development effort are speciﬁed as a
+function of product quality and process maturity,
+controlling for the size of the product and the ambi-
+guity of user requirements. A detailed explanation of
+each model and our hypotheses follow.
+
+Figure 1
+
+Conceptual Model
+
+3.1. Product Quality
+In our ﬁrst model (1), we relate process maturity to
+product quality, controlling for the size and design
+complexity of the software product:
+
+Product-Quality (cid:1) Function (Process-Maturity,
+
+Product-Size, Product-Design-Complexity).
+
+(1)
+
+In the life-cycle perspective of software develop-
+ment, there are several phases of testing that are
+conducted to discern the quality of software products.
+Unit tests are conducted separately for each module in
+the software product, with the goal of detecting and
+removing syntactical errors. System tests examine the
+functioning of the product as a whole to determine
+whether discrete modules will function together as
+planned and whether discrepancies exist between the
+way the product actually works and the way it was
+designed. Acceptance tests are conducted by the cus-
+tomers of the product to ensure that it meets their
+speciﬁcations.
+
+Our deﬁnition of product quality is based on errors
+uncovered in system and acceptance testing. These
+errors are deviations from the initial customer speci-
+ﬁcations and do not include enhancements. Speciﬁ-
+cally, we deﬁne product-quality as the lines of source
+code in the software product divided by the number
+of errors reported during system testing and customer
+acceptance testing. This deﬁnition reﬂects the size of
+the software per defect, with larger values implying a
+lower frequency of errors per unit of software, i.e.,
+higher product quality.
+
+Process-maturity measured on the CMM maturity
+scale reﬂects the ﬁrm’s level of investment to improve
+software process capabilities. The CMM framework
+includes 18 key process areas such as quality assur-
+ance, conﬁguration management, defect prevention,
+peer review, and training (Paulk et al. 1995). In all
+these process areas, the CMM identiﬁes various disci-
+plined software development practices. A software
+process is assigned the highest maturity level if the
+practices in the 18 key process areas of the CMM are
+adopted. As deﬁned in the CMM, an effective and
+mature software process must include the interactions
+among employee skill and morale, tools, and methods
+used in all the tasks and clearly deﬁned metrics and
+
+454
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+methods of products and process. The CMM practices
+aid in reducing defect injection and in early identiﬁ-
+cation of defects. As a consequence, the number of
+errors in system and acceptance testing will be lower
+for software products developed with a mature pro-
+cess. This implies:
+
+Hypothesis 1 (Process maturity and product
+quality). Higher levels of process-maturity lead to higher
+product-quality in software products.
+
+We control in this model for the effect of product
+size (product-size) and product design complexity
+(product-design-complexity). Product-size
+(deﬁned in
+terms of thousand lines of source code in the product)
+is a factor that we expect to be inversely related to
+product quality. Prior studies of software productivity
+and quality have identiﬁed product size measured in
+lines of code as a primary determinant of product
+defects (Basili and Musa 1991). Because of the volume
+of code and increased product functionality, larger
+products provide more opportunity to introduce er-
+rors. In addition, larger products may include more
+modules and interactions between modules, thus fur-
+ther increasing the possibility of defects. Product-
+design-complexity in our model captures three impor-
+tant dimensions of complexity: domain, data, and
+decision complexity. Domain complexity reﬂects the
+difﬁculty of the functionality, speciﬁcally the algo-
+rithms and calculations that will be accomplished in a
+product. Data complexity refers to the complexity of
+the data structures and relationships in the software
+product. Decision complexity refers to the complexity
+of decision paths and structures in the software prod-
+uct. The more complex the product design on these
+dimensions, the higher the likelihood that errors will
+be injected in development and uncovered in system
+and acceptance testing when live data rather than test
+cases are used (Munson 1996).
+
+3.2. Cycle Time
+(2), we examine the link
+In our second model
+between process maturity, quality, and develop-
+ment cycle time in software products, controlling
+for the effects of product size and the ambiguity of
+user requirements.
+
+Cycle-Time (cid:1) Function (Process-Maturity,
+
+Product-Quality, Product-Size,
+
+Requirements-Ambiguity).
+
+(2)
+
+Cycle-time is the time to develop the product, i.e., the
+elapsed time in days from the start of design on the
+product until its ﬁnal acceptance by the customer. The
+relationship between cycle time, process maturity, and
+quality has been viewed from two different perspec-
+tives. One view is that cycle time must be traded off
+against improvements in quality. That is, increased
+investment in process improvement requires addi-
+tional time for testing, code inspections, etc., that add
+to the elapsed time required to develop the product
+and delay its introduction.
+
+In contrast, an alternate view is that improvements
+in quality can lead to an overall reduction in cycle
+time. The rationale behind this is that by adopting
+disciplined practices as speciﬁed in the CMM frame-
+work and improving process maturity, the time spent
+on preventing and uncovering defects early in the
+development can be more than recovered by avoiding
+rework to correct defects detected at the later stages of
+product development (Jones 1997). In the context of
+software production, several studies have indicated
+that more time is needed to ﬁx defects uncovered at
+later stages in software development than in earlier
+stages (e.g., Swanson et al. 1991, Abdel-Hamid and
+Madnick 1991). Following this view, we hypothesize
+that increased investment in process improvement
+activities (as reﬂected in process maturity) can in-
+crease cycle time. However, higher process maturity
+leads to higher product quality, and as products
+exhibit fewer defects, there is less rework, thereby
+reducing cycle time. Therefore:
+
+Hypothesis 2 (Process maturity and cycle time).
+Higher levels of process-maturity are associated with in-
+creased cycle-time in software products.
+
+Hypothesis 3 (Product quality and cycle time).
+Higher product-quality is associated with lower cycle-time
+in software products.
+
+In the cycle time model, we control for the effects of
+product size (product-size) and the ambiguity of user
+requirements (requirements-ambiguity). We expect that
+
+Management Science/Vol. 46, No. 4, April 2000
+
+455
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+product size will be positively related to cycle time,
+ceteris paribus, because larger products involve more
+work and should take longer to develop in the absence
+of variations in schedule pressure. Products for which
+user requirements are not clearly speciﬁed in design
+should also take longer to develop because additional
+time is required to elicit precise requirements from the
+users in a series of meetings during the development
+process (Gopal et al. forthcoming). It may be argued
+that the average team size could determine the cycle
+time. Although our research site had predeﬁned rules
+for budgeting personnel in each phase of develop-
+ment, because of differences in speciﬁc circumstances
+the actual loading proﬁle of individual projects often
+deviated from the established norm. This variation in
+actual loading proﬁle makes average team size a less
+meaningful variable at our research site.
+
+3.3. Development Effort
+In our third model (3) we examine the link between
+process maturity, quality, and development effort in
+software products, controlling for the effects of prod-
+uct size and the ambiguity of user requirements:
+
+Effort (cid:1) Function (Process-Maturity,
+
+Product-Quality, Product-Size,
+
+Requirements-Ambiguity).
+
+(3)
+
+Effort refers to the person-months required to de-
+velop the software product. The relationship between
+development effort, process maturity, and product
+quality has also been discussed from two different
+viewpoints. The conventional school of thought as-
+serts that effort and quality improvement must be
+counterbalanced. That is, increased effort is required
+to follow disciplined practices, use quality tools, and
+conduct rigorous testing and code reviews in attaining
+higher quality levels. A different school of thought
+views development effort and quality improvement as
+complementary. This stems from the argument that
+defects detected at the later stages of product devel-
+opment lead to substantial rework, and the cost of this
+rework could be signiﬁcantly higher than investments
+in quality improvement at the early stages of product
+development (Boehm 1981). This implies that there is
+an inverse relationship between quality and effort.
+
+Along these lines, we expect that improved quality is
+associated with lower development effort. However,
+higher levels of process maturity would directly in-
+crease development effort as a result of the additional
+activities for process improvement. Thus:
+
+Hypothesis 4 (Process maturity and development
+effort. Higher levels of process-maturity are associated with
+increased development-effort in software products.
+
+Hypothesis 5 (Product quality and develop-
+ment effort). Higher product-quality is associated with
+lower development-effort in software products.
+
+We control in this model for the effect of product
+size (product-size) and the ambiguity of user require-
+ments (requirements-ambiguity). Software size has been
+identiﬁed as the most signiﬁcant factor that explains
+development effort (Kemerer 1997). Accordingly, we
+expect that product size will be positively related to
+development effort. Products for which user require-
+ments are ambiguous in design should also take more
+effort to develop as additional work is required to
+elicit precise requirements from the users in develop-
+ment. The importance of effective requirements deter-
+mination for software productivity has been empha-
+sized by Jones (1996) and others.
+
+4. Research Design and
+
+Methodology
+
+4.1. Research Setting
+We examine data collected on 30 software products
+created by the systems integration division of a $1
+billion per year IT ﬁrm. The products comprise ap-
+proximately 3.3 million lines of COBOL code and were
+created from 1984 to 1996. The products were devel-
+oped as part of a $230 million effort to build a material
+requirements planning (MRP) information system to
+manage spare parts acquisition. All of the MRP soft-
+ware is designed to satisfy a stringent ﬁve-second
+response time for all queries, regardless of geographic
+location or complexity of retrieval.
+
+This IT ﬁrm provides an interesting research site to
+study software development because the ﬁrm focused
+on improvements to development processes and qual-
+ity during the time frame in which the products were
+
+456
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+developed, and advanced in process maturity. A con-
+tractual arrangement using incentive targets moti-
+vated the IT ﬁrm to continually search for techniques
+to improve the process and reduce cycle time and
+costs. Costs exceeding a ﬁxed ceiling were borne by
+the ﬁrm, but savings resulting from process improve-
+ment were shared jointly by the ﬁrm and customer.
+The risk of cost overruns and the opportunity for
+increased proﬁts provided signiﬁcant motivation for
+improving process capabilities. Incremental process
+improvements included adoption of advanced devel-
+opment tools including CASE tools, integration of
+documentation with CASE, and automated conﬁgura-
+tion management tools. In addition, techniques such
+as Pareto Analysis were adopted to detect, manage,
+and reduce software errors. Human resource practices
+were modiﬁed by changing recruitment policies to
+encourage improved skills and qualiﬁcations in IT
+personnel. Figure 2 summarizes the process improve-
+ments adopted by the IT ﬁrm.
+
+4.2. Data Collection Methods
+Process improvement data were collected by external
+divisions and by government agencies to provide
+independent assessments of the IT development ﬁrm’s
+software development processes. Government audi-
+tors and senior corporate personnel in divisions out-
+side of systems integration performed ﬁve software
+process maturity assessments during the 12-year pe-
+riod. These independent groups used the SEI’s CMM
+(Paulk et al. 1995) to assess the maturity of software
+development and supporting activities.
+
+Figure 2
+
+Process Improvements at the Research Site
+
+All other data were collected by the IT development
+ﬁrm and were audited by the customer to ensure
+accuracy and accountability. Within the IT ﬁrm, the
+departments responsible for data collection included
+conﬁguration management, program control, and en-
+gineering. The researchers extracted data used in this
+study from the electronic and paper ﬁles maintained
+by these divisions and departments.
+
+Conﬁguration management (CM) maintained a da-
+tabase on software errors identiﬁed during the IT
+ﬁrm’s system level test and during the customer’s
+acceptance test. An independent test team within the
+IT ﬁrm (different from the development team) devel-
+oped a formal test plan to test the functionality of the
+system based on the product requirements. Upon
+completion of development, the software was mi-
+grated to the independent test team, where the prod-
+uct was tested using the detailed test plan procedures.
+This test team recorded development errors via the
+Software Problem Report. Upon completion of devel-
+opment testing and resolution of all errors found, the
+software was formally migrated to the customer test
+region. The customer’s acceptance test team used the
+test plan to test the functionality of the system, per-
+formed stress testing with larger data bases and user
+populations, and used the Software Problem Report to
+document acceptance errors. Both test teams followed
+a comprehensive and consistent approach to software
+testing. All errors were ﬁxed regardless of the severity
+of the error. The IT ﬁrm’s quality assurance depart-
+ment and an independent customer audit team re-
+viewed both types of error reports to ensure accuracy
+and completeness.
+
+The IT ﬁrm’s program control department was
+responsible for maintaining audited records of cycle
+time and effort. Cycle time data were stored using the
+Artemis(cid:1) scheduling system. Effort data were tracked
+by the corporate time reporting system. The effort data
+were entered into the standard corporate payroll sys-
+tem and summarized by software development prod-
+uct. The customer audited both schedule and effort
+data to ensure accuracy.
+
+Engineering was responsible for estimating product
+schedules and costs based on the user requirements
+speciﬁed in design in order to allocate resources and
+
+Management Science/Vol. 46, No. 4, April 2000
+
+457
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+manage the development process. Domain, data, and
+decision complexity are three variables that were
+critical to the estimation process and were principal
+inputs to the Software Productivity Quality and Reli-
+ability (SPQR20(cid:1)) methodology for projecting sched-
+ules and costs. Based on user requirements speciﬁca-
+tion documents, engineering estimated the domain,
+decision, and data complexity of the design in order to
+use SPQR20(cid:1) to develop initial product development
+estimates. Engineering also evaluated the ambiguity
+of user requirements to assess the potential effect of
+unclear or incomplete speciﬁcations. Products that
+implemented familiar functionality tended to have
+low requirements ambiguity; products that imple-
+mented new policies and procedures that had never
+before been used by the customer tended to have high
+requirements ambiguity. Engineering estimated the
+level of requirements ambiguity based on historical
+understanding of the processes, the relative newness
+of policies, and the clarity with which the speciﬁcation
+described them.
+
+4.3. Construct Measurement
+We operationalize the variables used in our models as
+follows. Process maturity reﬂects the level of discipline
+and sophistication of the software development and
+supporting processes. We measure process maturity
+using the SEI’s CMM level of maturity. Maturity levels
+were associated with a software product based on the
+maturity level of the IT ﬁrm at the beginning of a
+product’s design. The maturity level of a product that
+beneﬁted from process improvements later in the prod-
+uct’s life-cycle stages (e.g., coding stage) was assigned a
+commensurate increase in maturity level. Product quality
+assesses the total defects in the product prior to customer
+release. We measure this variable as the number of lines
+of source code in the product divided by the sum of the
+defects found in system and acceptance testing. The
+inverse of this measure, i.e., defect density, has been
+used in many prior quality studies (Basili and Musa
+1991, Fenton and Pﬂeeger 1997).
+
+Cycle time measures the number of calendar days
+elapsed from the ﬁrst day of design to ﬁnal customer
+acceptance of the product. Life-cycle stages included
+in cycle time are high-level design, detailed design,
+coding, unit testing, system-level test, and customer
+
+acceptance test. Development effort is the total number
+of person-months logged by the development team in
+all the stages of product development, starting from
+initial design through ﬁnal product acceptance testing.
+Our measures for development cycle time and effort
+are consistent with those used in prior research of
+software engineering (e.g., Boehm 1981).
+
+Product size is measured in terms of KLOC (thousand
+lines of source code). Lines of code is a primary metric
+for assessing product size in many empirical software
+productivity studies (e.g., Boehm 1981, Conte et al. 1986).
+The main shortcoming of this measure stems from the
+inaccurate and inconsistent deﬁnition of “a line of code”
+across various programming languages (Jones 1986).
+However, in this study, this problem is not salient
+because all the products were developed in a single
+language (COBOL), and the lines of code were counted
+in a consistent manner using the same tool.
+
+As noted earlier, the product design complexity vari-
+able in our analysis captures three important under-
+lying dimensions of complexity: domain, data, and
+decision complexity (Jones 1996). Domain complexity
+measures the level of functional complexity as deter-
+mined by engineering from the user requirements
+speciﬁcation. Although the products are part of the
+same application domain (i.e., MRP), the development
+difﬁculty of these products may signiﬁcantly differ
+because of differences in the tasks implemented in the
+products. Data complexity measures the anticipated
+level of difﬁculty in developing the system because of
+complicated data structures and data base relation-
+ships. Decision complexity captures the degree of difﬁ-
+culty in the decision paths and structures within the
+product. All three complexity constructs are assessed
+subjectively on a scale of 1 to 5 (low to high). The
+complexity constructs exhibited high intercorrelation.
+An exploratory factor analysis using the principal
+components method revealed a single factor that ex-
+plained 60% of the variance among the three variables.
+For ease of interpretation, scores for the product design
+complexity variable were computed by taking an aver-
+age of the three complexity constructs.
+
+Requirements-ambiguity is a subjective, ordinal mea-
+sure that assesses the degree to which user require-
+ments are clearly deﬁned for a product. It is measured
+
+458
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+Variable
+
+Std Deviation
+
+Minimum
+
+Maximum
+
+531.02
+457.30
+211.53
+0.64
+130.79
+0.41
+1.08
+
+Median
+
+400.77
+663.00
+130.89
+2.00
+78.02
+1.95
+2.93
+
+105.16
+62.00
+3.38
+1.00
+4.05
+1.23
+1.00
+
+2024.00
+1692.00
+829.78
+3.00
+605.68
+2.85
+5.00
+
+ln(Product Quality)
+
+ln(Cycle Time)
+
+ln(Effort)
+
+ln(Product Size)
+
+ln(Process
+Maturity)
+
+ln(Product Design
+Complexity)
+
+ln(Reqmts
+Ambiguity)
+
+Table 1
+
+Summary Statistics
+
+Product Quality
+Cycle Time
+Development Effort
+Process Maturity
+Product Size
+Product Design Complexity
+Requirements Ambiguity
+
+Table 2
+
+Correlation Matrix
+
+ln(Product Quality)
+ln(Cycle Time)
+
+ln(Effort)
+
+ln(Process Maturity)
+
+ln(Product Size)
+
+ln(Product Design Complexity)
+
+ln(Reqmts Ambiguity)
+
+Mean
+
+659.53
+759.27
+196.88
+2.02
+109.82
+1.95
+2.68
+
+1.000
+(cid:4)0.342
+(0.065)
+(cid:4)0.220
+(0.243)
+0.454
+(0.012)
+0.036
+(0.850)
+(cid:4)0.131
+(0.489)
+(cid:4)0.043
+(0.823)
+
+1.000
+
+0.861
+(0.000)
+(cid:4)0.124
+(0.516)
+0.624
+(0.000)
+0.459
+(0.011)
+(cid:4)0.043
+(0.082)
+
+1.000
+
+(cid:4)0.073
+(0.702)
+0.843
+(0.000)
+0.533
+(0.002)
+0.457
+(0.011)
+
+1.000
+
+(cid:4)0.115
+(0.545)
+0.363
+(0.049)
+0.141
+(0.458)
+
+1.000
+
+0.480
+(0.007)
+0.541
+(0.002)
+
+1.000
+
+0.687
+(0.000)
+
+1.000
+
+Note. Pearson correlation coefﬁcients with p values in parentheses.
+
+on a scale of 1 to 5, with 5 reﬂecting the highest degree
+of ambiguity in user requirements speciﬁcation, and 1
+indicating that user requirements are clear and unam-
+biguous. Descriptive statistics for all variables are in
+Table 1, and a correlation matrix is in Table 2.
+
+5. Analysis and Results
+A linear speciﬁcation of the three models implies that the
+effects of process maturity, product size, product design
+complexity, and ambiguity of user requirements on
+product quality, cycle time, and development effort are
+additively separable and linear. However, in the case of
+software development, the effects of size and other
+factors are not linear. Both economies and diseconomies
+of scale (i.e., size) of the software product have been
+observed by researchers for cost (Banker and Slaughter
+1997, Banker et al. 1994) and quality (Newfelder 1993). In
+
+addition, for the data sample in this study, statistical
+tests rejected standard assumptions of the linear model
+such as normality of error terms. Thus, a generic multi-
+plicative speciﬁcation for our models is adopted through
+log transformation of the variables (Kmenta 1986). The
+speciﬁcation test for nonnested models (the J-test) sup-
+ported the log-linear models speciﬁed below over linear
+models for each of our equations (Davidson and Mac-
+Kinnon 1995).
+
+ln(cid:2)Product-Quality(cid:3) (cid:1) (cid:2)
+
+(cid:3) (cid:2)
+
+11
+
+01
+
+(cid:1) ln(cid:2)Process-Maturity(cid:3)
+
+(cid:3) (cid:2)
+
+21
+
+(cid:1) ln(cid:2)Product-Size(cid:3) (cid:3) (cid:2)
+
+31
+
+(cid:1) ln(cid:2)Product-Design-Complexity(cid:3) (cid:3) (cid:4)
+
+01
+
+(1)
+
+ln(cid:2)Cycle-Time(cid:3) (cid:1) (cid:2)
+
+02
+
+(cid:3) (cid:2)
+
+12
+
+(cid:1) ln(cid:2)Product-Quality(cid:3)
+
+Management Science/Vol. 46, No. 4, April 2000
+
+459
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+Table 3
+
+Model 1 Parameter Estimates (n (cid:1) 30)
+
+Variable
+
+Parameter
+
+Intercept
+
+ln(Process-Maturity)
+
+ln(Product-Size)
+
+ln(Product-Design-Complexity)
+
+R 2
+R 2 (adj)
+F Model
+
+(cid:2)
+01
+s.e
+t
+p
+(cid:2)
+11
+s.e
+t
+p
+(cid:2)
+21
+s.e
+t
+p
+(cid:2)
+31
+s.e
+t
+p
+
+F 3,26
+p
+
+OLS
+Estimate
+
+5.597
+0.464
+12.059
+0.000
+1.589
+0.386
+4.116
+0.000
+0.234
+0.108
+2.160
+0.020
+(cid:4)2.111
+0.712
+(cid:4)2.963
+0.003
+0.412
+0.345
+6.080
+0.003
+
+SURE
+Estimate
+
+5.602
+0.470
+11.930
+0.000
+1.594
+0.391
+4.081
+0.000
+0.236
+0.109
+2.152
+0.017
+(cid:4)2.137
+0.720
+(cid:4)2.969
+0.002
+0.413
+
+6.010
+0.001
+
+2SLS
+Estimate
+
+5.597
+0.464
+12.059
+0.000
+1.589
+0.386
+4.116
+0.000
+0.234
+0.108
+2.160
+0.020
+(cid:4)2.111
+0.712
+(cid:4)2.963
+0.003
+0.412
+0.345
+6.080
+0.003
+
+Rank Regression
+Estimate
+
+5.611
+3.814
+1.471
+0.076
+0.733
+0.179
+4.095
+0.000
+0.369
+0.177
+2.080
+0.024
+(cid:4)0.464
+0.195
+(cid:4)2.378
+0.012
+0.399
+0.330
+5.750
+0.004
+
+Note. (one-tailed p values)
+ln(Product-Quality) (cid:1) (cid:2)
+
+(cid:5) (cid:2)
+11
+
+01
+
+(cid:1) ln(Process-Maturity) (cid:5) (cid:2)
+
+(cid:1) ln(Product-Size) (cid:5) (cid:2)
+
+(cid:1) ln(Product-Design-Complexity) (cid:5) (cid:4)
+
+31
+
+21
+
+01.
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Requirements-Ambiguity(cid:3) (cid:3) (cid:4)
+
+02
+
+(2)
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Process-Maturity(cid:3)
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Product-Size(cid:3)
+
+ln(cid:2)Development-Effort(cid:3) (cid:1) (cid:2)
+
+03
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Product-Quality(cid:3)
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Process-Maturity(cid:3)
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Product-Size(cid:3)
+
+22
+
+32
+
+42
+
+13
+
+23
+
+33
+
+43
+
+(cid:3) (cid:2)
+
+(cid:1) ln(cid:2)Requirements-Ambiguity(cid:3) (cid:3) (cid:4)
+
+03
+
+(3)
+
+The parameters of the individual equations were
+initially estimated using ordinary least squares (OLS)
+(column three in Tables 3 through 5). Because all the
+products in our sample are from the same company, it
+may be possible that the error terms are correlated as
+a result of a common effect. Hence, we also estimated
+the seemingly unrelated regression (SURE) parame-
+
+ters using a feasible generalized least squares (FGLS)
+procedure that allows for correlation of disturbances
+across equations (Greene 1997). The FGLS estimates
+were very similar in sign, magnitude, and signiﬁcance
+to the OLS estimates (column four in Tables 3 through
+5), indicating the absence of any correlation across the
+error terms.
+
+It may be argued that quality, cycle time, and effort
+are codetermined. We checked for endogeneity of
+quality, cycle time, and effort in our models using the
+Hausman speciﬁcation test (Hausman 1978) and the
+Durbin-Wu-Hausman test (Davidson and MacKinnon
+1993). Although these tests did not suggest endogene-
+ity, in small samples the precision of these tests is not
+certain. We thus estimated a two-stage least squares
+(2SLS) model to correct for possible inconsistency in
+the OLS estimators. The 2SLS estimates of the param-
+eters for all models (column ﬁve in Tables 3 through 5)
+were very similar in sign, signiﬁcance, and magnitude
+to the OLS estimates.
+
+460
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+Table 4
+
+Model 2 Parameter Estimates (n (cid:1) 30)
+
+Variable
+
+Parameter
+
+Intercept
+
+ln(Product-Quality)
+
+ln(Process-Maturity)
+
+ln(Product-Size)
+
+ln(Reqmts-Ambiguity)
+
+R 2
+R 2 (adj)
+F Model
+
+(cid:2)
+02
+s.e
+t
+p
+(cid:2)
+12
+s.e
+t
+p
+(cid:2)
+22
+s.e
+t
+p
+(cid:2)
+32
+s.e
+t
+p
+(cid:2)
+42
+s.e
+t
+p
+
+F 4,25
+p
+
+OLS
+Estimate
+
+7.399
+0.912
+8.116
+0.000
+(cid:4)0.454
+0.155
+(cid:4)2.920
+0.004
+0.403
+0.360
+1.120
+0.137
+0.424
+0.099
+4.285
+0.000
+(cid:4)0.170
+0.259
+(cid:4)0.656
+0.259
+0.546
+0.474
+7.520
+0.000
+
+SURE
+Estimate
+
+7.660
+0.904
+8.470
+0.000
+(cid:4)0.503
+0.154
+(cid:4)3.267
+0.001
+0.461
+0.357
+1.292
+0.100
+0.432
+0.098
+4.397
+0.000
+(cid:4)0.194
+0.257
+(cid:4)0.756
+0.226
+0.546
+
+8.130
+0.000
+
+2SLS
+Estimate
+
+8.553
+1.847
+4.631
+0.000
+(cid:4)0.674
+0.343
+(cid:4)1.966
+0.030
+0.655
+0.510
+1.285
+0.106
+0.453
+0.110
+4.110
+0.000
+(cid:4)0.249
+0.291
+(cid:4)0.858
+0.200
+0.510
+0.431
+5.960
+0.002
+
+Rank Regression
+Estimate
+
+7.999
+4.022
+1.989
+0.058
+(cid:4)0.395
+0.167
+(cid:4)2.369
+0.013
+0.239
+0.168
+1.421
+0.084
+0.699
+0.150
+4.670
+0.000
+(cid:4)0.060
+0.150
+(cid:4)0.399
+0.347
+0.498
+0.418
+6.210
+0.001
+
+Note. (one-tailed p values).
+ln(Cycle-Time) (cid:1) (cid:2)
+(cid:5) (cid:2)
+12
+
+02
+
+(cid:1) ln(Product-Quality) (cid:5) (cid:2)
+
+(cid:1) ln(Process-Maturity) (cid:5) (cid:2)
+
+(cid:1) ln(Product-Size) (cid:5) (cid:2)
+
+(cid:1) ln(Requirements-Ambiguity) (cid:5) (cid:4)
+
+32
+
+42
+
+22
+
+02.
+
+As a robustness check, we estimated a rank regres-
+sion model for each equation (Iman and Conover
+1979). The parameter estimates from the rank regres-
+sions (column six in Tables 3 through 5) are similar in
+sign, magnitude, and signiﬁcance to those from the
+OLS regressions, suggesting the robustness of the OLS
+estimates.
+
+Thus, we used the OLS estimates for the interpretation
+of our results. Standard assumptions of the OLS estima-
+tors were tested. The assumption of normality is not
+rejected for any of the models at the 5% signiﬁcance level
+using the Shapiro-Wilk test (Shapiro and Wilk 1965). The
+presence of heteroskedasticity in all the models was
+tested using White’s (1980) test, and no evidence of it
+was found. The effect of multicollinearity was examined
+using conditions speciﬁed in Belsley et al. (1980). The
+condition index for all models is less than 30, within the
+
+acceptable limit. We did not detect any inﬂuential outli-
+ers in the equations using Cook’s distance (Cook and
+Weisberg 1982) and the guidelines speciﬁed by Belsley et
+al. (1980). Because the products were developed over a
+period of 12 years, we tested for serial correlation be-
+tween products using both the Durbin-Watson test
+(Durbin and Watson 1971) and the Breusch-Godfrey test
+(Breusch and Godfrey 1981) but did not ﬁnd any evi-
+dence of it. The calculated values of all four models’
+F-statistics exceeded the critical values at the 5% signif-
+icance level.
+
+6. Discussion
+
+6.1. Product-Quality Model
+In model one, we ﬁnd as expected that higher levels of
+process maturity are associated with higher product
+
+Management Science/Vol. 46, No. 4, April 2000
+
+461
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+Table 5
+
+Model 3 Parameter Estimates (n (cid:1) 30)
+
+Variable
+
+Parameter
+
+Intercept
+
+ln(Product-Quality)
+
+ln(Process-Maturity)
+
+ln(Product-Size)
+
+ln(Reqmts-Ambiguity)
+
+R 2
+R 2 (adj)
+F Model
+
+(cid:2)
+03
+s.e
+t
+p
+(cid:2)
+13
+s.e
+t
+p
+(cid:2)
+23
+s.e
+t
+p
+(cid:2)
+33
+s.e
+t
+p
+(cid:2)
+43
+s.e
+t
+p
+
+F 4,25
+p
+
+OLS
+Estimate
+
+4.280
+1.049
+4.081
+0.000
+(cid:4)0.611
+0.179
+(cid:4)3.416
+0.001
+0.799
+0.414
+1.932
+0.033
+0.954
+0.114
+8.375
+0.000
+(cid:4)0.235
+0.298
+(cid:4)0.787
+0.220
+0.803
+0.772
+25.530
+0.000
+
+SURE
+Estimate
+
+4.479
+1.041
+4.302
+0.000
+(cid:4)0.649
+0.177
+(cid:4)3.657
+0.000
+0.844
+0.411
+2.055
+0.021
+0.960
+0.113
+8.486
+0.000
+(cid:4)0.253
+0.296
+(cid:4)0.856
+0.197
+0.803
+
+26.260
+0.000
+
+2SLS
+Estimate
+
+5.065
+2.073
+2.433
+0.011
+(cid:4)0.760
+0.385
+(cid:4)1.977
+0.029
+0.971
+0.572
+1.697
+0.051
+0.973
+0.124
+7.869
+0.000
+(cid:4)0.289
+0.326
+(cid:4)0.885
+0.193
+0.798
+0.766
+22.970
+0.000
+
+Rank Regression
+Estimate
+
+2.274
+2.538
+0.896
+0.190
+(cid:4)0.223
+0.105
+(cid:4)2.119
+0.022
+0.211
+0.106
+1.986
+0.029
+0.930
+0.094
+9.839
+0.000
+(cid:4)0.064
+0.095
+(cid:4)0.681
+0.251
+0.800
+0.768
+25.040
+0.000
+
+Note. (one-tailed p values)
+ln(Development-Effort) (cid:1) (cid:2)
+
+(cid:5) (cid:2)
+13
+
+03
+
+(cid:1) ln(Product-Quality) (cid:5) (cid:2)
+
+(cid:1) ln(Process-Maturity) (cid:5) (cid:2)
+
+(cid:1) ln(Product-Size) (cid:5) (cid:2)
+
+(cid:1) ln(Requirements-Ambiguity) (cid:5) (cid:4)
+
+33
+
+43
+
+23
+
+03.
+
+11
+
+quality (i.e., fewer defects in system and acceptance
+testing, (cid:2)
+(cid:1) 1.589, p (cid:6) 0.001). The value of the
+coefﬁcient for process maturity implies that, holding
+the other variables in the equation constant at their
+mean levels, a 1% improvement in process maturity is
+associated with a 1.589% increase in product quality.
+The value of the process maturity coefﬁcient also
+suggests that the quality beneﬁts increase with higher
+levels of process maturity. As noted earlier, if the
+development process is not disciplined and mature,
+there will be deviations from the standard process
+such as absence of requirements tracking,
+lack of
+rigorous code reviews and inspections, and myopic
+design choices. As a consequence, both design and
+coding errors will be injected during the development
+process.
+
+Our results indicate that larger products exhibit
+
+higher quality. Although larger products may have
+more defects, in our sample the rate of increase in
+defects resulting from size is lower for larger products.
+Hence the coefﬁcient of size in our model is positive
+((cid:2)
+(cid:1) 0.234, p (cid:1) 0.020). Also as we expected,
+products with a more complex design have lower
+quality.
+
+21
+
+12
+
+6.2. Cycle-Time Model
+Our ﬁndings in this model
+indicate that product
+quality is signiﬁcantly and negatively associated with
+cycle time ((cid:2)
+(cid:1) (cid:4)0.454, p (cid:1) 0.004). That is, higher
+quality products exhibit signiﬁcant reductions in cycle
+time. The value of the coefﬁcient for product quality
+implies that, holding the other variables in the equa-
+tion constant at their mean levels, a 1% improvement
+in product quality is associated with a 0.454% decrease
+
+462
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+quent reduction in effort because of improved quality,
+the net effect is negative ((cid:4)0.175). As expected, we
+ﬁnd that larger products are associated with greater
+effort. The coefﬁcient for requirements ambiguity is
+not statistically signiﬁcant in this model.
+
+6.4. Marginal Analysis
+The value of the coefﬁcient for process maturity in the
+product quality model suggests that the marginal
+beneﬁts from improved process maturity increase
+with higher levels of process maturity (Figure 3). This
+implies that from the perspective of quality improve-
+ment, it is beneﬁcial to advance to the higher levels of
+process maturity, all other things being equal. It
+should be noted, however, that this relationship is
+valid only within the range of process maturity
+present within our data set. We also observe that the
+values of the coefﬁcients for product quality in the
+development effort and cycle time models imply that
+there may exist a threshold quality level beyond
+which any process improvements would not be justi-
+ﬁed in terms of development effort and cycle time
+savings. As shown in Figures 4 and 5, the marginal
+beneﬁts of quality improvement for cycle time and
+effort decrease with higher levels of quality.
+
+To illustrate the application of our models from the
+perspective of justifying investments in process matu-
+rity, we compare the predicted effect of an improve-
+ment in process maturity on quality, cycle time and
+effort. Based on our sample, the predicted beneﬁt of
+
+Figure 3
+
+Marginal Effects of Process Maturity on Product Quality
+
+in cycle time. Because the model speciﬁcation is mul-
+tiplicative, the value for the coefﬁcient of product
+quality implies that, at higher levels of quality, the
+payoff in development cycle time savings decreases.
+Our results also indicate that controlling for product
+size and requirements ambiguity, the direct effect of
+process maturity on cycle time is positive. However,
+in our sample this effect is not statistically signiﬁcant
+at the 5% level ((cid:2)
+
+(cid:1) 0.403, p (cid:1) 0.137).
+
+22
+
+An interesting ﬁnding in our model is that the net
+effect of process maturity on cycle time is negative.
+Although the direct effect of process maturity on cycle
+time is positive, when we include the positive effect on
+quality and the consequent reduction in cycle time, the
+net marginal effect of process maturity on cycle time is
+negative ((cid:4)0.318). As expected, we ﬁnd that larger
+products are associated with longer cycle times. The
+coefﬁcient for requirements ambiguity is not statisti-
+cally signiﬁcant in this model.
+
+23
+
+13
+
+6.3. Development-Effort Model
+Similar to our ﬁndings in the cycle time model, our
+results in the effort model indicate that the direct effect
+of process maturity on development effort is positive
+((cid:2)
+(cid:1) 0.799, p (cid:1) 0.033). This effect is statistically
+signiﬁcant, indicating that higher development effort
+is associated with higher levels of process maturity.
+We ﬁnd that the quality of the product is signiﬁcantly
+and negatively associated with effort ((cid:2)
+(cid:1) (cid:4)0.611, p
+(cid:1) 0.001). That is, higher quality products exhibit
+lower development effort. The value of the coefﬁcient
+for product quality in our multiplicative speciﬁcation
+implies that, holding the other variables in the equa-
+tion constant at their mean levels, a 1% improvement
+in quality is associated with a 0.611% decrease in
+development effort. Also, the value for the coefﬁcient
+of product quality implies that, at higher levels of
+quality, the payoff in development cost savings de-
+creases. Our results on the relationship between de-
+velopment cost and product quality are consistent
+with ﬁndings from the study of life-cycle cost and
+quality by Krishnan (1996).
+
+Similar to the cycle time model, we ﬁnd that the net
+effect of process maturity on effort is negative. Al-
+though the direct effect of process maturity on devel-
+opment effort is positive, when we include the conse-
+
+Management Science/Vol. 46, No. 4, April 2000
+
+463
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+Figure 4
+
+Marginal Effects of Product Quality on Cycle Time
+
+Table 6
+
+Estimated Beneﬁts of Process Maturity
+
+increasing from CMM level 1 to level 2 for the average
+product is a reduction in cycle time of 183 calendar
+days and in development effort of 23 person-months
+(Table 6). By comparison, increasing from CMM level
+2 to level 3 would yield an additional 90-calendar-
+days reduction in cycle time, and a 12-person-months
+reduction in development effort.
+
+7. Conclusion
+We have studied empirically the relationships be-
+tween process maturity, product quality, cycle time,
+and development effort. Our analysis suggests that
+higher levels of process maturity as assessed by the
+SEI’s CMM are associated with signiﬁcantly higher
+
+Figure 5
+
+Marginal Effects of Product Quality on Development Effort
+
+SEI CMM
+Maturity Level
+
+Quality (lines of
+code/error)
+
+Cycle Time
+(calendar days)
+
+Effort
+(person-months)
+
+1
+2
+3
+
+195.96
+593.21
+1133.97
+
+926.92
+743.31
+653.26
+
+202.41
+179.32
+167.05
+
+product quality, but also with increases in cycle time
+and development effort. However, the marginal re-
+ductions in cycle time and effort resulting from im-
+proved quality outweigh the marginal increases from
+achieving higher levels of process maturity. Thus, the
+net marginal effect of process maturity is reduced
+cycle time and development effort in our sample of
+software products.
+
+It should be noted that the relationships between
+process maturity, quality, cycle time, and develop-
+ment effort are valid only in the ranges observed in
+this application domain (custom software develop-
+ment of an algorithmically intense system in a
+COBOL, mainframe development environment). It is
+possible that the effort and cycle time incurred to
+achieve considerably higher quality levels in a mis-
+sion-critical software product could be signiﬁcantly
+higher. This is because additional time and resources
+must be deployed for rigorous testing, inspection or
+checking at every stage of product development and
+for several rounds of regression testing of the product.
+Hence, the investments required to achieve extremely
+high levels of product quality may not be recovered by
+reductions in cycle time and effort.
+
+We expect that our models, methodology, and ap-
+proach for evaluating the effects of process maturity
+may be applied usefully in other software develop-
+ment contexts. However, variables such as product
+size may need to be operationalized differently to
+reﬂect other environments such as object-oriented
+design where, for example, size may be measured
+using object points (Pﬂeeger 1998) rather than lines of
+code. Other independent variables may need to be
+included to reﬂect the unique aspects of a particular
+ﬁrm’s development environment. It would be useful
+to determine and evaluate the cost of quality improve-
+ment across different development environments,
+
+464
+
+Management Science/Vol. 46, No. 4, April 2000
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+team size, and compositions. Such comparisons could
+yield insights into the variations in the quality prac-
+tices used in the various software development do-
+mains.
+
+Our study makes several signiﬁcant contributions to
+software engineering research and practice. A primary
+contribution is the rigorous examination of the inter-
+relationships between quality, cycle time, and effort in
+software product development. As noted earlier, prior
+studies have modeled quality, cycle time, or effort in
+the absence of one or more of the other variables.
+Another contribution is the examination of the direct
+and indirect effects of improved process maturity on
+quality, cycle time, and development effort. These
+effects are not well understood and are generally not
+rigorously studied in the software engineering litera-
+ture. Further research could explore reengineering the
+software life cycle through leaner processes, enabling
+greater reduction in cycle time from quality improve-
+ment. Also, future research could examine the trade-
+off between cycle time and effort, controlling for team
+loading and schedule pressure. It would be instructive
+to explore the effects of process improvement in
+different phases of the software life cycle. Finally, the
+impact of process improvement on the nonengineer-
+ing activities that support software development
+could be examined.
+
+For software engineering practice, our results quan-
+tify the beneﬁts of process maturity. Software manag-
+ers may be reluctant to invest in quality improvement
+practices without knowledge of the return on that
+investment. For managers of software projects, our
+analysis provides a methodology for quantifying the
+time and cost savings from quality improvement.
+These results provide useful insights for planning and
+assessing the return on investment from quality im-
+provement in the development process.1
+
+1 The authors gratefully acknowledge research support from the
+Graduate School of Industrial Administration at Carnegie Mellon
+University and the University of Michigan Business School. The
+assistance of managers and staff at our data site were invaluable.
+Helpful comments were provided by participants in research sem-
+inars at Carnegie Mellon University, the University of Michigan, the
+University of Pennsylvania, the University of Minnesota, the Uni-
+versity of Texas at Austin, and the Workshop on Information
+Systems and Economics (WISE ’97).
+
+References
+Abdel-Hamid, T., S. Madnick. 1991. Software Project Dynamics: An
+Integrated Approach. Prentice-Hall, Englewood Cliffs, NJ.
+Banker, R. D., H. Chang, C. Kemerer. 1994. Evidence on economies
+of scale in software development. Inform. Software Tech. 36(5)
+275–282.
+, S. Slaughter. 1997. A ﬁeld study of scale economies in software
+maintenance. Management Sci. 43(12) 1709 –1725.
+
+Basili, V. R., J. D. Musa. 1991. The future engineering of software: A
+
+management perspective. IEEE Comput. 20(4) 90 –96.
+, B. Perricone. 1984. Software errors and complexity: An empir-
+ical investigation. Comm. ACM 27(1) 42–52.
+
+Belsley, D. A., E. Kuh, R. E. Welsch. 1980. Regression Diagnostics:
+Identifying Inﬂuential Data and Sources of Collinearity. Wiley and
+Sons, New York.
+
+Bockerstette, J., R. Shell. 1993. Time Based Manufacturing. McGraw-
+
+Boehm, B. W. 1981. Software Engineering Economics. Prentice-Hall,
+
+Hill, New York.
+
+Englewood Cliffs, NJ.
+
+Bohn, R. E. 1995. Noise and learning in semiconductor manufactur-
+
+ing. Management Sci. 41(1) 31– 42.
+
+Breusch, T., L. Godfrey. 1981. A review of recent work on testing for
+autocorrelation in dynamic simultaneous models. D. Currie, R.
+Nobay, D. Peel, eds. Macroeconomic Analysis: Essays in Macro-
+economics and Econometrics. Croon Helm, London, England.
+63–105.
+
+Brooks, F. 1995. The Mythical Man-Month: Essays on Software Engi-
+neering. Anniversary Edition, Addison-Wesley, Reading, MA.
+Conte, S. D., H. E. Dunsmore, V. Y. Shen. 1986. Software Engineering
+Metrics and Models. Benjamin/Cummings Publication Com-
+pany, Menlo Park, CA.
+
+Cook, R. D., S. Weisberg. 1982. Residuals and Inﬂuence in Regression.
+
+Chapman & Hall, London, England.
+
+Crosby, P. B. 1979. Quality Is Free. McGraw-Hill, New York.
+Davidson, R., J. MacKinnon. 1995. Several tests for model speciﬁca-
+tions in the presence of multiple alternatives. Econometrica 49
+781–793.
+,
+University Press, New York.
+
+. 1993. Estimation and Inference in Econometrics. Oxford
+
+Deming, W. E. 1986. Out of the Crisis. MIT Center for Advanced
+
+Engineering Study, Cambridge, MA.
+
+Durbin, J., G. Watson. 1971. Testing for serial correlation in least
+
+squares regression III. Biometrica 58 1– 42.
+
+El Emam, K., D. R. Goldenson. 1996. Some initial results from the
+international SPICE trials. Software Process Newsletter, Technical
+Council on Software Engineering 6 (Spring) IEEE Computer
+Society.
+
+Fenton, N. E., S. L. Pﬂeeger. 1997. Software Metrics: A Rigorous and
+Practical Approach. International Thompson Computer Press,
+London, England.
+
+Gopal, A., T. Mukhopadhyay, M. S. Krishnan. The role of software
+process and communication in offshore software development.
+Comm. ACM. Forthcoming.
+
+Management Science/Vol. 46, No. 4, April 2000
+
+465
+
+HARTER, KRISHNAN, AND SLAUGHTER
+Process Maturity in Software Product Development
+
+Jones, C. 1986. How not to measure programmer productivity.
+
+Inc., New York.
+
+Greene, W. H. 1997. Econometric Analysis. 3rd ed., MacMillan
+
+Lyu, M. R. 1996. Handbook of Software Reliability Engineering.
+
+Publishing Company, New York.
+
+McGraw-Hill, New York.
+
+Hausman, J. 1978. Speciﬁcation tests in econometrics. Econometrica
+
+46 1251–1271.
+
+Herbsleb, J., D. Zubrow, D. Goldenson, W. Hayes, M. Paulk. 1997.
+Software quality and the capability maturity model. Comm.
+ACM 40(6) 30 – 40.
+
+Humphrey, W. S. 1995. A Discipline for Software Engineering. Addi-
+
+son-Wesley, Reading, MA.
+
+Iman, R., W. Conover. 1979. The use of the rank transform in
+
+regression. Technometrics 21(4) 499 –509.
+
+Computerworld 20(2) 65–76.
+1996. Applied Software Measurement: Assuring Productivity and
+Quality. McGraw-Hill, New York.
+1997. Software Quality: Analysis and Guidelines for Success. ITP
+Press, London, UK.
+
+Kemerer, C. F. 1997. Software Project Management Readings and Cases.
+
+Rev. 64(2) 87–95.
+
+McGraw-Hill, New York.
+
+Kmenta, J. 1986. Elements of Econometrics. Macmillan, New York.
+Krishnan, M. S. 1996. Cost and quality considerations in software
+product management. Ph.D. Dissertation, Graduate School of
+Industrial Administration, Carnegie Mellon University, Pitts-
+burgh, PA.
+, S. Kekre, C. H. Kriebel, T. Mukhopadhyay. 2000. An empirical
+analysis of productivity and quality in software products.
+Management Sci. Forthcoming.
+
+This paper was accepted by Haim Mendelson and Seungjin Whang.
+
+Mowrey, D. C. 1996. The International Computer Software Industry: A
+Comparative Study of Industrial Evolution and Structure. Oxford
+University Press, Oxford, U.K.
+
+Munson, J. 1996. Software faults, software failures, and software
+reliability modeling. Inform. Software Tech. 38(11) 687– 699.
+Nandakumar, P., S. M. Datar, R. Akella. 1993. Models for measuring
+and accounting for cost of conformance quality. Management
+Sci. 39(1) 1–16.
+
+Newfelder, A. M. 1993. Ensuring Software Reliability. Marcel Dekker,
+
+Paulk, M. C., C. V. Weber, B. Curtis, M. B. Chrissis. 1995. The
+Capability Maturity Model: Guidelines for Improving the Software
+Process. Addison-Wesley Publishing Company, Reading, MA.
+Pﬂeeger, S. 1998. Software Engineering: Theory and Practice. Prentice-
+
+Hall, NJ.
+
+Biometrika 52 591– 612.
+
+Swanson, K., D. McComb, J. Smith, D. McCubbrey. 1991. The
+application software factory: Applying total quality techniques
+to systems development. MIS Quart. 15(4) 566 –580.
+
+Tagaras, G., H. Lee. 1996. Economic models of vendor evalua-
+tion with quality cost analysis. Management Sci. 42(11) 1531–
+1543.
+
+The Wall Street Journal. 1997. The spoils of war. September 11.
+White, H. 1980. Heteroskedasticity-consistent covariance matrix
+estimator and a direct test for heteroskedasticity. Econometrica
+48(5) 817– 838.
+
+Kaplan, R. 1986. Must CIM be justiﬁed by faith alone? Harvard Bus.
+
+Shapiro, S., M. Wilk. 1965. An analysis of variance test for normality.
+
+466
+
+Management Science/Vol. 46, No. 4, April 2000
+
+

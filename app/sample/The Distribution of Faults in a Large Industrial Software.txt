@@ -1,0 +1,2603 @@
+The Distribution of Faults in a Large Industrial Software
+System
+
+Thomas J. Ostrand
+ostrand@research.att.com
+AT&T Labs - Research
+180 Park Avenue
+Florham Park, NJ 07932
+
+Elaine J. Weyuker
+weyuker@research.att.com
+AT&T Labs - Research
+180 Park Avenue
+Florham Park, NJ 07932
+
+ABSTRACT
+
+and the reasons are straightforward:
+
+A case study is presented using thirteen releases of a large
+
+industrial inventory tracking system. Several types of ques-
+
+tions are addressed in this study. The (cid:12)rst involved exam-
+
+ining how faults are distributed over the di(cid:11)erent (cid:12)les. This
+
+systems.
+
+It is di(cid:14)cult to locate and gain access to these large
+
+included making a distinction between the release during
+
+(cid:15)
+
+It is very time consuming, and therefore expensive, to
+
+which they were discovered, the lifecycle stage at which they
+
+collect and analyze the necessary data.
+
+were (cid:12)rst detected, and the severity of the fault. The second
+
+category of questions we considered involved studying how
+
+It is di(cid:14)cult to (cid:12)nd personnel with the appropriate
+
+the size of modules a(cid:11)ected their fault density. This included
+
+skills to perform the empirical studies.
+
+(cid:15)
+
+(cid:15)
+
+looking at questions like whether or not (cid:12)les with high fault
+
+densities at early stages of the lifecycle also had high fault
+
+densities during later stages. A third type of question we
+
+Still, if our goal is to be able to identify characteristics of
+
+fault-prone code, it is essential that we perform such large
+
+considered was whether (cid:12)les that contained large numbers
+
+of faults during early stages of development, also had large
+
+case studies.
+
+numbers of faults during later stages, and whether faulti-
+
+ness persisted from release to release. Finally, we examined
+
+With this in mind, we have begun analyzing data that are
+
+whether newly written (cid:12)les were more fault-prone than ones
+
+routinely collected for all production systems at AT&T. When-
+
+that were written for earlier releases of the product. The
+
+ever a fault is identi(cid:12)ed in a software system, any time dur-
+
+ultimate goal of this study is to help identify characteristics
+
+ing the development or production lifecycle, an entry is made
+
+of (cid:12)les that can be used as predictors of fault-proneness,
+
+in a fault-reporting database system associated with that
+
+thereby helping organizations determine how best to use
+
+particular pro ject.
+
+Included with each entry is the stage
+
+their testing resources.
+
+during the lifecycle that the problem was (cid:12)rst observed, the
+
+Keywords:
+
+Software Faults, Fault-prone, Pareto, Empiri-
+
+release of the program during which it was observed, the
+
+cal Study, Software Testing
+
+1.
+
+INTRODUCTION
+
+release of the program during which it was (cid:12)xed, the sever-
+
+ity of the problem, all (cid:12)les modi(cid:12)ed to (cid:12)x the problem, and
+
+other associated information. Also included in the database
+
+is source code for every version of each (cid:12)le in the system.
+
+In spite of its importance, there have been relatively few
+
+empirical studies published that investigate issues relating
+
+The ultimate goal of our work is to help determine a way
+
+to the dependability of software. Of those, only a small
+
+to identify particularly fault-prone (cid:12)les. If it could be de-
+
+number have been done using industrial software systems of
+
+termined early on which (cid:12)les are likely to contain the most
+
+large size and complexity. The ones most relevant to the
+
+faults, development and test teams would have guidelines
+
+work described in this paper include [1, 3, 6] Although it is
+
+on how to allocate scarce resources so as to optimize the
+
+possible that studies of this sort are being performed, the
+
+payback from testing and debugging e(cid:11)ort.
+
+primary evidence that we would see, published papers, are
+
+rare. W e believe that we do not see many large empirical
+
+Although that is our goal, we do not expect to be able to
+
+studies in the literature because they are not being done,
+
+determine this with a single case study that investigates one
+
+Permission to make digital or hard copies of part or all of this work or 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear this notice and the full citation on the first page.  To copy otherwise, to 
+republish,  to  post  on  servers,  or  to  redistribute  to  lists,  requires  prior 
+specific permission and/or a fee. 
+© 2002 ACM  1-58113-562-9...$5.00 
+
+system, even though we have at our disposal comprehensive
+
+data from many successive releases. However, we do expect
+
+to provide some useful evidence that can contribute to the
+
+attainment of this goal, and also, help delineate appropriate
+
+questions to ask in future case studies. In this way we expect
+
+to eventually be able to identify these types of characteris-
+
+tics. If we see the same phenomena occurring for di(cid:11)erent
+
+software systems, produced in di(cid:11)erent environments, then
+
+this provides evidence that the results we observe are gen-
+
+eralizable.
+
+This paper is organized as follows: Section 2 describes re-
+
+and found that two of the best predictors of faults in a mod-
+
+lated work. Section 3 gives a high-level description of the
+
+ule were the number of times that the module had been
+
+system. The results of the actual case study are presented
+
+changed in the past, and
+
+, de(cid:12)ned as a weighted
+
+module age
+
+in Section 4, while Section 5 describes our conclusions, and
+
+average of the size of changes times age of changes (number
+
+plans for future work.
+
+of lines modi(cid:12)ed) x (elapsed time since changes were made).
+
+2. RELATED WORK
+
+This study also found that a module’s size and complexity
+
+were generally poor predictors of faults.
+
+Fenton and Ohlsson [3] presented results of an empirical
+
+study designed to examine some of the standard \wisdom"
+
+about the distribution of faults and failures in software sys-
+
+tems. They studied two successive releases of a large com-
+
+mercial system. They found evidence that some of the com-
+
+monly assumed hypotheses hold, but in several cases they
+
+found strong evidence that the opposite situation prevailed.
+
+Fenton and Ohlsson carefully point out that the fact that
+
+they found either weak or strong evidence supporting or re-
+
+futing a given hypothesis does not necessarily mean that
+
+the same results will be found for other software systems.
+
+Adams made a similar comment. Fenton and Ohlsson also
+
+noted that there are not necessarily causal relationships be-
+
+tween hypotheses and conclusions that appear to follow from
+
+For example, while the general wisdom was that modules
+
+that were found to be particularly buggy during pre-release
+
+them.
+
+testing contained the highest concentration of faults discov-
+
+ered once the software was released to beta sites or to the
+
+(cid:12)eld, this was not the case for the modules they examined.
+
+The rationale for the prevailing wisdom is that certain mod-
+
+ules are particularly or inherently di(cid:14)cult and therefore con-
+
+tain many faults throughout their development and opera-
+
+tional lifecycles. In contrast, as predicted by the standard
+
+wisdom, they
+
+(cid:12)nd evidence of a Pareto-like distribution
+
+did
+
+In this paper we will investigate questions similar to those
+
+posed by Fenton and Ohlsson for a di(cid:11)erent large industrial
+
+software system produced in a di(cid:11)erent environment. The
+
+more evidence that can be collected that certain hypotheses
+
+are supported in di(cid:11)erent environments, the more likely it
+
+is that these results are generalizable. Of course, if opposite
+
+situations are observed for some questions, then we know
+
+that these conclusions cannot be considered to be general
+
+of faults and failures, with relatively few modules containing
+
+a large proportion of the faults, during both pre-release and
+
+occurrences.
+
+post-release stages.
+
+An earlier study by Adams [1] done at IBM, focused primar-
+
+ily on the usefulness of doing preventive servicing of software
+
+systems. His primary (cid:12)ndings were that most defects occur
+
+very rarely in practice, and that a very small percentage
+
+(roughly 10%) of all faults detected correspond to the bulk
+
+of the defects \worth (cid:12)xing" because they will lead to seri-
+
+ous (cid:12)eld outages. Of course, it is very di(cid:14)cult to determine
+
+a priori which will be the faults worth spending the e(cid:11)ort to
+
+correct. In our environment, every fault has a severity as-
+
+signed to it. In practice, this assessment provides guidelines
+
+for which faults get (cid:12)xed in the nearterm, and which are
+
+postponed, perhaps inde(cid:12)nitely. Thus, a Severity 1 fault
+
+gets top priority, with the goal typically being that it be
+
+(cid:12)xed within 24 hours.
+
+In contrast, a Severity 4 fault has
+
+very low consequence of failure, and therefore its correc-
+
+tion may be put o(cid:11) until higher severity faults have been
+
+removed.
+
+Our study does di(cid:11)er in some important ways from that of
+
+Fenton and Ohlsson. Whereas Fenton and Ohlsson had two
+
+successive releases of their system at their disposal, we have
+
+data collected from thirteen successive releases for the sys-
+
+tem upon which we based this study. The data collected by
+
+Fenton and Ohlsson were from four di(cid:11)erent lifecycle stages
+
+of the system, namely function test, system test, \the (cid:12)rst 26
+
+weeks at a number of site tests", and approximately the (cid:12)rst
+
+year of operation after the site tests. They grouped these
+
+into two phases: pre-release (function and system test) and
+
+post-release (site tests and (cid:12)rst year of operation). Our data
+
+is much more extensive, covering faults discovered from the
+
+requirements through general release; a total of nine distinct
+
+phases for each release. In order to be able to compare our
+
+results with Fenton and Ohlsson, we will at times also group
+
+our results into
+
+(including development and unit,
+
+pre-release
+
+integration, and system testing), and
+
+(includ-
+
+post-release
+
+ing the beta release, controlled release, and general release
+
+phases). We will also sometimes (cid:12)nd it useful to group de-
+
+velopment and unit testing together as
+
+, and
+
+early-pre-release
+
+group integration and system testing together as
+
+late-pre-
+
+Several studies, including [2, 3, 5, 6], have investigated the
+
+relation between module size and both the fault count and
+
+release
+
+.
+
+fault density of a module. A key question is whether small,
+
+medium, or large modules are most fault-prone. They have
+
+generally found that, contrary to common belief, as the size
+
+of the modules increases, the number of faults per unit size
+
+actually decreases. These results call into question years
+
+of e(cid:11)ort to make modularization and design decomposition
+
+standard practice. This argument has been based on intu-
+
+ition and plausibility, stating that by limiting module size, it
+
+is easier to comprehend what the module is doing, and there-
+
+fore fewer faults will enter the software, thereby raising the
+
+software system’s quality. But empirical studies described
+
+in the above-cited papers seem to indicate that not only is
+
+Another di(cid:11)erence between this study and the one done by
+
+Fenton and Ohlsson is that theirs does not di(cid:11)erentiate be-
+
+tween the severity of faults. The data we have collected as-
+
+sociates a severity with every fault, ranging from the most
+
+severe, Severity 1, which requires the problem to be (cid:12)xed
+
+very quickly in order for the system to continue operating,
+
+down to the least severe, Severity 4, which are largely cos-
+
+metic or very minor faults. In addition to examining some
+
+of the questions that Fenton and Ohlsson did for their sys-
+
+tem, we will also examine the extent to which various issues
+
+hold regardless of severity and those which are di(cid:11)erent for
+
+this
+
+the case, in fact the opposite situation prevails.
+
+not
+
+di(cid:11)erent severity faults.
+
+Graves et al [4] studied a large telephone switching system,
+
+Early-Pre-Release Late-Pre-Release
+
+Post-Release
+
+Release Files KLOC Dev
+
+Unit
+
+Int
+
+Sys Limited Gen’l Total
+
+1
+
+584
+
+146
+
+7
+
+763
+
+2
+
+218
+
+0
+
+0
+
+990
+
+2
+
+567
+
+154
+
+2
+
+171
+
+3
+
+24
+
+0
+
+1
+
+201
+
+3
+
+706
+
+191
+
+15
+
+387
+
+0
+
+85
+
+0
+
+0
+
+487
+
+4
+
+743
+
+203
+
+0
+
+293
+
+0
+
+31
+
+0
+
+4
+
+328
+
+5
+
+804
+
+232
+
+2
+
+282
+
+13
+
+30
+
+2
+
+11
+
+340
+
+6
+
+867
+
+254
+
+1
+
+287
+
+5
+
+33
+
+0
+
+13
+
+339
+
+7
+
+993
+
+292
+
+14
+
+156
+
+7
+
+12
+
+1
+
+17
+
+207
+
+8
+
+1197
+
+339
+
+14
+
+363
+
+28
+
+77
+
+2
+
+6
+
+490
+
+9
+
+1321
+
+377
+
+50
+
+298
+
+28
+
+50
+
+2
+
+8
+
+436
+
+10
+
+1372
+
+396
+
+84
+
+119
+
+7
+
+24
+
+1
+
+11
+
+246
+
+11
+
+1607
+
+427
+
+17
+
+158
+
+17
+
+71
+
+4
+
+14
+
+281
+
+12
+
+1740
+
+476
+
+62
+
+130
+
+8
+
+53
+
+1
+
+19
+
+273
+
+13
+
+1772
+
+471
+
+35
+
+52
+
+1
+
+26
+
+2
+
+9
+
+125
+
+Total
+
+303
+
+3459
+
+119
+
+734
+
+15
+
+113
+
+4743
+
+Table 1: Distribution of Faults
+
+The referenced papers use the term
+
+to describe the
+
+tabulated in Table 1. In most cases, as the system matured
+
+module
+
+basic code components of their studies, referring either to
+
+and more functionality was added and faults were (cid:12)xed, it
+
+collections of (cid:12)les, or to separate executable components.
+
+grew both in terms of the number of (cid:12)les and the number of
+
+The basic components in our study are
+
+, most of which
+
+lines of code. At the same time, the overall number of faults
+
+(cid:12)les
+
+are java (cid:12)les consisting of class de(cid:12)nitions. Throughout this
+
+detected during succeeding releases generally declined.
+
+paper, when referring to results of the referenced studies,
+
+we be consistent with their terminology and use the term
+
+During all thirteen releases, and all stages of development, a
+
+module. For results of our study, we use the term (cid:12)le.
+
+total of 4,743 faults were detected, the vast ma jority during
+
+3. SYSTEM DESCRIPTION
+
+testing, before the system was released to users. Table 1
+
+shows the distribution of faults by release and by stage dis-
+
+In this section we provide information about the system un-
+
+covered. Of the 4,743 faults, only 78 (1.6%) were classi(cid:12)ed
+
+der test that served as the basis for this case study. Certain
+
+as being Severity 1, the most critical category of fault, and
+
+details have been omitted to protect proprietary informa-
+
+in no case did the Severity 1 faults exceed 5% of the faults
+
+tion.
+
+identi(cid:12)ed during a release. Severity 1 faults require immedi-
+
+ate correction in order for the system to continue to operate
+
+The system is an inventory tracking system. As mentioned
+
+properly, and hence they are the ones of greatest concern to
+
+above, we have data collected from thirteen successive re-
+
+the organization.
+
+It is therefore particularly important to
+
+leases of this product, produced over a period of several
+
+note that of the 78 Severity 1 faults, a total of only ten oc-
+
+years. Fault data was collected during each of nine periods:
+
+curred once the system had been released to the (cid:12)eld, spread
+
+requirements, design, development, unit testing, integration
+
+across the thirteen di(cid:11)erent releases. 687 faults (14.5%) were
+
+testing, system testing, beta release, controlled release, and
+
+classi(cid:12)ed as Severity 2, and 131 (2.8%) were considered to be
+
+general release, and was recorded in a database associated
+
+Severity 4. Over 81% of the faults, 3,847, were categorized
+
+with the product. Since very few faults were identi(cid:12)ed dur-
+
+as Severity 3. We see that the vast ma jority of the faults
+
+ing the requirements and design phases, we do not include
+
+across all releases (more than 97%) were detected prior to
+
+that data in this study. We have also combined the faults
+
+beta release. This is testimony to the e(cid:11)ectiveness of the
+
+detected during beta release and controlled release into a
+
+testing and assessment process for this system.
+
+single category called ‘limited release’.
+
+The current version of the system contains 1,974 separate
+
+(cid:12)les, with a total of roughly 500,000 lines of code. Most of
+
+Following the convention used by Moller and Paulish [6], if
+
+the cause of a failure was corrected by modifying
+
+(cid:12)les, we
+
+n
+
+counted it as
+
+distinct faults. This assures that every fault
+
+n
+
+the system is written in java (1,412 (cid:12)les), with additional
+
+is associated with a unique (cid:12)le. Fenton and Ohlsson [3] also
+
+(cid:12)les written in shell scripts (105 (cid:12)les), Make(cid:12)les (102 (cid:12)les),
+
+state that every fault is associated with a single (cid:12)le.
+
+xml (98 (cid:12)les), html (66 (cid:12)les), perl (35 (cid:12)les), c (19 (cid:12)les),
+
+sql (15 (cid:12)les), awk (8 (cid:12)les), and several other specialized
+
+4. THE STUDY
+
+languages. We removed from consideration non-code (cid:12)les
+
+We now describe each of the four categories of questions we
+
+like MS Word (cid:12)les, gif, jpg, or readme (cid:12)les. They are not
+
+addressed for this system, along with our (cid:12)ndings.
+
+included in the (cid:12)le count or code size mentioned above, nor
+
+will they be included in the actual study.
+
+The primary set of questions involves examining how faults
+
+are distributed over the di(cid:11)erent (cid:12)les, and to what extent
+
+Java (cid:12)les range in size from 13 lines of code to more than
+
+faults are heavily concentrated in a relatively few (cid:12)les. We
+
+8,000 lines of code, with only 20% of all (cid:12)les larger than 300
+
+will consider the release during which a fault was discovered,
+
+lines. Of course, each release contains di(cid:11)erent numbers of
+
+the lifecycle stage at which it was (cid:12)rst detected, and its
+
+(cid:12)les and therefore di(cid:11)erent amounts of code. This data is
+
+severity. Additionally, we will analyze the distribution of
+
+faults between newly added (cid:12)les and those that appeared in
+
+faults are contained in 40% of the (cid:12)les, accounting for 72%
+
+earlier releases. These results are described in Section 4.1.
+
+of the code mass. For Release 10 through Release 13, the
+
+The second category of questions involves the density of
+
+10% of the (cid:12)les is shown as 100%. In fact, as can be seen
+
+entry in column 2 listing the percentage of faults found in
+
+faults among di(cid:11)erent (cid:12)les. This includes looking at ques-
+
+in the corresponding fourth column, 100% of the faults for
+
+tions such as whether large (cid:12)les are more fault-prone than
+
+those releases were concentrated in less than 10% of the (cid:12)les.
+
+small ones in the sense that they have higher numbers of
+
+We have used an entry of ‘-’ for those releases in the third
+
+faults per 1,000 lines of code than do smaller (cid:12)les, and
+
+column rather than enter a misleading number. The actual
+
+whether (cid:12)les with high fault densities at early stages of the
+
+percentages of the lines of code contained in these (cid:12)les are
+
+lifecycle, also have high fault densities during later stages.
+
+shown in the last column of the table.
+
+Our observations in this area are described in Section 4.2.
+
+The third type of question involves investigating the per-
+
+that a small number of (cid:12)les contain most of the faults dis-
+
+sistence of faults by comparing the fault distribution found
+
+covered during the entire lifecycle for every release, with the
+
+during pre-release to that of faults uncovered during post-
+
+concentration getting stronger in later releases, as the prod-
+
+release, and from one release to another. In particular, we
+
+uct matures. For example, all the faults uncovered during
+
+would like to see whether or not those (cid:12)les that have par-
+
+Release 1 were contained in 40% of the (cid:12)les, while in Re-
+
+The numbers presented in this table provide strong evidence
+
+ticularly high numbers of pre-release faults, also have high
+
+lease 13, they were contained in just 4% of the (cid:12)les.
+
+numbers of post-release faults. As mentioned above, the
+
+conventional wisdom relating to this states that some (cid:12)les
+
+Our next goal was to see whether this skewed distribution
+
+are inherently complex and therefore will contain large num-
+
+could be explained by the fact that the (cid:12)les containing most
+
+bers of faults throughout their development and production
+
+of the faults also contained most of the code. The columns
+
+lifecycle. Fenton and Ohlsson [3] found the opposite to hold
+
+labeled ‘% LOC’ in Table 2 show this information for each
+
+for the system they studied, and o(cid:11)ered a plausible expla-
+
+release for both the 10% of the (cid:12)les containing the largest
+
+nation for why that might be the case. In Section 4.3 we
+
+number of faults and for the set of (cid:12)les that contain 100%
+
+will see whether the data for this system support or contra-
+
+of the faults in that release. For Release 2, for example,
+
+dict such a hypothesis. We will also investigate whether (cid:12)les
+
+we found that the 10% of the (cid:12)les that accounted for the
+
+with particularly high numbers or densities of faults remain
+
+highest number of faults contained 33% of the lines of code,
+
+buggy from release to release.
+
+while the 16% of the (cid:12)les that contained the entire set of
+
+Finally, we consider whether (cid:12)les that appear for the (cid:12)rst
+
+For all of the releases, the percentage of the code mass con-
+
+faults contained a total of 36% of the code for this release.
+
+time in a given release are likely to contain more faults than
+
+tained in the (cid:12)les containing faults exceeded the percentage
+
+(cid:12)les that have appeared in earlier releases. We explore ques-
+
+of the (cid:12)les. This partly explains the skewed distributions
+
+tions relating to this distinction in Section 4.4.
+
+of faults when viewed solely in terms of the number of (cid:12)les
+
+4.1 Pareto Distribution of Faults
+
+the phenomenon entirely.
+
+irrespective of their sizes, but it certainly does not explain
+
+We began our study by investigating whether or not there
+
+was evidence of a Pareto-like distribution of faults. The
+
+As before, we saw increasingly strong evidence as the prod-
+
+prevailing wisdom says that we can expect that a small per-
+
+uct matured through later releases that a relatively small
+
+centage of the (cid:12)les will contain a large percentage of the
+
+percentage of lines of code accounted for most of the faults.
+
+faults detected at every stage of the lifecycle. We (cid:12)rst con-
+
+All of the (cid:12)les that contained faults found during Release 1
+
+sidered this issue for faults of any severity, and any stage
+
+accounted for 72% of the lines of code, while for Release 13,
+
+of development. We then investigated whether the distri-
+
+that number dropped to 13%. We therefore see evidence
+
+bution was di(cid:11)erent for pre-release faults than it was for
+
+that it would be worthwhile to concentrate fault detection
+
+post-release faults. Finally, we particularized it for each of
+
+and correction e(cid:11)ort in the relatively small number of fault-
+
+the four severity categories that can be assigned to a fault.
+
+prone (cid:12)les if they could be identi(cid:12)ed early.
+
+In this way we should be able to see whether or not the dis-
+
+tribution changes signi(cid:12)cantly for di(cid:11)erent severities, and
+
+Figure 1 shows graphically how the distribution of faults
+
+also whether the distributions are di(cid:11)erent as the system
+
+changed as the system matured, becoming successively more
+
+matures.
+
+concentrated in fewer (cid:12)les. We included the information for
+
+(cid:12)ve releases so that it would be easy to see this progression.
+
+Fault Concentration By Release
+
+For each release, the faults were always heavily concentrated
+
+in a relatively small number of (cid:12)les. Table 2 summarizes this
+
+distribution data for each of the thirteen releases, both from
+
+the point of view of how they are concentrated in (cid:12)les, and
+
+the concentration based on the size of the (cid:12)les. Although
+
+there are many di(cid:11)erent ways that one can measure size, in
+
+this study we use lines of code as the measure. We also use
+
+The cumulative percentage of faults and code size are shown
+
+graphically for Release 12 in Figure 2. We see that roughly
+
+7% of the (cid:12)les contain 100% of the faults and 24% of the
+
+lines of code. All of the other releases have similarly shaped
+
+curves, with the percent of faults in the (cid:12)les growing much
+
+more quickly than the percent of code mass. In addition,
+
+the percent of the system’s code mass included in the faulty
+
+(cid:12)les always exceeded the percent of the (cid:12)les that contained
+
+the term ‘code mass’ when we are speaking of this size.
+
+the faults.
+
+For Release 1, Table 2 indicates that 10% of the (cid:12)les account
+
+for 68% of the faults and 35% of the code, and 100% of the
+
+As mentioned above, the summary data for the thirteen re-
+
+Figure 1: Fault Distribution for Releases 1, 6, 8, 10, 12
+
+120
+
+100
+
+80
+
+60
+
+40
+
+20
+
+t
+n
+e
+c
+r
+e
+P
+
+0
+
+0
+
+Percent of Faults
+
+Percent of Code Size
+
+1
+
+2
+
+6
+
+7
+
+8
+
+3
+4
+5
+Percent of Files
+
+Figure 2: Cumulative Percentage of Faults and Code Size - Release 12
+
+10% Files Contain
+
+100% Faults Contained In
+
+Release % Faults % LOC % Files
+
+% LOC
+
+1
+
+68
+
+35
+
+40
+
+72
+
+2
+
+85
+
+33
+
+16
+
+36
+
+3
+
+83
+
+33
+
+20
+
+43
+
+4
+
+88
+
+37
+
+15
+
+42
+
+5
+
+85
+
+41
+
+16
+
+46
+
+6
+
+92
+
+33
+
+13
+
+34
+
+7
+
+97
+
+32
+
+11
+
+32
+
+8
+
+94
+
+32
+
+12
+
+38
+
+9
+
+96
+
+30
+
+11
+
+31
+
+10
+
+100
+
+-
+
+8
+
+26
+
+11
+
+100
+
+-
+
+7
+
+26
+
+12
+
+100
+
+-
+
+7
+
+24
+
+13
+
+100
+
+-
+
+4
+
+13
+
+Table 2: Overall Pareto Distribution By Release
+
+Early-Pre-Release
+
+Late-Pre-Release
+
+Post-Release
+
+Release % Files % LOC % Files % LOC % Files % LOC
+
+1
+
+36
+
+67
+
+18
+
+43
+
+0
+
+0
+
+2
+
+15
+
+35
+
+3
+
+11
+
+0
+
+3
+
+3
+
+18
+
+41
+
+7
+
+22
+
+0
+
+0
+
+4
+
+14
+
+39
+
+3
+
+12
+
+1
+
+4
+
+5
+
+12
+
+39
+
+4
+
+17
+
+1
+
+4
+
+6
+
+12
+
+32
+
+3
+
+16
+
+2
+
+7
+
+7
+
+9
+
+28
+
+2
+
+6
+
+1
+
+6
+
+8
+
+11
+
+34
+
+4
+
+19
+
+1
+
+1
+
+9
+
+9
+
+27
+
+4
+
+12
+
+1
+
+5
+
+10
+
+7
+
+22
+
+2
+
+9
+
+1
+
+3
+
+11
+
+5
+
+18
+
+3
+
+16
+
+1
+
+4
+
+12
+
+6
+
+20
+
+2
+
+11
+
+1
+
+5
+
+13
+
+3
+
+10
+
+1
+
+7
+
+1
+
+4
+
+Table 3: Distribution of Faults By Lifecycle Stage
+
+leases shown in Table 2 provides strong evidence that there
+
+We de(cid:12)ned early-pre-release to include development and unit
+
+is a very uneven distribution of faults among (cid:12)les for every
+
+testing. For all releases, faults (cid:12)rst detected during early-
+
+release, with the evidence becoming stronger as the prod-
+
+pre-release accounted for a substantial ma jority of all faults,
+
+uct matures with succeeding releases. Of course, if the sys-
+
+in most cases over 80%. It is therefore not surprising that
+
+tem had remained essentially the same, with changes to the
+
+for each of the releases we considered, the fault distribution
+
+system representing only fault corrections, this would not
+
+for this phase looked similar to the overall fault distribution.
+
+be surprising. However, an examination of the second and
+
+third columns of Table 1 show that the size of each successive
+
+Late-pre-release was de(cid:12)ned to include integration and sys-
+
+release has generally increased signi(cid:12)cantly, demonstrating
+
+tem testing. As can be seen in Table 1, there were many
+
+that in most cases, new functionality has been added at
+
+fewer faults detected during this phase than during early-
+
+each successive release. In fact, it more than doubled, both
+
+pre-release for every release, and so the faults were concen-
+
+in terms of number of (cid:12)les and lines of code, as the sys-
+
+trated in a smaller percentage of the number of (cid:12)les, and
+
+tem evolved from Release 1 to Release 8, and almost tripled
+
+the code mass contained in those (cid:12)les was also signi(cid:12)cantly
+
+in size between Release 1 and Release 12. This signi(cid:12)cant
+
+smaller.
+
+growth in size makes this result far more exceptional than
+
+if the system remained essentially static in size from release
+
+We considered post-release faults to include any faults that
+
+to release.
+
+occurred either during limited release or during general re-
+
+Fault Concentration By Stage
+
+After investigating the overall fault distribution for each of
+
+for each release.
+
+the releases, we wanted to see whether there were distinct
+
+lease. Again by looking at Table 1 we see that there are
+
+generally very few post-release faults detected, and hence
+
+these faults are generally concentrated in less than 1% of
+
+the (cid:12)les, accounting for just a few percent of the code mass
+
+di(cid:11)erences in the fault distribution depending on the stage
+
+In summary, we found strong evidence that a small percent-
+
+of development during which the fault was (cid:12)rst observed.
+
+age of (cid:12)les accounted for most of the faults, for all of the
+
+The data for each of the releases are summarized in Table 3.
+
+releases, for faults (cid:12)rst detected at each of these stages.
+
+taining faults, for Release 12. We created the same plots
+
+Fault Concentration By Severity
+
+for each of the other releases; in all cases, the shapes of the
+
+plots were similar. Figure 3 shows fault densities between 10
+
+Together, Severity 1 faults and Severity 4 faults accounted
+
+and 75 faults/KLOC for the smallest (cid:12)les (under 100 lines),
+
+for only 4% of the faults uncovered during the thirteen re-
+
+and leveling o(cid:11) at 2-3 faults/KLOC for (cid:12)les larger than 1000
+
+leases. The vast ma jority were Severity 3 faults (81% over-
+
+lines.
+
+all) with the remaining 15% being Severity 2 faults. These
+
+overall percentages were typical of those found during indi-
+
+Hatton [5] compiled the results of several studies, and ob-
+
+vidual releases.
+
+served that fault density was high for the smallest compo-
+
+nents, decreased to a minimum for \medium-size" compo-
+
+The very small numbers of Severity 1 and Severity 4 faults
+
+nents, and then started increasing again as component size
+
+guaranteed that they would occur in each release in a very
+
+grew. The minimum fault densities appeared in components
+
+small percentage of the (cid:12)les. For Severity 1 faults, this
+
+with approximately 200-400 statements, both for assembly
+
+ranged from 3% of the (cid:12)les in Release 1 to none in Re-
+
+code and Ada programs. In contrast to this observation, the
+
+lease 12. For Severity 4 faults the range was from 4% of the
+
+fault densities for the (cid:12)les of our system do not increase as
+
+(cid:12)les in Release 1 to 0.3% of the (cid:12)les in Release 12.
+
+the (cid:12)les get larger.
+
+Even though there were a larger number of Severity 2 faults
+
+Fenton and Ohlsson’s data, however, agree neither with our
+
+than Severity 1 and Severity 4 faults, they still represented
+
+results nor with those in [2, 5, 6]. In examining the relation
+
+a relatively small number of faults for each release and thus
+
+of fault density to (cid:12)le size, they found no trend at all. Figure
+
+also always occurred in only a small percentage of the (cid:12)les.
+
+9 in [3], showing no apparent relation between (cid:12)le size and
+
+fault density, is the the exact analog of our Figure 3, which
+
+Since Severity 3 faults accounted for roughly 80% of the
+
+shows a clear inverse relationship.
+
+faults in most releases, it was not surprising that their con-
+
+centration in (cid:12)les was typically very similar to that of all
+
+Various other factors,
+
+including whether or not a (cid:12)le is
+
+faults. For example, for Release 1 all Severity 3 faults oc-
+
+new, the amount of changed code, the amount of testing
+
+curred in 36% of the (cid:12)les, accounting for 68% of the lines of
+
+performed, the amount of operational use that a (cid:12)le expe-
+
+code. This compares to 40% of the (cid:12)les and 72% of the lines
+
+riences, and the experience of the programmer, might be
+
+of code for all faults. For Release 8, the numbers were 11%
+
+responsible for the fault density of a particular (cid:12)le. The
+
+of the (cid:12)les and 35% of the lines of code, as compared to 12%
+
+systems examined in the studies mentioned covered a wide
+
+and 38% respectively. Release 12 had all of its Severity 3
+
+range of development environments, programming languages,
+
+faults concentrated in just 6% of its (cid:12)les, accounting for 22%
+
+and applications. Although a variety of reasons have been
+
+of the lines of code. All the release’s faults were in 7% of
+
+proposed for this observed phenomenon, no de(cid:12)nitive expla-
+
+the (cid:12)les and 13% of the code mass.
+
+nation has yet been proven. At this stage in our study, we
+
+are unable to o(cid:11)er an explanation; we hope to investigate
+
+The fact that we have seen strong evidence of a Pareto prin-
+
+the issue further in future studies.
+
+ciple whether we analyzed the system by release alone, by
+
+release and phase of development, or by release and fault
+
+Since the number of pre-release faults completely dominates
+
+severity, indicates that this is certainly something worth con-
+
+the number of post-release faults for each of our releases, it is
+
+sidering when deciding how to focus testing e(cid:11)ort. This is
+
+not surprising that we observed nearly identical plots when
+
+especially true since this phenomenon has been reported by
+
+we restricted the domain to only pre-release faults. There
+
+other researchers who have studied di(cid:11)erent systems, devel-
+
+were too few post-release faults to say anything meaningful
+
+oped in di(cid:11)erent environments, using di(cid:11)erent programming
+
+about their distribution relative to (cid:12)le size.
+
+languages [1, 3, 7].
+
+4.2 Effects of Module Size on Fault-Proneness
+
+4.3 Persistence of Faults
+
+In this section we consider whether or not those (cid:12)les with
+
+Another issue we considered was how the size of code com-
+
+high concentrations of faults detected during pre-release also
+
+ponents a(cid:11)ected the number and density of faults. It has
+
+tend to have high concentrations of faults detected during
+
+been argued for a long time that large modules are much
+
+post-release. We also consider whether faultiness persists
+
+more fault-prone than small ones. For many years, there-
+
+between releases, i.e., whether (cid:12)les with relatively high num-
+
+fore, it has been considered good programming practice to
+
+bers of faults in early releases are likely to have high num-
+
+keep modules small. In fact, many organizations have for-
+
+bers of faults in later releases. The implication of either of
+
+malized that idea and provided strict guidelines, often re-
+
+these hypotheses being true is that it would help us identify
+
+quiring that all modules be kept smaller than some speci(cid:12)c
+
+(cid:12)les that are likely to be unusually fault-prone, and there-
+
+size.
+
+fore help us determine particularly good ways of allocating
+
+A few earlier empirical studies, including those described in
+
+testing resources.
+
+[2] and [6], found that, contrary to this standard wisdom,
+
+Fenton and Ohlsson [3] compared the number of faults per
+
+there was no evidence that larger modules had higher fault
+
+module found in pre-release testing of a release against the
+
+densities than smaller ones, and that, in fact, just the op-
+
+number found in post-release use of that release. Their study
+
+posite was true. The data in our study generally supports
+
+involved two successive releases. They found that many of
+
+these results. Figure 3 plots fault density in faults per 1,000
+
+the post-release faults occurred in modules that contained
+
+lines of code against the size of the (cid:12)les, for all (cid:12)les con-
+
+no pre-release faults, and 100% of the post-release faults
+
+C
+O
+L
+K
+
+ 
+/
+ 
+
+s
+t
+l
+u
+a
+F
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+0
+
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+7000
+
+8000
+
+9000
+
+Size of File
+
+Figure 3: Fault Density vs. File Size - Release 12
+
+Release No Late-Pre-Release Faults At Least 1 Late-Pre-Release Fault
+
+1
+
+0
+
+0
+
+2
+
+1
+
+0
+
+3
+
+0
+
+0
+
+4
+
+3
+
+1
+
+5
+
+9
+
+4
+
+6
+
+8
+
+5
+
+7
+
+18
+
+0
+
+8
+
+5
+
+3
+
+9
+
+5
+
+5
+
+10
+
+7
+
+5
+
+11
+
+10
+
+8
+
+12
+
+14
+
+6
+
+13
+
+7
+
+4
+
+Table 4: Distribution of Post-Release Faults
+
+occurred in modules that had either 7% (in one release) or
+
+conclude that there is simply not enough data to draw any
+
+23% (in the other release) of the pre-release faults. They
+
+meaningful conclusions about the predictive ability of fault
+
+interpreted these results as being in direct contrast to the
+
+concentration during pre-release for post-release from this
+
+common belief of persistence of faultiness in (cid:12)les.
+
+analysis.
+
+We did a similar evaluation of the late-pre-release and post-
+
+There is, however, an indication that the (cid:12)les that contain
+
+release faults for the 13 releases. Our results thus address
+
+pre-release faults are not the most-likely place where post-
+
+the question of whether a higher incidence of faults in in-
+
+release faults will occur. Table 4 shows, for each release, how
+
+tegration and system testing implies a higher incidence of
+
+the post-release faults were distributed. Column 2 indicates
+
+faults in post-release operation. We found results very simi-
+
+the number of post-release faults found in (cid:12)les that con-
+
+lar to Fenton and Ohlsson’s across all thirteen of the releases
+
+tained no late-pre-release faults, while column 3 lists those
+
+we studied. The percent of late-pre-release faults that occur
+
+that were found in (cid:12)les containing at least one pre-release
+
+in (cid:12)les with
+
+post-release faults ranges from 72% through
+
+fault. For every release, at least as many post-release faults
+
+no
+
+94%; correspondingly, 100% of the post-release faults oc-
+
+were found in (cid:12)les that had
+
+late-pre-release faults, as
+
+no
+
+cur in (cid:12)les that account for 6% through 28% of the faults
+
+were found in (cid:12)les that did contain some late-pre-release
+
+discovered during late-pre-release.
+
+faults. In fact in Release 7, all eighteen post-release faults
+
+However, Table 1 shows that no release contains more than
+
+small number of post-release faults in any release prevents us
+
+occur in (cid:12)les with no pre-release faults. Again, the relatively
+
+twenty post-release faults, and roughly half of them contain
+
+from drawing any (cid:12)rm conclusions from these numbers, but
+
+ten or fewer post-release faults. Considering that each re-
+
+we intend to examine the question further in future studies
+
+lease contains between 584 and 1,772 (cid:12)les, we are forced to
+
+of additional software systems.
+
+Release
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+Rel (n-1)
+
+-
+
+27
+
+54
+
+21
+
+45
+
+42
+
+52
+
+34
+
+21
+
+17
+
+39
+
+24
+
+Rel (n+1)
+
+63
+
+46
+
+27
+
+30
+
+56
+
+34
+
+34
+
+27
+
+22
+
+36
+
+22
+
+-
+
+Table 5: Persistence of High-Fault Files
+
+% Faulty Files Faults/KLOC
+
+Release OLD NEW OLD NEW
+
+2
+
+15.4
+
+16.3
+
+1.29
+
+1.46
+
+3
+
+18.5
+
+24.8
+
+2.32
+
+4.01
+
+4
+
+13.8
+
+39.1
+
+1.42
+
+5.44
+
+5
+
+13.8
+
+31.0
+
+1.33
+
+2.09
+
+6
+
+11.0
+
+36.8
+
+1.13
+
+4.90
+
+7
+
+10.2
+
+13.3
+
+.69
+
+.90
+
+8
+
+12.2
+
+12.8
+
+1.36
+
+1.97
+
+9
+
+8.9
+
+36.3
+
+.81
+
+4.85
+
+10
+
+7.6
+
+20.7
+
+.60
+
+1.15
+
+11
+
+6.9
+
+7.9
+
+.60
+
+1.54
+
+12
+
+5.8
+
+14.4
+
+.49
+
+1.08
+
+Table 6: Comparison of Faultiness For Old and New Files
+
+To assess the persistence of faults between releases, we traced
+
+release, the percentage of faulty new (cid:12)les is larger than the
+
+individual (cid:12)les through successive releases of the system.
+
+percentage of faulty pre-existing (cid:12)les.
+
+For this purpose, we de(cid:12)ned ‘high-fault (cid:12)les’ of a release
+
+to be the top 20% of (cid:12)les ordered by decreasing number of
+
+Table 6 also shows the fault density for pre-existing (cid:12)les
+
+faults, plus all other (cid:12)les that have as many faults as the
+
+and for new (cid:12)les. It is not surprising that for every release,
+
+least number among the top 20%. We then did pair-wise
+
+the fault density is higher for new (cid:12)les than for pre-existing
+
+intersections of the sets of high-fault (cid:12)les between releases,
+
+ones.
+
+generating for each pair of releases, the set of (cid:12)les that are
+
+high-fault in both releases. This allowed us to see which
+
+Although these observations simply con(cid:12)rm our intuition,
+
+high-fault (cid:12)les of each release had already been high-fault
+
+they nonetheless provide valuable insights.
+
+In particular,
+
+in any previous releases, and which ones continued to be
+
+given that this was always the case for the system used in
+
+high-fault (cid:12)les in later releases. Although we determined
+
+this case study, it might be reasonable to suggest that test
+
+these values for all pairs of releases, Table 5 only shows this
+
+teams allocate more resources for testing new (cid:12)les than for
+
+backward and forward fault persistence for a release’s prede-
+
+testing pre-existing ones, since both larger percentages of
+
+cessor and successor. Row 1 shows the percent of high-fault
+
+new (cid:12)les have been shown to contain faults, and their fault
+
+(cid:12)les in Release (n-1) that remained high-fault (cid:12)les in Re-
+
+density is higher as well.
+
+lease n, while row 2 shows the percent of high-fault (cid:12)les in
+
+Release (n+1) that had been high-fault (cid:12)les in Release n.
+
+5. CONCLUSIONS
+
+We have considered a series of thirteen releases of a large,
+
+The numbers provide moderate evidence that (cid:12)les contain-
+
+evolving industrial software system as the sub ject of a case
+
+ing high numbers of faults in one release, remain high-fault
+
+study intended to evaluate issues related to fault distribu-
+
+(cid:12)les in later releases. 17% to 54% of the high-fault (cid:12)les of
+
+tion and fault-proneness of (cid:12)les. We investigated whether
+
+Release n are still high-fault in Release (n+1), with the per-
+
+faults concentrate in small numbers of (cid:12)les and small per-
+
+sistence being greater than one-third in more than half of
+
+centages of the code mass, and found that they did. Not
+
+the cases. The percent of high-fault (cid:12)les in Release n that
+
+only did we (cid:12)nd this to be true for every release, we found
+
+were also high-fault in Release n-1 ranges from 22% to 63%.
+
+that as the product evolved, the faults became increasingly
+
+Release 12 was particularly interesting. A sizable percent of
+
+concentrated in increasingly smaller proportions of the code.
+
+the high-fault (cid:12)les during this release were also high-fault
+
+In particular, in the (cid:12)rst release, all of the faults were con-
+
+in every one of the previous releases; more than 40% of its
+
+tained in 40% of the (cid:12)les that contained 72% of the lines of
+
+high-fault (cid:12)les were also high-fault in Release 1, which was
+
+code of the system. By the last release, all of the faults were
+
+produced several years earlier.
+
+concentrated in just 4% of the (cid:12)les, containing 13% of the
+
+4.4 Old Files, New Files
+
+code mass.
+
+In this section we explore the fault-proneness of (cid:12)les based
+
+We also investigated the concentration of faults by stage of
+
+on whether they are newly written in the current release,
+
+the lifecycle. We considered faults discovered during devel-
+
+or pre-existed in an earlier release. For each release beyond
+
+opment, three stages of testing, and three levels of customer
+
+the (cid:12)rst, we computed the percentage of pre-existing (cid:12)les
+
+release. We grouped those faults into early-pre-release, late-
+
+for which faults were identi(cid:12)ed, and also the percentage of
+
+pre-release, and post-release faults, and compared the dis-
+
+new (cid:12)les that were shown to contain faults. These values are
+
+tributions. We found very few post-release faults during
+
+shown in columns 2 and 3 of Table 6, respectively. In every
+
+any of the thirteen releases, with twenty being the largest
+
+number of such faults identi(cid:12)ed during any single release.
+
+[1] E.N. Adams. Optimizing Preventive Service of
+
+For that reason, post-release faults were very highly concen-
+
+Software Products.
+
+, Vol28, No1,
+
+IBM J. Res. Develop.
+
+trated. In each of the releases, they appeared in at most 2%
+
+Jan 1984, pp.2-14.
+
+of the (cid:12)les, accounting for no more than 7% of the lines of
+
+code. For each release, the early-pre-release faults accounted
+
+[2] V.R. Basili and B.T. Perricone. Software Errors and
+
+for a clear ma jority of the faults, in most cases more than
+
+Complexity: An Empirical Investigation.
+
+80%. For that reason, the distribution and concentration
+
+Communications of the ACM
+
+, Vol27, No1, Jan 1984,
+
+of early-pre-release faults looked very much like the overall
+
+pp.42-52.
+
+distribution, with a de(cid:12)nite trend showing an increasing con-
+
+[3] N.E. Fenton and N. Ohlsson. Quantitative Analysis of
+
+centration of early-pre-release faults as the product matured
+
+Faults and Failures in a Complex Software System.
+
+from Release 1 to Release 13. There were also relatively few
+
+IEEE Trans. on Software Engineering
+
+, Vol 26, No 8,
+
+late-pre-release faults uncovered during any release, and so
+
+Aug 2000, pp.797-814.
+
+they were also very heavily concentrated. With the excep-
+
+tion of two early releases, all late-pre-release faults always
+
+[4] T.L. Graves, A.F. Karr, J.S. Marron, and H. Siy.
+
+appeared in under 5% of the (cid:12)les.
+
+Predicting Fault Incidence Using Software Change
+
+History.
+
+, Vol
+
+IEEE Trans. on Software Engineering
+
+In all cases, the percentage of lines of code contained in (cid:12)les
+
+26, No 7, Jul 2000, pp.653-661.
+
+that contained faults exceeded the percentage of (cid:12)les that
+
+contained faults, thereby partially explaining the Pareto-like
+
+[5] L. Hatton. Reexamining the Fault Density -
+
+distribution of faults. However, in no case did this account
+
+Component Size Connection.
+
+,
+
+IEEE Software
+
+entirely for the extreme nature of the fault concentration.
+
+March/April 1997, pp.89-97.
+
+We examined the persistence of faultiness of individual (cid:12)les,
+
+Investigation of Software Fault Distribution.
+
+Proc.
+
+[6] K-H. Moller and D.J. Paulish. An Empirical
+
+both within a single release, and across successive releases.
+
+IEEE First Internation Software Metrics Symposium
+
+,
+
+Although our data do not give strong results for either case,
+
+Baltimore, Md., May 21-22, 1993, pp.82-90.
+
+they indicate that faults are likely to be found both in pre-
+
+viously faulty (cid:12)les and in (cid:12)les that were previously fault-
+
+[7] J.C. Munson and T.M. Khoshgoftaar. The Detection
+
+free. Within a single release, we tried to determine whether
+
+of Fault-Prone Programs.
+
+IEEE Trans. on Software
+
+the number of pre-release faults can be used to predict the
+
+Engineering
+
+, Vol18, No5, May 1992, pp.423-433.
+
+number of post-release faults attributed to a (cid:12)le, and de-
+
+cided that the very small total number of post-release faults
+
+in our data prevented drawing any conclusions of this sort.
+
+We did note, however, that in every release half or more
+
+of post-release faults occurred in (cid:12)les that had no late-pre-
+
+release faults. This observation contradicts the conventional
+
+wisdom that the best places to (cid:12)nd bugs are places where
+
+they have already been found.
+
+Across successive releases, we found some evidence that high-
+
+fault (cid:12)les of one release tend to remain high fault in later
+
+releases. In particular, between a quarter and two-thirds of
+
+the high-fault (cid:12)les of Release n were high-fault in the pre-
+
+vious release, and up to one-half continued being high-fault
+
+in the following release. This observation indicates that it is
+
+a mistake to shortchange testing e(cid:11)orts for previously high-
+
+fault (cid:12)les, under the belief that their problems have all been
+
+solved in the previous release.
+
+Acknowledgments
+
+This work could not have been performed without the coop-
+
+eration and generous assistance of various members of both
+
+development and testing teams at AT&T. Danielle Bella-
+
+vance graciously gave us access to both data and personnel.
+
+We are very grateful to Cheryl Bliss, Jainag Vallabhaneni,
+
+Jim Laur, and Joe Pisano for their time and insights. Beto
+
+Avritzer was very helpful in assisting us with the (cid:12)gures, and
+
+Parni Dasu provided suggestions on appropriate statistical
+
+analysis as well as help with the (cid:12)gure generation. We also
+
+appreciate the assistance we received from our colleagues
+
+Ken Church, David Korn, and John Linderman.
+
+6. REFERENCES
+
+

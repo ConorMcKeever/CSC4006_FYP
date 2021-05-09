@@ -1,0 +1,4171 @@
+Information and Software Technology 51 (2009) 1087–1109
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+
+j o u r n a l h o m e p a g e : w w w . e l s e v i e r . c o m / l o c a t e / i n f s o f
+
+A systematic literature review to identify and classify software requirement errors
+
+Gursimran Singh Walia a, Jeffrey C. Carver b,*
+
+a Mississippi State University, Department of Computer Science and Engineering, 300 Butler Hall, Mississippi State, MS 39762, United States
+b University of Alabama, Computer Science, Box 870290, 101 Houser Hall, Tuscaloosa, AL 35487-0290, United States
+
+a r t i c l e
+
+i n f o
+
+a b s t r a c t
+
+Article history:
+Received 7 December 2007
+Received in revised form 27 January 2009
+Accepted 29 January 2009
+Available online 5 March 2009
+
+Keywords:
+Systematic literature review
+Human errors
+Software quality
+
+Most software quality research has focused on identifying faults (i.e., information is incorrectly recorded
+in an artifact). Because software still exhibits incorrect behavior, a different approach is needed. This
+paper presents a systematic literature review to develop taxonomy of errors (i.e., the sources of faults)
+that may occur during the requirements phase of software lifecycle. This taxonomy is designed to aid
+developers during the requirement inspection process and to improve overall software quality. The
+review identiﬁed 149 papers from the software engineering, psychology and human cognition literature
+that provide information about the sources of requirements faults. A major result of this paper is a cat-
+egorization of the sources of faults into a formal taxonomy that provides a starting point for future
+research into error-based approaches to improving software quality.
+
+(cid:2) 2009 Elsevier B.V. All rights reserved.
+
+Contents
+
+1.
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1088
+Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1088
+Existing quality improvement approaches . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1088
+2.1.
+2.2.
+Background on error abstraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1089
+Research method . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1089
+Research questions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1089
+3.1.
+Source selection and search . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1090
+3.2.
+3.3.
+Data extraction and synthesis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1091
+Reporting the review . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1092
+Question 1: Is there any evidence that using error information can improve software quality?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1092
+4.1.
+Question 1.1: Are there any processes or methods reported in literature that use error information to improve software quality? . . . . . . 1092
+4.2.
+Question 1.2: Do any of these processes address the limitations and gaps identified in Section 2 of this paper? . . . . . . . . . . . . . . . . . . 1093
+4.3.
+Question 2: What types of requirement errors have been identified in the software engineering literature? . . . . . . . . . . . . . . . . . . . . . 1094
+4.4.
+Question 2.1: What types of errors can occur during the requirement stage? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1094
+4.5.
+Question 2.2: What errors can occur in other phases of the software lifecycle that are related to errors that can occur during the
+4.6.
+requirements phase?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1094
+Question 2.3: What requirement errors can be identified by analyzing the source of actual faults? . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1095
+4.7.
+Question 3: Is there any research from human cognition or psychology that can propose requirement errors?. . . . . . . . . . . . . . . . . . . 1095
+4.8.
+Question 3.1: What information can be found about human errors and their classification? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1095
+4.9.
+Question 3.2: Which of the human errors identified in question 3.1 can have corresponding errors in software requirements? . . . . 1095
+4.10.
+4.11.
+Question 4: How can the information gathered in response to questions 1–3 be organized into an error taxonomy? . . . . . . . . . . . . . 1096
+Process of developing the requirement error taxonomy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1096
+Developing the requirement error classes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1096
+5.1.
+5.2.
+Development of requirement error types . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1098
+Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1100
+Principal findings. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1100
+6.1.
+Strengths and weaknesses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1100
+6.2.
+Contribution to research and practice communities . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1101
+6.3.
+
+* Corresponding author. Tel.: +1 205 348 9829; fax: +1 205 348 0219.
+
+E-mail addresses: gw86@cse.msstate.edu (G.S. Walia), carver@cs.ua.edu (J.C. Carver).
+
+0950-5849/$ - see front matter (cid:2) 2009 Elsevier B.V. All rights reserved.
+doi:10.1016/j.infsof.2009.01.004
+
+1088
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+6.4.
+
+Conclusion and future work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1101
+Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1101
+Appendix A. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1103
+Appendix B . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1103
+Appendix C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1104
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1108
+
+1. Introduction
+
+The software development process involves the translation of
+information from one form to another (i.e., from customer needs
+to requirements to architecture to design to code). Because this
+process is human-based, mistakes are likely to occur during the
+translation steps. To ensure high-quality software (i.e., software
+with few faults), mechanisms are needed to ﬁrst prevent these
+mistakes and then to identify them when they do occur. Successful
+software organizations focus attention on software quality, espe-
+cially during the early phases of the development process. By iden-
+tifying problems early, organizations reduce the likelihood that
+they will propagate to subsequent phases. In addition, ﬁnding
+and ﬁxing problems earlier rather than later is easier, less expen-
+sive, and reduces avoidable rework [19,28].
+
+The discussion of software quality focuses around the use of a
+few important terms: error, fault, and failure. Unfortunately, some
+of these terms have competing, and often contradictory, deﬁnitions
+in the literature. To alleviate confusion, we begin by providing a
+deﬁnition for each term that will be used throughout the remain-
+der of this paper. These deﬁnitions are quoted from Lanubile
+et al. [53], and are consistent with software engineering textbooks
+[32,67,77] and an IEEE Standard [1].
+
+Error – defect in the human thought process made while trying to
+understand given information, solve problems, or to use methods
+and tools. In the context of software requirements speciﬁcations,
+an error is a basic misconception of the actual needs of a user or
+customer.
+Fault – concrete manifestation of an error within the software. One
+error may cause several faults, and various errors may cause iden-
+tical faults.
+Failure – departure of the operational software system behavior
+from user expected requirements. A particular failure may be
+caused by several faults and some faults may never cause a failure.
+
+We realize that the term error has multiple deﬁnitions. In fact,
+IEEE Standard 610 provides four deﬁnitions ranging from an incor-
+rect program condition (sometimes referred to as a program error)
+to a mistake in the human thought process (sometimes referred to
+as a human error) [1]. The deﬁnition used in this paper more closely
+correlates to a human error rather than a program error.
+
+Most previous quality research has focused on the detection
+and removal of faults (both early and late in the software lifecycle).
+This research has examined the cause–effect relationships among
+faults to develop fault classiﬁcation taxonomies, which are used
+in many quality improvement approaches (more details in Section
+2.1). Despite these research advancements, empirical evidence
+suggests that quality is still a problem because developers lack
+an understanding of the source of problems, have an inability to
+learn from mistakes, lack effective tools, and do not have a com-
+plete veriﬁcation process [19,28,86]. While fault classiﬁcation
+taxonomies have proven beneﬁcial, faults still occur. Therefore,
+to provide more insight into the faults, research needs to focus
+on understanding the sources of the faults rather than just the
+faults themselves. In other words, focus on the errors that caused
+the faults.
+
+As a ﬁrst step, we performed a systematic literature review to
+identify and classify the errors identiﬁed by other quality research-
+ers. A systematic literature review is a formalized, repeatable pro-
+cess in which researchers systematically search a body of
+literature to document the state of knowledge on a particular sub-
+ject. The beneﬁts of performing a systematic review, as opposed to
+using the more common ad hoc approach, is that it provides the
+researchers with more conﬁdence that they have located as much
+relevant information as possible. This approach is more commonly
+used in other ﬁelds such as medicine to document high-level con-
+clusions that can be drawn from a series of detailed studies
+[48,79,92]. To be effective, a systematic review must be driven
+by an overall goal. In this review, the high level goal is to:
+
+Identify and classify types of requirement errors into a taxonomy to
+support the prevention and detection of errors.
+
+The remainder of this paper is organized as follows. Section 2
+describes existing quality improvement approaches and previous
+uses of errors. Section 3 gives details about the systematic review
+process and its application. Sections 4 and 5 report the results of
+the review. Finally, the conclusions and future work are presented
+in Section 6.
+
+2. Background
+
+To provide context for the review, Section 2.1 ﬁrst describes
+successful quality improvement approaches that focus on faults,
+along with their limitations. These limitations motivate the need
+to focus on the source of faults (rather than faults alone) as an in-
+put to the software quality process. Then, Section 2.2 introduces
+the concept of error abstraction and describes the literature from
+other ﬁelds that is relevant to this review.
+
+2.1. Existing quality improvement approaches
+
+The NASA Software Engineering Laboratory’s (SEL) process
+improvement mechanisms focuses on packaging software process,
+product and measurement experience to facilitate faster learning
+[2,9]. This approach classiﬁes faults from different phases into a
+taxonomy to support risk, cost and cycle time reduction. Similarly,
+the Software Engineering Institute (SEI) uses a measurement
+framework to improve quality by understanding process and prod-
+uct quality [36]. This approach also uses fault taxonomies as a basis
+for building a checklist that facilitates the collection and analysis of
+faults and improves quality and learning. The SEL and SEI ap-
+proaches are two successful examples that represent many fault-
+based approaches. Even with such approaches, faults still exist.
+Therefore, a singular focus on faults does not ultimately lead to
+the elimination of all faults. Faults are only a concrete manifesta-
+tion, or symptom, of the real problem; and without identifying
+the source, some faults will be overlooked.
+
+One important quality improvement approach that does focus
+on errors is root cause analysis. However, due to its complexity
+and expense, it has not found widespread success [55]. Building
+on root cause analysis, the orthogonal defect classiﬁcation (ODC)
+was developed to provide in-process feedback to developers and
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1089
+
+Table 1
+Limitations of existing quality improvement approaches.
+
+Focus on faults rather than errors
+
+psychology. Therefore, literature from software engineering and
+psychology are needed to provide a more comprehensive list of er-
+rors that may occur.
+
+Inability to counteract the errors at their origin and uncover all faults
+Lack of methods to help developers learn from mistakes and gain insights into
+
+3. Research method
+
+major problem areas
+
+Inability of defect taxonomies to satisfy certain attributes, e.g., simplicity,
+
+comprehensiveness, exclusiveness, and intuitiveness
+
+Lack of a process to help developers identify and classify errors
+Lack of a complete veriﬁcation process
+
+help them learn from their mistakes. The ODC also uses an under-
+standing of the faults to identify cause–effect relationships [16,26].
+In addition, fault classiﬁcation taxonomies have been developed
+and evaluated to aid in quality improvement throughout the devel-
+opment process [37,43,59].
+
+and
+
+perspective-based)
+
+Empirical evidence suggests that ‘‘quantifying, classifying and
+locating individual faults is a subjective and intricate notion, espe-
+cially during the requirement phase” [38,53]. In addition, Lawrence
+and Kosuke have criticized various fault classiﬁcation taxonomies
+because of their inability to satisfy certain attributes (e.g., simplic-
+ity, comprehensiveness, exclusiveness, and intuitiveness) [54].
+These fault classiﬁcation taxonomies have been the basis for most
+of the software inspection techniques (e.g., checklist-based, fault-
+developers
+based,
+[10,22,25,38,58,75]. However, when using these fault-based tech-
+niques inspectors do not identify all of the faults present. To com-
+pensate for undetected faults, various supporting mechanisms that
+have been added to the quality improvement process (e.g., re-
+inspections and defect estimation techniques [5,11,34,84,85]) have
+made signiﬁcant contributions to fault
+reduction. However,
+requirements faults still slip to later development phases. This
+fault slippage motivates a need for additional improvements to
+the fault detection process. The use of error information is a prom-
+ising approach for signiﬁcantly increasing the effectiveness of
+inspectors.
+
+used
+
+by
+
+Table 1 summarizes the limitations of the quality improvement
+approaches described in this section. To overcome these limita-
+tions, the objective of this review is to identify as many errors as
+possible, as described by researchers in the literature, and classify
+those errors so that they are useful to developers. A discussion of
+how the errors can be used by developers is provided in Section
+6 of this paper.
+
+2.2. Background on error abstraction
+
+Lanubile et al. ﬁrst investigated the feasibility of using error
+information to support the analysis of a requirements document.
+They deﬁned error abstraction as the analysis of a group of related
+faults to identify the error that led to their occurrence. After an er-
+ror was identiﬁed, it was then used to locate other related faults.
+One drawback to this process is that the effectiveness depends
+heavily on the error abstraction ability of the inspectors [53]. To
+address this problem, our work augments Lanubile et al.’s work
+by systematically identifying and classifying errors to provide sup-
+port to the error abstraction process.
+
+In addition to research reported in the software engineering lit-
+erature, it is likely that error can be identiﬁed by reviewing re-
+search from other ﬁelds. Given that software development is a
+human-based activity, phenomena associated with the human
+mental process and its fallibilities can also cause requirements er-
+rors. For example, two case studies report that human reasons, i.e.,
+reasons not directly related to software engineering, can contribute
+to fault and error injection [55,86]. Studies of these human reasons
+can be found in research from the ﬁelds of human cognition, and
+
+Following published guidelines [18,30,48], this review included
+
+the following steps:
+
+(1) Formulate a review protocol.
+(2) Conduct the review (identify primary studies, evaluate those
+studies, extract data, and synthesize data to produce a con-
+crete result).
+
+(3) Analyze the results.
+(4) Report the results.
+(5) Discuss the ﬁndings.
+
+The review protocol speciﬁed the questions to be addressed, the
+databases to be searched and the methods to be used to identify,
+assemble, and assess the evidence. To reduce researcher bias, the
+protocol, described in the remainder of this section, was developed
+by one author, reviewed by the other author and then ﬁnalized
+through discussion, review, and iteration among the authors and
+their research group. An overview of the review protocol is pro-
+vided here, with a complete, detailed description appearing in a
+technical report [91].
+
+3.1. Research questions
+
+The main goal of this systematic review was to identify and
+classify different types of requirement errors. To properly focus
+the review, a set of research questions were needed. With the
+underlying goal of providing support to the software quality
+improvement process, the high-level question addressed by this
+review was:
+
+What types of requirements errors can be identiﬁed from the liter-
+ature and how can they be classiﬁed?
+
+Motivated by the background research and to complement the
+types of errors identiﬁed in the software engineering literature,
+this review makes use of cognitive psychology research into under-
+standing human errors. Fig. 1 shows that the results of a literature
+search in software engineering about faults and their causes are
+
+Fig. 1. Types of literature searched to identify the requirement errors.
+
+1090
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Table 2
+Research questions and motivations.
+
+Research question
+
+1. Is there any evidence that using error information can improve software quality?
+
+1.1. Are there any processes or methods reported in literature that use error information to improve soft-
+
+1.2. Do any of these processes address the limitations and gaps identiﬁed in Section 2 (Table 1) of this
+
+Motivation
+
+Assess the usefulness of errors in existing approaches;
+identify shortcomings the current approaches and avenues
+for improvement
+
+2. What types of requirement errors have been identiﬁed in the software engineering literature?
+
+2.1. What types of errors can occur during the requirement stage?
+2.2. What errors can occur in other phases of the software lifecycle that are related to requirement errors?
+2.3. What requirement errors can be identiﬁed by analyzing the source of actual faults?
+
+Identify types of errors in the software engineering
+literature as an input to an error classiﬁcation taxonomy
+
+3. Is there any research from human cognition or psychology that can propose requirement errors?
+
+3.1. What information can be found about human errors and their classiﬁcation?
+3.2. Which of the human errors identiﬁed in question 3.1 can have corresponding errors in software
+
+Investigate the contribution of human errors from the
+ﬁelds of human cognition and psychology
+
+4. How can the information gathered in response to questions 1–3 be organized into an error taxonomy?
+
+Organize the error information into a taxonomy
+
+ware quality?
+
+paper?
+
+requirements?
+
+combined with the results of a literature search of the more gen-
+eral psychological accounts of human errors to develop the
+requirement error taxonomy.
+
+The high-level research question was decomposed into three
+speciﬁc research questions and sub-questions shown in Table 2,
+which guided the literature review. The ﬁrst question required
+searching the software engineering literature to identify any qual-
+ity improvement approaches that focus on errors. These ap-
+proaches were analyzed to identify any shortcomings and record
+information about errors. The second question also required
+searching the software engineering literature with the purpose of
+explicitly identifying requirement errors and errors from other life-
+cycle phases (i.e., the design or coding phase) that are related to
+requirement errors. In addition, this question also required analy-
+sis of faults to identify the underlying errors. As a result, this ques-
+tion identiﬁed a list of
+requirement errors from software
+engineering literature. To answer the third question, we searched
+the human error literature from the human cognition and psychol-
+ogy ﬁelds to identify other types of errors that may occur while
+developing a requirement artifact. This question involved analyz-
+ing the models of human reasoning, planning, and problem solving
+and their fallibilities to identify errors that can occur during the
+requirements development stage. Finally, the fourth research ques-
+tion, which is really a meta-question using the information from
+questions 1 to 3, combines the errors identiﬁed from the software
+engineering literature and the human cognition and psychology lit-
+erature into a requirement error taxonomy.
+
+3.2. Source selection and search
+
+The initial list of source databases was developed using a de-
+
+tailed source selection criteria as described below:
+
+(cid:2) The databases were chosen such that they included journals and
+conferences focusing on: software quality, software engineering,
+empirical studies, human cognition, and psychology.
+
+(cid:2) Multiple databases were selected for each research area: soft-
+
+ware engineering, human cognition, and psychology.
+
+(cid:2) The databases had to have a search engine with an advanced
+
+search mechanism that allowed keyword searches.
+
+(cid:2) Full text documents must be accessible through the database or
+
+through other means.
+
+(cid:2) Any other source known to be relevant but not included in one
+of the above databases, were searched separately (e.g., Empirical
+Software Engineering: An International Journal, text books, and
+SEI technical reports).
+
+(cid:2) The list of databases was reduced where possible to minimize
+the redundancy of journals and proceedings across databases.
+
+This list was then reviewed by a software engineering expert
+and a cognitive psychology expert who added two databases, a text
+book and one journal. The ﬁnal source list appears in Table 3.
+
+To search these databases, a set of search strings was created for
+each of the three research questions based on keywords extracted
+from the research questions and augmented with synonyms.
+Appendix A provides a detailed discussion of the search strings
+used for each research question.
+
+The database searches resulted in an extensive list of potential
+papers. To ensure that all papers included in the review were
+clearly related to the research questions, detailed inclusion and
+exclusion criteria were deﬁned. Table 4 shows the inclusion and
+exclusion criteria for this review. The inclusion criteria is speciﬁc
+to each research question, while the exclusion criteria is common
+for all questions. The process followed for paring down the search
+results was:
+
+(1) Use the title to eliminate any papers clearly not related to
+
+(2) Use the abstract and keywords to exclude papers not related
+
+the research focus;
+
+to the research focus; and
+
+(3) Read the remaining papers and eliminate any that do not
+
+fulﬁll the criterion described in Table 4.
+
+After selecting the relevant papers, a quality assessment was
+performed in accordance with the guidelines published by the Cen-
+ter for Reviews and Discrimination and the Cochrane Reviewers’
+Handbook as cited by Kitchenham et al. (i.e., each study was as-
+sessed for bias, internal validity, and external validity) [48]. First,
+the study described in each paper was classiﬁed as either an exper-
+iment or an observational study. Then, a set of quality criteria, fo-
+cused on study design, bias, validity, and generalizability of results,
+was used to evaluate quality of the study. The study quality assess-
+ment checklist is shown in Table 5.
+
+Using this process, the initial search returned over 25,000 pa-
+pers, which were narrowed down to 7838 papers based on their ti-
+tles, then to 482 papers based on their abstracts and keywords.
+
+Table 3
+Source list.
+
+Databases
+
+Other journals
+
+Additional
+Sources
+
+IEEExplore, INSPEC, ACM Digital Library, SCIRUS (Elsevier),
+Google Scholar, PsychINFO (EBSCO), Science Citation Index
+Empirical Software Engineering – An International Journal,
+Requirements Engineering Journal
+Reference lists from primary studies, Books, Software
+Engineering Institute technical reports
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1091
+
+Table 4
+Inclusion and exclusion criteria.
+
+RQ Inclusion criteria
+
+ware quality
+
+ware lifecycle
+
+defects
+
+or problem solving
+
+1
+
+(cid:2) Papers that focus on analyzing/using the errors (source of faults) for improving soft-
+
+(cid:2) Empirical studies (qualitative or quantitative) of using the error information in soft-
+
+2
+
+(cid:2) Papers that talk about errors, mistakes or problems in the software development pro-
+
+cess and requirements in particular
+
+(cid:2) Papers about error, fault, or defect classiﬁcations
+(cid:2) Empirical studies (qualitative or quantitative) on the cause of software development
+
+supported by any evidence)
+
+Exclusion criteria
+
+(cid:2) Papers that are based only on expert opinion
+(cid:2) Short-papers, introductions to special issues, tutorials, and mini-tracks
+(cid:2) Studies not related to any of the research questions
+(cid:2) Preliminary conference versions of included journal papers
+(cid:2) Studies not in English
+(cid:2) Studies whose ﬁndings are unclear and ambiguous (i.e., results are not
+
+3
+
+(cid:2) Papers from human cognition and psychology about human thought process, planning,
+
+(cid:2) Empirical studies on human errors
+(cid:2) Papers that survey or describe the human error classiﬁcations
+
+Table 5
+Quality assessment.
+
+Experimental studies
+
+Observational studies
+
+1 Does the evidence support the
+
+ﬁndings?
+
+2 Was the analysis appropriate?
+3 Does study identify or try to minimize
+
+biases and other threats?
+Can this study be replicated?
+
+4
+
+Do the observations support the
+conclusions or arguments?
+Are comparisons clear and valid?
+Does study uses methods to minimize
+biases and other threats?
+Can this study be replicated?
+
+Then, these 482 papers were read to select the ﬁnal list of 149 pa-
+pers based on the inclusion and exclusion criteria.
+
+Of these 149 papers, 108 were published in 13 leading journals
+and six conferences in software engineering, and 41 were pub-
+lished in nine psychology journals. The distribution of the selected
+papers is shown in Table 6, including the number of papers from
+each source along with the percentage of the overall total. In addi-
+tion, three textbooks [69,62,73], provided additional information
+about human errors that were also found in the journal and confer-
+ence proceedings included in Table 6. The list of all included liter-
+ature (journals, conferences proceedings, and textbooks)
+is
+provided in Appendix C.
+
+Based on the results from the quality assessment criteria de-
+scribed in Table 5 (and discussed in more detail in Section 6), all
+of the identiﬁed papers identiﬁed were of high-quality, providing
+additional conﬁdence in the overall quality of the set of selected
+papers. In addition, all of the relevant papers that the authors were
+aware of prior to the search [16,24,26,28,53,55,69] (i.e., papers that
+were identiﬁed during the background investigation and before
+commencing the systematic review) were located by the search
+process during the systematic review, an indication of the com-
+pleteness of the search. Also, all of the relevant papers from the ref-
+erence lists of papers identiﬁed during the search were found
+independently by the search process. Contrary to our expectations,
+Table 6 shows that only a small number of papers appeared in the
+Journal of Software Testing, Veriﬁcation, and Reliability,
+in
+the International Requirements Engineering Conference, and in
+the Software Quality Journal. Because we expected these journals
+to have a larger number of relevant papers, we wanted to ensure
+there was not a problem with the database being used. Therefore,
+we speciﬁcally searched these two journals again, but no addi-
+tional relevant material was found.
+
+Furthermore, in some cases a preliminary version of a paper
+was published in a leading conference with a more complete jour-
+nal paper following. In this case, only the journal paper was in-
+cluded in the review thereby reducing the number of papers
+from some conferences (e.g., preliminary work by Sutcliffe et. al.,
+on the impact of human error on system requirements was pub-
+
+Table 6
+Paper distribution.
+
+Source
+
+Count
+
+%
+
+IEEE Computer
+Journal of System and Software
+Journal of Accident Analysis and Prevention
+ACM Transactions on Software Engineering
+Communications of the ACM
+IBM Systems Journal
+IEEE Transaction in Software Engineering
+ACM Transactions on Computer–Human Interaction
+Applied Psychology: An International Review
+SEI Technical Report Website
+Journal of Information and Software Technology
+IEEE Int’l Symposium on Software Reliability Engineering
+Journal of Ergonomics
+IEEE Trans. on Systems, Man, and Cybernetics (A): Systems and
+
+Humans
+
+IEEE International Symposium on Empirical Software Engineering
+Requirements Engineering Journal
+International Conference on Software Engineering
+Journal of Computers in Human Behavior
+Empirical Software Engineering: An International Journal
+The International Journal on Aviation Psychology
+IEEE Annual Human Factors Meeting
+International Journal of Human–Computer Interaction
+Software Process: Improvement and Practice
+Journal of Software Testing, Veriﬁcation and Reliability
+Journal of Reliability Engineering and System Safety
+IEEE International Software Metrics Symposium
+Journal of Information and Management
+Software Quality Journal
+High Consequence System Surety Conference
+Crosstalk: The Journal of Defense Software Engineering
+Journal of IEEE Computer and Control Engineering
+
+19
+13
+11
+11
+8
+8
+8
+6
+6
+5
+5
+4
+4
+4
+
+4
+4
+3
+3
+3
+2
+2
+2
+2
+1
+1
+1
+1
+1
+1
+1
+1
+
+12.8
+8.7
+7.4
+7.4
+5.4
+5.4
+5.6
+4
+4
+3.4
+3.4
+2.7
+2.7
+2.7
+
+2.7
+2.7
+2
+2
+2
+1.3
+1.3
+1.3
+1.3
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+
+Total
+
+149
+
+100
+
+lished in International Conference on Requirements Engineering,
+but is not included in the review because of a later journal version
+published in the International Journal of Human–Computer Inter-
+action [80]).
+
+3.3. Data extraction and synthesis
+
+We used data extraction forms to ensure consistent and accu-
+rate extraction of the important information from each paper re-
+lated to the research questions. In developing the data extraction
+forms, we determined that some of the information was needed
+regardless of the research question, while other information was
+speciﬁc to each research focus. Table 7 shows the data that was ex-
+tracted from all papers. Table 8 shows the data that was extracted
+for each speciﬁc research focus.
+
+1092
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Table 7
+Data items extracted from all the papers.
+
+Data items
+
+Description
+
+Identiﬁer
+Bibliographic
+Type of article
+Study aims
+Context
+Study design
+Level of analysis
+Control group
+Data collection
+Data analysis
+Concepts
+Higher-order
+
+interpretations
+
+Study ﬁndings
+
+Unique identiﬁer for the paper (same as the reference number)
+Author, year, title, source
+Journal/conference/technical report
+The aims or goals of the primary study
+Context relates to one/more search focus, i.e., research area(s) the paper focus on
+Type of study – industrial experiment, controlled experiment, survey, lessons learned, etc.
+Single/more researchers, project team, organization, department
+Yes, no; if ‘‘Yes”: number of groups and size per group
+How the data was collected, e.g., interviews, questionnaires, measurement forms, observations, discussion, and documents
+How the data was analyzed; qualitative, quantitative or mixed
+The key concepts or major ideas in the primary studies
+The second- (and higher-) order interpretations arising from the key concepts of the primary studies. This can include limitations, guidelines or
+any additional information arising from application of major ideas/concepts
+Major ﬁndings and conclusions from the primary studies
+
+Table 8
+Data items extracted for each research focus.
+
+Search focus
+
+Data item
+
+Description
+
+Quality improvement approach
+
+Requirement errors
+
+Error–fault–defect taxonomies
+
+Software inspections
+
+Human errors
+
+Focus or process
+Beneﬁts
+Limitations
+Evidence
+
+Error focus
+
+Problems
+Errors
+Faults
+Mechanism
+
+Focus
+Error focus
+Requirement phase
+Beneﬁts
+Limitation
+Evidence
+
+Focus
+Error focus
+Requirement phase
+Beneﬁts
+Limitation
+
+Human errors and
+classiﬁcations
+Errors attributable
+Related faults
+Evidence
+
+Focus of the quality improvement approach and the process/method used to improve quality
+Any beneﬁts from applying the approach identiﬁed
+Any limitations or problems identiﬁed in the approach
+The empirical evidence indicating the beneﬁts of using error information to improve software quality and
+any speciﬁc errors found
+Yes or No; and if ‘‘Yes”, how does it relate to our research
+
+Problems found in requirement stage
+Whether the problems constitute requirement stage errors
+Faults at requirement stage and their causes
+Process used to analyze or abstract requirement errors
+
+The focus of the taxonomy (i.e., error, fault, or failure)
+Yes or No; if ‘‘Yes”, how does it relate to our research questions
+Yes or No (whether it was applied in requirement phase)
+Beneﬁts of the taxonomy
+Limitations of the taxonomy
+The empirical evidence regarding the beneﬁts of error/fault/defect taxonomy for software quality
+
+The focus of inspection method (i.e., error, fault of failure)
+Yes or No; if ‘‘Yes”, how does it relate to our research questions
+Yes or No (Did it inspect requirement documents?)
+Beneﬁts of the inspection method
+Limitations of the inspection method
+
+Description of errors made by human beings and classes of their fallibilities during planning, decision
+making and problem solving
+Software development errors that can be attributable to human errors
+Software faults that can be caused by human errors
+The empirical evidence regarding errors made by humans in different situations (e.g., aircraft control)
+that are related to requirement errors
+
+Consistent with the process followed in previous systematic re-
+views (e.g., [49]), the ﬁrst author reviewed all papers and extracted
+data. Then, the second author independently reviewed and ex-
+tracted data from a sample of the papers. We then compared the
+data extracted by each reviewer for consistency. We found that
+we had consistently extracted information from the sample of pa-
+pers, suggesting that the second author did not need to review the
+remainder of papers in detail and that the information extracted by
+the ﬁrst author was sufﬁcient. The data extracted from all papers
+was synthesized to answer each question as described in Section 4.
+
+4. Reporting the review
+
+4.1. Question 1: Is there any evidence that using error information can
+improve software quality?
+
+The idea of using the source of faults to improve software
+quality is not novel. Other researchers have used this information
+in different ways with varying levels of success. A review of the
+different methods indicates that knowledge of the source of faults
+
+is useful for process improvement, defect prevention by helping
+developers learn from their mistakes and detection of defects
+during inspections. A major drawback of these approaches is that
+they typically do not provide a formal process to assist developers
+in ﬁnding and ﬁxing errors. In fact, only the approach by Lanubile
+et al. provided any systematic way to use error information to im-
+prove the quality of a requirements document [53]. Another
+drawback to these methods is that they rely only on a sample
+of faults to identify errors, therefore potentially overlooking some
+errors.
+
+While these approaches have positive aspects and describe soft-
+ware errors (as discussed in the answers to 1.1), they also have lim-
+itations (as discussed in the answers to 1.2). A total of 13 papers
+addressed this question and its related sub-questions.
+
+4.2. Question 1.1: Are there any processes or methods reported in
+literature that use error information to improve software quality?
+
+The review identiﬁed nine methods that stress the use of error
+information during software development. These methods are de-
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1093
+
+scribed in this section along with their use in software organiza-
+tions, and the types of errors they helped identify.
+
+(cid:2) The defect causal analysis approach is a team-based quality
+improvement technique used to analyze samples of previous
+faults to determine their cause (the error) in order to suggest
+software process changes and prevent future faults. Empirical
+ﬁndings show that the use of the defect causal analysis method
+at IBM and at Computer Sciences Corporation (CSC) resulted in
+a 50% decrease in defects over each two year period studied.
+Based on the results from these studies, Card suggests that
+all causes of software faults fall into one of four categories:
+(a) methods (incomplete, ambiguous, wrong, or enforced), (b)
+tools and environment (clumsy, unreliable, or defective), (c)
+people (who lack adequate training or understanding), and
+(d) input and requirements (incomplete, ambiguous, or defec-
+tive) [24].
+
+(cid:2) The software failure analysis approach is a team-based quality
+approach. The goal of this process is to improve the software
+development and maintenance process. Using this approach,
+developers analyze a representative sample of defect data to
+understand the causes of particular classes of defects (i.e., spec-
+iﬁcation, user-interface, etc.). This process was used by
+engineers at Hewlett–Packard to understand the cause of
+user-interface defects and develop better user interface design
+guidelines. During their next year-long project, using these
+guidelines,
+found during test
+decreased 50%. All the causes of user-interface defects were
+classiﬁed into four different categories: guidelines not fol-
+lowed, lack of feedback or guidelines, different perspectives,
+or oops! (forgotten) [41].
+
+the user-interface defects
+
+(cid:2) The defect causal analysis (using experts) approach accumulates
+expert knowledge to substitute for an in-depth, per-object
+defect causal analysis. The goal is to identify the causes of faults
+found during normal development, late in the development
+cycle and after deployment. Based on the results of a study,
+Jacobs et al. describe the causes of software defects, e.g., inade-
+quate unjustiﬁed trust,
+inadequate communication, unclear
+responsibilities, no change control authority, usage of different
+implementations, etc. The study also showed that the largest
+numbers of defects were the result of communication problems
+[46].
+
+(cid:2) The defect prevention process uses causal analysis to deter-
+mine the source of a fault and to suggest preventive actions.
+Study results show that it helps in preventing commonly
+occurring errors, provides signiﬁcant reductions in defect rates,
+leads to less test effort, and results in higher customer satisfac-
+tion. Based on the analysis of different software products over
+six years, Mays et al. classiﬁed defect causes as oversight
+causes (e.g., developer overlooked something, or something
+was not considered thoroughly), education causes (developer
+did not understand some aspect), communication causes
+(e.g., something was not communicated), or transcription
+causes (developer knew what to do but simply made a mis-
+take) [60].
+
+(cid:2) The software bug analysis process identiﬁes the source of bugs.
+It also contains countermeasures (with implementation guid-
+ance) for preventing bugs. To assess the usefulness of this
+approach, a sample of 28 bugs found during the debug and test
+phases of authorization terminal software development were
+analyzed by group leaders, designers, and third party designers
+to determine their cause. A total of 23 different causes were
+identiﬁed, and more than half of these causes were related to
+designers carelessness [61].
+
+(cid:2) The root cause analysis method introduced the concept of a
+multi-dimensional defect trigger to help developers determine
+the root cause of a fault (the error) in order to identify areas
+for process improvement. Leszak et al. conducted a case-study
+of the defect modiﬁcation requests during the development of
+a transmission network element product. They found the root
+causes of defects to include: communication problems or lack
+of awareness of the need for communication, lack of domain/
+system/tools/process knowledge, lack of change coordination,
+and individual mistake [55].
+
+(cid:2) The error abstraction process analyzes groups of related faults to
+determine their cause (i.e., the error). This error information is
+then used to ﬁnd other related faults in a software artifact [53].
+(cid:2) The defect based software process improvement analyzes faults
+through attribute focusing to provide insight into their potential
+causes and makes suggestions that can help a team adjust their
+process in real time [24,59].
+
+(cid:2) The goal-oriented process improvement methodology also uses
+defect causal analysis for tailoring the software process to
+address speciﬁc project goals in a speciﬁc environment. Basili
+and Rombach describe an error scheme that classiﬁes the cause
+of software faults into different problem domains. These prob-
+lem domains include: application area (i.e., misunderstanding
+of application or problem domain), methodology to be used
+(not knowing, misunderstanding, or misuse of problem solution
+processes), and the environment of the software to be developed
+(misunderstanding or misuse of the hardware or software of a
+given project) [8].
+
+(cid:2) Total quality management is a philosophy for achieving long-
+term success by linking quality with customer satisfaction. Key
+elements of this philosophy include total customer satisfaction,
+continuous process improvement, a focus on the human side of
+quality, and continuous improvement for all quality parameters.
+It involves identifying and evaluating various probable causes
+(errors) and testing the effects of change before making it [47].
+This approach is based on the defect prevention process
+described earlier.
+
+Each of the above methods uses error information to improve
+software quality. Each has shown some beneﬁts and identiﬁed
+some important types of errors. This information served as an in-
+put to the requirement error taxonomy.
+
+4.3. Question 1.2: Do any of these processes address the limitations
+and gaps identiﬁed in Section 2 of this paper?
+
+Each of the methods described in the answer to question 1.1
+does address many of the limitations described in Table 1, but, they
+still have some additional limitations. The limitations common to
+the different methods are summarized in Table 9.
+
+While these methods do analyze the source of faults, they only
+use a small sample of faults, potentially overlooking some errors.
+As a result, the error categories are generic and appear to be
+incomplete. Moreover, some methods only describe the cause cat-
+egories (and not actual errors), while others provide only a few
+examples for each category. None of the methods provides a list
+of all the errors that may occur during the requirements phase. An-
+other common problem is that while many methods do emphasize
+the importance of human errors and provide a few examples (e.g.,
+errors due to designers carelessness and transcription errors), they
+do not go far enough. These approaches lack a strong cognitive the-
+ory to describe a more comprehensive list of the errors. Finally, no
+formal process is available that can guide developers in identifying
+the errors and resulting faults when they occur. The inability of the
+
+1094
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Table 9
+Limitations of methods in question 1.1.
+
+Limitations
+
+investment
+
+Requires extensive documentation of problem reports and inspection results; and over-reliance on historical data
+Cost of performing the causal analysis through implementing actions ranges from 0.5% to 1.5% of the software budget; and requires a startup
+
+[24,50,47,55,59,60]
+[24,41,59,60]
+
+It is cost-intensive, people-intensive and useful for analyzing only a small sample of faults, or group of related faults
+Requires experienced developers, extensive meetings among experts, and interviewing the actual developers to analyze the probable causes of faults
+Results in a large number of actions, and has to applied over a period of time to test the suggested actions/improvements to software process
+It can only detect the process inadequacy/process improvement actions and not reveal the actual error
+It analyzes the faults found late in the software lifecycle
+Does not guide the inspectors, and relies heavily on the creativity of inspectors in abstracting errors from faults during software inspections
+
+[8,24,41,46,59–61]
+[46]
+[55,59–61]
+[47,59–61]
+[46,59–61]
+[53]
+
+Methods
+
+existing methods to overcome these limitations motivates the
+need for development of more complete requirement error
+taxonomy.
+
+4.4. Question 2: What types of requirement errors have been identiﬁed
+in the software engineering literature?
+
+The identiﬁcation of requirement errors will support future re-
+search into software quality. To obtain an initial list of errors, the
+software engineering literature was reviewed to extract any errors
+that had been described by other researchers. This research ques-
+tion is addressed in detail by sub-questions 2.1 and 2.2. A total
+of 55 papers were analyzed to identify the types of requirement er-
+rors in software engineering literature, 30 to address question 2.1
+and 24 to address question 2.2. The complete list of all the require-
+ment errors that were identiﬁed in the software engineering liter-
+ature is provided in Appendix B.
+
+4.5. Question 2.1: What types of errors can occur during the
+requirement stage?
+
+The review uncovered a number of candidates for requirement
+errors. Table lists potential requirement errors along with the rel-
+evant references.
+
+The ﬁrst row of Table 10 contains six different studies that ana-
+lyzed faults found during software development using different
+causal analysis methods (as described in question 1.1) to identify
+requirement errors [16,24,41,46,60,61]. Examples of the errors
+identiﬁed by these studies include: lapses in communications
+among developers, inadequate training, not considering all the
+ways a system can be used, and misunderstanding certain aspect
+of the system functionality.
+
+The second source of errors includes empirical studies that clas-
+sify requirement errors problems experienced by developers, stud-
+ies that classify difﬁculties in determining requirements, and other
+case studies that trace requirement errors to the problems faced
+during the requirements engineering process [13,21,42,77,81,82].
+Examples of the errors from these studies include: lack of user par-
+
+Table 10
+Sources used to identify requirement errors in the literature.
+
+Sources of errors
+
+References
+
+Root causes, cause categories, bug causes, defect–fault causes
+Requirement engineering problem classiﬁcation
+Empirical studies on root causes of troubled projects or errors
+Inﬂuencing factors in reference stage and software
+
+[16,24,41,46,60,61]
+[13,21,42,77,81,82]
+[7,39,76]
+[12,27,79,92]
+
+development
+
+inconsistency
+
+Causes of requirement traceability and requirement
+
+[29,33,65,71]
+
+Domain knowledge problems
+Management problems
+Situation awareness/decision making errors
+Team errors
+Other
+
+[65]
+[29]
+[33]
+[71]
+[40,56,57,87]
+
+ticipation, inadequate skills and resources, complexity of applica-
+tion, undeﬁned requirement process, and cognitive biases.
+
+The third source of errors include studies that describe the root
+causes (some of whom were those belonging to requirement stage)
+of troubled IT projects [7,39,76]. Examples of the errors from these
+studies include: unrealistic business plan, use of immature tech-
+nology, not involving user at all stages, lack of experienced or capa-
+ble management, and improper work environment.
+
+Table 10 also includes the ﬁndings from an empirical study of
+13 software companies that identiﬁed 32 potential problem fac-
+tors, and other similar empirical studies that identiﬁed require-
+ment problem factors affecting software reliability [12,27,79,92].
+Examples of the errors from these studies include: hostile team
+relationships, schedule pressure, human nature (mistakes and
+omissions), and ﬂawed analysis method.
+
+Table 10 also includes studies that determined the causes of
+requirement traceability and requirement inconsistencies, errors
+due to domain knowledge, requirement management errors, and
+errors committed among team members during software develop-
+ment [29,33,64,71]. Examples of the errors from these studies in-
+clude: poor planning, insufﬁciently formalized change requests,
+impact analysis not systematically achieved, misunderstandings
+due to working with different systems, and team errors.
+
+Finally, Table 10 contains ‘‘other errors” that includes studies
+describing the root causes of safety-related software errors and
+description of requirement errors causing safety-related errors as
+well as studies that describe requirement errors based on the con-
+tribution of human error from social and organizational literature
+[56,57,87]. Examples of the errors from these studies include mis-
+understanding of assumptions and interface requirements, misun-
+derstanding of dependencies among requirements, mistakes
+during application of well-deﬁned process, and attention or mem-
+ory slips. The complete list of requirement errors derived from the
+sources listed in Table 10 is shown in Appendix B.
+
+4.6. Question 2.2: What errors can occur in other phases of the
+software lifecycle that are related to errors that can occur during the
+requirements phase?
+
+In addition to the errors found speciﬁcally in the requirements
+phase, the review also uncovered errors that occur during the de-
+sign and coding phases. These errors can also occur during the
+requirements phase, including:
+
+(cid:2) Missing information: Miscommunication between designers in
+different teams; lack of domain, system, or environmental
+knowledge; or misunderstandings caused by working simulta-
+neously with several different software systems and domains
+[17,41].
+
+(cid:2) Slips in system design: Misunderstanding of the current situation
+while forming a goal (resulting in an inappropriate choice of
+actions), insufﬁcient speciﬁcation of actions to follow for achiev-
+ing goal (resulting in failure to complete the chosen actions),
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1095
+
+using an analogy to derive a sequence of actions from another
+similar situation (resulting in the choice of a sequence of actions
+that is different from what was intended), or the sequence of
+actions is forgotten because of an interruption [63,64].
+
+(cid:2) System programs: Technological, organizational, historical, indi-
+
+vidual, or other causes [31].
+
+(cid:2) Cognitive breakdown: Inattention, over attention, choosing the
+wrong plan due to information overload, wrong action, incorrect
+model of problem space, task complexity, or inappropriate level
+of detail in the task speciﬁcation [50,51].
+
+4.7. Question 2.3: What requirement errors can be identiﬁed by
+analyzing the source of actual faults?
+
+In addition to identifying requirement errors directly reported
+in the literature, this review also identiﬁed a list of faults that could
+be traced back to their underlying error [3,4,6,14,15,26,37,44,
+68,70,72]. For example, in the case where a requirements docu-
+ment is created by multiple sub-teams, a particular functionality
+is missing because each sub-team thought the other one would in-
+clude it. The error that caused this problem is the lack of commu-
+nication among the sub-teams. Another example is the case where
+two requirements are incomplete because they are both missing
+important information about the same aspect of system function-
+ality. The error that caused this problem is the fact that developers
+did not completely understand that aspect of the system and it was
+manifested in multiple places. These errors were added to the list
+of errors that served as input to question 4. These errors include:
+
+(cid:2) Misunderstanding or mistakes in resolving conﬂicts (e.g., there
+are unresolved requirements or incorrect requirements that
+were agreed on by all parties).
+
+(cid:2) Mistakes or misunderstandings in mapping inputs to outputs,
+
+input space to processes, or processes to output.
+
+(cid:2) Misunderstanding of some aspect of the overall functionality of
+
+the system.
+
+(cid:2) Mistakes while analyzing requirement use cases or different sce-
+
+narios in which the system can be used.
+
+(cid:2) Unresolved issues about complex system interfaces or unantici-
+
+pated dependencies.
+
+4.8. Question 3: Is there any research from human cognition or
+psychology that can propose requirement errors?
+
+To address the fact that requirements engineering is a human-
+based activity and prone to errors, the review also examined hu-
+man cognition and psychology literature. The contributions of this
+literature to requirements errors are addressed by sub-questions
+3.1 and 3.2. A total of 32 papers that analyzed the human errors
+and their fallibilities were used to identify errors that may occur
+during software requirements phase.
+
+4.9. Question 3.1: What information can be found about human errors
+and their classiﬁcation?
+
+The major types of human errors and classiﬁcations identiﬁed
+
+in human cognition and psychology include:
+
+(cid:2) Reason’s classiﬁcation of mistakes, lapses, and slips: Errors are clas-
+siﬁed as either mistakes (i.e., the wrong plan is chosen to accom-
+plish a particular task), lapses (i.e., the correct plan is chosen, but
+a portion is forgotten during execution), or slips (i.e., the plan is
+correct and fully remembered, but during its execution some-
+thing is done incorrectly) [23,31,64].
+
+(cid:2) Rasmussen’s
+
+skill,
+
+rule and knowledge based human error
+taxonomy: Skill based slips and lapses are cause by mistakes
+while executing a task even though the correct task was cho-
+sen. Rule and knowledge based mistakes occur due to errors
+in intentions, including choosing the wrong plan, violating a
+rule, or making a mistake in an unfamiliar
+situation
+[23,63,40].
+
+(cid:2) Reason’s general error modeling system (GEMS): A model of
+human error in terms of unsafe acts that can be intentional
+or unintentional. Unintentional acts include slips and lapses
+while
+and violations
+[23,35,63,78].
+
+include mistakes
+
+intentional
+
+acts
+
+(cid:2) Senders and Moray’s classiﬁcation of phenomenological taxonomies,
+cognitive taxonomies, and
+deep rooted tendency taxonomies:
+Description of the how, what and why concerns of an error,
+including omissions, substitutions, unnecessary repetitions,
+errors based on the stages of human information processing
+(e.g., perception, memory, and attention), and errors based on
+biases [23,78].
+
+(cid:2) Swain and Guttman’s classiﬁcation of individual discrete actions:
+Omission errors (something is left out), commission errors
+(something is done incorrectly), sequence errors (something is
+done out of order), and timing errors (something is done too
+early or too late) [83].
+
+(cid:2) Fitts and Jones control error taxonomy: Based on a study of ‘‘pilot
+error” that occur while operating aircraft controls. The errors
+include: substitution (choosing the wrong control), adjustment
+(moving the control to the wrong position), forgetting the con-
+trol position, unintentional activation of the control, and inabil-
+ity to reach the control in time [35].
+
+(cid:2) Cacciabue’s taxonomy of erroneous behavior: Includes system and
+personnel related causes. Errors are described in relation to exe-
+cution, planning, interpretation, and observation along with the
+correlation between the cause and effects of erroneous behavior
+[23].
+
+(cid:2) Galliers, Minocha, and Sutcliffe’s taxonomy of inﬂuencing factors for
+occurrence of errors: Environmental conditions, management and
+organizational factors, task/domain factors, and user/personnel
+qualities including the slip and mistake types of errors described
+earlier [40].
+
+(cid:2) Sutcliffe and Rugg’s error categories: Operational description, cog-
+nitive causal categories, social and organizational causes, and
+design errors [81].
+
+(cid:2) Norman’s classiﬁcation of human errors: Formation of intention,
+activation, and triggering. Important errors include errors in
+classifying a situation, errors that result from ambiguous or
+incompletely speciﬁed intentions, slips from faulty activation
+of schemas, and errors due to fault triggering [62–64,66].
+
+(cid:2) Human error identiﬁcation (HEI) tool: Describes the SHERPA tool
+that classiﬁes errors as action, checking, retrieval, communica-
+tion, or selection [74,78].
+
+(cid:2) Human error reduction (HERA): Technique that analyzes and
+describes human errors in air the trafﬁc control domain. HERA
+contains error taxonomies for ﬁve cognitive domains: percep-
+tion and vigilance, working memory, long-term memory, judg-
+ment, planning and decision-making, and response execution
+[20,45].
+
+4.10. Question 3.2: Which of the human errors identiﬁed in question
+3.1 can have corresponding errors in software requirements?
+
+Those errors that were relevant to requirements were included
+in the initial list of errors that served as input to question 4 to make
+it more comprehensive. Examples of the translation of these errors
+into requirements errors are found in Table 11.
+
+1096
+
+Error
+
+Table 11
+Requirement errors drawn from human errors.
+
+Description
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Not understanding the domain
+
+Not understanding the speciﬁc application
+Poor execution of processes
+
+Inadequate methods of achieving goals and
+
+objectives
+
+Incorrectly translating requirements to written
+
+natural language
+
+Other human cognition errors
+
+Misunderstandings due to the complex nature of the task; some properties of the problem space are not fully investigated;
+and, mistaken assumptions are made
+Misunderstanding the order of events, the functional properties, the expression of end states, or goals
+Mistakes in applying the requirements engineering process, regardless of its adequacy; out of order steps; and lapses on
+the part of the people executing the process
+System-speciﬁc information was omitted leading to the selection of the wrong technique or process; selection of a
+technique or process that, while successful on other projects, has not been fully investigated or understood in the current
+situation
+Lapses in organizing requirements; omission of necessary veriﬁcation at critical points during the execution of an action;
+repetition of veriﬁcation leading to the repetition or omission of steps
+Mistakes caused by adverse mental states, loss of situation awareness, lack of motivation, or task saturation; mistakes
+caused by environmental conditions
+
+4.11. Question 4: How can the information gathered in response to
+questions 1–3 be organized into an error taxonomy?
+
+Some of the errors were identiﬁed in more than one of the
+bodies of literature surveyed: quality improvement approaches,
+requirement errors, other software errors, and human errors. The
+errors described in the answers to questions 1–3 were collected,
+analyzed and combined into an initial requirement error taxonomy
+with the objective of making the taxonomy simple and easy to use
+yet comprehensive enough to be effective.
+
+The development of the requirement error taxonomy consisted
+of two step. First, the detailed list of errors identiﬁed during the lit-
+erature search, and described in the answers to questions 1–3,
+were grouped together into a set of detailed requirement error
+classes. Second, the error classes were grouped into three high-
+level requirement error types. These high-level error types were
+also found during the literature search. The next section details
+the process of developing the requirement error taxonomy and
+how the taxonomy was constructed.
+
+5. Process of developing the requirement error taxonomy
+
+We organized the errors into a taxonomy that will guide future
+error detection research with the intent of addressing limitations
+in the existing quality improvement approaches. The errors identi-
+ﬁed from the software engineering and psychology ﬁelds were col-
+lected, analyzed for similarities, and grouped into the taxonomy.
+Errors that had similar characteristics (symptoms), whether from
+software engineering or from psychology, were grouped into an er-
+ror class to support the identiﬁcation of related errors when an er-
+ror
+is found. An important constraint while grouping the
+requirement errors was to keep the error classes as orthogonal as
+possible [87,88].
+
+In Section 5.1, for each error class, we ﬁrst describe the error
+class. Then we provide a table that lists the speciﬁc errors from
+the literature search that were grouped into that error class. Final-
+ly, we give an example of an error from that class, along with a
+fault likely to be caused by that error. The examples are drawn
+from two sample systems. Due to space limitations, only a brief
+overview of each example system is provided here.
+
+that satisfy the criteria. The LA system automates information
+management activities, such as updating loan information pro-
+vided monthly by banks.
+
+(cid:2) Automated ambulance dispatch system (AAD): This system sup-
+ports the computer-aided dispatch of ambulances to improve
+the utilization of ambulances and other resources. The system
+receives emergency calls, evaluates incidents, issues warnings,
+and recommends ambulance assignments. The system should
+reduce the response time for emergency incidents by dispatch-
+ing decisions based on recommendations made by system
+[4,52].
+
+5.1. Developing the requirement error classes
+
+The requirement error classes were created by grouping errors
+with similar characteristics. Tables 12–25 show each error class
+along with the speciﬁc errors (from Software Engineering and Hu-
+man Cognition ﬁelds) that make up that class.
+
+Table 12
+Communication errors.
+
+Inadequate project communications
+Changes in requirements not communicated
+Communication problems, lack of communication among developers and
+
+between developers and users
+
+Communication problems
+Poor communication between users and developers, and between
+
+members of the development team
+
+Lack of communication between sub-teams
+Communication between development teams
+Lack of user communication
+Unclear lines of communication and authority
+Poor communication among developers involved in the development
+
+[41]
+[46]
+[60]
+
+[55]
+[47]
+
+[16]
+[13]
+[13]
+[39]
+[12,27]
+
+process
+
+Communication problems, information not passed between individuals
+Communication errors within a team or between teams
+Lack of communication of changes made to the requirements
+Lack of communication among groups of people working together
+
+[33]
+[56]
+[56]
+[71]
+
+(cid:2) Loan arranger system (LA): The LA application supports the busi-
+ness of a loan consolidation organization. This type of organiza-
+tion makes money by purchasing loans from banks and then
+reselling those loans to other investors. The LA allows a loan
+analyst to select a bundle of loans that have been purchased
+by the organization that match the criteria provided by an inves-
+tor. This criterion may include amount of risk, principal involved
+and expected rate of return. When an investor speciﬁes invest-
+ment criteria, the system selects the optimal bundle of loans
+
+Table 13
+Participation errors.
+
+development
+
+No involvement of all the stakeholders
+Lack of involvement of users at all times during requirement
+
+[46]
+[47]
+
+Involving only selected users to deﬁne requirements due to the
+internal factors like rivalry among developers or lack of the
+motivation
+
+[39,40,87]
+
+Lack of mechanism to involve all the users and developers together to
+
+[24]
+
+resolve the conﬂicting requirements needs
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1097
+
+Table 14
+Domain knowledge errors.
+
+Table 20
+Requirement elicitation errors.
+
+Lack of domain knowledge or lack of system knowledge
+Complexity of the problem domain
+Lack of appropriate knowledge about the application
+Complexity of the task leading to misunderstandings
+Lack of adequate training or experience of the requirement
+
+[12,17,40,41,55,92]
+[12,13,21,42]
+[27]
+[40]
+[41]
+
+Lack of knowledge, skills, or experience to perform a task
+Some properties of the problem space are not fully
+
+engineer
+
+investigated
+
+Mistaken assumptions about the problem space
+
+[71]
+[31]
+
+[56]
+
+Table 15
+Speciﬁc application errors.
+
+[60,65]
+Lack of understanding of the particular aspects of the problem domain
+Misunderstandings of hardware and software interface speciﬁcation
+[56]
+Misunderstanding of the software interfaces with the rest of the system [56]
+[61]
+User needs are not well-understood or interpreted while resolving
+
+conﬂicting requirements
+
+Mistakes in expression of the end state or output expected
+Misunderstandings about the timing constraints, data dependency
+
+[64]
+[56,57]
+
+constraints, and event constraints
+
+Misunderstandings among input, output, and process mappings
+
+[70]
+
+Table 16
+Process execution errors.
+
+Mistakes in executing the action sequence or the requirement
+
+[23,35,63,78]
+
+engineering process, regardless of its adequacy
+
+Execution or storage errors, out of order sequence of steps and
+slips/lapses on the part of people executing the process
+
+[35,40,66,85]
+
+Inadequate requirement gathering process
+Only relying on selected users to accurately deﬁne all the requirements
+Lack of awareness of all the sources of requirements
+Lack of proper methods for collecting requirements
+
+[16]
+[39]
+[27]
+[13]
+
+Table 21
+Requirement analysis errors.
+
+Incorrect model(s) while trying to construct and analyze solution
+Mistakes in developing models for analyzing requirements
+Problem while analyzing the individual pieces of the solution space
+Misunderstanding of the feasibility and risks associated with
+
+[50,51]
+[8]
+[13]
+[87]
+
+requirements
+
+[8]
+Misuse or misunderstanding of problem solution processes
+Unresolved issues and unanticipated dependencies in solution space
+[17]
+Inability to consider all cases to document exact behavior of the system [60]
+Mistakes while analyzing requirement use cases or scenarios
+
+[8,74]
+
+Table 22
+Requirement traceability errors.
+
+Inadequate/poor requirement traceability
+Inadequate change management, including impact analysis of
+
+[13,42,76]
+[29]
+
+changing requirements
+
+Table 23
+Requirement organization errors.
+
+Poor organization of requirements
+Lapses in organizing requirements
+Ineffective method for organizing together the requirements documented by
+
+[41]
+[23]
+[8]
+
+different developers
+
+Table 17
+Other human cognition errors.
+
+Mistakes caused by adverse mental states, loss of situation awareness
+Mistakes caused by ergonomics or environmental conditions
+Constraints on humans as information processors, e.g., task saturation
+
+[33,71,87]
+[12]
+[40]
+
+Table 24
+No use of standard for documenting errors.
+
+No use of standard format for documenting requirements
+Different technical standard or notations used by sub teams for documenting
+
+[41]
+[39]
+
+Table 18
+Inadequate method of achieving goals and objectives errors.
+
+Incomplete knowledge leading to poor plan on achieving goals
+Mistakes in setting goals
+Error in choosing the wrong method or wrong action to achieve
+
+[40]
+[40]
+[50,51]
+
+goals
+
+Some system-speciﬁc information was misunderstood leading to
+
+[33]
+
+the selection of wrong method
+
+Selection of a method that was successful on other projects
+Inadequate setting of goals and objectives
+Error in selecting a choice of a solution
+Using an analogy to derive a sequence of actions from other similar
+situations resulting in the wrong choice of a sequence of actions
+
+[23,69]
+[76]
+[56]
+[31,40,64,69]
+
+Transcription error, the developer understood everything but
+
+[60]
+
+simply made a mistake
+
+Table 19
+Management errors.
+
+Poor management of people and resources
+Lack of management leadership and necessary motivation
+Problems in assignment of resources to different tasks
+
+[27,71]
+[29]
+[13]
+
+The communication errors class (Table 12) describes errors that
+result from poor or missing communications among the various
+stakeholders involved in developing the requirements.
+
+requirements
+
+Table 25
+Speciﬁcation errors.
+
+Missing checks (item exists but forgotten)
+Carelessness while organizing or documenting requirement regardless of
+
+[16]
+[7,8]
+
+the effectiveness of the method used
+
+Human nature (mistakes or omissions) while documenting requirements
+Omission of necessary veriﬁcation checks or repetition of veriﬁcation
+
+[83,92]
+[50,51]
+
+checks during the speciﬁcation
+
+Example:
+
+Error: Customer did not communicate that the LA system
+should be used by between one and four users (loan analysts)
+simultaneously.
+Fault: Omitted functionality because the requirements specify
+operations as if they are performed by only one user at a time.
+
+The participation error class (Table 13) describes errors that re-
+sult from inadequate or missing participation of important stake-
+holders involved in developing the requirements.
+
+Example:
+Error: Bank lender, who was not involved in the requirements
+process, wanted the LA application system to handle both ﬁxed
+rate loans and adjustable rate loans.
+
+1098
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Fault: Omitted functionality as requirements only consider ﬁxed
+rate loans.
+The domain knowledge error class (Table 14) describes errors
+that occur when requirement authors lack knowledge or experi-
+ence about the problem domain.
+
+Example:
+
+Error: Requirement author lacks knowledge about the rela-
+tive priority of emergency types within the AAD domain.
+Fault: The functionality is incorrect because the requirements
+contain the wrong ambulance dispatch algorithm.
+
+The speciﬁc application error class (Table 15) describes errors
+that occur when the requirement authors lack knowledge about
+speciﬁc aspects of the application being developed (as opposed
+to the general domain knowledge).
+
+Example:
+Error: Requirement author does not understand the order in
+which status changes should be made to the ambulances in
+the AAD system.
+Fault: The requirements specify an incorrect order of events,
+is
+the status of
+dispatched rather than before, leaving a small window of time
+in which the same ambulance could be dispatched two times.
+The process execution error class (Table 16) describes errors
+that occur when requirement authors make mistakes while exe-
+cuting the requirement elicitation and development processes
+regardless of the adequacy of the chosen process.
+
+ambulance is updated after
+
+the
+
+it
+
+Example:
+Error: Misunderstanding of the ordering of the transactions
+involving the creation or deletion of records in the database
+for the LA system.
+Fault: The requirements incorrectly specify how the LA should
+handle transactions. They state that transactions should be
+resolved based on the order in which the processing completes
+rather than in the order in which the requests were received.
+
+The other human cognition error class (Table 17) describes
+other errors that result from constraints on the cognitive abilities
+of the requirement authors.
+
+The inadequate method of achieving goals and objective error
+class (Table 18) describes errors that result from selecting inade-
+quate or incorrect methods for achieving the stated goals and
+objectives.
+
+Example:
+
+Error: The requirements engineering misunderstood that some
+crucial functionality had to be delivered before other function-
+ality, so s/he chose the waterfall lifecycle rather than an incre-
+mental one.
+Fault: Required functionality cannot be delivered on time to the
+customer.
+
+The management error class (Table 19) describes errors that re-
+
+sult from inadequate or poor management processes.
+
+Example:
+Error: In the LA system, the same requirement engineer is
+assigned to document the borrower’s risk requirement and
+the loan’s risk requirements. These contrasting tasks result in
+a mental lapse when understanding the inputs required to suc-
+cessfully produce the risk estimates.
+Fault: The functionality for calculating risk is incorrect.
+
+Example:
+Error: In the AAD system, the requirements engineers are not
+able to elicit requirements about system response time for
+emergency incidents or about error handling.
+Fault: Performance and other non-functional requirements are
+omitted.
+
+The requirement analysis error class (Table 21) describes errors
+
+committed during the requirement analysis process.
+
+Example:
+Error: In the LA system, the analysis process was not able to
+identify how the system should respond if multiple transactions
+are requested that include the same loan before the system is
+updated.
+Fault: The requirements omit this situation leaving it undeﬁned
+and possibly erroneous.
+The requirement traceability error class (Table 22) describes
+that result from an inadequate or incomplete requirement trace-
+ability process.
+Example:
+Error: In the LA system, a requirement describing the ability of
+loan analyst to change the borrower information can not be
+traced to any user need.
+Fault: An extraneous requirement is included that could result
+in extra, unnecessary work for the developers.
+
+The requirement organization error class (Table 23) describes
+errors committed while organizing the requirement during the
+documentation process.
+
+Example:
+
+Error: When creating the requirements document for the LA
+system, the requirement engineer does not use any type of log-
+ical organization of the requirements.
+Fault: Because the requirements are not grouped logically, a
+requirement about how to display the results of a report was
+omitted from the requirements document.
+
+The no use of documentation standard error class (Table 24) de-
+scribes errors committed because the requirement author did not
+use a standard for documenting the requirements.
+
+Example:
+Error: In documenting the LA application system, the IEEE Stan-
+dard was not used.
+Fault: Requirements about system scope and performance were
+omitted.
+
+The speciﬁcation error class (Table 25) describes general errors
+that can occur while specifying the requirements regardless of
+whether the developers correctly understood the requirements.
+
+amount 6$275,000)
+
+In the LA application system,
+
+Example:
+Error:
+the requirement
+author understood the difference between regular loans (i.e.,
+for
+and
+for
+amount >$275,000), but while documenting the requirements,
+s/he recorded the same information for both type of
+loans.
+Fault: The requirements for the jumbo loans incorrectly specify
+exactly the same behavior as for regular loans.
+
+jumbo
+
+loans
+
+(i.e.,
+
+The requirement elicitation error class (Table 20) describes er-
+rors that result from the use of an inadequate requirement elicita-
+tion process.
+
+In order to make the taxonomy understandable and usable for
+developers, it includes two levels. The taxonomy organizes the er-
+
+5.2. Development of requirement error types
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1099
+
+ror classes, from Section 5.1, into three high-level types: people er-
+rors, process errors, and documentation errors. These high-level types
+can be found in the literature. The remainder of this section de-
+
+Basili and Rombach
+
+1. Application errors (misunderstanding of the problem
+
+[8]
+
+domain)
+
+Table 26
+Requirement error types.
+
+Reference
+
+Card [24]
+
+Error types
+
+Jacobs et al. [46]
+
+Mays et al. [60]
+
+Beecham et al. [13]
+
+Sutcliffe et al. [81]
+
+Coughlan and
+
+Macredie [27]
+
+Lutz [56]
+
+1. Incomplete or wrong methods
+2. Clumsy or defective tools and environment
+3. People who lack adequate training or understanding
+4. Incomplete or defective input and requirement
+
+1. Inadequate communication
+2. Process risks
+3. Organizational risks concerning decision authorities,
+
+responsibilities
+
+4. Technology risks concerning methods and toolsDoes not
+mention people risks as a separate type, but are embed-
+ded in other risk types
+
+1. Oversight of the developer
+2. Education of the developer
+3. Communication failure
+4. Transcription error (developer knew what to do and
+
+understood but simply made a mistake)
+
+2. Problem–solution errors (not knowing, misunderstand-
+
+ing, or misuse of problem solution processes)
+
+3. Environment errors (misunderstanding of the hardware
+
+or software environment)
+
+4. Information management errors (mishandling of certain
+
+procedures)
+
+5. Clerical errors (carelessness)
+
+1. Organizational issues (i.e., developer communication,
+culture, resources, skills, training, user communication)
+2. Technical issues (i.e., complexity of the application, poor
+user understanding, requirements traceability, unde-
+ﬁned requirement process)
+
+1. Communication problems
+2. Social and organization problems (i.e., user participa-
+
+tion, lack of understanding, or trained personnel)
+
+3. Politics
+4. Technical problems
+
+1. Poor communication
+2. Lack of appropriate knowledge or shared understanding
+3. Inappropriate, incomplete, or inaccurate documentation
+4. Lack of systematic process
+5. Poor management of people or resources
+
+1. Program faults (documented software errors)
+2. Human errors (i.e., communication errors, misunder-
+
+standings speciﬁcations, or problem domain)
+
+3. Process ﬂaws (i.e., ﬂaws in controlling system complex-
+
+ity or development methods)
+
+scribes the three error types and the distribution of the error clas-
+ses over three error types.
+
+The different high-level error types found in the literature are
+shown in Table 26, along with their source. Various researchers
+have described different classiﬁcations of requirement errors. We
+have based our error types on this information as described below.
+A major focus of the research in Table 26 is the contribution of
+people to the errors. Some researchers have explicitly labeled them
+as people errors or human errors (i.e., Card et al. [24] and Lutz et al.
+[56]), while others mentioned the error types that are more detailed
+variants of the people errors (e.g., inadequate communication, er-
+rors due to the education of a developer, misunderstandings, etc.).
+These errors are already described in the requirement error classes
+shown in Section 5.1.
+
+Another focus in Table 26 concerns the errors related to process
+ﬂaws. Jacobs et al. [40] and Coughlan et al. [27] have mentioned er-
+rors due to ﬂawed development process and ﬂawed methods and
+tools. While other researchers have recognized this source of er-
+rors, they often combine process errors with other error types.
+An important aspect of our taxonomy is that we distinguish be-
+tween ﬂaws in the process (i.e., process errors) and human contri-
+bution to the error (i.e., people errors).
+
+Mays et al. [60] also listed transcription errors, i.e., the devel-
+oper knew what to do and understood but simply made a mistake.
+Based on this idea, we developed the documentation error type to
+describe errors caused by mistakes in organizing and specifying
+the requirements regardless of whether the developer understood
+the requirement.
+
+Therefore, the error types used in our requirement error taxon-
+omy are: people errors, process errors, and documentation errors. Peo-
+ple errors include errors that originate with fallibilities of the
+individuals involved in project development. Process errors are
+caused by mistakes in selecting the means of achieving goals and
+objectives and focus mostly on the inadequacy of the requirement
+engineering process. Documentation errors are caused by mistakes
+in organizing and specifying the requirements irrespective of
+whether the developer understood the requirements. After identi-
+fying the 14 error types and their meaning, the next step was to
+classify them using these three error types. Fig. 2 shows results
+of that classiﬁcation as the full requirement error taxonomy.
+
+We include the communication and participation error classes in
+the people error type (because they deal with problems among
+people involved in the development). The domain knowledge and
+speciﬁc application error classes are included in the people error
+type because they relate to the lack of adequate training provided
+to people or a person’s misunderstanding of the problem domain.
+Process execution errors are included in the people error type be-
+cause they relate to errors committed by people during the execu-
+tion of processes, rather than errors associated with the adequacy
+
+Fig. 2. Requirement error taxonomy.
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1100
+
+Error
+
+Table 27
+Excluded requirement errors.
+
+Exclusion reason
+
+Culture, staff retention, politics
+Inappropriate, hidden or missing functionality,
+poor feedback, syntax and semantic errors
+Work standard, getting slow start, relying only on
+
+user interviews, time pressure, situation
+awareness errors, lack of trust
+
+Based only on expert opinion
+Not related to any of the
+research questions
+Short-papers, introductions
+to special issues, tutorials,
+and mini-tracks
+
+of the process itself. Finally, other human cognition errors are in-
+cluded in the people error type because they describe errors that
+result from constraints on the cognitive abilities of people.
+
+The process error type includes the error classes that described
+the errors resulting from ﬂawed methods and tools used for
+achieving goals and ﬂawed requirement engineering processes.
+The error classes included in process error were: inadequate method
+for achieving goals and objectives, requirement management errors,
+requirement elicitation errors,
+requirement analysis errors, and
+requirement traceability errors.
+
+Finally, the documentation error type includes errors that result
+from the process of documenting the information about the
+requirements. They do not concern misunderstandings of the ac-
+tual requirements, those are people errors. The three error types
+that are related to this problem are speciﬁcation errors, no usage
+of standard errors, and organization errors.
+
+Finally, there were some errors that were found during the sys-
+tematic review that were excluded from the requirement error tax-
+onomy. Table 27 lists those errors along with the reasons for
+excluding them.
+
+6. Discussion
+
+This section summarizes the principal ﬁndings of the systematic
+review, highlights the strengths and weaknesses of the evidence
+gathered and discusses the relevance and contribution of the
+requirement error taxonomy to the software engineering research
+and practice community.
+
+6.1. Principal ﬁndings
+
+The goal of this review was to identify and classify errors that
+can occur during the requirement phase. Thus, a systematic litera-
+ture review was conducted covering various research domains.
+Using this information, a comprehensive initial requirement error
+taxonomy was developed. The principal ﬁndings of the review are:
+(cid:2) A description of software quality improvement methods that
+use error information, their limitations, drawbacks, and contri-
+butions to the requirements error taxonomy.
+
+(cid:2) A description of the requirements errors that have been reported
+in the software engineering literature. In addition, an analysis of
+groups of related faults provided additional errors types that
+were included in the requirement error taxonomy.
+
+(cid:2) A description of human errors (from cognitive psychology) and
+their classiﬁcations accounted for additional errors that can
+occur during the requirement stage.
+
+(cid:2) Finally, a requirement error taxonomy that classiﬁes all of the
+errors uncovered during the systematic review along with their
+impact on software quality using example of faults they are
+likely to cause by some of the errors.
+
+6.2. Strengths and weaknesses
+
+Validity of evidence: The evidence collected from the literature
+was identiﬁed through a search of multiple literature databases
+
+covering all of the relevant journals, proceedings, technical reports
+and other literature in this area. To reduce bias, data extraction
+forms were utilized to consistently extract the desired information
+from each of the selected papers. The information extracted was
+validated through comparison of independent analysis results be-
+tween the authors of the paper. Finally, a well-deﬁned inclusion
+and exclusion criterion was followed to select only the most appro-
+priate papers.
+
+Results of quality assessment: The results from the quality assess-
+ment (Table 5) showed that the papers were of high quality. The
+papers that address research question 1 were all experiments that
+satisﬁed the four quality questions, i.e., they provided empirical
+evidence on the use of errors for improving software quality, de-
+scribed the analysis method appropriately and were completely
+understandable.
+
+The papers collected that address research question 2 were a
+mixture of experiments and observational studies. These studies
+analyzed the root causes of faults in the software requirement
+phase and other software lifecycle phases. All the studies provided
+error information using well-described analyzes, used real defect
+data from software organizations, and presented the evidence
+(e.g., by describing case studies of using error information to im-
+prove software process or decreasing defect rates) or observations
+(e.g., by noticing better customer satisfaction and improved com-
+munication) to support their ﬁndings and conclusions.
+
+The papers that address research question 3 were also a mixture
+of experiments and observational studies. The observational stud-
+ies described human error classiﬁcations derived from observing
+the human thought processes while planning, making decisions,
+and problem solving. The experiments described new human error
+classiﬁcation and validated those described in the observational
+studies. The human errors described in these studies were sup-
+ported by evidence (empirical or observations).
+
+Adequacy ofrequirement error taxonomy to address limitations: To
+overcome the limitations and drawbacks identiﬁed in Section 2
+(listed in Table 1) and discussed in Section 4 (in the answer to ques-
+tion 1.2), the requirement error taxonomy provides comprehensive
+error information to help developers identify and classify errors in
+the requirements phase. The usefulness of the requirement error
+taxonomy has been validated through a series of three controlled
+experiments at Mississippi State University. The initial results from
+these studies have been published, with more detailed analysis
+ongoing. Therefore, only an overview of how the requirement error
+taxonomy can be used to improve the quality of software artifacts
+and the major results of each study are provided.
+
+To evaluate the feasibility of using a requirement error taxon-
+omy, an initial taxonomy was developed using an ad hoc review
+(as opposed to this systematic review). Then, a study was con-
+ducted to ensure that developers could use the error information
+to improve their defect detection capability during the inspection
+process. This study utilized a repeated-measures experiment de-
+sign, where the subjects were asked to ﬁrst inspect the require-
+ment artifact (which they created) to ﬁnd as many faults as
+possible. These subjects were then trained in the use of error
+abstraction (similar to Lanubile et al. [53]) following by training
+in the use of error classiﬁcation (using the requirement error tax-
+onomy). The subjects were then asked to return to artifact and
+re-inspect it using the knowledge of errors that they committed
+to identify additional faults. The results from this study showed
+that all the subjects found a considerably large number of addi-
+tional faults during the second inspections [89,90].
+
+After this study, the systematic review reported in this paper
+was conducted to develop the requirement error taxonomy as de-
+scribed in Section 5. A second study was then performed using the
+new taxonomy. This study replicated the ﬁrst study with the addi-
+tion of a control group. The goal of this study was to investigate
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1101
+
+how much of the increase seen during the re-inspection step of
+study 1 was due to the requirement error taxonomy and how much
+was due simply to performing a second inspection of the same arti-
+fact. In this study, the control group simply performed two inspec-
+tions to look for faults, while the treatment group performed the
+ﬁrst inspection in the same way as control group followed by error
+abstraction and classiﬁcation to inform their second inspection (as
+in study 1). The results from this study showed that the experi-
+ment group, using the requirement error taxonomy, was signiﬁ-
+cantly more effective than the control group during the re-
+inspection [88,90].
+
+A third study also evaluated the usefulness of the requirement
+error taxonomy by replicating the ﬁrst study and adding an obser-
+vational variable. The goal of this study was to observe ﬁrsthand
+the behavior and interactions of subjects while they developed
+the requirements document and inspected it using the require-
+ment error taxonomy. This study included a participant observer
+(one of the researchers) who took notes about the errors commit-
+ted by subjects during the development of the requirements and
+about their interactions when using the requirement error taxon-
+omy. The results from this study also conﬁrmed the effectiveness
+of using the requirement error taxonomy to ensure early defect
+detection.
+
+In addition, the subjects participating in all the three studies fa-
+vored the requirement error taxonomy on different attributes (i.e.,
+simplicity, understandability, applicability, intuitiveness, orthogo-
+nal, comprehensiveness, usefulness, and uniformity across prod-
+ucts). The results from all the three studies showed that the
+requirement error taxonomy: (a) improves the effectiveness for
+inspection teams and individual
+for
+improving the quality of a requirements document, and (c) pro-
+vides important insights into the requirement phase of the soft-
+ware lifecycle. The results also support the validity of using
+human cognition research to better understand software fault pro-
+duction, and to increase defect detection [88–90]. These studies
+with university students have provided positive initial results
+and further validation is underway.
+
+inspectors, (b) is useful
+
+6.3. Contribution to research and practice communities
+
+vast body of literature from both the software engineering and cog-
+nitive psychology ﬁelds was conducted to identify and classify
+requirements errors. The result of the review is a requirement error
+taxonomy to help developers identify errors at their origin and en-
+sure the early detection of defects. Based on the initial empirical
+evaluations, the requirement error taxonomy shows promise as
+an effective quality improvement approach and provides impor-
+tant insights into the requirement phase of software lifecycle.
+
+This work will contribute to the understanding of software
+quality assurance through the inclusion of research from cognitive
+psychology. Researchers and practitioners from both domains will
+beneﬁt from this work. For researchers, this work can serve as a
+starting point for future research into the development of similar
+errors taxonomies for other lifecycle phases. We also anticipate
+that the continuing work in this area will provide additional in-
+sights into the cognitive aspects of software development and
+quality assurance. For practitioners, software engineers will gain
+a more solid psychological basis for understanding software faults
+and errors, and developers will be provided with a new set of tools
+to prevent, detect, and repair the errors and resulting faults. Future
+research into the development of concrete techniques based on the
+error taxonomies can be used by developers to efﬁciently identify
+the cause of faults at their source, and improve the quality of their
+software.
+
+6.4. Conclusion and future work
+
+Based on the evidence gathered from the review and the data
+collected from initial studies, the requirement error taxonomy
+shows promise. The evidence provided in this paper has motivated
+further investigation of the effectiveness of the proposed taxon-
+omy. These results provide additional information for researchers
+who are investigating methods to improve quality by developing
+more effective tools and methods to assist software developers.
+
+Finally, similar systematic reviews to identify errors in the sub-
+sequent software lifecycle phases are needed. Research in this
+direction will help the research and practice communities develop
+a more complete veriﬁcation process.
+
+Acknowledgements
+
+This paper provides a new perspective for the investigation of
+software quality improvement. It outlines the software quality
+problem and describes the limitations of the existing practices in
+ensuring software quality. A systematic review encompassing a
+
+We thank the Empirical Software Engineering (ESE) Research
+Group at Mississippi State University for providing useful feedback
+and suggestions during the systematic review. We also thank Dr.
+
+Table 28
+Search strings.
+
+String
+#
+
+High level search string
+
+Detailed search string
+
+Review
+question
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+Software quality improvement
+approach
+
+Software inspection methods
+
+Error abstraction OR root causes
+
+Requirement stage errors
+
+Software error/fault/defect
+taxonomy
+
+Human error classiﬁcation
+
+Contribution from other ﬁelds to
+S/W development
+
+((software OR development OR application OR product OR project) AND (quality OR condition OR character OR
+property OR attribute OR aspect) AND (improvement OR enhancement OR advancement OR upgrading OR
+ameliorate OR betterment) AND (approach OR process OR system OR technique OR methodology OR procedure
+OR mechanism OR plan OR pattern))
+((software OR development OR application OR product OR project) AND (inspection OR assessment OR evaluation
+OR examination OR review OR measurement) AND (approach OR process OR system OR technique OR
+methodology OR procedure OR mechanism OR plan OR pattern))
+(error OR mistake OR problem OR reason OR fault OR defect OR imperfection OR ﬂaw OR lapse OR slip OR err)
+AND (abstraction OR root cause OR cause))
+((requirement OR speciﬁcation) AND (phase OR stage OR situation OR division OR period OR episode OR part OR
+state OR facet) AND (error OR mistake OR problem OR reason OR fault OR defect OR imperfection OR ﬂaw OR lapse
+OR slip OR err))
+((software OR development OR application OR product OR project) AND (error OR mistake OR problem OR reason
+OR fault OR defect OR imperfection OR ﬂaw OR lapse OR slip OR err) AND (taxonomy OR classiﬁcation OR
+categorization OR grouping OR organization OR terminology OR systematization))
+((human OR cognitive OR individual OR psychological) AND (error OR mistake OR problem OR reason OR fault OR
+defect OR imperfection OR ﬂaw OR lapse OR slip OR err) AND (taxonomy OR classiﬁcation OR categorization OR
+grouping OR organization OR terminology OR systematization))
+((contribution OR signiﬁcance OR beneﬁt OR supplement OR assistance) AND (human cognition OR psychology)
+AND (software development))
+
+1
+
+2
+
+3
+
+1102
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Table 29
+List of requirement errors identiﬁed in software engineering literature.
+
+Description of error
+
+Methods (which may be incomplete, ambiguous, wrong, or unenforced); tools and environment (which may be clumsy, unreliable, or defective); and people
+
+[24]
+
+Reference
+
+(who may lack adequate training and understanding)
+
+Poor organization of requirements
+No use of standard format used for documenting requirements
+Inadequate/insufﬁcient training and experience
+Inadequate project communications
+Changes in the requirements not communicated
+Not involvement of all the stakeholders
+Poor impact analysis of changing requirements
+Lack of trust
+People have different interpretation of requirements
+Communication error (lack of communication among developers and between developer and users); transcription error (the developer understood
+
+everything but simply made a mistake); and the developer did not understand some aspect of the product or process
+
+User needs not well-understood or interpreted by different stakeholders
+Missing checks (item exists but forgotten)
+Mishandling of steps to follow
+Lack of understanding of the system
+Lack of domain knowledge or lack of system knowledge
+Communication problems
+Individual mistakes
+Lack of change coordination
+Lack of domain knowledge
+Misunderstanding of problem solution processes
+Mistakes in developing models for analyzing requirements
+Ineffective method of organizing individual requirements
+Carelessness while documenting requirements
+Mishandling of certain processes
+Poor communication between users and developers, and between members of the development teams
+Lack of involvement of users at all times during requirement development
+Lack of communication between sub teams; and inadequate requirement development processes
+Communication errors between development teams
+Lack of user communication
+Complexity of problem domain
+Problem in assignment of resources to different tasks
+Lack of proper methods for collecting requirements
+Inadequate requirement traceability
+Problem while analyzing the solution space
+Communication issues between users and developers
+Complexity of problem domain
+Constraints on humans as information processors
+Lack of developer communication and lack of user communication
+Complexity of the application domain
+Inadequate requirement traceability
+Undeﬁned requirement process
+Lack of skills or inappropriate skills or lack of training
+Inadequate assignment of resources
+Poor communication and interactions among users and developers thorough the requirement development process
+Lack of trained or experienced personnel
+Misunderstandings of requirements by development team
+Lack of domain knowledge or lack of speciﬁc task knowledge
+Clerical errors
+Mistaken assumptions about the problem space
+Unclear lines of communication and authority
+Lack of involvement due to internal factors like rivalry among developers or lack of the motivation
+Only relying on selected users to accurately deﬁne all the requirements
+Different technical standards followed by sub-teams
+Lack of proper environment
+Lack of experience and poor communication among developers
+Lack of proper methods of collecting requirements
+Inadequate setting of goals and objectives
+Complex domain
+Lack of domain knowledge
+Lack of communication
+Poor communication among developers
+Lack of appropriate knowledge about the application and lack of awareness of sources of requirements; and poor management of people and resources
+Lack of domain knowledge
+Human nature (mistakes or omissions)
+Lack of management leadership and motivation
+Lack of skills and poor planning
+Impact analysis not systematically achieved and change requests insufﬁciently formalized
+Communication problems
+Simple omission
+Wrong solution chosen because some system speciﬁc information was misunderstood
+Not understanding some parts of the problem domain
+
+[41]
+
+[46]
+
+[60]
+
+[61]
+
+[55]
+
+[8]
+
+[47]
+
+[16]
+[13]
+
+[21]
+
+[42]
+
+[81]
+
+[82]
+[7]
+
+[39]
+
+[76]
+
+[12]
+
+[27]
+
+[92]
+
+[29]
+
+[33]
+
+[65]
+
+(continued on next page)
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1103
+
+Table 29 (continued)
+
+Description of error
+
+Lack of domain knowledge
+Lack of task knowledge
+Mistakes in setting goals
+Incomplete knowledge leading to poor plans on achieving goals
+Complexity of the task
+Application of wrong rules
+Lack of involvement of all the users
+Lack of communication within a team or between teams
+Misunderstanding of interface speciﬁcations
+Error in selecting a choice of solution
+Mistaken assumptions
+Lack of communication of the requirement changes
+Misunderstandings about the timing constraints, data dependency constraints, and command ordering constraints
+Lack of motivation, inadequate communications, and poor planning
+Lack of communication among group of people working together
+Lack of knowledge, skills, or experience to perform a task
+Deﬁciency of resource or task management
+
+Reference
+
+[40]
+
+[56]
+
+[57]
+[87]
+[71]
+
+Gary Bradshaw, a human cognition and psychology expert, for pro-
+viding information on relevant databases and useful feedback on
+our research. We thank Doris Carver and Guilherme Travassos for
+reviewing early drafts of this paper. Finally we thank the anony-
+mous reviewers for their helpful comments.
+
+the high level set of keywords used to derive the string; detailed
+search string – the more detailed set of keywords used to derive
+the string (this string was customized for each database search op-
+tions to generate best results); and review question – maps to the
+primary research questions.
+
+Appendix A
+
+Appendix B
+
+To search these databases described in Table 3, a set of search
+strings was created for each research question based on keywords
+extracted from the research questions and augmented with syn-
+onyms. Table 12 shows the search strings used for each research
+question (three search strings for question 1, two search strings
+for question 2, and two search strings for question 3). In developing
+the keyword strings, the following principles were applied:
+(cid:2) The major terms were extracted from the review questions and
+augmented with other terms known to be relevant to the
+research.
+
+(cid:2) A list of meaningful synonyms, abbreviations, and alternate
+spellings was then generated. This list also included terms iden-
+tiﬁed via consultation with the librarian and additional terms
+from papers that were known to be relevant.
+
+(cid:2) The following global search string was constructed containing
+
+all of the relevant keywords and their synonyms.
+
+((software OR development OR application OR product OR project)
+AND (quality OR condition OR character OR property OR attribute
+OR aspect) AND (improvement OR enhancement OR advancement
+OR upgrading OR ameliorate OR betterment) AND (approach OR
+process OR system OR technique OR methodology OR procedure
+OR mechanism OR plan OR pattern) AND (error OR mistake OR
+problem OR reason OR fault OR defect OR imperfection OR ﬂaw
+OR lapse OR slip OR err) AND (requirement OR speciﬁcation)
+AND (phase OR stage OR situation OR division OR period OR epi-
+sode OR part OR state OR facet) AND (taxonomy OR classiﬁcation
+OR categorization OR grouping OR organization OR terminology
+OR systematization) AND (human OR cognitive OR individual
+OR psychological) AND (abstraction OR root cause OR cause)
+AND (inspection OR assessment OR evaluation OR examination
+OR review OR measurement) AND (contribution OR signiﬁcance
+OR assistance OR beneﬁt OR supplement) AND (human cognition
+OR psychology OR failure management)).
+
+This appendix describes the all the requirement errors that were
+identiﬁed in the software engineering literature. The sources used
+to identify requirement errors are shown in Table 10 of the journal
+paper under research question 2.1, and described in Table 29.
+
+Table 30 describes the list of other software process errors (in
+design and coding phases), and are related to errors that can occur
+during the requirement stage. Table 30 is related to the research
+question 2.2 of the journal paper.
+
+Table 31 describes the list of requirement errors that were ab-
+stracted from analysis of source of actual faults. Table 31 is related
+to the research question 2.3 of the journal paper.
+
+Table 30
+List of other software process errors that can also occur during the requirement.
+
+Description of error
+
+Miscommunication among teams
+Lack of domain or system knowledge
+Misunderstandings caused by working simultaneously with several
+
+different software systems and domains
+
+Using an analogy to derive a sequence of actions from other similar
+situations resulting in the wrong choice of a sequence of actions
+
+[63,64]
+
+Mistake while executing the sequence of actions
+Misunderstanding of situation while forming a goal
+Technological, historical, organizational, individual or other causes
+Inattention or over attention
+Choosing the wrong plan due to information overload
+Wrong actions to achieve goals
+Incorrect model while trying to understand solution and task
+
+complexity
+
+Reference
+
+[17,41]
+
+[31]
+[50,51]
+
+Table 31
+List of abstracted errors.
+
+Description of error
+
+Using this global search string, seven different search strings
+(each one with its own purpose) were derived and executed on
+each database. These strings are explained in Table 28 with the fol-
+lowing attributes: string # – identiﬁcation; high level search string –
+
+Lack of participation of all the stakeholders
+Mistakes or misunderstandings in mapping inputs, outputs, and processes
+Unresolved system interfaces and unanticipated dependencies
+Misunderstanding of some aspect of the overall functionality of the system
+Mistakes while analyzing requirement use cases or different scenarios in which
+
+the system can be used
+
+1104
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+Appendix C
+
+This appendix provides a list of all the papers that provided in-
+put to this review, including those cited in the main paper and
+some additional references. The additional references were not in-
+cluded in the main paper because they are either illustration of er-
+ror taxonomies that were cited in the main paper, or they are
+references that do not add any new information to those that are
+cited. This complete list of references is included for the sake of
+completeness and may be of interest to some readers. For the sake
+of clarity, references marked with a ‘(cid:3)’ are included in the reference
+list for the main paper.
+
+*[1]
+
+IEEE Std 610.12-1990, IEEE Standard Glossary of Software
+Engineering Terminology, 1990.
+
+*[2] Software Engineering Laboratory: Software Measurement
+Guidebook, NASA/GSFC Software Engineering Laboratory,
+1994.
+
+*[3] A.F. Ackerman, L.S. Buchwald, F.H. Lewski, Software
+
+inspections: an effective veriﬁcation process, IEEE
+Software 6 (3) (1989) 31–36.
+
+*[4] A. Aurum, H. Petersson, C. Wohlin, State-of-the-art:
+
+software inspections after 25 years, Journal of Software
+Testing Veriﬁcation and Reliability 12 (3) (2002) 133–
+154.
+
+[5] B.P. Bailey, J.A. Konstan, On the need for attention-
+aware systems, measuring effects of interruption on
+task performance, error rate and affective state. Journal
+of Computers in Human Behavior 22 (4) (2006) 685–
+708.
+
+[6] V. Basili, S. Green, Software process evolution at the SEL,
+
+IEEE Software 11 (2) (1994) 58–66.
+
+*[7] V.R. Basili, D.M. Weiss, Evaluation of a software
+
+requirements document by analysis of change data, in:
+Proceedings of the Fifth International Conference on
+Software Engineering, IEEE Press, San Diego, CA, 1981, pp.
+314–323.
+
+*[8] V.R. Basili, B.T. Perricone, Software errors and complexity:
+
+an empirical investigation, Communications of the ACM
+27 (1) (1984) 42–52.
+
+[9] V.R. Basili, E.E. Katz, N.N. Panlilio-Yap, C.L. Ramsey, S.
+
+Chang, Characterization of an ada software development,
+IEEE Computer 18 (9) (1985).
+
+*[10] V.R. Basili, H.D. Rombach, Tailoring the software process to
+project goals and environments, in: Proceedings of Ninth
+International Conference in Software Engineering, IEEE
+Press, California, United States, 1987, pp. 345–357.
+
+*[11] V.R. Basili, H.D. Rombach, The TAME project: towards
+
+improvement-oriented software environments, IEEE
+Transactions on Software Engineering 14 (6) (1988) 758–
+772.
+
+*[12] V.R. Basili, Evolving and packaging reading techniques,
+
+Journal of Systems and Software 38 (1) (1997) 3–12.
+
+*[13] S. Basu, N. Ebrahimi, Estimating the number of undetected
+
+errors: Bayesian model selection, in: Proceedings of the
+Ninth International Symposium on Software Reliability
+Engineering, IEEE Computer Society, Paderborn, Germany,
+1998, pp. 22–31.
+
+*[14] D. Batra, Cognitive complexity in data modeling: causes
+
+and recommendations, Requirements Engineering Journal
+12 (4) (2007) 231–244.
+
+*[15] S. Beecham, T. Hall, C. Britton, M. Cottee, A. Rainer, Using
+an expert panel to validate a requirements process
+improvement model, The Journal of Systems and Software
+76 (3) (2005) 251–275.
+
+*[16] T.E. Bell, T.A. Thayer, Software requirements: are they
+
+[17]
+
+really a problem? in: Proceedings of Second
+International Conference on Software Engineering, IEEE
+Computer Society Press, Los Alamitos, CA, 1976, pp. 61–68.
+J.P. Benson, S.H. Saib, A software quality assurance
+experiment, in: Proceedings of the Software Quality
+Assurance Workshop on Functional and Performance
+Issues, ACM Press, 1978, pp. 87–91.
+
+*[18] T. Berling, T. Thelin, A case study of reading techniques in a
+
+software company, in: Proceedings of the 2004
+International Symposium on Empirical Software
+Engineering (ISESE’04), IEEE Computer Society, 2004, pp.
+229–238.
+
+*[21]
+
+*[20]
+
+[19] B. Bernardez, M. Genero, A. Duran, M. Toro, A controlled
+experiment for evaluating a metric-based reading
+technique for requirement inspection, in: Proceedings of
+the 10th International Symposium on Software Metrics
+(METRICS’04), IEEE Computer Society, 2004, pp. 257–268.
+I. Bhandari, M. Halliday, E. Tarver, D. Brown, J. Chaar, R.
+Chillarege, A case study of software process improvement
+during development, IEEE Transactions on Software
+Engineering 19 (12) (1993) 1157–1170.
+I. Bhandari, M.J. Halliday, J. Chaar, R. Chillarege, K. Jones,
+J.S. Atkinson, C. Lepori-Costello, P.Y. Jasper, E.D. Tarver,
+C.C. Lewis, M. Yonezawa, In process improvement through
+defect data interpretation, IBM Systems Journal 33 (1)
+(1994) 182–214.
+J. Biolchini, P.G. Mian, A.C. Natatli, G.H. Travassos,
+Systematic Review in Software Engineering: Relevance
+and Utility, PESC-COPPE/UFRJ, Brazil, 2005, <http://
+cronos.cos.ufrj.br/publicacoes/reltec/es67905.pdf>.
+[23] S. Bifﬂ, B. Freimut, O. Laitenberger, Investigating the cost-
+
+*[22]
+
+effectiveness of reinspections in software development,
+in: Proceedings of the 23rd International Conference on
+Software Engineering, IEEE Computer Society, Toronto,
+Ontario, Canada, 2001, pp. 155–164.
+
+[24] M.R. Blackburn, R. Busser, A. Nauman, Eliminating
+requirement defects and automating test, in: Test
+Computer Software Conference, IEEE Computer Society,
+2001, pp. 25–34.
+
+[25] A. Blavier, E. Rouy, A.S. Nyssen, V. Keyser, Prospective
+
+issues for error detection, Journal of Ergonomics 48 (7)
+(2005) 758–781.
+
+*[26] B. Boehm, V.R. Basili, Software defect reduction top 10 list,
+
+IEEE Computer 34 (1) (2001) 135–137.
+
+*[27] T. Bove, Development and Validation of Human Error
+
+Management Taxonomy in Air Trafﬁc Control, Risø National
+Laboratory and University of Roskilde, 2002, p. 234.
+
+*[28] G.J. Browne, V. Ramesh, Improving information
+
+requirements determination: a cognitive perspective,
+Journal of Information and Management 39 (8) (2002)
+625–645.
+
+*[29] B. Brykczynski, A survey of software inspection checklists,
+
+ACM SIGSOFT Software Engineering Notes 24 (1) (1999)
+82–89.
+
+[30] D.K. Buse, C.W. Johnson, Identiﬁcation and analysis of
+incidents in complex, medical environments, in:
+Proceedings of the First Workshop on Human Error and
+Clinical Systems, Cambridge University Press, Glasgow,
+Scotland, 1999.
+
+*[31] P.C. Cacciabue, A methodology of human factors analysis
+
+for systems engineering: theory and applications, IEEE
+Transactions on System, Man and Cybernetics – Part A:
+Systems and Humans 27 (3) (1997) 325–329.
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1105
+
+*[32] D.N. Card, Learning from our mistakes with defect causal
+
+*[51] W.A. Florac, Software Quality Measurement: A
+
+analysis, IEEE Software 15 (1) (1998) 56–63.
+
+*[33] B. Cheng, R. Jeffrey, Comparing inspection strategies for
+
+software requirement inspections, in: Proceedings of the
+1996 Australian Software Engineering Conference, IEEE
+Computer Society, Melbourne, Australia, 1996, pp. 203–
+211.
+
+Framework for Counting Problems and Defects, Carnegie
+Mellon Software Engineering Institute, Pittsburgh, PA,
+1992.
+
+[52] M. Fredericks, V. Basili, Using Defect Tracking and Analysis
+to Improve Software Quality, The Data and Analysis Center
+for Software (DACS), 1998.
+
+[34] Y. Chernak, A statistical approach to the inspection checklist
+
+*[53] B. Freimut, C. Denger, M. Ketterer, An industrial case study
+
+[41] S.W.A. Dekker, Illusions of explanation : a critical essay on
+
+[59] M. Graboswki, K.H. Roberts, Human and organizational
+
+formal synthesis and improvement, IEEE Transactions on
+Software Engineering 22 (12) (1996) 866–874.
+
+*[35] R. Chillarege, I. Bhandari, J. Chaar, M. Halliday, D. Moebus,
+
+B. Ray, M.Y. Wong, Orthogonal defect classiﬁcation – a
+concept for in-process measurement, IEEE Transactions on
+Software Engineering 18 (11) (1992) 943–956.
+
+[36] M. Ciolkowski, O. Laitenberger, S. Bifﬂ, Software reviews:
+
+the state of the practice, IEEE Software 20 (6) (2003) 46–51.
+[37] B. Clark, D. Zubrow, How good is the software: a review of
+
+defect prediction techniques, in: Software Engineering
+Symposium, IEEE Computer Press, Pittsburgh, PA, 2001,
+pp. 1–35.
+J. Coughlan, D.R. Macredie, Effective communication in
+requirements elicitation: a comparison of methodologies,
+Requirements Engineering Journal 7 (2) (2002) 47–60.
+
+*[38]
+
+*[39] W.J. Cristopher, The cost of errors in software
+
+development: evidence from industry, The Journal of
+System and Software 62 (1) (2002) 1–9.
+
+*[40] C. Debou, A.K. Combelles, Linking software process
+
+[58]
+
+improvement to business strategies: experiences from
+industry, Journal of Software Process: Improvement and
+Practice 5 (1) (2000) 55–64.
+
+error classiﬁcation, The International Journal of Aviation
+Psychology 13 (2) (2003) 95–106.
+
+[42] B.S. Dhillon, Y. Liu, Human error in maintenance: a review,
+Journal of Quality in Maintenance Engineering 12 (1)
+(2006) 21–36.
+I.M.M. Duncan, D.J. Robson, An exploratory study of
+common coding faults in C programs, C Traps and Pittfalls
+8 (4) (1996) 251–256.
+
+[43]
+
+[44] K. Emam, O. Laitenberger, T. Harbich, The application of
+subjective estimates of effectiveness to controlling
+software inspections, The Journal of Systems and Software
+54 (2) (2000) 119–136.
+
+*[45] A. Endres, An analysis of errors and their causes in system
+programs, IEEE Transactions on Software Engineering 1 (2)
+(1975) 140–149.
+
+*[46] A. Endres, D. Rombach, A Handbook of Software and
+
+*[47] M.R. Endsley, Situation awareness and human error:
+
+designing to support human performance, in: Proceedings
+of the High Consequence Systems Surety Conference, SA
+Technologies, Albuquerque, NM, 1999, pp. 2–9.
+
+[48] M.E. Fagan, Design and code inspections to reduce errors
+
+in program development, IBM Systems Journal 15 (3)
+(1976) 182–211.
+
+*[49] N.E. Fenton, M. Neil, A critique of software defect
+prediction models, IEEE Transactions on Software
+Engineering 25 (5) (1999) 675–689.
+
+*[50] P.M. Fitts, R.E. Jones, Analysis of factors contributing to
+
+460 ‘pilot error’ experiences in operating aircrafts control,
+in: Selected Papers on Human Factors in the Design and
+Use of Control Systems, Dover Publications Inc., New York,
+1961, pp. 332–358.
+
+Systems Engineering, ﬁrst ed., Pearson Addison Wesley,
+Harlow, England, 2003.
+
+*[64]
+
+of implementing and validating defect classiﬁcation for
+process improvement and quality management, in:
+Proceedings of the 11th IEEE International Software
+Metrics Symposium, IEEE Press, 2005.
+
+[54] M.S. Fujii, A comparison of software assurance methods,
+
+ACM SIGMETRICS Performance Evaluation Review 7 (3–4)
+(1978) 27–32.
+
+*[55] P. Fusaro, F. Lanubile, G. Visaggio, A replicated
+
+experiment to assess requirements inspection
+techniques, Journal of Empirical Software Engineering 2
+(1) (1997) 39–57.
+
+*[56] D.A. Gaitros, Common errors in large software
+
+*[57]
+
+development projects, The Journal of Defense Software
+Engineering 12 (6) (2004) 21–25.
+J. Galliers, S. Minocha, A. Sutcliffe, A causal model of
+human error for safety critical user interface design, ACM
+Transactions on Computer–Human Interaction 5 (3)
+(1998) 756–769.
+J. Galliers, A. Sutcliffe, S. Minocha, An impact analysis
+method for safety-critical user interface design, ACM
+Transactions on Computer–Human Interaction 6 (4)
+(1999) 341–369.
+
+error in large scale systems, IEEE Transactions on System,
+Man And Cybernetics – Part A: Systems and Humans 26
+(1) (1996) 2–16.
+
+*[60] R.B. Grady, Software failure analysis for high-return
+
+process improvement, Hewlett–Packard Journal 47 (4)
+(1996) 15–24.
+
+[61] W.D. Gray, The nature and processing of errors in
+
+interactive behavior, Journal of Cognitive Science 24 (2)
+(2000) 205–248.
+
+*[62] T. Hall, S. Beecham, A. Rainer, Requirement problems in
+
+*[63]
+
+twelve software companies: an empirical analysis, IEE
+Proceedings Software 149 (5) (2002) 153–160.
+J.H. Hayes, Building a requirement fault taxonomy:
+experiences from a NASA veriﬁcation and validation
+research project, in: Proceedings of the 14th International
+Symposium on Software Reliability Engineering, IEEE
+Computer Society, 2003, pp. 49–59
+J.H. Hayes, E.A. Holbrook, I. Raphael, D.M. Pruett, Fault-
+based analysis: how history can help improve
+performance and dependability requirements for high
+assurance systems, in: Fifth International Workshop on
+Requirements for High Assurance Systems (RHAS’05), IEEE
+Computer Society, Chicago, 2005.
+
+[65] K. Henningsson, C. Wohlin, Assuring fault classiﬁcation
+
+agreement – an empirical evaluation, in: Proceedings of the
+2004 International Symposium on Empirical Software
+Engineering (ISESE’04), IEEE Computer Society, 2004, pp.
+95–104.
+
+[66] A. Hobbs, A. Williamson, Skills, rules and knowledge in
+aircraft maintenance: errors in context, Journal of
+Ergonomics 45 (4) (2002) 290–308.
+
+[67] E. Hollnagel, Human Reliability Analysis: Context and
+
+Control, Academic Press, London, 1994.
+
+1106
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+[68]
+
+J.C. Huang, C.K. Chang, M. Christensen, Event-based
+traceability for managing evolutionary change, IEEE
+Transactions on Software Engineering 29 (9) (2003) 796–804.
+[69] W.S. Humphrey, Using a deﬁned and measured personal
+
+[86] O. Laitenberger, C. Atkinson, M. Schlich, K.E. Emam, An
+
+experimental comparison of reading techniques for defect
+detection in UML design documents, The Journal of
+Systems and Software 53 (2) (2000) 183–204.
+
+software process, IEEE Software 13 (3) (1996) 77–88.
+
+[87] O. Laitenberger, J.M. DeBaud, An encompassing lifecycle
+
+*[70] A. Issac, S.T. Shorrock, R. Kennedy, B. Kirwan, H. Andersen,
+
+*[71]
+
+T. Bove, The Human Error in ATM Technique (HERA-
+JANUS), European Air Trafﬁc Management, 2002, pp. 1–94.
+J. Jacobs, J.V. Moll, P. Krause, R. Kusters, J. Trienekens, A.
+Brombacher, Exploring defect causes in products
+developed by virtual teams, Journal of Information and
+Software Technology 47 (6) (2005) 399–410.
+
+[72] M.S. Jaffe, N.G. Leveson, M.P.E. Heimdahl, B.E. Melhart,
+
+Software requirements analysis for real-time process
+control systems, IEEE Transactions on Software
+Engineering 17 (3) (1991) 241–258.
+
+[73] C. Johnson, Forensic software engineering: are software
+failures symptomatic of software problems? Journal of
+Safety Science 40 (9) (2002) 835–847.
+
+[74] M. Jorgensen, M. Shepperd, A systematic review of software
+development cost estimation studies, IEEE Transactions on
+Software Engineering 33 (1) (2007) 33–53.
+
+[75] W. Joung, B. Hesketh, Using ‘‘war stories” to train for
+
+adaptive performance: is it better to learn from errors or
+success? Journal of Applied Psychology: An International
+Review 55 (2) (2006) 282–302.
+
+*[76] S.H. Kan, V.R. Basili, L.N. Shapiro, Software quality: an
+overview from the perspective of total quality
+management, IBM Systems Journal 33 (1) (1994) 4–19.
+[77] E. Kantorowitz, L. Arzi, A. Gutmann, The performance of
+the N-fold requirement inspection method, Requirement
+Engineering Journal 2 (3) (1997) 152–164.
+
+[78] D. Kelly, T. Shepard, Task-directed software inspection
+
+technique: an experiment and case study, in: Proceedings
+of the 2000 Conference of the Centre for Advanced Studies
+on Collaborative Research, IBM Press, Mississauga,
+Ontario, Canada, 2000.
+
+[79] T.G. Kirner, J.C. Abib, Inspection of software requirements
+speciﬁcation documents: a pilot study, in: Proceedings of
+the 15th Annual International Conference on Computer
+Documentation, IEEE Press, Salt Lake City, Utah, United
+States, 1997, pp. 161–171.
+J.C. Knight, A.E. Myers, An improved inspection technique,
+Communications of the ACM 36 (11) (1993) 50–69.
+
+[80]
+
+*[81] A.J. Ko, B.A. Myers, Development and evaluation of a
+
+model of programming errors, in: Proceedings of IEEE
+Symposium on Human Centric Computing Languages and
+Environments, IEEE Computer Society, 2003, pp. 7–14.
+*[82] A.J. Ko, B.A. Myers, A framework and methodology for
+
+studying the causes of software errors in programming
+systems, Journal of Visual Languages and Computing 16
+(2) (2005) 41–84.
+J. Kramer, A.L. Wolf, in: Succeedings of the Eighth
+International Workshop on Software Speciﬁcation and
+Design, ACM SIGSOFT Software Engineering Notes, vol. 21,
+no. 5, 1996, pp. 21–35.
+J. Krogstie, Integrating the understanding of quality in
+requirements speciﬁcation and conceptual modeling, ACM
+SIGSOFT Software Engineering Notes 23 (1) (1998) 86–91.
+
+*[83]
+
+[84]
+
+[85] O. Laitenberger, C. Atkinson, Generalizing perspective-
+
+[88]
+
+*[89]
+
+centric survey of software inspection, The Journal of
+Systems and Software 50 (1) (2000) 5–31.
+F. Lanubile, G. Visaggio, Assessing Defect Detection
+Methods for Software Requirement Inspection Through
+External Replication, Department of Informatica,
+University of Bari, 1996.
+F. Lanubile, F. Shull, V.R. Basili, Experimenting with error
+abstraction in requirements documents, in: Proceedings of
+the Fifth International Symposium on Software Metrics
+(METRIC’98), IEEE Computer Society, Bethesda, MD, USA,
+1998, pp. 114–121.
+
+*[90] C.P. Lawrence, I. Kosuke, Design error classiﬁcation and
+knowledge management, Journal of Knowledge
+Management Practice 10 (9) (2004) 72–81.
+
+*[91] M. Leszak, D.E. Perry, D. Stoll, A case study in root cause
+defect analysis, in: Proceedings of the 22nd International
+Conference on Software Engineering, ACM Press, Limerick,
+Ireland, 2000, pp. 428–437.
+
+[92] R.R. Lutz, K. Wong, S. Johnny, Constraint checking during
+
+error recovery, in: Proceedings of the NASA Technology 2002
+Conference, IEEE Computer Society, 1992, pp. 142–153.
+
+*[93] R.R. Lutz, Analyzing software requirements errors in
+
+safety-critical, embedded systems, in: Proceedings of the
+IEEE International Symposium on Requirements
+Engineering, IEEE Computer Society Press, San Diego, CA,
+USA, 1993, pp. 126–133.
+
+*[94] R.R. Lutz, Targeting safety-related errors during software
+requirements analysis, The Journal of Systems and
+Software 34 (3) (1996) 223–230.
+
+[95] R.R. Lutz, Requirements analysis using forward and
+
+*[96]
+
+backward search, Annals of Software Engineering 3 (1)
+(1997) 459–475.
+J. Martin, W.T. Tsai, N-fold inspection: a requirement
+analysis technique, Communications of the ACM 33 (2)
+(1990) 225–232.
+
+*[97] C. Masuck, Incorporating a fault categorization and
+
+analysis process in the software build cycle, Journal of
+Computing Sciences in Colleges 20 (5) (2005) 239–248.
+
+*[98] R.G. Mays, C.L. Jones, G.J. Holloway, D.P. Studinski,
+
+[99]
+
+Experiences with defect prevention, IBM Systems Journal
+29 (1) (1990) 4–32.
+F. McGarry, G. Page, V. Basili, M. Zelkowitz, Software
+Process Improvement in the NASA Software Engineering
+Laboratory, Carnegie Mellon Software Engineering
+Institute (SEI), 1994.
+
+[100] K.S. Mendis, Quantifying software quality, Annual Quality
+
+[101]
+
+Congress Transaction 35 (4) (1981) 11–18.
+J. Miller, M. Wood, M. Roper, Further experiences with
+scenarios and checklists, Journal of Empirical Software
+Engineering 3 (1) (1998) 37–64.
+
+[102] Y. Mohri, T. Kikuno, Fault analysis based on fault
+
+reporting in JSP software development, in: Proceedings
+of the 15th Annual International Computer Software and
+Applications Conference, IEEE Computer Society, 1991,
+pp. 591–596.
+J.C. Munson, A.P. Nikora, Toward a quantiﬁable deﬁnition
+of software faults, in: Proceedings of the 13th
+International Symposium on Software Reliability
+Engineering, IEEE Computer Society, 2002, pp. 388–395.
+
+based inspection to handle object-oriented development
+artifacts, in: International Conference on Software
+Engineering, IEEE Computer Society Press, Los Angeles, CA,
+USA, 1999, pp. 494–503.
+
+[103]
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1107
+
+[104] N. Nachiappan, W. Laurie, H. John, S. Will, V. Mladen,
+
+*[122] S. Sakthivel, A survey of requirement veriﬁcation
+
+Preliminary results on using static analysis tools for
+software inspection, in: Proceedings of the 15th
+International Symposium on Software Reliability
+Engineering (ISSRE’04), IEEE Press, 2004, 429–439.
+
+*[105] T. Nakashima, M. Oyama, H. Hisada, N. Ishii, Analysis of
+
+software bug causes and its prevention, Journal of
+Information and Software Technology 41 (15) (1999)
+1059–1068.
+
+[106] C.R. Nelms, The latent causes of industrial failures how to
+
+[107]
+
+identify them, and what to do about them, in: Proceedings of
+the IEEE Sixth Conference on Human Factors and Power
+Plants, 1997, Global Perspectives of Human Factors in Power
+Generation, IEEE Press, Orlando, FL, USA, 1997, pp. 7–12.
+J.M. Nieves, A.P. Sage, Human and organizational error as a
+basis for process reengineering: with applications to
+system integration planning and marketing, IEEE
+Transactions on System, Man And Cybernetics – Part A:
+Systems and Humans 28 (6) (1998) 742–762.
+*[108] D. Norman, The Psychology of Every Day Things, Basic
+
+techniques, Journal of Information Technology 6 (2)
+(1991) 68–79.
+
+[123] K. Sandahl, O. Blomkvist, J. Karlsson, C. Krysander, M.
+
+Lindvall, N. Ohlsson, An extended replication of an
+experiment for assessing methods for software
+requirements inspections, Journal of Empirical Software
+Engineering 3 (4) (1998) 327–354.
+
+*[124] K. Sasao, J. Reason, Team errors: deﬁnition and taxonomy,
+Journal of Reliability Engineering and System Safety 65 (1)
+(1999) 1–9.
+
+[125] P. Sawyer, I. Sommerville, S. Viller, Capturing the beneﬁts
+
+of requirement engineering, IEEE Software 16 (2) (1999)
+78–85.
+
+*[126] G.M. Schneider, J. Martin, W.T. Tsai, An experimental study
+
+of fault detection in user requirements documents, ACM
+Transactions on Software Engineering and Methodology 1
+(2) (1992) 188–204.
+L.W. Senders, N.P. Moray, Human Error: Cause, Prediction,
+and Reduction, Lawrence Erlbaum, Hillslade, NJ, 1991.
+
+*[127]
+
+Books, New York, 1988.
+
+[128] S.A. Shappell, D.A. Weigmann, A human error approach to
+
+*[109] D.A. Norman, Steps towards a cognitive engineering:
+
+design rules based on analyzes of human error,
+Communications of the ACM 26 (4) (1981) 254–258.
+
+accident investigation: the taxonomy of unsafe
+operations, The International Journal of Aviation
+Psychology 7 (4) (1997) 269–291.
+
+*[110] D.A. Norman, Design rules based on analyzes of human
+
+[129] W. Shen, M. Guizani, Z. Yang, K. Compton, J. Huggins,
+
+error, Communications of the ACM 26 (4) (1983) 254–258.
+*[111] K.M. Oliveira, F. Zlot, A.R. Rocha, G.H. Travassos, C. Galotta,
+
+*[112]
+
+[113]
+
+C.S. Menezes, Domain-oriented software development
+environment, The Journal of Systems and Software 72 (2)
+(2004) 145–161.
+F. Paterno, C. Santoro, Preventing user errors by systematic
+analysis of deviations from the system task model,
+International Journal of Human–Computer Studies 56 (2)
+(2002) 225–245.
+F. Patrick, L. David, M. Melinda, P. Andy, Tree-based
+methods for classifying software failures, in: Proceedings
+of the 15th International Symposium on Software
+Reliability Engineering (ISSRE’04), IEEE Press, 2004, pp.
+451–462.
+
+*[114] A.A. Porter, L.G. Votta, V.R. Basili, Comparing detection
+
+Execution of a requirement model in software development,
+in: Proceedings of the 13th International Conference on
+Intelligent and Adaptive Systems and Software Engineering,
+IEEE Press, Nice, France, 2004, pp. 203–208.
+
+*[130] S.T. Shorrock, B. Kirwan, Development and application of a
+
+*[131]
+
+[132]
+
+*[133]
+
+human error identiﬁcation tool for air trafﬁc control,
+Journal of Applied Ergonomics 33 (4) (2002) 319–336.
+F. Shull, I. Rus, V. Basili, How perspective based reading
+can improve requirement inspection, IEEE Computer 33
+(7) (2000) 73–79.
+I. Sommerville, Software Engineering, eighth ed., Addison
+Wesley, Harlow, England, 2007.
+J. Smith, The 40 root causes of troubled IT projects, Journal
+of IEEE Computer and Control Engineering 13 (3) (2002)
+109–112.
+
+methods for software requirements inspections: a
+replicated experiment, IEEE Transactions on Software
+Engineering 21 (6) (1995) 563–575.
+
+*[134] N.A. Stanton, S.V. Stevenage, Learning to predict human
+
+error: issues of acceptability, reliability and validity,
+Journal of Ergonomics 41 (11) (1998) 1737–1756.
+
+[115] A.A. Porter, L.G. Votta, What makes inspections work? IEEE
+
+*[135] M.A. Stutzke, C.S. Smidts, A stochastic model of fault
+
+[116]
+
+*[117]
+
+Software 14 (6) (1997) 99–102.
+L. Prechelt, Accelerating learning from experience:
+avoiding defects faster, IEEE Software 18 (6) (2001) 56–61.
+J. Reason, Human Error, Cambridge University Press,
+Cambridge, USA, 1990.
+
+introduction and removal during software development,
+IEEE Transactions on Reliability 50 (20) (2001) 184–193.
+*[136] A. Sutcliffe, G. Rugg, A taxonomy of error types for failure
+
+analysis and risk assessment, International Journal of
+Human–Computer Interaction 10 (4) (1998) 381–405.
+
+[118] S. Reinach, A. Viale, Application of a human error
+
+*[137] A. Sutcliffe, A. Economou, P. Markis, Tracing requirements
+
+framework to conduct train accident/incident
+investigations, Journal of Accident Analysis and
+Prevention 38 (2) (2006) 396–406.
+
+errors to problems in the requirements engineering
+process, Requirements Engineering Journal 4 (3) (1999)
+134–151.
+
+[119] P.N. Robillard, The role of knowledge in software
+
+development, Communications of the ACM 42 (1) (1999)
+87–92.
+
+*[138] A. Sutcliffe, B. Gault, N. Maiden, ISRE: immersive scenario-
+based requirements engineering with virtual prototypes,
+Requirements Engineering Journal 10 (1) (2004) 95–111.
+
+[120] W.N. Robinson, S.D. Pawlowski, Managing requirement
+
+*[139] A. Swain, H. Guttman, Handbook of Human Reliability
+
+inconsistency with development goal monitors, IEEE
+Transactions on Software Engineering 25 (6) (1999) 816–
+835.
+
+[121] G. Sabaliauskaite, S. Kusumoto, K. Inoue, Assessing defect
+
+detection performance of interacting teams in object-
+oriented design inspections, Journal of Information and
+Software Technology 46 (13) (2004) 875–886.
+
+Analysis with Emphasis on Nuclear Power Plant
+Applications, Nuclear Regulatory Commission,
+Washington, DC, 1983.
+
+*[140] T. Thelin, P. Runeson, C. Wohlin, T. Olsson, C. Andersson,
+Evaluation of usage based reading-conclusion after three
+experiments, Journal of Empirical Software Engineering 9
+(1–2) (2004) 77–110.
+
+1108
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+*[141] C. Trevor, S. Jim, C. Judith, K. Brain, Human Error in
+
+Software Generation Process, University of Technology,
+Loughborough, England, 1994.
+
+[142] V. Venkatasubramaniam, R. Rengaswamy, S.K. Kavuri, A
+
+review of process fault detection and diagnosis Part 2:
+qualitative models and search strategies, Journal of
+Computers and Chemical Engineering 27 (2) (2003) 313–
+326.
+
+[143] V. Venkatasubramaniam, R. Rengaswamy, K. Yin, S.K.
+
+Kavuri, A review of fault detection and diagnosis Part 1:
+quantitative model-based methods, Journal of Computers
+and Chemical Engineering 27 (2) (2003) 293–311.
+
+*[144] S. Viller, J. Bowers, T. Rodden, Human factors in
+
+requirement engineering: a survey of human sciences
+literature relevant to the improvement of dependable
+systems development processes, in: Cooperative Systems
+Engineering Group Technical Report, Computing
+Department, Lancaster University, Lancaster, 1997.
+
+*[145] G.S. Walia, J. Carver, T. Philip, Requirement error
+
+abstraction and classiﬁcation: an empirical study, in: IEEE
+Symposium on Empirical Software Engineering, ACM
+Press, Brazil, 2006, pp. 336–345.
+
+*[146] G. Walia, J. Carver, T. Philip, Requirement error abstraction
+
+and classiﬁcation: a control group replicated study, in:
+18th IEEE International Symposium on Software
+Reliability Engineering, Trollhättan, Sweden, 2007.
+*[147] G.S. Walia, J. Carver, Development of a Requirement Error
+Taxonomy as a Quality Improvement Approach: A
+Systematic Literature Review MSU-070404, Department of
+Computer Science and Engineering, Mississippi State
+University, 2007, <http://www.cse.msstate.edu/
+PUBLICATIONS/TECHNICAL_REPORTS/MSU-070404.pdf>.
+
+*[148] G.S. Walia, Empirical Validation of Requirement Error
+
+Abstraction and Classiﬁcation: A Multidisciplinary
+Approach, M.S. Thesis, Computer Science and Engineering,
+Mississippi, Starkville, 2006.
+
+[149] D.M. Weiss, Evaluating software development by error
+
+analysis: the data from architecture research facility,
+Journal of Systems and Software 4 (4) (1979) 289–300.
+[150] T. Yamamura, K. Yata, T. Yasushi, H. Yamaguchi, A basic
+study on human error in communication network
+operation, in: IEEE Global Telecommunications
+Conference, 1989, and Exhibition, Communications
+Technology for the 1990s and Beyond, GLOBECOM’89,
+IEEE Press, Dallas, TX, USA, 1989, pp. 795–800.
+
+[151] D. Zage, W. Zage, An analysis of the fault correction
+
+process in a large-scale SDL production model, in:
+Proceedings of the 25th International Conference on
+Software Engineering, IEEE Computer Society, Portland,
+Oregon, 2003, pp. 570–577.
+
+*[152] X. Zhang, H. Pham, An analysis of factors affecting
+
+software reliability, The Journal of Systems and Software
+50 (1) (2000) 43–56.
+
+References
+
+[1] IEEE Std 610.12-1990,
+Terminology, 1990.
+
+[2] Software Engineering Laboratory: Software Measurement Guidebook, SEL-94-
+
+002, NASA/GSFC Software Engineering Laboratory, 1994.
+
+[3] A.F. Ackerman, L.S. Buchwald, F.H. Lewski, Software inspections: an effective
+
+veriﬁcation process, IEEE Software 6 (3) (1989) 31–36.
+
+[4] E.B.
+
+Allen,
+
+Computer
+
+London
+Ambulance Service: Software Requirement Speciﬁcation, MSU-030429,
+Department of Computer Science and Engineering, Mississippi State
+University, 2003.
+
+Aided Dispatch
+
+System for
+
+the
+
+[5] A. Aurum, H. Petersson, C. Wohlin, State-of-the-art: software inspections after
+25 years, Journal of Software Testing Veriﬁcation and Reliability 12 (3) (2002)
+133–154.
+
+[6] V.R. Basili, D.M. Weiss, Evaluation of a software requirements document by
+analysis of change data, in: Proceedings of the Fifth International Conference
+on Software Engineering, IEEE Press, San Diego, CA, 1981, pp. 314–323.
+
+[7] V.R. Basili, B.T. Perricone, Software Errors and Complexity: An Empirical
+
+Investigation, Communications of the ACM 27 (1) (1984) 42–52.
+
+[8] V.R. Basili, H.D. Rombach, Tailoring the software process to project goals and
+environments, in: Proceedings of Ninth International Conference in Software
+Engineering, IEEE Press, California, United States, 1987, pp. 345–357.
+
+[9] V.R. Basili, H.D. Rombach, The TAME project: towards improvement-oriented
+software environments, IEEE Transactions on Software Engineering 14 (6)
+(1988) 758–772.
+
+[10] V.R. Basili, Evolving and packaging reading techniques, Journal of Systems and
+
+Software 38 (1) (1997) 3–12.
+
+[11] S. Basu, N. Ebrahimi, Estimating the number of undetected errors: bayesian
+model selection, in: Proceedings of the Ninth International Symposium on
+Software Reliability Engineering, IEEE Computer Society, Paderborn, Germany,
+1998, pp. 22–31.
+Batra,
+
+and
+recommendations, Requirements Engineering Journal 12 (4) (2007) 231–244.
+[13] S. Beecham, T. Hall, C. Britton, M. Cottee, A. Rainer, Using an expert panel to
+validate a requirements process improvement model, The Journal of Systems
+and Software 76 (3) (2005) 251–275.
+
+data modeling:
+
+complexity
+
+Cognitive
+
+[12] D.
+
+causes
+
+in
+
+[14] T.E. Bell, T.A. Thayer, Software requirements: are they really a problem?, in:
+Proceedings of Second International Conference on Software Engineering, IEEE
+Computer Society Press, Los Alamitos, CA, 1976, pp 61–68.
+
+[15] T. Berling, T. Thelin, A case study of reading techniques in a software company,
+in: Proceedings of the 2004 International Symposium on Empirical Software
+Engineering (ISESE’04), IEEE Computer Society, 2004, pp. 229–238.
+
+[16] I. Bhandari, M. Halliday, E. Tarver, D. Brown, J. Chaar, R. Chillarege, A case study
+of software process improvement during development, IEEE Transactions on
+Software Engineering 19 (12) (1993) 1157–1170.
+
+[17] I. Bhandari, M.J. Halliday, J. Chaar, R. Chillarege, K. Jones, J.S. Atkinson, C.
+Lepori-Costello, P.Y. Jasper, E.D. Tarver, C.C. Lewis, M. Yonezawa, In process
+improvement through defect data interpretation, IBM Systems Journal 33 (1)
+(1994) 182–214.
+
+[18] J. Biolchini, P.G. Mian, A.C. Natatli, G.H. Travassos, Systematic Review in
+Software Engineering: Relevance and Utility, PESC-COPPE/UFRJ, Brazil, 2005,
+<http://cronos.cos.ufrj.br/publicacoes/reltec/es67905.pdf>.
+
+[19] B. Boehm, V.R. Basili, Software defect reduction top 10 list, IEEE Computer 34
+
+(1) (2001) 135–137.
+
+[20] T. Bove, Development and Validation of Human Error Management Taxonomy
+in Air Trafﬁc Control, Ph.D. Thesis, Risø National Laboratory and University of
+Roskilde, 2002.
+
+[21] G.J. Browne, V. Ramesh, Improving information requirements determination: a
+cognitive perspective, Journal of Information and Management 39 (8) (2002)
+625–645.
+
+[22] B. Brykczynski, A survey of software inspection checklists, ACM SIGSOFT
+
+Software Engineering Notes 24 (1) (1999) 82–89.
+
+[23] P.C. Cacciabue, A methodology of human factors analysis for systems
+engineering: theory and applications, IEEE Transactions on System, Man and
+Cybernetics – Part A: Systems and Humans 27 (3) (1997) 325–329.
+
+[24] D.N. Card, Learning from our mistakes with defect causal analysis, IEEE
+
+Software 15 (1) (1998) 56–63.
+
+[25] B. Cheng, R. Jeffrey, Comparing inspection strategies for software requirement
+inspections, in: Proceedings of the 1996 Australian Software Engineering
+Conference, IEEE Computer Society, Melbourne, Australia, 1996, pp. 203–211.
+[26] R. Chillarege, I.S. Bhandari, J.K. Chaar, M.J. Halliday, D.S. Moebus, B.K. Ray, M.Y.
+Wong, Orthogonal defect
+in-process
+measurement, IEEE Transactions on Software Engineering 18 (11) (1992)
+943–956.
+
+classiﬁcation – a concept
+
+for
+
+[27] J. Coughlan, D.R. Macredie, Effective communication in requirements
+elicitation: a comparison of methodologies, Requirements Engineering
+Journal 7 (2) (2002) 47–60.
+
+[28] W.J. Cristopher, The cost of errors in software development: evidence from
+
+industry, The Journal of System and Software 62 (1) (2002) 1–9.
+
+[29] C. Debou, A.K. Combelles, Linking software process improvement to business
+Software Process:
+
+from industry,
+
+Journal of
+
+strategies:
+Improvement and Practice 5 (1) (2000) 55–64.
+
+experiences
+
+[30] T. Dyba, Experiences of Undertaking Systematic Reviews, SINTEF ICT,
+
+Queensland, 2005.
+
+[31] A. Endres, An analysis of errors and their causes in system programs, IEEE
+
+Transactions on Software Engineering 1 (2) (1975) 140–149.
+
+[32] A. Endres, D. Rombach, A Handbook of Software and Systems Engineering, ﬁrst
+
+[33] M.R. Endsley, Situation awareness and human error: designing to support
+human performance, in: Proceedings of the High Consequence Systems Surety
+Conference, SA Technologies, Albuquerque, NM, 1999, pp. 2–9.
+
+[34] N.E. Fenton, M. Neil, A critique of software defect prediction models, IEEE
+
+Transactions on Software Engineering 25 (5) (1999) 675–689.
+
+[35] P.M. Fitts, R.E. Jones, Analysis of factors contributing to 460 ‘pilot error’
+experiences in operating aircrafts control, in: Proceedings of Selected Papers
+on Human Factors in the Design and Use of Control Systems, Dover
+Publications Inc., New York, 1961, pp. 332–358.
+
+IEEE Standard Glossary of Software Engineering
+
+ed., Pearson Addison Wesley, Harlow, England, 2003.
+
+G.S. Walia, J.C. Carver / Information and Software Technology 51 (2009) 1087–1109
+
+1109
+
+[36] W.A. Florac, Software Quality Measurement: A Framework for Counting
+Problems and Defects, CMU/SEI-92-TR-22, Carnegie Mellon Software
+Engineering Institute, Pittsburgh, PA, 1992, <http://citeseer.ist.psu.edu/
+ﬂorac92software.html>.
+
+[37] B. Freimut, C. Denger, M. Ketterer, An industrial case study of implementing
+and validating defect classiﬁcation for process improvement and quality
+management, in: Proceedings of the 11th IEEE International Software Metrics
+Symposium, IEEE Press, 2005.
+
+[38] P. Fusaro, F. Lanubile, G. Visaggio, A replicated experiment
+Empirical
+
+inspection techniques,
+
+Journal
+
+of
+
+to assess
+Software
+
+requirements
+Engineering 2 (1) (1997) 39–57.
+
+[63] D.A. Norman, Steps towards a cognitive engineering: design rules based on
+analyses of human error, Communications of the ACM 26 (4) (1981) 254–258.
+[64] D.A. Norman, Design rules based on analyses of human error, Communications
+
+of the ACM 26 (4) (1983) 254–258.
+
+[65] K.M. Oliveira, F. Zlot, A.R. Rocha, G.H. Travassos, C. Galotta, C.S. Menezes,
+Domain-oriented software development environment, The Journal of Systems
+and Software 72 (2) (2004) 145–161.
+
+[66] F. Paterno, C. Santoro, Preventing user errors by systematic analysis of
+deviations from the system task model, International Journal of Human–
+Computer Studies 56 (2) (2002) 225–245.
+
+[67] S.L. Pﬂeeger, J.M. Atlee, Software Engineering Theory and Practice, third ed.,
+
+[39] D.A. Gaitros, Common errors in large software development projects, The
+
+Prentice Hall, Upper Saddle River, NJ, 2006.
+
+Journal of Defense Software Engineering 12 (6) (2004) 21–25.
+
+[40] J. Galliers, S. Minocha, A. Sutcliffe, A causal model of human error for safety
+interface design, ACM Transactions on Computer–Human
+
+critical user
+Interaction 5 (3) (1998) 756–769.
+
+[41] R.B. Grady, Software failure analysis for high-return process improvement,
+
+[68] A.A. Porter, L.G. Votta, V.R. Basili, Comparing detection methods for software
+IEEE Transactions on
+
+requirements inspections: a replicated experiment,
+Software Engineering 21 (6) (1995) 563–575.
+
+[69] J. Reason, Human Error, Cambridge University Press, Cambridge, USA, 1990.
+[70] S. Sakthivel, A survey of requirement veriﬁcation techniques,
+
+Journal of
+
+Hewlett–Packard Journal 47 (4) (1996) 15–24.
+
+Information Technology 6 (2) (1991) 68–79.
+
+[42] T. Hall, S. Beecham, A. Rainer, Requirement problems in twelve software
+companies: an empirical analysis, IEE Proceedings Software 149 (5) (2002)
+153–160.
+
+[43] J.H. Hayes, Building a requirement fault taxonomy: experiences from a NASA
+veriﬁcation and validation research project,
+in: Proceedings of the 14th
+International Symposium on Software Reliability Engineering, IEEE Computer
+Society, 2003, pp. 49–59.
+
+[44] J.H. Hayes, E.A. Holbrook, I. Raphael, D.M. Pruett, Fault-based analysis: how
+history can help improve performance and dependability requirements for
+high assurance systems, in: Proceedings of Fifth International Workshop on
+Requirements for High Assurance Systems (RHAS’05), IEEE Computer Society,
+Chicago, 2005.
+
+[45] A. Issac, S.T. Shorrock, R. Kennedy, B. Kirwan, H. Andersen, T. Bove, The Human
+Error in ATM Technique (HERA-JANUS), HRS/HSP-002-REP-03, European Air
+Trafﬁc Management, 2002.
+
+[46] J. Jacobs, J.V. Moll, P. Krause, R. Kusters, J. Trienekens, A. Brombacher, Exploring
+defect causes in products developed by virtual teams, Journal of Information
+and Software Technology 47 (6) (2005) 399–410.
+
+[47] S.H. Kan, V.R. Basili, L.N. Shapiro, Software quality: an overview from the
+perspective of total quality management, IBM Systems Journal 33 (1) (1994)
+4–19.
+
+[48] B. Kitchenham, Procedures for Performing Systematic Reviews, Technical
+Report TR/SE-0401, Department of Computer Science, Keele University and
+National
+<http://www.elsevier.com/
+Australia,
+framework_products/promis_misc/inf-systrev.pdf>.
+
+2004,
+
+Ltd.,
+
+ICT,
+
+[49] B. Kitchenham, E. Mendes, G.H. Travassos, A systematic review of cross- vs.
+within-company cost estimation studies, in: Proceedings of 10th International
+Conference on Evaluation and Assessment in Software Engineering (EASE’06),
+Keele University, 2006.
+
+[50] A.J. Ko, B.A. Myers, Development and evaluation of a model of
+programming errors,
+IEEE Symposium on Human
+Centric Computing Languages and Environments, IEEE Computer Society,
+2003, pp. 7–14.
+
+in: Proceedings of
+
+[51] A.J. Ko, B.A. Myers, A framework and methodology for studying the causes of
+software errors in programming systems, Journal of Visual Languages and
+Computing 16 (2) (2005) 41–84.
+
+[52] J. Kramer, A.L. Wolf, in: Succeedings of the Eighth International Workshop on
+Software Speciﬁcation and Design, ACM SIGSOFT Software Engineering Notes,
+vol. 21, no. 5, 1996, pp. 21–35.
+
+[53] F. Lanubile, F. Shull, V.R. Basili, Experimenting with error abstraction in
+in: Proceedings of Fifth International Software
+requirements documents,
+Metrics Symposium, METRICS’98, IEEE Computer Society, Bethesda, MD, 1998,
+pp. 114–121.
+
+[54] C.P. Lawrence,
+
+I. Kosuke, Design error classiﬁcation and knowledge
+management, Journal of Knowledge Management Practice 10 (9) (2004) 72–
+81.
+
+[55] M. Leszak, D.E. Perry, D. Stoll, A case study in root cause defect analysis, in:
+Proceedings of the 22nd International Conference on Software Engineering,
+ACM Press, Limerick, Ireland, 2000, pp. 428–437.
+
+[56] R.R. Lutz, Analyzing software requirements errors in safety-critical, embedded
+systems,
+the IEEE International Symposium on
+Requirements Engineering, IEEE Computer Society Press, San Diego, CA, USA,
+1993, pp. 126–133.
+
+in: Proceedings of
+
+[57] R.R. Lutz, Targeting safety-related errors during software requirements
+
+analysis, The Journal of Systems and Software 34 (3) (1996) 223–230.
+
+[58] J. Martin, W.T. Tsai, N-fold inspection: a requirement analysis technique,
+
+Communications of the ACM 33 (2) (1990) 225–232.
+
+[59] C. Masuck, Incorporating a fault categorization and analysis process in the
+software build cycle, Journal of Computing Sciences in Colleges 20 (5) (2005)
+239–248.
+
+[60] R.G. Mays, C.L. Jones, G.J. Holloway, D.P. Studinski, Experiences with defect
+
+prevention, IBM Systems Journal 29 (1) (1990) 4–32.
+
+[61] T. Nakashima, M. Oyama, H. Hisada, N. Ishii, Analysis of software bug causes
+and its prevention, Journal of Information and Software Technology 41 (15)
+(1999) 1059–1068.
+
+[71] K. Sasao, J. Reason, Team errors: deﬁnition and taxonomy, Journal of Reliability
+
+Engineering and System Safety 65 (1) (1999) 1–9.
+
+[72] G.M. Schneider, J. Martin, W.T. Tsai, An experimental study of fault detection in
+user requirements documents, ACM Transactions on Software Engineering and
+Methodology 1 (2) (1992) 188–204.
+
+[73] L.W. Senders, N.P. Moray, Human Error: Cause, Prediction, and Reduction,
+
+Lawrence Erlbaum, Hillslade, NJ, 1991.
+
+[74] S.T. Shorrock, B. Kirwan, Development and application of a human error
+identiﬁcation tool for air trafﬁc control, Journal of Applied Ergonomics 33 (4)
+(2002) 319–336.
+
+[75] F. Shull,
+
+I. Rus, V. Basili, How perspective based reading can improve
+
+requirement inspection, IEEE Computer 33 (7) (2000) 73–79.
+
+[76] J. Smith, The 40 root causes of troubled IT projects, Journal of IEEE Computer
+
+and Control Engineering 13 (3) (2002) 109–112.
+
+[77] I. Sommerville, Software Engineering, eighth ed., Addison Wesley, Harlow,
+
+England, 2007.
+
+[78] N.A. Stanton, S.V. Stevenage, Learning to predict human error: issues of
+acceptability, reliability and validity, Journal of Ergonomics 41 (11) (1998)
+1737–1756.
+
+[79] M.A. Stutzke, C.S. Smidts, A stochastic model of fault introduction and removal
+during software development, IEEE Transactions on Reliability 50 (20) (2001)
+184–193.
+
+[80] A. Sutcliffe, G. Rugg, A taxonomy of error types for failure analysis and risk
+assessment, International Journal of Human–Computer Interaction 10 (4)
+(1998) 381–405.
+
+[81] A. Sutcliffe, A. Economou, P. Markis, Tracing requirements errors to problems
+in the requirements engineering process, Requirements Engineering Journal 4
+(3) (1999) 134–151.
+
+[82] A. Sutcliffe, B. Gault, N. Maiden, ISRE: immersive scenario-based requirements
+engineering with virtual prototypes, Requirements Engineering Journal 10 (1)
+(2004) 95–111.
+
+[83] A. Swain, H. Guttman, Handbook of Human Reliability Analysis with Emphasis
+on Nuclear Power Plant Applications, Nuclear Regulatory Commission,
+Washington, DC, 1983.
+
+[84] T. Thelin, P. Runeson, Robust estimation of fault content with capture–
+recapture and detection proﬁle estimators, The Journal of Systems and
+Software 52 (2) (2000) 139–148.
+
+[85] T. Thelin, P. Runeson, C. Wohlin, T. Olsson, C. Andersson, Team based fault
+content estimation in the software inspection process, in: Proceedings of the
+26th International Conference on Software Engineering (ICSE’04),
+IEEE
+Computer Society, 2004, pp. 263–272.
+
+[86] C. Trevor, S. Jim, C. Judith, K. Brain, Human Error in Software Generation
+Process, University of Technology, Loughborough, England, 1994, <http://
+www.branchlines.org.uk/Research/Tread1.pdf>.
+
+[87] S. Viller, J. Bowers, T. Rodden, Human Factors in Requirement Engineering: A
+Survey of Human Sciences Literature Relevant to the Improvement of
+Dependable
+Systems
+Engineering Group Technical Report, CSEG/8/1997, Computing Department,
+Lancaster
+<http://citeseer.ist.psu.edu/
+viller97human.html>.
+
+Systems Development
+
+Cooperative
+
+University,
+
+Processes,
+
+Lancaster,
+
+1997,
+
+[88] G. Walia, J. Carver, T. Philip, Requirement error abstraction and classiﬁcation: a
+control group replicated study, in: 18th IEEE International Symposium on
+Software Reliability Engineering, Trollhättan, Sweden, 2007.
+
+[89] G.S. Walia, Empirical Validation of Requirement Error Abstraction and
+Classiﬁcation: A Multidisciplinary Approach, M.S. Thesis, Computer Science
+and Engineering, Mississippi, Starkville, 2006.
+
+[90] G.S. Walia, J. Carver, T. Philip, Requirement error abstraction and classiﬁcation:
+an empirical study, in: Proceedings of IEEE Symposium on Empirical Software
+Engineering, ACM Press, Brazil, 2006, pp. 336–345.
+
+[91] G.S. Walia, J. Carver, Development of a Requirement Error Taxonomy as a
+Quality Improvement Approach: A Systematic Literature Review MSU-070404,
+Department of Computer Science and Engineering, Mississippi State
+University, 2007, <http://www.cse.msstate.edu/PUBLICATIONS/TECHNICAL_
+REPORTS/MSU-070404.pdf>.
+
+[92] X. Zhang, H. Pham, An analysis of factors affecting software reliability, The
+
+[62] D. Norman, The Psychology of Every Day Things, Basic Books, New York, 1988.
+
+Journal of Systems and Software 50 (1) (2000) 43–56.
+
+

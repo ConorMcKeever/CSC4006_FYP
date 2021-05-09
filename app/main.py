@@ -3,11 +3,14 @@ from convert import convert_pdf_to_txt
 from references import getReferences
 from refextract import extract_references_from_file
 import pdfminer
+import csv
 import glob
 import pathlib
 import os
 
 chFile = " "
+
+
 # Menu List
 menu1 = True
 while menu1 == True:
@@ -66,9 +69,7 @@ while menu2 == True:
     o3 = int(input('Choose an option:'))
 
     if o3 == 1:
-        print(chFile)
-        value = getReferences(chFile, 'Software Errors and Complexity')
-        print(value + '  test')
+        getReferences(chFile)
 
     if o3 == 2:
         in1 = '[' + str(input('Which reference to count:')) + ']'

@@ -1,0 +1,1978 @@
+The Emerald Research Register for this journal is available at
+www.emeraldinsight.com/researchregister
+
+The current issue and full text archive of this journal is available at
+www.emeraldinsight.com/1469-1930.htm
+
+Intellectual capital
+Measurement effectiveness
+Gopika Kannan
+DaimlerChrysler Research and Technology India, Bangalore, Karnataka, India
+Wilfried G. Aulbur
+DaimlerChrysler AG, Stuttgart, Germany
+
+Keywords Intellectual capital, Measurement, Knowledge management
+
+Abstract Intellectual capital (IC), knowledge management and intangible assets are important
+factors in determining the value of an organization, as reﬂected in the growth of the knowledge
+management industry. There is however, a lack of effective measurement techniques to specify and
+optimize the value of IC. This paper presents a detailed review of existing techniques and establish
+the need for a more comprehensive approach. The proposed framework addresses IC valuation
+issues across the IC cycle. People, process, and technology are measured and correlated in the ﬁnal
+step with social and ﬁnancial measures, thus providing a new framework.
+
+1. Introduction
+Over the last decade, businesses have recognized the importance of managing their
+intangible assets. The development of brands, stakeholder relationships, reputation
+and the culture of organizations are viewed as providing sustainable sources of
+business advantage. The ability to build and leverage the value of these intangible
+assets constitutes a core competency for organizations.
+
+However, recent studies (McGrath, 1996) claim that empirical evidence and work,
+supporting theory is lacking. Clearly, empirical work must be based on adequate
+measurement frameworks that capture the organizational, process and ﬁnancial
+impacts of knowledge intensive business strategies[1].
+
+Early measurements of intellectual capital (IC) focus on the accounting and ﬁnancial
+perspective. Most of the research centers primarily around three questions: What
+causes the discrepancy between a ﬁrm’s book value and the value of its physical
+assets? What are their intangible assets? And what characterizes their value? We need
+to deﬁne what constitutes intellectual capital, to answer these questions.
+
+1.1 Deﬁning IC
+Intellectual capital can be deﬁned as intellectual resources that have been “formalized,
+captured and leveraged” to create assets of higher value (Prusak, 1998). IC refers to
+intellectual material such as knowledge,
+intellectual property and
+experience that can be used to create wealth. Intangible assets are innately difﬁcult to
+measure and include a large number of organizational and individual variables. Simple
+ﬁnancial measures fail to take cognizance of the complex nature of these assets.
+
+information,
+
+IC can be classiﬁed as human capital, organizational capital and customer capital
+
+(Bontis, 1996; Edvinsson and Sullivan, 1996; Roos and Roos, 1997; Stewart, 1995).
+
+Human Capital refers to the accumulated value of investments in employee training,
+competence, and future. The term focuses on the value of what the individual can
+produce; human capital thus encompasses individual value in an economic sense
+
+Intellectual
+capital
+
+389
+
+Journal of Intellectual Capital
+Vol. 5 No. 3, 2004
+pp. 389-413
+q Emerald Group Publishing Limited
+1469-1930
+DOI 10.1108/14691930410550363
+
+JIC
+5,3
+
+390
+
+(Becker, 1992). Human Capital can be further sub-classiﬁed as, the employees’
+competence, relationship ability and values. A simple example provided by Kindred
+Pederson of Southern California Edison indicates that if a software package sells for
+$1 million before employee modiﬁcations and $3 million after employee modiﬁcations,
+then the human capital used to modify the software is $2 million.
+
+Organizational capital is the supportive infrastructure that enables human capital
+to function. Edvinsson and Malone (1997) further classify structural capital into
+organizational, process and innovation capital. Organizational capital includes the
+organization philosophy and systems for leveraging the organization’s capability.
+Process capital includes the techniques, procedures, and programs that implement
+and enhance the delivery of goods and services. Innovation capital includes intellectual
+properties and intangible assets. An organization’s policy and procedures, customized
+software applications, research and development programmes, training courses and
+patents are examples of organizational capital.
+
+Customer capital
+
+is deﬁned as the combined value of the relationships with
+customers, suppliers, industry associations and markets. Customer capital refers to
+issues like trust and understanding and the strength and loyalty of customer relations.
+Customer satisfaction, repeat business, ﬁnancial well-being, and price sensitivity may
+be used as indicators of customer capital.
+
+1.2 Beneﬁts of measurement of IC
+is to measure the value of organizations knowledge assets, both
+Our goal
+organizational and human capital,
+in order to justify investments in intellectual
+capital. A key reason for measuring intellectual capital is to recognize hidden assets
+and strategically develop them to achieve organizational goals.
+
+The beneﬁts of IC measurement include the following.
+Identiﬁcation and mapping of intangible assets.
+
+.
+
+. Recognition of knowledge ﬂow patterns within the organization.
+. Prioritization of critical knowledge issues.
+. Acceleration of learning patterns within the organization.
+. Best practice identiﬁcation and diffusion across the ﬁrm, by presenting a strong
+
+business case for the best practice.
+
+. Constant monitoring of asset value and ﬁnding ways of increasing value.
+Increased understanding of how knowledge creates interrelationships.
+
+.
+
+. Understanding organizational social networks and identifying change agents.
+
+.
+
+.
+
+.
+
+Increase in innovation.
+Increase collaborative activities and a knowledge sharing culture as a result of
+increased awareness of the beneﬁts of knowledge management.
+Increased employee self-perception of the organization and increased motivation.
+
+. Creates a performance-oriented culture.
+
+Measurement of IC and knowledge management practices will result in signiﬁcant
+beneﬁts to the organization that will help determine business strategy, process design
+as well providing competitive advantage. While discussing all points mentioned above
+
+Intellectual
+capital
+
+391
+
+in detail is beyond the scope of this paper, a few case studies based on our personal
+experience are in order.
+
+1.3 Limitations of current measurement systems
+A detailed literature study (Bontis, 2001) identiﬁed several limitations in the existing
+measurement systems, which are as follows
+
+. The existing approaches relate to the organization as a whole and do not account
+
+for individual departments or knowledge workers.
+
+. They do not balance past-orientation with future predictions, or quantitative
+
+ﬁnancial measures with qualitative perceptual and process measures.
+
+. Behavioral dynamics and its impact on organizational economics are not
+
+. There is no system for measuring process effectiveness in capturing tacit
+
+measured.
+
+knowledge transfer.
+
+The above limitations can be overcome by integrating ﬁnancial measures, with
+perceptual, process and systems measures. Such an approach will account for every
+individual department in the value chain and will also help to identify key factors,
+which inﬂuence IC effectiveness or retard its growth. The existing measurement
+systems are discussed below.
+
+The existing measurement systems can be broadly classiﬁed as belonging to the
+ﬁnancial or accounting framework or the perceptual school of thought. We further
+classify the non-ﬁnancial and non-perceptual measurement systems as “other
+measurement techniques”. We discuss the different measurement frameworks and
+their limitations below. Table I summarizes this discussion and provides an overview
+of the different measurement frameworks.
+
+1.3.1 Financial measurement system. Financial measurement systems are a
+classiﬁcation system for all IC measurement
+techniques that address ﬁnancial
+contributions made through IC assets Conventional cost accounting shows the costs of
+individual production operations without connection to other activities, e.g. marketing,
+service, etc. As production was the dominant activity, the results of all other activities
+in a company were not registered separately, rather they were considered general
+(indirect) costs. A small shift was made when activity-based costs (ABC) were
+introduced. This represented certain advancement, as costs per individual activity
+could be controlled in a better way and provided some sort of connection with the
+whole. Regardless of this, the measuring system based on cost accounting has proved
+totally inadequate for contemporary circumstances.
+
+Financial statements fail to measure and show the “most signiﬁcant building blocks
+of business”, which is the human capital, organizational capital, and customer capital.
+As a result, these ﬁnancial statements fail to communicate about the state of the
+business in terms of IC development to the management and investors. The current
+accounting framework, which is transactional and realization based, only recognizes
+the existence of an item when transactions with third parties take place (Brennan,
+1999). This does not hold good for IC measurement.
+
+Intangibles such as staff competencies, customer relationships, business models,
+and computer and administrative systems receive no recognition in the traditional
+ﬁnancial and reporting model. Interestingly, even traditional intangibles like brand
+
+JIC
+5,3
+
+392
+
+Table I.
+The four schools of IC
+measurement and
+analysis of their
+advantages and
+disadvantages. Our
+integrated framework is
+based on these four
+schools and results in an
+effective IC measurement
+system
+
+Advantages
+
+Disadvantages
+
+Perceptual measures
+Perceptions affect attitudes and behaviors
+
+Culture is a measure of normative behaviors
+Knowledge of employee perceptions can help
+the organization design more acceptable
+processes and bring about behavioral change
+When used to measure perceptions of process
+effectiveness, they can lead to continuous
+process improvements
+Process measures
+Mapping and establishment of current
+processes
+Determination of process/system usefulness
+and effectiveness (usability statistics)
+Predict future performance/infrastructure
+requirements
+Lead to tangible beneﬁts in terms of
+learning time and cycle time reduction
+Financial measures
+Provides the shareholders with a ﬁnancial
+value of the organizations intangible assets
+Clearly links spending on intangibles with
+proﬁts
+Measures like ROA and ROI, as well as KCV
+provide for intangibles in the accounting
+framework and justify spending on intangible
+resources
+By linking process and ﬁnancial the
+organization can measure and improve its IC
+effectiveness
+Other measures
+Social network measures determine the
+optimum intangible resource allocation and
+utilization required for increasing the rate of
+innovation
+Human capital value addition measures
+determine the organizational processes that can
+be improved to sustain and increase the human
+capital value addition
+Econometrics measures reveal tangible beneﬁts
+and value of intangible assets and resources
+
+Difﬁcult to establish causal relations, hence
+cannot be generalized
+Subjective in nature and hence lead to bias
+Not correlated with performance and proﬁts
+
+Too much formalism
+
+Can be confusing when dealing with too
+many knowledge domains
+Can be effective only when knowledge
+ﬂows are enabled across domains
+Not linked to proﬁts or tangible
+improvements
+
+Too complex incorporates several variables
+and cannot be standardized
+May not be always possible to account for
+earnings from intangible assets
+Dependent on external factors such as market
+exuberance
+
+Does not take into consideration process and
+people factors and cannot be used to identify
+problem areas and design improvements
+
+These measures do not consider individual
+perceptions and hence may not result in the
+requisite behavioral change
+
+equity, patents, and goodwill are reported in the ﬁnancial statements only when they
+meet stringent recognition criteria, otherwise they have, until recently been omitted
+from the ﬁnancial statements (IFAC, 1998; IASC, 1998).
+
+The limitations of the existing ﬁnancial reporting system for capital markets and
+other stakeholders have motivated an evolving dialogue on ﬁnding new ways to
+measure and report on a company’s IC. The product of this dialogue is a plethora of
+new measurement approaches that all have the aim, to a greater or lesser extent, of
+
+Intellectual
+capital
+
+393
+
+synthesizing the ﬁnancial and non-ﬁnancial value-generating aspects of the company
+into one external report. Principal among the new reporting models are the knowledge
+production function (Machlup, 1962); the intangible asset monitor (Sveiby, 1997, 1998;
+Celemi, 1999); the balanced scorecard (Kaplan and Norton, 1992, 1996); the skandia
+value scheme (Edvinsson and Malone, 1997); the IC accounts (DATI, 1998); and the
+knowledge capital scorecard (Lev, 2000). Each of these seminal works deﬁnes a
+particular class of ﬁnancial reporting model. Table II provides a useful framework for
+comparing several of the main ﬁnancial measurement approaches.
+
+The “new” measurement frameworks have certain limitations. They do not factor in
+the effect of human behavior and attitudes, social networks or the importance of tacit
+knowledge transfer. The limitations of the current measurement systems will be
+discussed in detail in the literature review section.
+
+1.3.2 Perceptual Measurement Techniques. The perceptual school of thought
+concentrates on employees’ perceptions and their need for an effective knowledge
+management system Perceptual measures include employee perceptions of
+top
+management commitment, need for knowledge sharing and knowledge management,
+perceptions of the value addition and of equitable reward structures. The perceptual
+school of thought also emphasizes the role of organizational culture in inﬂuencing IC
+value adding behaviors.
+
+Analysis of organizational culture is essential for understanding knowledge ﬂow in
+an organization. We deﬁne culture as the shared values, beliefs, and practices of the
+people in the organization. Culture is reﬂected in the visible aspects of the organization,
+such as its mission. It is embedded in the way people act, what they expect of each
+other, and perceptions of other’s actions (Schein, 1996).
+
+Clearly, behaviors determine that the organizations culture and employee attitudes
+are important determinants of knowledge sharing behavior. For example, individuals
+hold certain beliefs and in the process of socialization they share their beliefs and
+this becomes tacit knowledge. When an individual externalizes those beliefs,
+tacit knowledge becomes explicit
+team knowledge (Nonaka and Konno, 1998).
+This indicates the importance of individual knowledge worker perceptions and beliefs
+and their importance with relation to value creation and value addition.
+
+Developed by
+
+Framework
+
+Classiﬁcation model
+
+Machlup (1962)
+
+Knowledge production function
+
+Sveiby (1988, 1997)
+
+The intangible asset monitor
+
+Kaplan and Norton (1992)
+
+The balanced scorecard
+
+Edvinsson and Malone (1997)
+
+Skandia value scheme
+
+Lev (2000)
+
+Knowledge capital scorecard
+
+Investments in knowledge capital
+Production costs
+Economic growth
+Internal structure
+External structure
+Competence
+Internal processes perspective
+Customer perspective
+Learning and growth perspective
+Financial perspective
+Human capital
+Structural capital
+Total earnings
+Earnings from tangible assets
+Knowledge capital earnings
+
+Table II.
+Frameworks for
+classifying intellectual
+capital reporting models
+
+JIC
+5,3
+
+394
+
+There is no standardized procedure to evaluate or determine how an organization’s
+culture supports the IC development. Managers need a conceptual framework of the
+links between culture and knowledge to design the interventions needed to create
+behaviors that will support their knowledge management objectives (DeLong, 1997).
+Current methodologies for culture assessments are correlational in nature, do not
+provide causal relationships and therefore cannot be generalized.
+
+The perceptual approach is inadequate as it focuses on individual levels of analysis
+and it is uncorrelated with performance and proﬁt. It is a self-concept based approach
+and could lead to subjective bias in the measurement of IC.
+
+1.3.3 Other measurement techniques. Measurement techniques that cannot be
+classiﬁed as purely ﬁnancial or perceptual fall under this category. They include
+measures of social networks, process measures and systems measures. Several
+in the literature review section.
+measurement techniques are discussed in detail
+A combination of ﬁnancial, perceptual and “other” measures will result in value adding
+behaviors and resultant organizational effectiveness.
+
+1.3.4 Motivation for the study and research objectives. Based on our analysis of
+literature we are convinced that there is a need for a more holistic and integrated
+approach to IC measurement that will result in measurement of systems, processes
+and people issues and their impact on the organizations’ proﬁts Table III shows a
+brief review of literature, research gaps found and the need for further research.
+Speciﬁc measurement techniques will be discussed in detail in the literature review
+section.
+
+The measurement gap analysis detailed above and our extensive literature survey
+shows that there is a need for a more integrated and holistic approach to IC
+measurement. The new approach must result in measurement of systems processes and
+people issues and their impact on the organizations’ proﬁts. We believe that the
+measures and tools developed in this paper will enable managers to harness and develop
+an organization’s IC in a more accurate and proactive way than currently possible.
+
+This paper attempts to achieve the following objectives.
+. To identify how IC is measured and reported.
+. To assess the current measurement techniques against the needs of knowledge
+
+intensive organizations.
+
+. To propose an integrated and holistic methodology towards IC measurement,
+which can be used as a diagnostic and also as a tool for ﬁnancial decisions.
+
+2. Methodology framework
+Over 100 papers on measurement techniques and theories on intellectual capital were
+reviewed and analyzed. Figure 1 presents the methodology ﬂow chart.
+
+We studied over 100 papers on IC management, which modeled IC effectiveness and
+also presented ﬁnancial, perceptual, process and other techniques for IC measurement.
+We then short listed methodologies that were of interest to us in our organization,
+using the following criteria: practicability, theoretical validation and measurement
+effectiveness regarding its impact on bottom line results. Speciﬁc ﬁnancial, perceptual,
+and process and other measures were then identiﬁed and selected to provide an
+integrated IC measurement framework. The next phase involved design of speciﬁc
+stage wise techniques for IC management and measurement. The stages include needs
+
+Year
+
+Findings
+
+Further research
+
+Author
+
+Penrose
+
+Machlup
+
+Bass
+
+Hinings et al.
+
+Basili
+
+1959 Organization as a knowledge
+
+repository
+
+1962 Knowledge production and
+
+distribution in American
+Society and the importance of
+knowledge work and the
+knowledge worker
+
+1969 Bass diffusion model describes
+
+the empirical adoption curve
+
+1974 Work-based learning is a key
+practice in transforming
+organizational practice –
+power resources are traded
+away
+
+1984 Basili put forward the Goal
+
+Question Metrics Paradigm for
+continuous process
+improvements
+
+Karl Sveiby
+
+1986 Need for behavioral perspective
+
+as an addition to intangible
+assets monitor
+
+Prahalad and Hamel
+
+1990
+
+Core competency theory- path
+breaking
+
+McAteer
+
+Nelson and Winter
+
+Hall
+
+Foucault
+
+Davenport
+
+Nonaka and Takeuchi
+
+1991
+
+Four characteristics of high
+value adding perceptions:
+accelerate learning, framework
+for testing innovation, reduce
+risk, link between process and
+results, reduce costs
+1992 Knowledge stored as
+
+predictable behavioral patterns
+
+1992
+
+Communication processes and
+capacity building measures
+help manage intellectual capital
+
+1994 Managing knowledge is not
+
+just an issue of technology but
+managing social relations also
+1995 Knowledge – ideas, skills and
+expertise can be captured and
+shared
+
+Need for studying
+organizations knowledge
+Empirical impetus to
+knowledge production
+
+To ﬁt the Bass curve as a
+process, outcome measure of
+adaptability
+What does it entail? And how
+should it be brought about?
+
+The paradigm is perceptual
+process in nature and there is
+need for further work in terms
+of tangible measures for
+process improvements and
+linking them to ﬁnancial
+beneﬁts
+Good tool for ﬁnancial
+appraisal of intangibles, but
+does not help in understanding
+employee perception of value
+addition and increasing it
+Specialist knowledge alone,
+does not consider
+organizational capital and tacit
+generalist knowledge
+Importance of the possible
+relations between process
+effectiveness measures and
+perceptual measures leading to
+more effective IC management
+
+Impetus for exploring human
+capital value addition
+
+consideration
+Clearer understanding of
+communication processes and
+their importance
+Evidence related to importance
+of people, yet no speciﬁc
+measures of value addition
+What is the most effective way
+of doing that? How does it
+contribute to value addition?
+
+(continued)
+
+1992 Resource based view of the ﬁrm Does not take people into
+
+Intellectual
+capital
+
+395
+
+Table III.
+Representing the
+literature surveyed,
+important ﬁndings and
+research gaps
+
+JIC
+5,3
+
+396
+
+Author
+
+McGrath
+
+Senn
+
+APQC
+
+DiMattia and Oder
+
+Philips
+
+Ginchereau
+
+Edvinsson and Mallone
+
+1998
+
+Sieloff and Shih
+
+Tobin
+
+Year
+
+Findings
+
+Further research
+
+No theories for organizational
+knowledge management
+
+Important for IT management
+to understand the
+characteristics and behaviors of
+high performing IT personnel
+Need for a holistic model that
+incorporates ﬁnancial,
+perceptual, process and social
+measures
+
+Need for knowledge capture
+and leverage through effective
+human capital management
+
+Need to integrate it and
+technology performance with
+processes, people factors and
+ﬁnancial returns
+
+Financial rather than a
+behavioral parameter. Difﬁcult
+to improve performance and
+design diagnostics
+Does not explore the direct
+relationships between rewards
+innovation and performance.
+Need for a holistic optimal
+model for value addition
+
+Need for incorporating
+perceptual and systems
+measures in IC valuation
+
+1996 KM for strategy and
+
+1997
+
+innovation – important, but
+inadequate studies
+1996 Top performing information
+technology (IT) professionals
+with needed specialized skills
+are in short supply
+Lasting organizational change
+is dependent on cultural
+change; and requires formal
+education and training,
+communication, infrastructure
+and ﬁnancial incentives
+Findings show that
+organizations have lost a lot of
+information and expertise
+through loss of people
+
+1997
+
+1997 Return on investment on
+knowledge assets
+
+1997 Usability statistics for
+
+knowledge management IT
+solutions. Ginchereau.B
+devised performance measures
+for Knowledge Management
+systems and used them to
+compare different Knowledge
+Management technologies
+Intellectual capital theory and
+ﬁrst organizational application
+
+1998 HP culture selects and rewards
+
+loyal employees (those who share
+and contribute). Has had a steady
+growth rate of 20 percent, while
+start up have higher turn over.
+Training is important to build
+knowledge capital
+1998 The knowledge enabled
+
+organization uses the knowledge
+and skills of all employees,
+regardless of level or function. It
+provides tools and opportunities
+to share knowledge. Employee
+perception of the same may be a
+determinant of contribution.
+Organizations use only 10
+percent of employee knowledge
+– need for efﬁcient systems
+
+Table III.
+
+(continued)
+
+Author
+
+Warren
+
+Warren
+
+Meyer
+
+Year
+
+Findings
+
+Further research
+
+Intellectual
+capital
+
+397
+
+Does not indicate factors
+involved in people value
+addition
+
+Need to explore knowledge
+worker perceptions and design
+programs and systems to
+overcome these barriers
+Need for a more detailed study
+of perceptions and behaviors of
+organizational factors leading
+to value addition
+
+Need to understand the exact
+relationships, organizational
+dynamics and social networks
+
+McAdam and McCreedy
+
+1999 Rated knowledge transfer,
+
+Chug
+
+Harvey and Lusch
+
+1999 Have an effective KM support
+system which is seen to
+facilitate value addition
+1999 Attempt to evaluate the
+
+Explore the relations between
+knowledge management
+systems and IC Value
+Diagnostic tool for
+measurement of human capital
+
+Dell and Mcdormott
+
+2000
+
+Need to evaluate perceptions of
+culture and its relation to value
+addition to the organization
+
+Mayo
+
+2000 The need to create a value
+
+Need to create a theoretical
+model to understand value
+addition
+
+(continued)
+
+Table III.
+
+1999 APQC study stating that
+
+though technology may be
+necessary for KM, it is not
+sufﬁcient. People value
+addition is important
+1999 Biggest barrier to knowledge
+
+sharing are cultural factors that
+holding information is more
+valuable than sharing it
+1999 Unsupportive cultures, where
+
+knowledge sharing is not
+considered a value added
+activity, leads to low
+knowledge sharing
+behaviors
+
+learning, core-competencies,
+knowledge capture and
+dissemination, education,
+experience, and culture as
+issues related to knowledge
+intensive organization. Tacit
+knowledge is perceived by
+81 percent of the sample as
+being captured by informal
+discussions
+
+liability side of intangible
+assets but did not touch the
+people element. The “great
+divide” is around the question:
+“is this activity/person
+contributing positively to
+future value creation or not?”
+Companies successful in
+promoting knowledge sharing
+culture, adapt their KM
+approach to ﬁt their culture.
+Visible link between knowledge
+sharing and problem-solving.
+Knowledge sharing is built
+around networks people use in
+daily work
+
+adding chain, and to see where
+the individual ﬁts into it
+
+Author
+
+Year
+
+Findings
+
+Further research
+
+Goshal et al.
+
+2000
+
+JIC
+5,3
+
+398
+
+Chong et al.
+
+Need to look at process
+variables that go towards
+creating IC Value
+
+Employee perceptions of these
+factors need to be understood
+and integrated into a holistic
+theory for value addition
+
+3M-innovation and NPD,
+Enron creates value through
+culture change. Case studies
+of value creating
+organizations
+
+2000 A key element in value addition
+
+is knowledge codiﬁcation and
+sharing. It beneﬁts the
+organization better
+decision-making, more efﬁcient
+staff. Knowledge investments
+are not adding value because of
+the low organizational
+environments disabling
+competency sharing. Formal
+frameworks would be
+beneﬁcial to link between
+internal resources and
+company performance; to close
+the gap between the level of
+expectations of senior
+managers and the level of
+delivery of projects
+2000 Degree of learning are now
+
+deployed by organizations as
+components of reward
+systems-effect efﬁciencies in
+individual and organizational
+performance
+
+2000 Management initiatives could
+be used to increase ﬁrm
+functioning and productivity,
+through increased employee
+value-add. Many elements of
+employee value
+addition- network,
+perceptions, behavioral
+competencies and attitudes are
+not included in competency
+frameworks
+
+2000 Measures for organizational
+
+architecture and performance
+based on social network
+analysis
+
+processes should factor in an
+understanding of where and
+how knowledge plays a role in
+the performance of the process
+
+Importance of learning and
+reward delineated, and to be
+integrated in a model for
+increasing value addition
+
+Perceived and expressed need
+for a behavioral model and tool
+to understand and assess these
+competencies
+
+Possible correlations with
+processes and outcomes
+
+Understand processes that
+facilitate knowledge sharing
+and creation as well as value
+addition
+
+Garrick and Clegg
+
+Campbell
+
+Carley
+
+Nickols
+
+2000 Design or redesign of business
+
+Table III.
+
+(continued)
+
+Author
+
+Iske
+
+Year
+
+Findings
+
+Further research
+
+2001 The value potential of
+
+knowledge and the importance
+of context, ease of transfer and
+usage
+
+Kannan and Akhilesh
+
+2001 Human capital knowledge
+
+value addition, a perceptual
+process diagnostic of
+knowledge value addition
+
+Knowledge value potential
+coupled with ROI and process
+and systems measures can give
+an accurate estimate of IC
+development
+Possibility of linking value
+addition diagnostics to
+ﬁnancial outcomes and process
+measures
+
+Intellectual
+capital
+
+399
+
+Table III.
+
+Figure 1.
+Methodology ﬂow chart
+
+analysis measures, systems measures, process measures and outcome measures. Needs
+analysis refer to the measurement of organizational readiness for knowledge
+management and IC development and the employees perceived needs towards IC
+in nature and involve people and their
+practice. The measures are perceptual
+perceptions of organizational processes. Systems measures refer to performance of
+technology for knowledge management. Process measures involve the measurement of
+process effectiveness and outcome measures refer to the tangible and intangible
+outcomes resulting from IC. Outcome measures include ﬁnancial measures and
+social measures. Existing measurement techniques are incorporated into the above
+framework. Figure 2 shows a graphical representation of IC measurement frameworks
+as presented in this paper.
+
+JIC
+5,3
+
+400
+
+Figure 2.
+Graphical representation
+of IC measurement
+frameworks that can be
+classiﬁed as perceptual,
+ﬁnancial, process and
+other
+
+3. Survey of literature
+Over 100 papers on intellectual capital research and practice were analyzed.
+The literature surveyed included ﬁnancial and accounting measurement techniques,
+perceptual measures, process and systems measures, social networks analysis
+techniques, and econometric techniques for intangibles measurement. The
+framework is described in Figure 3 and the advantages and
+measurement
+limitations of each measurement “type” are presented in Table III.
+
+We discuss in detail about the seminal studies and popular frameworks for IC
+measurement, their drawback in general and the need for an integrated framework
+has been presented in Section 2. Hence we focus on drawbacks of speciﬁc measurement
+techniques in this section. We will present a detailed analysis of goal-question-metrics
+paradigm (GQM) (Basili and Perricone, 1984, Basili and Musa, 1991, Basili et al.
+1994; Bhatt, 2000), the intangibles assets monitor (Sveiby, 1996, 1998; Bontis, 2001),
+
+Intellectual
+capital
+
+401
+
+Skandia framework (Edvinsson and Malone, 1997; Sveiby, 1998; Bontis, 2001),
+Bagelleri’s R&D measures, (Bagelieri, 1997, 2000), knowledge capital value (Lev, 2000;
+Stewart, 2001), human capital value added (Kannan and Akhilesh, 2002), carnegie
+measures of knowledge architecture and performance (Carley et al., 2000), economic
+value added (Bontis, 1999; Starssman, 1999; Sveiby, 2001,West, 1999), organizational
+culture (Argyris, 1982; DeLong, 1997; Denison, 1982, Schein, 1996), return on
+investment, (Phillips, 1997), knowledge value potential (Iske and Boekhoff, 2001),
+knowledge production function (Machlup, 1962; Swanstrom, 2001), and learning and
+diffusion curves (Lam, 2000; Roth, 1995; Swanstrom, 2001; Watkins, 2001).
+
+The literature reviewed is classiﬁed as ﬁnancial, perceptual, perceptual process and
+
+other measures as shown in Figure 3.
+
+3.1 Perceptual measures
+Perceptual measures, as discussed in Section 1.3.2, focus on employee perceptions of
+the current practices and the beneﬁts garnered through them. Perceptual measures
+have several limitations, as discussed in Section 1.3.2, but are still important as they
+can help to clarify possible barriers to IC effectiveness. Needs analysis, cultural
+analysis and commitment measures are perceptual measures, which are essential for
+understanding the organization’s readiness for knowledge management activities and
+commitment to IC development and leverage.
+
+3.1.1 Needs analysis. The success of a KM implementation program depends upon
+the organizations readiness and acceptance of the program. Any change can be
+brought about only through the organizations awareness of the need for change,
+acceptance of it and cooperation and commitment to it. This is possible only when the
+change agent has a clear understanding of the members’ needs. Thus, the ﬁrst step in
+the process would be to carry out a needs analysis (APQC, 2001; Hylton, 2002).
+
+Needs analysis is the measurement process which reviews and maps organizational
+information need, creation, use, ﬂow, and storage; identiﬁes gaps, duplication, costs;
+and value; and uncovers the barriers to effective knowledge ﬂow. The analysis is used
+to investigate the company’s knowledge environment, ecology, knowledge use and
+sharing and most importantly the employees’ perceptions of knowledge management
+effectiveness (Hylton, 2002).
+
+Needs analysis involves questionnaire-based studies of employee perceptions of
+knowledge management initiatives, knowledge sharing within the organization,
+knowledge criticality and prioritization. Mind mapping tools are used for knowledge
+management needs analysis (Sprotte, 2000).
+
+Figure 3.
+A standard bass curve for
+diffusion of innovations
+over time
+
+JIC
+5,3
+
+402
+
+Needs analysis has been established as an important ﬁrst step in an IC or knowledge
+management exercise (APQC, 2000; Swanstrom, 2001; Von Hippel, 2001). However, its
+perceptual nature can lead to subjective bias and there is a need to integrate it with
+other systems and process measures as well as ﬁnancial analysis, in order to estimate
+the effectiveness of needs analysis exercises.
+
+3.1.2 Cultural analysis. The success of any KM initiative depends upon an
+environment which motivates people to communicate, collaborate, innovate, take risks,
+and share and re-use knowledge. Equally important are appropriate skills,
+competences and behaviours. Fundamentals like values,
+trust, beliefs and
+organizational politics dictate success or failure of KM interventions, so to add real
+value, the KM initiative must address the existing corporate culture and sub-cultures.
+Social processes and organizational structures (including self-forming groups)
+facilitate the conversion of information to knowledge, and the sharing, distribution
+and creation of knowledge. Other social processes like change management, managing
+complexity, communities of practice/interest, organizational
+learning, narrative,
+visioning etc. are also important and need to be accounted for in KM interventions
+(Davenport and Prusak, 1998; Guerteen, 1999).
+
+Sustained knowledge management requires the establishment of an organizational
+memory that is ﬂexible and adaptive to changing requirements. This is best achieved
+by a strong organizational culture that emphasizes knowledge sharing by the use of
+various communication channels (Lemkin, 2000). An analysis of knowledge culture is
+thus recommended.
+
+The results from the analysis of knowledge culture might show cultural barriers
+that need to be addressed. A supportive environment is the most critical factor for the
+success of KM projects (Davenport and Prusak, 1998) and should be given high
+priority.
+
+The cultural factors affecting organizational change have been undervalued, and
+cultural/behavioristic implementations have shown some beneﬁts. But the cause-effect
+relationship between cultural strategy and business beneﬁts is not clear, because the
+“Hawthorne Effect” may come into play, and because we still cannot make dependable
+predictions about systems as complex as knowledge-based business organizations.
+Positive results achieved by cultural/behavioristic strategies may not be sustainable,
+measurable, cumulative, or replicable (Barclay and Murray, 1997).
+
+3.1.3 Commitment measures. Commitment to IC development and knowledge
+sharing are essential for the success of any knowledge management initiative.
+Commitment needs to be both attitudinal and behavioral. A high employee and
+management commitment will result in increased leverage of knowledge. Quinn and
+Sydney (1996) deﬁned IC as commitment £ competence and emphasized on the
+importance of commitment for IC development. Building commitment
+involves
+engaging employees’ emotional energy and attention. It is reﬂected in how employees
+relate to each other and feel about a ﬁrm (Ulrich, 1998).
+
+Theory and research from literature provides a framework for understanding
+employee commitment behaviors (Ulrich et al., 1989). Research indicates that
+employees perception of demands versus the available resources, affects their coping
+and commitment behaviors. Imbalance of demands and resources results in low
+commitment behaviors (Hamel and Prahalad, 1994). Once demands and resources are
+balanced, employees can contribute. They are committed to improve and competent
+
+enough to make the right
+(Ulrich, 1998).
+
+improvements. Their intellectual capital
+
+increases
+
+Commitment may be measured along the following criteria.
+
+.
+
+Is there an expressed positive attitude towards the project?
+
+. Are positive commitment behaviors exhibited?
+. Are value adding behaviors exhibited? Such as initiative taking behaviors,
+
+contributions to IP/IC, knowledge sharing and problem-solving, etc.
+
+Intellectual
+capital
+
+403
+
+3.2 Perceptual-process metrics
+Perceptual-process metrics refer to measurement techniques that combine process
+measurements with employee perceptions of their effectiveness. Perceptual-process
+measures are more enhanced and holistic than traditional perceptual measures. They
+can be used as diagnostics. Perceptual-process measures are, however, limited to
+measures of process improvements and do not provide deﬁnitive social or ﬁnancial
+implications. The goal question metrics, usability statistics, human capital knowledge
+value added are some of the perceptual-process measures we discuss in this paper.
+
+3.2.1 Goal/question/metrics paradigm. GQM is a widely used perceptual framework
+for measuring IC, that is process oriented and focuses on diagnostics and deliverables
+and is used to determine process efﬁciency (Basili and Perricone, 1984). The GQM
+approach involves experts and involves three steps: deﬁning goals for the desired state
+of knowledge management in a speciﬁc domain, deﬁning questions on processes and
+ﬁnally deﬁning metrics. GQM deﬁnes the goal of measurement in concise terms using
+ﬁve facets: analysis of object (process/product under study), purpose, focus (quality
+attribute of the object, e.g. reliability), viewpoint and environment (context). The goals
+are translated into speciﬁc questions, which allow a veriﬁcation of success. Questions
+are reﬁned through suitable metrics, thus making it possible to control the success of
+the process. The metrics for each question are deﬁned by asking for information
+speciﬁc to the question. Data collection procedures are deﬁned for each metric. Data are
+then collected, validated and analyzed and feedback provided to the process team.
+
+The GQM model helps in integrating knowledge management with organizational
+processes, provides assistance in performing knowledge management activities,
+comparison of knowledge management processes for designing interfaces between
+virtual
+teams and also for inter-organizational knowledge transfer. The GQM
+framework tracks how the KM system reaches the goals and monitors the processes in
+detail.
+
+The limitations of the GQM model are that it is process focused and does not
+address people issues or ﬁnancial outcomes. A potential danger is the possibility of
+making KM include too much formalism. The process-oriented view is confusing as it
+deals with several knowledge domains. While knowledge domains are a means of
+splitting this complexity, the linking between them is important. KM can only be fully
+effective when knowledge ﬂows are enabled across organizational divisions or units.
+Further, the value addition provided through the speciﬁc process improvements is not
+measured in monetary terms or linked to organizational performance.
+
+3.2.2 Usability statistics. Usability statistics refer to the ease of usage of processes
+and technologies for IC leverage and knowledge management. The measurement
+criteria according to Ginchereau et al. (1997) include the following.
+
+JIC
+5,3
+
+404
+
+. Performance: refers to ease of implementation, ease of maintenance, ease of
+information transfer,
+
+administration, ease of analysis and usage, ease of
+dissemination and distribution.
+
+. Documentation: refers to technological support provided by the tool to facilitate
+
+documentation.
+
+. Technical support: refers to the availability of technical support staff for
+
+clariﬁcations and maintenance.
+
+3.2.3 Human capital knowledge value addition. Human capital knowledge value
+addition (HCKVA) is a perceptual-process measurement technique that is used to
+determine the organizational factors that contribute to employee performance. It acts
+as a diagnostic and can be used to monitor process change and enhancements, to
+develop human capital potential. Ability development, quitting consequences,
+knowledge access and rewards were identiﬁed as the most important determinants
+of employee value addition. The limitation of this measure is that it does not link
+performance behavior and processes to ﬁnancial outcome measures.
+
+3.2.4 Systems performance measures. System performance measures are broadly
+divided into two categories, system, and output measures System metrics measure the
+general health of the system. For example, number of page hits, number of visitors,
+response times. Output measures are core day-to-day activity measures. Example, turn
+around time, percent complete on time, turn over rate, retention.
+
+Systems measures contain too much detail and may not always explain the
+behaviors. They measure a part of the “what”, but not much of the “why”. Systems
+measures do not determine the means to create customer value, or how internal
+knowledge assets improve that value.
+
+3.2.5 Skandia navigator. Skandia is considered to be the ﬁrst large company to have
+made a truly coherent effort at measuring knowledge assets (Bontis, 1996; Huseman and
+Goodman, 1999). The navigator has four areas of focus: process, customer, ﬁnancial,
+renewal and development and human capital (Edvinsson and Malone, 1997). The
+Skandia model uses 91 IC metrics plus 73 traditional metrics to measure the ﬁve focus
+areas mentioned above (Bontis, 2001). Edvinsson and Malone (1997) acknowledge that
+various IC indices may be redundant but still recommend 112 measures in the navigator.
+The Skandia model does not assign a dollar value to IC, but uses proxy measures to track
+trends in assumed value added (Lynn, 1998). The metrics used are subjective in nature
+and cannot be generalized (Roos and Roos, 1997). They also emphasized that the balance
+sheet approach followed by the Skandia model results in a snap shot view and does not
+represent the dynamic knowledge ﬂows in an organization.
+
+Financial measurement systems do overcome problems of subjective bias and
+reliability. We present key ﬁnancial measures and their limitations in the next section.
+
+3.3 Financial measures
+Financial measures as discussed in Section 1.3.1 focus on the ﬁnancial outcomes of IC
+investment. Some examples of ﬁnancial measurement techniques are the intangibles
+assets monitor, economic value added (EVA), the knowledge capital valuation method,
+knowledge production function, return on investment and knowledge value potential.
+Sveiby’s intangibles assets monitor scorecard approach presents three distinct
+IC: external and internal structure, and individuals’ competence.
+
+indicators of
+
+Intellectual
+capital
+
+405
+
+The indicators examine growth, renewal, efﬁciency, and stability/risk in each of these
+categories. External structure consists of relationships with customers and suppliers,
+brand names, and reputation. Internal structure consists of patents, concepts, models,
+systems and culture. These are created by the employees and are thus generally
+“owned” by the organization. Individual competence is people’s ability to act in various
+situations. It includes skill, education, experience, and values.
+
+The IAM method provides a scorecard of the company’s intellectual capital
+strengths and weaknesses. However, it does not result in an overall quantiﬁable value.
+Sveiby assumes that IC and ﬁnancial outcomes are innately related. Lynn (1998) argues
+that value creation is not possible without appropriate support for ﬁnancial feedback
+systems and more importantly a supportive culture. IAM does not provide quantitative
+measures of IC value addition or ROI.
+
+Economic value added is a comprehensive performance measure, proposed by
+Stewart (1997), that uses the variables of capital budgeting, ﬁnancial planning, goal
+setting, performance measurement, shareholder communication, and incentive
+compensation to account for all ways in which corporate value can be added or lost
+(Bontis, 1999). In simple terms EVA is a measure of surplus value created on an
+investment.
+
+EVA is calculated by subtracting capital charges, taxes and operating expenses
+from the net sales. Capital charges refer to the charges generated on an asset over
+a period of one year. Operating expenses are the money expended on running the
+operation for a period of one year. Net sales refer to the total volume of sales in a given
+ﬁnancial year. The formula for calculating EVA is presented in equation (1).
+
+Net sales 2 operating expenses 2 taxes 2 capital charges ¼ EVA
+
+ð1Þ
+
+EVA does not add to the understanding of the organizations intangible resources or
+their speciﬁc contributions to the organizations effectiveness. EVA uses 164 areas of
+performance adjustments, leading a trade off between complexity, accuracy and ease.
+The large list of possible variables for EVA measurement make it nonstandard and
+difﬁcult to compare. There is little conclusive empirical evidence on the accuracy of
+EVA measures.
+
+Price to book value. The most common method for measuring knowledge assets is
+to subtract a company’s book value from its market value and arrive at its IC worth.
+The price to book ratio compares two different types of valuations:
+
+(1)
+(2)
+
+the stock market’s valuation as reﬂected in the stock’s price, and
+the accountant’s valuation as measured by book value.
+
+Speciﬁcally, the price to book ratio is market capitalization divided by shareholder’s
+equity. The shortcoming of the “market to book value” method is that the number rises
+and falls with market exuberance (Starssman, 1999).
+
+Knowledge capital scorecard method proposed by Lev (2000) is performance driven
+and makes it possible to assess the worth of organizational knowledge. The value of IC
+is dependent on the earnings of the organization and accounts for earnings from
+intangible assets. The difference between the total earnings and earnings from tangible
+assets is termed knowledge capital earnings (KCE). The knowledge capital is then
+calculated by dividing the earnings by an expected rate of return on knowledge assets.
+The formula for calculating knowledge capital value (KCV) is shown in equation (2).
+
+JIC
+5,3
+
+406
+
+KCV ¼ normalized earnings 2 earnings from tangible assets=
+
+ð2Þ
+
+knowledge capital discount rate
+
+where normalized earning refers to: earnings adjusted for cyclical ups and downs in the
+economy; earnings from tangible assets refers to the ﬁnancial earnings; and knowledge
+capital discount rate refers to average after-tax proﬁts of: software and biotechnology
+industries – 10.5 percent. By inserting it in the formula, one can put a dollar ﬁgure on a
+company’s knowledge capital.
+
+The strength of the method is its predictive capacity. Empirical studies show a
+strong correlation 0.53 between return from stocks and knowledge earnings (Stewart,
+2001). Another study in the chemical industry, spanning over 83 companies and 25
+years, shows that R&D investments returned 25.9 percent pre-tax, whereas capital
+spending earned just 15 percent. The major drawback of the knowledge capital
+valuation method is that the variables measured by the Knowledge Capital Valuation
+method are futuristic.
+
+The knowledge production function refers to knowledge measured by R&D
+investment and patents. Knowledge production function is the relationship of
+investment in knowledge capital towards the reduction of production costs and
+increased economic growth. Machlup (1962) deﬁned knowledge production as any
+human activity that is effectively designed to create, alter, conﬁrm a meaningful
+appreciation, awareness or cognizance of one’s own or others experiences or ideas.
+Knowledge production function is measured as a function of the sum total of individual
+knowledge and learning the organizational knowledge and is described in equation (3).
+
+Q ¼ f ðK; L; Kn ¼ f ðK; LÞÞ:
+
+ð3Þ
+
+where, K refers to natural knowledge; L refers to learning; and Kn ¼ organizational
+knowledge.
+
+The knowledge production function is the most basic and fundamental metric
+towards measurement of the value of organizational knowledge. However, it does not
+answer the fundamental question “will it make money?” Philips proposed the return on
+investment measure monitor the economic returns from a knowledge investment.
+
+Return on investment refers to a systematic means to determine a monetary ﬁgure
+to how results compare to costs. ROI is used for evaluating IC investments as
+proﬁtable. An example being training.
+
+ROI is calculated as a percentage of the ratio between the net beneﬁts derived from a
+process or knowledge system and the total costs expended and is shown in the
+equation (4).
+
+ROI % ¼
+
+Net benefits
+Total costs £ 100
+
+:
+
+ð4Þ
+
+ROI measures help determine the value of the contribution of a process, system or
+individual, prioritize programs, improve processes and focus on results. ROI measures
+can also be used for enlisting management support and changing employee
+perceptions. However, ROI measures are expensive and time-consuming.
+
+The next section describes measurement techniques that are used to understand the
+effect of social factors and are classiﬁed as “other techniques” for the purpose of this
+paper.
+
+Intellectual
+capital
+
+407
+
+3.4 Other measures
+Other measures refer to a variety of measurement techniques that do not fall under the
+classiﬁcation of perceptual, process or ﬁnancial. They include measures of social
+networks, econometrics measures like learning and diffusion curves, and knowledge
+value potential measures.
+
+Social outcome measures refer to processes and social networks which affect
+knowledge sharing and generation. These include social network measures, ROI of
+communities of practice, learning curves, diffusion curves, etc.
+
+Social network measures refer to measures of interpersonal networks and authority
+structures (Carley et al., 2000; Galbraith, 1973; Thompson, 1967). Examples of social
+network measures are presented below:
+
+where i ¼ 1 j ¼ 1
+
+Span of control: average number of lower links per manager
+Density: the number of actual links in a network divided by the number of all
+possible links in the network
+Density ¼ NN/S ij
+Cognitive load is a measure of commitment network.
+Cognitive load is a measure of commitment network.
+Cognitive load: deﬁned for each person
+Number of people person i interacts with/total number of people in the group;
+Number of resources person i manages/total number of resources
+Number of tasks person i is assigned to/total number of tasks
+sum of number of resources required by the tasks person i does/(total number of
+
+sum of number of people who do the same tasks person i does/(total number of
+
+sum of negotiation needs person i needs to do for each task/total possible
+
+tasks * total number of resources)
+
+tasks * total number of people)
+
+negotiations
+
+Resource load: average number of resources each individual has access to.
+
+Skill complexity is a product of the number of people and number of available
+Social and interpersonal network measures determine intangible resources allocation
+and utilization in the organization and affect the rate of innovation in an organization.
+Rate of innovation can be measured based on the time taken from invention to
+replacement of an old technique and the value added by the new technique
+(Swanstrom, 2001).
+
+Learning costs associated with new technologies and innovations can be reduced
+through effective processes. Reduction in learning costs can be measured through
+learning curves. The learning curve represents natural knowledge production cost
+reduction without intervention (Abernathy and Wayne, 1974).
+
+Organizations can reduce learning costs and increase diffusions through use of
+efﬁcient knowledge management systems. Learning and diffusion curves should be
+applied to knowledge management tools and processes to determine the value add
+created by them (Watkins, 2001).
+
+JIC
+5,3
+
+408
+
+Diffusion curves track the diffusion and adoption of new ideas, processes, and
+products, i.e. Innovations and are based on aggregates of people. A small number of
+early adopters evaluate and accept an innovation, which then spreads rapidly across
+the organization (Nielsen, 1995).
+
+The curve typically has an S shape and is called the S curve as a result (Mahajan
+
+et al., 1990). Figure 3 presents the diffusion curve.
+
+Many factors, including, opinion leaders, knowledge base, adoption of another
+innovation, ability to forget the innovations being replaced and technology, govern the
+rate of diffusion.
+
+Diffusion may be measured using the formula presented in equation (5).
+
+N t ¼ N t21 þ pðm 2 N t21Þ þ q
+
+ðm 2 N t21Þ
+
+ð5Þ
+
+N t21
+m
+
+Where, m is the market potential, the total number of people who will eventually use
+the product, is the p the coefﬁcient of external inﬂuence, the likelihood that somebody
+who is not yet the using the product will start using it because of mass media
+coverage or other external factors, q the coefﬁcient of internal inﬂuence, the likelihood
+that somebody who is not yet using the product will start using it because of
+“word-of-mouth” or other inﬂuence from those already using the product.
+
+Managers intervene to compress the diffusion curve by conducing a cultural
+change, economic analysis and knowledge base analysis of the opinion leaders and
+then design an intervention to address the individual preferences for the packaging of
+innovations and the packaging of the knowledge. Increasing perceptions of a relative
+advantage and cost savings can inﬂuence diffusion of an innovation.
+
+The next step in the evolution of IC measurement factors in the potential value of
+
+knowledge.
+
+Knowledge value potential. Paul Iske in 2001 proposed a measure of knowledge value
+
+potential, which helps in making investment decisions and planning for IC growth.
+
+Iske deﬁnes the value of knowledge as the difference between the value of the
+end-state and that of the original state. The original state refers to the context in which
+knowledge is being measured and the transition process is the end state. The primary
+thesis being that value of knowledge is context dependent.
+
+Knowledge value potential equals the sum of the probability that knowledge is
+related to a context, and is multiplied by the ease of transfer and the ease of usage and
+context speciﬁc value addition and is shown in equation (6).
+
+V PðKðVÞÞ ¼
+
+pðKðVÞ; GÞ rðKðVÞ; GÞ aðKðVÞ; GÞ V ðK; GÞ
+
+X
+
+h
+(cid:3)
+V P LG
+
+þ
+
+i ðKðVÞ; ViÞ
+
+(cid:4)
+
+(cid:3)
+2 I LG
+
+(cid:4)
+i ðKðVÞ; ViÞ
+
+io
+
+ð6Þ
+
+Xn
+
+l
+
+i
+
+Knowledge value potential can be directly applied to KM systems such as yellow
+pages, smart documents. The effective exchange between two persons must be
+measured according to the presence of trust, communication skills, language (barriers)
+motivation, the prevalence of not-invented-here syndrome and shared mental models.
+The success of a knowledge management system depends heavily on these issues.
+The identiﬁcation, transfer and activation of knowledge across contexts determines the
+
+Intellectual
+capital
+
+409
+
+value added. Hence, the value of knowledge is not the intrinsic property of an
+organization but
+the
+measurement. Knowledge potential is context dependent and affected by social factors,
+interaction and sharing behaviors.
+
+is dependent on the environment and the objectives of
+
+4. The proposed framework
+Perceptual, ﬁnancial, process and other techniques of IC measurement were discussed
+in the previous section and a clear need established for an integrated holistic
+framework for IC measurement that combines elements of perceptual, process,
+ﬁnancial and social impact of IC. We present an IC measurement framework that
+addresses issues of organizational growth and economic success.
+
+Rather than follow the general deﬁnition of IC given above, we restrict ourselves for
+the purposes of the study to the OECD deﬁnition of IC, which describes IC as “the
+economic value of two categories of the intangible assets of a company: organizational
+and human capital” (OECD, 1999). We discuss in detail, measurement frameworks for
+human and organizational capital, thus capturing the people, process and technology
+aspects of IC valuation. Customer capital or social networks are only captured via
+debrieﬁng forms, to include social IC valuation, albeit to a limited degree. In addition,
+we include ﬁnancial measures to correlate the traditional OEC framework with
+bottomline performance measures.
+
+We propose a three-step model for IC measurement. The three steps include:
+identiﬁcation and awareness, systems and output measures, and outcome measures of
+tangible ﬁnancial returns (Figure 4).
+
+4.1 Knowledge management readiness: the ﬁrst step towards measurement of IC
+KM awareness measures the organizations awareness and readiness for knowledge
+identiﬁes
+management,
+core-competencies and establishes knowledge criticality. This step also includes
+culture audits.
+
+the extent of employee and management
+
+involvement,
+
+Systems and process are the diagnostic stage, where current system and
+process effectiveness is measured. This includes existing frameworks such as the
+goal-question paradigm and process efﬁciency measures as well as usability statistics.
+
+Figure 4.
+The new paradigm –
+a three-step process
+oriented approach to IC
+valuation
+
+JIC
+5,3
+
+410
+
+This step involves current status assessment and indicators for future enhancement or
+change. The processes and systems are then linked to basic effectiveness standards and
+ﬁnancial and social outcomes in the next step.
+
+The IC outcome measures link the various organizational processes and systems to
+speciﬁc ﬁnancial and social outcomes. These measures can be at two levels: the project
+level or the global organizational
+level. They include measures of ROI, ROA,
+knowledge productivity function, learning curves, etc. Detailed descriptions of each
+step and analysis are not within the scope of this paper.
+
+Note
+1. A knowledge intensive organization is one in which experts make up at least one-third of the
+
+organization (Starbuck, 1996).
+
+References
+Abernathy, W.J. and Wayne, K. (1974), “Limits of the learning curve”, Harvard Business Review,
+
+Vol. 52 No. 5, pp. 109-19.
+
+APQC (2000), APQC’s Best-Practice Report: Successfully Implementing Knowledge Management,.
+APQC (2001), APQC: The Leading Edge of Knowing, American Productivity and Quality Center.
+Argyris, C. (1982), Reasoning, Learning, and Action: Individual and organizational, Jossey-Bass,
+
+San Francisco, CA.
+
+Bagelieri, E. (1997), “R&D performance measurement: a reference model”, 7th international
+
+Forum on Technology Management, Kyoto.
+
+Bagelieri, E. (2000), “Linking share holder value to R&D Performance”, IAMOT Conference,
+
+Barclay, R.O. and Murray, P.C. (1997), What is Knowledge Management, available at: www.
+
+Miami.
+
+media-access.com/whatis.html
+
+Basili, V.R. and Musa, J. (1991), “The future engineering of software: a management perspective”,
+
+IEEE Computer, Vol. 24 No. 9, pp. 90-6.
+
+Basili, V.R. and Perricone, B.T.
+
+(1984), “Software errors and complexity: an empirical
+
+investigation”, Commun. ACM, Vol. 27 No. 1, pp. 42-52.
+
+Basili, V.R., Daskalantonakis, M. and Yacobellis, R. (1994), “Technology transfer at Motorola”,
+
+IEEE Software, Vol. 11 No. 2, pp. 70-6.
+
+Becker, G. (1992), Economic Way of Looking at Life, Nobel Lecture, 9 December.
+Bhatt, G.D. (2000), “Organizing knowledge in the knowledge development cycle”, Journal of
+
+Knowledge Management, Vol. 4 No. 1.
+
+Bontis, N. (1996), “There’s a price on your head: managing intellectual capital strategically”,
+
+Business Quarterly.
+
+Bontis, N. (1999), “Assessing knowledge assets: a review of the models uses to measure
+
+intellectual capital”, International Journal of Management Reviews, Vol. 3 No. 1.
+
+Bontis, N. (2001), “Assessing knowledge assets: a review of the models used to measure
+intellectual capital”, International Journal of Management Reviews, Vol. 3 No. 1, pp. 41-60.
+Brennan, B. (1999), “Measuring and reporting intellectual capital”, available at: www.oecd.org
+Carley, K.M., Yuqing, R. and David, K. (2000), “Measuring and modeling change in C 3 I
+architecture”, Proceedings of the 2000 Command and Control Research and Technology
+Symposium, Naval Postgraduate School, Monterey, CA.
+
+Intellectual
+capital
+
+411
+
+Celemi (1999), Growing A Knowledge Company, available at: www.celemi.com, site includes
+
+DATI – Danish Agency for Trade and Industry (1998), Intellectual Capital: A New Tool for
+
+celemi intangible assets monitor.
+
+Companies, DTI council, Copenhagen.
+
+Davenport, T.H. and Prusak, L. (1998), Working Knowledge: How Organizations Manage What
+
+They Know, Harvard Business School Press, Cambridge, MA.
+
+Denison, D.R. (1982), “The climate, culture, and effectiveness of work organizations: a study of
+organizational behavior and ﬁnancial performance”, Doctoral dissertation, University of
+Michigan.
+
+DeLong, D. (1997), “Building the knowledge-based organization: how culture drives knowledge
+behaviors”, Working Paper, Ernst & Young’s Center for Business Innovation, Boston, MA.
+
+Edvinsson, L. and Malone, M. (1997), Intellectual Capital, HarperCollins Publishers, New York, NY,
+
+Edvinsson, L. and Sullivan, P. (1996), “Developing a model for managing intellectual capital”,
+
+European Management Journal, Vol. 14 No. 4.
+
+Galbraith, J.R. (1973), Designing Complex Organizations, Addison-Wesley, Reading, MA.
+
+Ginchereau, W., Howell, F. and Mitchell, K. (1997), “Too much information”, InfoWorld, 19 May,
+
+Guerteen, D. (1999), Creating a Knowledge Sharing Culture, available at: www.guerteen.com
+
+Hamel, G. and Prahalad, C.K. (1994), Competing For The Future, Harvard Business School Press,
+
+p. 225.
+
+pp. 72-82.
+
+Boston, MA.
+
+Huseman, R.C. and Goodman, J.P. (1999), Leading with Knowledge: The Nature of Competition in
+
+the 21st Century, Sage, London.
+
+Hylton, A. (2002), The Pivotal Role of the Knowledge Audit, Knowledge Board, 30 August,
+
+available at: www.knowledgeboard.com
+
+IASC (1998), IAS 38, Intangible Assets, IASC Standards.
+
+IFAC (1998), The Measurement and Management of Intellectual Capital : An Introduction,
+
+Financial and Management Accounting Committee IFAC 1998 Study 7.
+
+Iske, P. and Boekhoff, T. (2001), “The value of knowledge doesn’t exist: a framework for valuing
+the potential of knowledge”, Knowledge Management Magazine, 26-28 June, Vol. 5 No. 2.
+
+Kannan, G. and Akhilesh, K.B. (2002), “Human capital knowledge value addition: a case study in
+
+info-tech”, Journal of Intellectual Capital Management, Vol. 3 No. 1.
+
+Kaplan, R.S. and Norton, D.P.
+
+(1992), “The balanced scorecard – Measures that drive
+
+performance”, Harvard Business Review, pp. 71-9.
+
+Kaplan, R.S. and Norton, D.P. (1996), The Balanced Scorecard, Harvard Business School Press,
+
+Lam, A. (2000), “Tacit knowledge: organizational learning and innovation”, DRUID working
+
+Lemkin (2000), available at: http://citeseer.nj.nec.com/254502.html
+
+Lev, B. (2000), New Math for a New Economy, available at: www.bayacht.com/resource/business/
+
+Lynn, L.E.
+
+(1998), “Managing intellectual capital: the issues and practice”, Management
+Accounting Issues, Paper 16, Management Accounting Practices Handbook, Hamilton,
+Society of Management Accountants, Ontario, Canada.
+
+Cambridge, MA.
+
+paper, Aalborg.
+
+busvalue.htm
+
+JIC
+5,3
+
+412
+
+McGrath, M.E. (1996), “Stetting the pace in product development”, A Guide To Product & Cycle
+
+Time Excellence, Butterworth & Heinemann, London.
+
+Machlup, F. (1962), The Production and distribution of Knowledge in the United States, Princeton
+
+University Press, NJ.
+
+Mahajan, V., Muller, E. and Bass, F.M. (1990), “New product diffusion models in marketing: a
+
+review and directions for research”, Journal of Marketing, Vol. 54 No. 1.
+
+Nielsen, A.P. (1995), Proceedings from the 3. IPS Junior Workshop on the New Organisation,
+
+25-16 October, Copenhagen, IPS working-paper.
+
+Nonaka, I. and Konno, N. (1998), “The concept of ‘Ba’: building foundations for knowledge
+
+creation”, California Management Review, Vol. 40 No. 3.
+
+OECD (1999), OECD Work on Measuring Intangible Investment, Micro Policies for Growth,
+
+OECD, Amsterdam.
+
+Phillips, J.J.
+
+(1997), Return on Investment in Training and Performance Programs, Gulf
+
+Publishing Company, Houston, TX.
+
+Prusak, L. (1998), Working Knowledge: How Organizations Manage What They Know, Harvard
+
+Business School Press, Cambridge, MA.
+
+Quinn, P.A. and Sydney, F. (1996), Managing Professional Intellect : Making the Most the Best,
+
+Harward Business Review, March-April.
+
+Roos, G. and Roos, J. (1997), “Measuring your company’s intellectual performance”, Long Range
+
+Planning, Vol. 30 No. 3, pp. 413-26.
+
+Roth, A. (1995), “Introduction to experimental economics”, in Kajel, J. and Roth, A. (Eds),
+
+Handbook of Experimental Economics, Princeton University Press, NJ.
+
+Schein, E.H. (1996), “Three cultures of management: the key to organizational learning”, Sloan
+
+Management Review.
+
+Sprotte, K. (2000), K3M, Cegos.
+
+Starbuck, W. (1996), “Unlearning ineffective or obsolete technologies”, International Journal of
+
+Technology Management, Vol. 11, pp. 725-37.
+
+Starssman, P. (1999), “Does knowledge capital explain market book valuations”, available at:
+
+www.starssmann.com (accessed September 1999).
+
+Stewart, T.A. (1995), “Trying to grasp the intangible”, Fortune, 2 October, pp. 157-61.
+
+Stewart, T.A. (1997), Intellectual Capital, Nicholas Brealey, London.
+
+Stewart, T.A. (2001), “Accounting gets radical”, Fortune.
+
+Sveiby, K. (1996), The Knowledge Organisation, available at: www.sveiby.com.au/KOS1.html
+
+Sveiby, K. (1997), The New Organizational Wealth: Managing and Measuring Knowledge Based
+
+Assets, Barret-Kohler, San Francisco, CA.
+
+Sveiby, K. (2001), “A knowledge based theory of the ﬁrm to guide strategy formulation”, Journal
+
+Sveiby, K-E. (1998), What is Knowledge Management?, report, Community Intelligence Labs,
+
+of Intellectual Capital, Nos 2/4.
+
+1 February.
+
+Swanstrom, E. (2001), Knowledge Management Economics Framework, GKEC.
+
+Thompson, J.A. (1967), Organizations in Action, McGraw-Hill, New York, NY.
+
+Ulrich, D.
+
+(1998), “Intellectual Capital ¼ Competence £ Commitment”, Sloan Management
+
+Review, Vol. 39 No. 2, pp. 15-26.
+
+Ulrich, D., Wayne, B. and Arthur, Y. (1989), “Human resource competencies in the 1990’s: an
+empirical assessment of what the future holds”, Personnel Administrator, pp. 91-3.
+Von Hippel, E. (2001), “Perspective user tool kits for innovation”, Journal of Product Innovation
+
+Intellectual
+capital
+
+Management, p. 18.
+
+Quarterly, October.
+
+Watkins, P.N. (2001), “The persistence of learning and acquisition strategies”, Acquisition Review
+
+West, T. (1999), “The information content of economic value added: a comparitive analysis with
+
+earnings cahsﬂow and residual income”, Journal of Economic Literature.
+
+413
+
+Further reading
+Myers, P.S.
+
+(Ed.)
+
+Butterworth-Heinemann, Boston.
+
+Wiley, New York, NY.
+
+(1996), Knowledge Management
+
+and Organizational Design,
+
+Swanstrom, E. (2000), Knowledge Management: Modeling and Managing the Knowledge Process,
+
+

@@ -1,0 +1,1110 @@
+Decision Sciences
+Volume 37 Number 4
+November 2006
+
+C(cid:2) 2006, The Author
+Journal compilation C(cid:2) 2006, Decision Sciences Institute
+
+RESEARCH NOTE
+
+Bringing IT Back: An Analysis of the
+Decision to Backsource or Switch Vendors
+
+Dwayne Whitten†
+Texas A&M University, Mailstop 4217, College Station, TX 77845,
+e-mail: dwhitten@mays.tamu.edu
+
+Dorothy Leidner
+Baylor University, One Bear Place #98005, Waco, TX 76798,
+e-mail: Dorothy Leidner@Baylor.edu
+
+ABSTRACT
+
+Whereas the decision to outsource information systems (IS) has been an important focus
+in IS research and practice, the decision to switch vendors or to backsource has received
+little attention. Evidence suggests that in practice, however, the decision to backsource
+or to switch vendors is becoming increasingly common as ﬁrms vie for ways to continue
+to cut information technology (IT) costs and improve IT service levels. This research
+speciﬁcally examines the factors associated with the decision to backsource or to switch
+vendors. Based on a sample of 160 IT managers involved with application development,
+we compare and contrast the perceptions of those who switched vendors, backsourced,
+or continued in an outsourcing relationship for application development. Our ﬁndings
+suggest that product quality, service quality, relationship quality, and switching costs
+are related to the decision to backsource application outsourcing. However, service and
+product quality did not inﬂuence the decision to switch vendors. Rather, ﬁrms that made
+the decision to switch vendors reported high levels of service and product quality but
+low levels of relationship quality and switching costs.
+
+Subject Areas: Backsourcing, Outsourcing, Product Quality, Relationship
+Quality, Service Quality, and Switching Costs.
+
+INTRODUCTION
+
+Although the popularity of information technology (IT) outsourcing has grown
+over the last two decades and was expected to be a larger than $206 billion in-
+dustry in the United States alone in 2005 (Scardino, Brown, Caldwell, Cournoyer,
+Dreyfus, Marriot, Maurer, & Young, 2004), many outsourcing arrangements do
+not last. One study found that approximately a third of companies studied had
+canceled outsourcing contracts (Lacity & Willcocks, 2001). Recently, some large
+outsourcing failures have received wide attention. For example, JP Morgan Chase
+& Co. ended its outsourcing relationship with IBM Corporation after only two
+years of what was projected to be a seven-year, $5-billion arrangement. JP Morgan
+
+†Corresponding author.
+
+605
+
+606
+
+Bringing IT Back
+
+Chase & Co. returned all IT functions back in house (Cowley, 2004). This practice
+of bringing IT back in house following an outsourcing arrangement is referred to
+as backsourcing. Lacity and Willcocks (2000) indicate that, of discontinued con-
+tracts, 34% are backsourced. The technology research and consulting ﬁrm, Gartner
+(Brown, 2004), reports that 56% of small-business and 42% of mid-sized-business
+contracts are backsourced once the contract has been discontinued.
+
+A major reason for bringing IT back in house is that top executives in highly
+competitive IT-intensive industries are discovering that IT infrastructure is, in fact,
+a competitive asset. Such was the case at JP Morgan Chase & Co. (Forelle, 2004).
+Other reasons for backsourcing include poor service and price (Chalos & Sung,
+1998; Ambrose, 2002) and a poor relationship between the vendor and the out-
+sourcer (Dibbern, Goles, Hirschheim, & Jayatilaka, 2004). In spite of the many
+reasons a ﬁrm might choose to backsource, transferring IT back in house is not
+without cost and risk. Due to the return of employees, assets, and knowledge into
+the ﬁrm, switching costs can be signiﬁcant. Gartner estimates that the cost of back-
+sourcing is usually between 2% and 15% of the annual cost of a contract. Rather
+than backsourcing, some ﬁrms might choose to switch vendors. However, the task
+of switching vendors may also prove risky and expensive.
+
+Outsourcing contracts run a gamut from total outsourcing, meaning outsourc-
+ing of greater than 80% of the IT budget, to total insourcing, meaning outsourcing
+of less than 20% of the IT budget, with the most common approach being selective
+sourcing, meaning that an organization outsources anywhere between 20% and
+80% of its IT budget (Lacity, Willcocks, & Feeny, 1996). Selective outsourcing
+of IT has been shown to result in the highest and most successful outsourcing
+arrangements (Lacity et al., 1996). Speciﬁcally, an organization might choose to
+selectively outsource and subsequently to backsource desktop operations, network
+operations, data center operations, and/or application development. We focus on
+application development. Application development as an area of selective sourc-
+ing has gained increasing attention as the phenomenon of offshore development
+has increased (Kaiser & Hawk, 2004; Rottman & Lacity, 2004). The objective
+of this research is to empirically examine the factors associated with switching
+vendors, backsourcing, or continuing in an outsourcing relationship for application
+development.
+
+THEORETICAL FOUNDATIONS
+
+Transaction cost theory (TCT) and social exchange theory (SET) in combination
+provide a theoretical lens through which to view the interaction of switching costs,
+relationship quality, service quality, and product quality as they relate to the decision
+an outsourcing client makes to either continue, backsource, or switch vendors. TCT
+has been the theoretical basis for a number of outsourcing studies in IT (Aubert,
+Rivard, & Patry, 2004; Lacity & Hirschheim, 1993) as well as in other areas such
+as manufacturing (Balakrishnan, 1994; David & Han, 2004) and supply chain
+management (Grover & Malhotra, 2003). This is largely because TCT focuses on
+the economic motivation for entering and exiting interorganizational relationships.
+In addition, TCT is applicable to a broad spectrum of research questions, because
+
+Whitten and Leidner
+
+607
+
+any problem that can be thought of in terms of a contract can be investigated with
+a transaction cost approach (Williamson, 1985).
+
+While TCT is a prominent and useful theory to explain why ﬁrms initiate an
+IT outsourcing arrangement (e.g., a presumably lower transaction cost to achieve
+a given product/service quality level than if they retain control of the IT), TCT
+alone cannot fully explain the subsequent decisions to continue or discontinue
+an outsourcing relationship. TCT focuses primarily on the economic aspects of
+relationships, but outsourcing decisions often involve fairly long-term relationships
+during which time the perception of the relationship takes on increasing weight in
+inﬂuencing satisfaction with the outsourcing arrangement. It is here that SET can
+help offer supplemental explanations for why a client ﬁrm might backsource or
+switch vendors, all else being equal. SET assumes that relationships are reviewed
+and weighted in terms of costs and rewards, but not exclusively ﬁnancial aspects
+(Thibaut & Kelley, 1959). The basis of SET is that parties involved in a relationship
+recognize the value provided by each other and continue in the relationship because
+the value created by the relationship is more attractive than alternatives (Blau,
+1964). Over time, ﬁrms in a good relationship are likely to consider not only the
+economic factors but also the social factors as important in the decision to continue
+in the same relationship or not. Moreover, the quality of the relationship a ﬁrm
+has with a vendor might be of considerable importance in cases where the ﬁrm is
+considering switching vendors or backsourcing.
+
+In summary, from TCT and SET, we posit that service quality and prod-
+uct quality, as the objects of an outsourcing agreement, are important predictors
+of a sustained outsourcing relationship. Moreover, relationship quality and the
+switching costs will also inﬂuence the decision to continue with an outsourcing
+agreement.
+
+Hypotheses
+Service quality is the conformance to customer requirements in the delivery of a
+service (Parasuraman, Zeithaml, & Berry, 1988). It is a perceived judgment result-
+ing from a comparison of client expectations with the level of service customers
+perceive to have received from the outsourcing vendor. Service quality results in sig-
+niﬁcant beneﬁts, such as proﬁt-level increases, cost savings, and increased market
+share, to both entities involved in a transaction (Zeithaml, Berry, & Parasuraman,
+1988) such as outsourcing. Outsourcing vendors assign considerable signiﬁcance
+to service quality, as evidenced by some ﬁrms’ use of service quality to strategically
+position themselves in the market (Parasuraman, Zeithaml, & Berry, 1988; Brown
+& Swartz, 1989). Although the analysis of the correlation between service quality
+and post hoc decisions is limited, service quality has been shown to affect purchase
+intentions (Cronin & Taylor, 1992). The results of research conducted by Zeithaml,
+Berry, and Parasuraman (1996) indicate a strong inﬂuence of service quality on
+customers’ behavioral intentions, which was measured as the willingness of a client
+to remain with the current vendor. In the context of outsourcing, service quality has
+been shown to increase the success of the outsourcing relationship (McFarlan &
+Nolan, 1995; Grover, Cheon, & Teng, 1996).
+
+608
+
+Bringing IT Back
+
+Service quality is of particular importance from a transaction cost perspective,
+because as the costs associated with monitoring the service level increase for the
+client, the client is more likely to perceive the overall transaction cost as too high,
+leading to a consideration of whether or not to continue the relationship. Moreover,
+if the service provider acts opportunistically, as predicted by TCT, service quality
+might decrease. For example, if the service provider diverts key people to other
+projects or fails to adequately update related technology, then the service quality
+might decrease for the client. As service quality decreases, the costs associated with
+monitoring the service increase. Thus, the overall transaction costs increase and,
+consequently, one would expect the client to consider alternatives. We therefore
+propose:
+
+H1a: Service quality will be negatively associated with backsourcing.
+H1b: Service quality will be negatively associated with vendor switching.
+
+Similarly, product quality is expected to inﬂuence the decision to backsource
+or switch vendors. Opportunism on the part of the service provider can cause
+product quality to decrease. If the service provider transfers experienced employees
+to other projects (or devotes fewer employees), the service provider might fail to
+make the types of continuous improvements expected by clients and, as a result,
+the product quality might decrease relative to alternatives.
+
+The product quality research has shown that performance, features, reliability,
+conformance, durability, serviceability, aesthetics, and perceived quality contribute
+to the perception of product quality in general (Garvin, 1984). Speciﬁcally related
+to software product quality, research has traditionally emphasized reliability as
+a primary indicator of quality (Shen, Yu, Thebaut, & Paulsen, 1985; Basili &
+Perricone, 1984). Once software reliability has been achieved, however, the
+focus then switches to other software product dimensions. Kekre, Krishnan,
+and Srinivasan (1995) have used capability, usability, performance, installabil-
+ity, maintainability, and documentation, in addition to reliability, as measures of
+software product quality. Each of these factors was found to impact customer sat-
+isfaction with the software product. Hence, we would expect product quality to
+be negatively associated with the decision to end an outsourcing arrangement. We
+therefore propose:
+
+H2a: Product quality will be negatively associated with backsourcing.
+H2b: Product quality will be negatively associated with vendor switching.
+
+A third measure of quality, relationship quality, is also expected to inﬂuence
+the decision to backsource or switch vendors. Trust, commitment, communication
+quality, cultural similarity, and balanced interdependence all positively impact the
+quality of a relationship (Dwyer, Schurr, & Oh, 1987; Anderson & Narus, 1990;
+Mohr & Spekman, 1994; Morgan & Hunt, 1994; Kern, 1997). Moreover, relation-
+ship quality and relationship success have been shown to be strongly connected
+(Anderson et al., 1990; Mohr et al., 1994). Speciﬁcally related to IT outsourcing,
+success has been shown to depend not only on a high level of service quality, but also
+on other factors such as the relationship between the client and the vendor (Grover,
+Cheon, & Teng, 1996; Kern, 1997; Lee & Kim, 1999; Lacity & Willcocks, 2000;
+Koh, Ang, & Straub, 2004). From the perspective of SET, so long as the beneﬁts
+
+Whitten and Leidner
+
+609
+
+of a relationship outweigh the costs (ﬁnancial and nonﬁnancial), there is no com-
+pelling motivation to terminate the relationship. If, however, a client perceives that
+the beneﬁts of the vendor come at too high a cost, then we would expect the client
+to consider switching vendors or backsourcing. Conversely, if the quality of the
+relationship is high, SET proposes the ﬁrms are less likely to terminate the rela-
+tionship; rather, they will continue with the relationship due to the beneﬁts derived
+from it. We therefore propose:
+
+H3a: Relationship quality will be negatively associated with backsourcing.
+H3b: Relationship quality will be negatively associated with vendor
+
+switching.
+
+Finally, switching costs (those associated with either moving service to an-
+other vendor or bringing the outsourcing activities back in house) may play an
+important role in terminating an outsourcing relationship. Research shows that
+customers may be willing to stay in relationships in which they are dissatisﬁed
+because of the presence of high switching costs (Morgan & Hunt, 1994; Willcocks
+& Lacity, 1995). Dependency upon a service provider, caused by the lack of experi-
+ence within a company or many other factors, can lead to relatively high switching
+costs. Company decision makers can then believe they are locked into an outsourc-
+ing relationship and feel unable to terminate the relationship without incurring
+large switching costs. As further support of the signiﬁcance of switching costs,
+it has been shown that, in environments where switching costs were not present,
+customers reacted by switching vendors (Heide & Weiss, 1995). Both TCT and
+SET shed light on the importance of switching costs. From the perspective of TCT,
+there is a straightforward relationship between the transaction cost of outsourcing
+to one ﬁrm versus outsourcing to another or backsourcing. If the total switching
+cost combined with the anticipated transaction cost of a new arrangement (due to
+switching or backsourcing) is relatively low, then the client ﬁrm would be expected
+to act rationally and terminate the existing outsourcing relationship. From a SET
+perspective, one might also consider the real as well as the perceived switching
+costs. The perceived costs of switching would be inﬂuenced by factors such as
+whether or not the client ﬁrm believes that the client can recreate as good as, or
+better, a relationship with another ﬁrm; whether or not the client ﬁrm feels that
+it is an important partner for the service provider; and whether or not the client
+believes that the resources provided by the service provider are unique and difﬁcult
+to replicate in the marketplace or in house. In short, one expects that switching
+costs, actual or perceived, are negatively associated with the decision to end an
+outsourcing arrangement. We thus propose:
+
+H4a: Switching costs will be negatively associated with backsourcing.
+H4b: Switching costs will be negatively associated with vendor switching.
+
+METHODOLOGY
+
+A survey methodology was employed using existing scales to measure service
+quality, product quality, relationship quality, and switching costs, all on seven-
+point scales. The measurement of service quality is based on the SERVQUAL
+
+610
+
+Bringing IT Back
+
+instrument developed by Parasuraman, Zeithaml, and Berry (1988) and introduced
+in an information systems (IS) setting by Kettinger and Lee (1994). The items
+chosen to measure relationship quality were taken from a general IT outsourcing
+environment (Lee & Kim, 1999) and included items measuring ﬁve relationship
+quality factors including trust, commitment, communication quality, cultural sim-
+ilarity, and degree of interdependence. To measure product quality, we relied upon
+a scale derived from previous research on the level of satisfaction with software
+products (Kekre, Krishnan, & Srinivasan, 1995). The switching-cost scale devel-
+oped for the current research was assembled with items from Weiss and Anderson
+(1992) and from Jones, Mothersbaugh, and Beatty (2002). For the exact items used
+to measure each construct or for a copy of the survey instrument, see Whitten
+(2004).
+
+Once the scale selection was complete, three versions of the instrument were
+created to speciﬁcally collect data from ﬁrms that had experience with continu-
+ing, backsourcing, or switching. The wording varied slightly to reﬂect the proper
+environment. For example, one of the items for the backsourcers read (emphasis
+added) “backsourcing required radical changes in the way we managed.” The same
+item for switchers read, “switching vendors required radical changes in the way
+we managed,” while the same item for the continuers read “switching to another
+vendor or backsourcing would require radical changes in the way we manage.”
+
+Sample
+The sampling process began with the gathering of contact data from the Directory
+of Top Computer Executives (Grover et al., 1996). The members were asked in the
+cover letter to respond to each survey item in regard to an outsourcing relation-
+ship in which they were involved in the past three years. A total of 160 responses
+were received for a response rate of 26%. The respondents represented a range of
+industries, including manufacturing, education, healthcare, and public administra-
+tion. Roughly one third of the respondents had previously outsourced application
+development before subsequently choosing to backsource roughly a quarter had
+switched vendors during the course of an outsourcing contract, and the remaining
+ﬁrms had continued with their application development outsourcing arrangements.
+Table 1 summarizes the sample of respondents.
+
+ANALYSIS AND RESULTS
+
+Nonresponse Bias
+Respondents were categorized by response time. Early responders were consid-
+ered those whose instruments were received in the ﬁrst 25% of responses, while
+late responders were those whose instruments were received in the last 25% of
+responses. A comparison of the means of sample classiﬁcation variables and sum-
+mary variables for the two groups was conducted using one-way analysis of vari-
+ance (ANOVA). Variables used in the analysis included the numbers of employees
+and IT employees in the organization, the number of years the organization has
+practiced outsourcing, the number of previous outsourcing contracts the organiza-
+tion has signed in the last ﬁve years, and the total dollar amount of the contracts. All
+
+Whitten and Leidner
+
+611
+
+Table 1: Responses by outsourcing outcome.
+
+Total number of survey responses
+Average dollar amount of money
+
+54
+$16,929,000
+
+36
+$16,464,000
+
+70
+$16,868,000
+
+Backsource
+
+Switch
+
+Continue
+
+spent per year on IT
+organizationwide
+
+Number of years the organization has
+
+11.88
+
+practiced outsourcing
+
+Number of years the vendor has
+developed applications for the
+responding company
+
+Number of application development
+outsourcing contracts signed
+within the last ﬁve years
+
+Percentage of the IT budget allocated
+for application development and
+maintenance that is currently
+outsourced
+
+12.00
+
+2.00
+
+10.14
+
+5.61
+
+8.53
+
+6.66
+
+2.76
+
+5.53
+
+14.55
+
+34.51
+
+27.69
+
+Total dollar amount of the contract
+
+$3,994,000
+
+$7,569,000
+
+$4,911,000
+
+comparisons among groups returned insigniﬁcant differences. The insigniﬁcance
+indicates that nonresponse bias has not impacted the data set.
+
+Internal and External Validity
+AMOS 4.0 was used to perform the factor analysis. Items for which factor scores
+were less than .40 (Hair, Anderson, Tatham, & Black, 1998) or possessed correlated
+error terms in the factor analysis were removed from further analysis following an
+iterative process to reﬁne the scale (Joreskog, 1993). Altogether, 13 of 77 items
+were removed. After these removals, the scales were assessed once again. The
+individual item loadings indicated a strong correspondence between the observed
+variables and their factors with all loadings at or above the .40 minimum (Hair et al.,
+1998).
+
+Three goodness-of-ﬁt indices (IFI, TLI, CFI) were used to determine the
+ﬁt of the factor structure to the data. Goodness-of-ﬁt scores above the generally
+accepted .90 threshold (Bentler, 1992) indicate an acceptable ﬁt of the model to the
+data. Goodness-of-ﬁt measures are provided in Table 2. All of the indices, with the
+exception of TLI (.89) for the switching costs scale, were above the .90 threshold.
+Table 2 also shows the Cronbach’s alpha measure of reliability for each scale.
+Consistent with traditional guidelines of scores greater than .7 being signiﬁcant
+(Hair et al., 1998), all scales were determined to be reliable.
+
+Both convergent and discriminant validity are considered subcategories of
+construct validity. Convergent validity is supported by all of the highly signiﬁcant
+loadings (p < .01) (Bagozzi, Yi, & Phillips, 1991) and the factor regression co-
+efﬁcients (R2) being larger than .50 (Hildebrandt, 1987). Discriminant validity is
+established when measures that should not be related actually do not relate. Dis-
+criminant validity can be assessed by calculating the Average Variance Extracted
+(AVE), which represents the amount of construct-related variance captured in
+
+612
+
+Bringing IT Back
+
+RELATIONSHIP QUALITY
+
+.95
+
+.93
+
+.95
+
+Cronbach’s
+alpha
+
+AVE
+
+TLI CFI
+
+IFI
+
+.97
+.94
+
+.95
+.93
+
+.96
+.94
+
+Table 2: Scale assessment.
+
+Factors/dimensions
+
+PRODUCT QUALITY
+SERVICE QUALITY
+
+Reliability
+Responsiveness
+Assurance
+Empathy
+
+Trust
+Commitment
+Culture
+Communication
+SWITCHING COSTS
+
+Management system upgrade costs
+Hiring and retraining costs
+Uncertainty costs
+Postswitching behavioral and cognitive costs
+Lost performance costs
+Setup costs
+Search and evaluation costs
+Sunk costs
+
+.95
+
+.85
+.88
+.87
+.91
+
+.88
+.72
+.82
+.90
+
+.79
+.82
+.79
+.86
+.87
+.83
+.95
+.88
+
+.91
+
+.84
+.92
+.92
+.89
+
+.89
+.83
+.73
+.90
+
+.068
+.83
+.53
+.64
+.77
+.74
+.86
+.85
+
+.91
+
+.89
+
+.91
+
+Table 3: Mean responses from Scheff´e results (subset for alpha = .05).
+
+Decision
+
+Backsource
+Switch
+Continue
+
+Product
+quality
+
+3.92
+4.86
+5.45
+
+Relationship
+quality
+
+4.42
+4.12
+5.32
+
+Service
+quality
+
+4.21
+5.01
+5.26
+
+Switching
+costs
+
+3.15
+3.46
+4.45
+
+relation to error variance. The average percentage of variance extracted for each
+construct should be higher than .50 (Hair et al., 1998). This implies that the vari-
+ance accounted for by each construct is greater than the variance accounted for by
+measurement error (Hair et al., 1998). The AVE for all measures exceed .50 (Table
+2), providing evidence of discriminative validity of the measures.
+
+ANOVA and Scheff´e’s Test
+An ANOVA, signiﬁcant at the .01 level, veriﬁed that differences exist among re-
+sponses between the three groups (those who backsourced, switched, and con-
+tinued). Scheff´e’s post hoc test was then used to investigate all speciﬁc mean
+differences between groups (Hair et al., 1998). Table 3 displays the results from
+multiple comparisons between groups.
+
+Whitten and Leidner
+
+Table 4: A comparison of backsourcers, switchers, and continuers.
+
+Product
+quality
+
+High
+Low
+High
+
+Relationship
+quality
+
+High
+Low
+Low
+
+Service
+quality
+
+High
+Low
+High
+
+Continuers
+Backsourcers
+Switchers
+
+613
+
+Switching
+costs
+
+High
+Low
+Low
+
+Table 4 summarizes the results from the various Scheff´e’s tests. Product-
+quality levels for the continuers and switchers are high relative to the low levels of
+backsourcers. This indicates that the mean response to product-quality questions
+for those who continued and those who switched were not signiﬁcantly different
+from each other, while at the same time both responses were signiﬁcantly different
+than the responses from those who backsourced. In this case, the high and low
+designations were derived from the relative mean scores of the groups (Table 3).
+
+Testing of Hypotheses 1a, 2a, 3a, 4a
+To test our hypotheses concerning backsourcing, we compared the backsourcers
+to the continuers across the four dimensions. According to our data, ﬁrms that
+continued with their applications-development outsourcing relationships experi-
+enced what they perceived as high levels of product quality, relationship quality,
+and service quality and also perceived a high cost of switching vendors. The con-
+trast in perceptions between backsourcers and continuers is stark. Firms that chose
+to backsource their application development experienced lower levels of all three
+quality metrics as well as switching costs. These differences on all four dimensions
+between continuers and backsourcers were highly signiﬁcant. In terms of service
+quality, the mean for backsourcers was 4.21, whereas the mean for continuers was
+5.26. The difference (1.05) is signiﬁcant at the .05 level, lending support to Hypoth-
+esis 1a. In terms of product quality, the mean for backsourcers was 3.92, whereas
+the mean for continuers was 5.45. The difference (1.53) is signiﬁcant at the .05
+level, lending support to Hypothesis 2a. With regard to relationship quality, the
+mean response for backsourcers was 4.42, while the mean response for continuers
+was 5.32. Hypothesis 3a is thus supported by the difference of .90 between the
+two groups being signiﬁcant (α = .05). With regard to switching costs, the mean
+response for backsourcers was 3.15, while the mean response for continuers was
+4.45. Hypothesis 4a is therefore supported by the difference of 1.30 between the
+two groups being signiﬁcant (α = .05). Mean values for these comparisons are
+shown in Table 3.
+
+Perhaps the least obvious of the results is that of switching costs. Should not
+the switching costs be the same regardless of whether or not the client is satisﬁed
+with the quality of the product, service, and relationship? Evidently it is not; rather,
+it appears that the softer elements associated with switching costs weigh in as
+important as the ﬁnancial elements such that ﬁrms satisﬁed with the quality of
+their outsourcing arrangements perceive greater switching costs than ﬁrms that are
+not satisﬁed.
+
+614
+
+Bringing IT Back
+
+Testing of Hypotheses 1b, 2b, 3b, and 4b
+When looking at the ﬁrms that chose to switch vendors, it is interesting to note that
+they rated the product and service quality as high, like the ﬁrms that continued in an
+outsourcing arrangement, but the relationship quality as low. Mean responses for
+product quality were 4.86 and 5.45 for switchers and continuers, respectively, while
+service-quality responses were 5.01 and 5.26, respectively. These scores were not
+signiﬁcantly different. Relationship-quality responses were 4.12 for the switchers
+and 5.32 for the continuers. The difference of 1.20 is signiﬁcant at the .001 level.
+We thus have support for Hypothesis 3b, but not for Hypotheses 1b or 2b. One
+might assume that, if a ﬁrm is satisﬁed with the product and service, that one is
+satisﬁed with the relationship, but this does not appear to be the case. Companies
+that switched vendors did so in spite of rating the product and service-quality levels
+as high as the continuers.
+
+Moreover, given that, of the three groups, the switchers had the highest aver-
+age dollar-value contract and the highest percentage of the IT budget outsourced
+(see Table 1), one might expect them to perceive the highest switching costs. Such
+is also not the case. Switchers perceived a signiﬁcantly lower switching cost than
+continuers, as shown by their mean responses of 3.46 and 4.45, respectively. The
+difference of .99 indicates a signiﬁcance difference at the .001 level, thus support-
+ing Hypothesis 4b and suggesting that it is the relationship quality more than the
+product or service quality that inﬂuences perceptions of switching costs.
+
+DISCUSSION
+
+Past research has indicated that economic and social contributions help to sustain
+exchange relationships (Gassenheimer, Houston, & Davis, 1998). When parties in
+a relationship are satisﬁed with the amount of economic and social investments and
+returns, they generally maintain these relationships (Mohr et al., 1994). Although
+TCT supposes that the primary motivations behind sustaining or terminating an
+exchange relationship are economic factors (Williamson, 1991), SET concedes that
+emotional costs and beneﬁts are intrinsic to economically motivated relationships
+(Kumar, Scheer, & Steenkamp, 1995). This article helps to demonstrate why it is
+important to consider both theories in tandem rather than separately. While both
+theories can help elucidate why a ﬁrm might consider discontinuing an outsourcing
+relationship, neither theory itself can explain why a ﬁrm decides to backsource
+as opposed to switch vendors. This study helps explain the differences in the
+backsourcing and vendor-switching decisions.
+
+It is clear that service and product quality had little inﬂuence on the survey
+respondents’ decision to switch vendors. To the contrary, ﬁrms that chose to switch
+vendors reported almost as high levels of service quality on all four dimensions—
+reliability, responsiveness, assurance, and empathy—as the ﬁrms that continued
+to outsource with their existing vendor, and they reported almost as high a level
+of product quality. However, relationship quality plays an important role in the
+decision to switch vendors. Of our three groups, those that switched vendors had
+the lowest perceptions of trust, commitment, culture, and communication in relation
+
+Whitten and Leidner
+
+615
+
+to their vendors. It is particularly worth noting that, in spite of having a high rating
+on product quality and a high rating on service quality, ﬁrms that switched vendors
+maintained a relatively low level of trust in their existing vendors, even lower than
+the backsourcers for whom the service and product quality perceptions were low.
+Hence, the building of trust between an outsourcer and a ﬁrm is far more a socio-
+emotional condition than it is a matter of providing an excellent product and/or
+service.
+
+Contrarily, the decision to backsource is heavily inﬂuenced by service and
+product quality in addition to relationship quality. For ﬁrms that made the decision
+to backsource, the product quality and the service quality on all four dimensions
+was signiﬁcantly lower than reported by ﬁrms that switched or continued to out-
+source with a given vendor. As a result, it appears that the signiﬁcance in perceived
+product and service quality lies in helping ﬁrms maintain trust in the suitability of
+outsourcing rather than trust in a particular vendor. Firms experiencing poor ser-
+vice and poor product quality are more likely to backsource than to switch vendors.
+Where service and product quality are high but other dimensions unacceptable, a
+ﬁrm is more likely to switch vendors than to backsource, in part because it has
+experienced strong vendor service even when dissatisﬁed with the outsourcing
+relationship as a whole.
+
+Switching costs exert similar inﬂuences on the backsourcing and vendor
+switching decision. In general, both switchers and backsourcers perceive switching
+costs to be signiﬁcantly lower than do continuers, despite the fact that we did
+not ask questions concerning the soft costs associated with developing a trusting
+relationship with a new vendor. Moreover, switchers and backsourcers perceived
+roughly equivalent switching costs, implying that the switching costs are the same
+whether one chooses to outsource with another vendor or whether one chooses to
+backsource. However, there is an interesting difference between the two groups in
+terms of switching costs related to the speciﬁc variable, setup costs. In this case,
+the setup costs perceived by backsourcers were signiﬁcantly lower than the setup
+costs perceived by switchers. One might conjecture that, because switchers were
+satisﬁed with the product and service qualities of their existing relationships, for
+them to set up equivalent products and service levels is perceived to be more costly
+than for backsourcers who did not have to live up to a high level of product and
+service quality expectations on the part of users.
+
+From a vendor perspective, it appears that investments made to improve
+service, relationship, and product quality could help to sustain the outsourcing
+relationship. As the quality in these areas increases, customers are more likely to
+continue in the relationship. Also, assuming vendor investments increase service,
+relationship, and product quality, the switching costs should rise in parallel as the
+client realizes it will cost them more to obtain similar service from another vendor or
+in-house staff. Conversely, if the service, relationship, and product quality decrease,
+the switching costs should decrease, resulting in a situation in which the client
+is likely to backsource or switch vendors. Thus, there is a relationship among
+service, relationship, and product quality, and the switching costs, and vendors
+should be aware of the direct effect these quality measures could have on contract
+continuation.
+
+616
+
+Bringing IT Back
+
+Future Research
+This article has sought to uncover the differences in experiences of backsourcers,
+compared to vendor switchers and to ﬁrms that continue in outsourcing relation-
+ships, across four constructs that have been proven important in previous outsourc-
+ing research: service quality, relationship quality, product quality, and switching
+costs. Whereas prior empirical research into outsourcing has predominantly relied
+upon satisfaction as a measure of outsourcing success (Dibbern, Goles, Hirschheim,
+& Jayatilaka, 2004), our research explores the actual decision to continue (or not)
+the outsourcing relationship as the success measure. This has helped us uncover
+some novel ﬁndings related to backsourcing and vendor switching. Of note is the
+signiﬁcance of relationship quality to the decision to discontinue an outsourcing
+arrangement. Future research could employ relationship theory, or theories of so-
+cial exchange, to learn how vendors and outsourcing clients can better manage
+their relationship, particularly given that service quality and product quality alone
+are insufﬁcient to motivate an outsourcing ﬁrm to continue its relationship with a
+vendor.
+
+Another fruitful avenue of future research would be to investigate the factors
+that inﬂuence switching costs. Given that our vendor switchers had higher real
+costs than our backsourcers and continuers, it is unexpected that their perceived
+switching costs would actually be lower than those of ﬁrms that continued in their
+outsourcing arrangement. This suggests that there are psychological elements at
+play in the assessment of switching costs. Helping ﬁrms understand their real,
+versus perceived, switching costs, would be a valuable research objective.
+
+The ﬁndings in this research are based on empirical results obtained from
+executives with actual experience with not only successful outsourcing, but also
+with backsourcing and switching. Further work in this area is needed to investigate
+more completely the backsourcing and switching phenomena. Other factors such as
+level of application complexity, goal conﬂict, and risk could be helpful in explaining
+the phenomena more completely and should be considered for inclusion in follow-
+up studies.
+
+Further research is also recommended to extend this research model into the
+broader IT outsourcing market, IT in general, and even outside of IT. For example,
+research could apply this model not only to other outsourcing settings, but also to
+IT services, such as procurement, or to areas outside of IT, such as manufacturing.
+Product manufacturing is likely to be impacted by the same types of issues as
+application development, as evidenced by the quantity of research in operations
+and manufacturing utilizing TCT (Grover & Malhotra, 2003; McNally & Grifﬁn,
+2004).
+
+Limitations
+This study was solely limited to application outsourcing. Factors impacting the de-
+cision to backsource or switch vendors in desktop operations, network operations,
+and data center operations could be different than in application backsourcing.
+Therefore, an extension of this research might examine the inﬂuence these factors
+have in various types of outsourcing. Another limitation concerns the categorical
+nature of the dependent variable of interest. This limited the data analysis options
+
+Whitten and Leidner
+
+617
+
+available. Although we believed, similar to Teng, Cheon, and Grover (1995), that
+this ex-post-facto method has its own merits, future research in this area should
+consider utilizing a Likert-type scale, as opposed to a three-category classiﬁcation.
+This would allow an expanded number of quantitative analysis methods that could
+offer a richer investigation. However, with a Likert scale, one would be limited to
+questioning ﬁrms concerning their intention (on a scale) to backsource or switch
+vendors, rather than whether or not they actually did backsource or switch vendors.
+This would pose a different set of limitations.
+
+CONCLUSIONS
+
+The IT outsourcing phenomenon is considered to be about 15 years old, dating back
+to the ﬁrst major contract announcement between Eastman Kodak and IBM in 1989
+(Dibbern et al., 2004). Recent research into outsourcing has suggested that many
+organizations have begun to renegotiate or terminate contracts with outsourcing
+partners, choosing instead to backsource or switch vendors (Overby, 2003). Dibbern
+et al. (2004) suggest that backsourcing might become a key area in the outsourcing
+arena in coming years. In spite of these indications that backsourcing may be on
+the rise, little empirical research exists that helps elucidate and understand the
+backsourcing decision, and at the same time a lack of research related to vendor
+switching is also evident. This article is among the ﬁrst that provides empirical data
+concerning the backsourcing and switching phenomena. We have presented data
+comparing ﬁrms that backsourced or switched vendors to ﬁrms that continued in
+an outsourcing relationship for application development. The results indicate that
+product quality, service quality, relationship quality, and switching costs are related
+to the decision to backsource application outsourcing, with product quality and
+service quality being the differentiators in deciding whether a client will backsource
+or switch. Understanding these factors is the critical ﬁrst step to understanding
+application backsourcing and vendor switching. [Received: May 2006. Accepted:
+September 2006.]
+
+REFERENCES
+
+Ambrose, C. (2002). Sourcing deals can’t ﬁx themselves: Know your options.
+
+Gartner, Document code # COM-15-2692.
+
+Anderson, J., & Narus, J. (1990). A model of distributor ﬁrm and manufacturer
+
+ﬁrm working relationships. Journal of Marketing, 54(1), 42–58.
+
+Aubert, B., Rivard, S., & Patry, M. (2004). A transaction cost model of IT out-
+
+sourcing. Information & Management, 41, 921–934.
+
+Bagozzi, R. P., Yi, Y., & Phillips, L. W. (1991). Assessing construct validity in
+organizational research. Administrative Science Quarterly, 36, 421–458.
+
+Balakrishnan, S. (1994). The dynamics of make or buy decisions. European Journal
+
+of Operational Research, 74, 552–571.
+
+Basili, V., & Perricone, B. (1984). Software errors and complexity: An empirical
+
+investigation. Communications of the ACM, 27(1), 42–52.
+
+618
+
+Bringing IT Back
+
+Bentler, P. M. (1992). On the ﬁt of models to covariances and methodology to the
+
+bulletin. Psychological Bulletin, 112, 400–404.
+
+Blau, P. M. (1964). Exchange and power in social life. New York: Wiley.
+
+Brown, R. (2004). User survey: SMB business process outsourcing, North America,
+
+2004. Gartner, Document code # G00124462.
+
+Brown, S., & Swartz, T. (1989). A gap analysis of professional service quality.
+
+Journal of Marketing, 53(2), 92–98.
+
+Chalos, P., & Sung, J. (1998). Outsourcing decisions and managerial incentives.
+
+Decision Sciences, 29, 901–919.
+
+Cowley, S. (2004). J.P. Morgan scraps $5B IT deal with IBM. Computerworld,
+
+38(38), 1–16.
+
+Cronin, J. J., Jr., & Taylor, S. A. (1992). Measuring service quality: A reexamination
+
+and extension. Journal of Marketing, 56(3), 55–68.
+
+David, R., & Han, S. (2004). A systematic assessment of the empirical support for
+
+transaction cost economics. Strategic Management Journal, 25(1), 39–58.
+
+Dibbern, J., Goles, T., Hirschheim, R., & Jayatilaka, B. (2004). Information systems
+outsourcing: A survey and analysis of the literature. DATABASE for Advances
+in Information Systems, 35(4), 6–102.
+
+Dwyer, F. R., Schurr, P. H., & Oh, S.(1987). Developing buyer-seller relationships.
+
+Journal of Marketing, 51(2), 11–27.
+
+Forelle, C. (2004). JP Morgan ends accord with IBM: Technology will return to
+being done in-house; Pact has $5 billion value. Wall Street Journal, September
+16, A3.
+
+Garvin, D. A. (1984). What does “product quality” really mean? Sloan Management
+
+Review, 26(1), 25–43.
+
+Gassenheimer, J., Houston, F., & Davis, J. (1998). The role of economic value,
+social value, and perceptions of fairness in interorganizational relationship
+retention decisions. Journal of the Academy of Marketing Science, 26, 322–
+337.
+
+Kumar, N., Scheer, L., & Steenkamp, J. (1995). The effects of perceived inter-
+dependence on dealer attitudes. Journal of Marketing Research, 32, 348–
+357.
+
+Grover, V., Cheon, M. J., & Teng, J. (1996). The effect of service quality and
+partnership on the outsourcing of information systems functions. Journal of
+Management Information Systems, 12(4), 89–116.
+
+Grover, V., & Malhotra, M. (2003). Transaction cost framework in operations and
+supply chain management research: Theory and measurement. Journal of
+Operations Management, 21, 457–473.
+
+Hair, J. F., Jr., Anderson, R. E., Tatham, R. L., & Black, W. C. (1998). Multivariate
+
+data analysis with readings. New York: Macmillan.
+
+Heide, J., & Weiss, A. (1995). Vendor consideration and switching behavior for
+buyers in high-technology markets. Journal of Marketing, 59(3), 30–43.
+
+Whitten and Leidner
+
+619
+
+Hildebrandt, L. (1987). Consumer retail satisfaction in rural areas: A reanalysis of
+
+survey data. Journal of Economic Psychology, 8(1), 19–42.
+
+Jones, M., Mothersbaugh, D., & Beatty, S. (2002). Why customers stay: Measuring
+the underlying dimensions of services switching costs and managing their
+differential strategic outcomes. Journal of Business Research, 55, 441–450.
+
+Joreskog, K. (1993). Factor analysis by least-squares and maximum-likelihood
+methods. In K. Enslein, A. Ralston, & J. Wilf (Eds.), Statistical methods for
+digital computers. New York: Wiley, 125–153.
+
+Kaiser, K., & Hawk, S. (2004). Evolution of offshore software development: From
+
+outsourcing to cosourcing. MIS Quarterly Executive, 3(2), 69–81.
+
+Kekre, S., Krishnan, M., & Srinivasan, K. (1995). Drivers of customer satisfaction
+for software products: Implications for design and service support. Manage-
+ment Science, 41, 1456–1470.
+
+Kern, T. (1997). The gestalt of an information technology outsourcing relation-
+ship: An exploratory analysis. Proceedings of the Eighteenth International
+Conference on Information Systems, Atlanta, GA, 37–58.
+
+Kettinger, W., & Lee, C. (1994). Perceived service quality and user satisfaction
+with the information services function. Decision Sciences, 25, 737–766.
+
+Koh, C., Ang, S., & Straub, D. (2004). IT outsourcing success: A psychological
+
+contract perspective. Information Systems Research, 15, 356–373.
+
+Lacity, M., & Hirschheim, R. (1993). The information systems outsourcing band-
+wagon: Look before you leap. Sloan Management Review, 35(1), 72–86.
+
+Lacity, M., & Willcocks, L. (2000). Relationships in IT outsourcing: A stakeholder
+perspective. In R. Zmud (Ed.), Framing the domains of IT management:
+Projecting the future through the past. Cincinnati, OH: Pinnaﬂex, 355–384.
+
+Lacity, M., & Willcocks, L. (2001). Global information technology outsourcing:
+In search of business advantage (1st ed.). West Sussex, England: Wiley.
+
+Lacity, M., Willcocks, L., & Feeny, D. (1996). The value of selective IT sourcing.
+
+Sloan Management Review, 37(3), 13–25.
+
+Lee, J. N., & Kim, Y. G. (1999). Effect of partnership quality on IS outsourcing
+success: Conceptual framework and empirical validation. Journal of Man-
+agement Information Systems, 15(4), 29–61.
+
+McFarlan, W., & Nolan, R. (1995). How to manage an IT outsourcing alliance.
+
+Sloan Management Review, 36(2), 9–23.
+
+McNally, R., & Grifﬁn, A. (2004). Firm and individual choice drivers in make-
+or-buy decisions: A diminishing role for transaction cost economics? The
+Journal of Supply Chain Management, 40(1), 4–17.
+
+Mohr, J., & Spekman, R. (1994). Characteristics of partnership success: Partner-
+ship attributes, communication behavior, and conﬂict resolution techniques.
+Strategic Management Journal, 15(2), 135–152.
+
+Morgan, R., & Hunt, S. (1994). The commitment-trust theory of relationship mar-
+
+keting. Journal of Marketing, 58(3), 20–38.
+
+620
+
+Bringing IT Back
+
+Overby, S. (2003). Bringing IT back home. CIO, 16(10), 1.
+
+Parasuraman, A., Zeithaml, V. A., & Berry, L. L. (1988). SERVQUAL: A multiple-
+item scale for measuring consumer perceptions of service quality. Journal of
+Retailing, 64(1), 12–40.
+
+Rottman, J., & Lacity, M. (2004). Twenty practices for offshore outsourcing. MIS
+
+Quarterly Executive, 3(3), 117–130.
+
+Scardino, L., Brown, R., Caldwell, B., Cournoyer, S., Dreyfus, C., Marriot, I.,
+Maurer, W., & Young, A. (2004). Gartner on outsourcing, 4q04. Gartner
+Group, Paper #G00125258.
+
+Shen, V., Yu, T.-J., Thebaut, S., & Paulsen, L. (1985). Identifying error-prone
+software: An empirical study. IEEE Transactions on Software Engineering,
+11, 317–324.
+
+Teng, J., Cheon, M., & Grover, V. (1995). Decisions to outsource information
+systems functions: Testing a strategy-theoretic discrepancy model. Decision
+Sciences, 26, 75–103.
+
+Thibaut, J. W., & Kelley, H. H. (1959). The social psychology of groups. New York:
+
+Wiley.
+
+Weiss, A., & Anderson, E. (1992). Converting from independent to employee
+salesforces: The role of perceived switching costs. Journal of Marketing
+Research, 29(1), 101–115.
+
+Whitten, D. (2004). The application development outsourcing contract decision:
+The effect of service quality, relationship quality, satisfaction, and switching
+costs on continuation and discontinuation decisions. Doctoral dissertation,
+Louisiana Tech University, Ruston, LA.
+
+Willcocks, L., & Lacity, M. (1995). Information systems outsourcing in theory and
+
+practice. Journal of Information Technology, 10(4), 203–207.
+
+Williamson, O. E. (1985). The economic institutions of capitalism: Firms, markets,
+
+relational contracting. New York: Free Press.
+
+Williamson, O. E. (1991). Comparative economic organization: The analysis of
+discrete structural alternatives. Administrative Science Quarterly, 36(2), 269–
+296.
+
+Zeithaml, V. A., Berry, L. L., & Parasuraman, A. (1988). Communication and
+control processes in the delivery of service quality. Journal of Marketing,
+52(2), 35–48.
+
+Zeithaml, V. A., Berry, L. L., & Parasuraman, A. (1996). The behavioral conse-
+
+quences of service quality. Journal of Marketing, 60(2), 31–46.
+
+Dwayne Whitten is assistant clinical professor of information systems in the Mays
+Business School at Texas A&M University. His main research interests include IT
+outsourcing, IT governance, switching costs, and IT security. He has published in
+several business and information systems related journals including the Harvard
+Business Review, European Journal of Information Systems, Journal of Strategic
+
+Whitten and Leidner
+
+621
+
+Information Systems, Communications of the AIS, Journal of Organizational and
+End User Computing, Journal of Computer Information Systems, and Industrial
+Management and Data Systems.
+
+Dorothy E. Leidner is the Randall W. and Sandra Ferguson Professor of Informa-
+tion Systems at Baylor University. She previously served as an associate professor
+at INSEAD and an associate professor at Texas Christian University. She has also
+been a visiting professor at the University of Mannheim in Germany, at Monterrey
+Tech University in Mexico, at the University of Caen, France, and at Southern
+Methodist University. Dr. Leidner received her PhD in information systems from
+the University of Texas at Austin. Her research has been published in a variety of
+journals, such as MIS Quarterly, Information Systems Research, Journal of Man-
+agement Information Systems, and Organization Science. She received best paper
+awards in 1993 from the Hawaii International Conference on System Sciences, in
+1995 from MIS Quarterly, and in 1999 from the Academy of Management OCIS
+division. Dr. Leidner is currently serving as Associate Editor for Decision Sciences
+and Senior Editor for MIS Quarterly.
+
+

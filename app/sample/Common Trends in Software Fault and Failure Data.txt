@@ -111,7 +111,7 @@ between faults and failures is complex because it is possible
 that a fault may result in many failures and vice versa. Since
 associating failures with the faults that caused them is a
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 0098-5589/09/$25.00 (cid:2) 2009 IEEE
 
@@ -266,7 +266,7 @@ the files identified as fault-prone contained 83 percent of
 the total faults. Neither [23] nor [24] have investigated the
 fault types.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 486
 
@@ -414,7 +414,7 @@ repositories. In each study, we used some sort of change
 documents to tie failures to the faults that caused them. It
 should be noted that the domains, development methods,
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 HAMILL AND GO(cid:2)SEVA-POPSTOJANOVA: COMMON TRENDS IN SOFTWARE FAULT AND FAILURE DATA
 
@@ -551,7 +551,7 @@ and operation. Based on the data available to us, we were
 able to link failures to faults that caused them for 356 SCRs
 associated with 11 CSCIs.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 488
 
@@ -654,7 +654,7 @@ failures (i.e., 33 percent of GCC failures and between 6 and
 the failures from the four CSCIs of
 36 percent of
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 HAMILL AND GO(cid:2)SEVA-POPSTOJANOVA: COMMON TRENDS IN SOFTWARE FAULT AND FAILURE DATA
 
@@ -782,7 +782,7 @@ hypothesis testing, presented in this section clearly prove
 that a significant percentage of software failures are
 associated with changes that spread across the system,
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 490
 
@@ -863,7 +863,7 @@ This scatter plot shows some positive trend which indicates
 that larger CSCIs tend to have more nonconformance SCRs
 associated with them. It should be noted that the positive
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 Fig. 5. Scatter plot showing the number of files in each CSCI versus the
 number of SCRs entered against each CSCIs for all 21 CSCIs from the
@@ -945,7 +945,7 @@ TABLE 3
 Distribution of the Three Most Common Fault Types
 across CSCIs Grouped by the Number of Releases
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 492
 
@@ -1055,7 +1055,7 @@ safety critical anomalies, while in this study, we consider 2,858 software
 change requests entered throughout development, testing, and operation of
 21 CSCIs, including all levels of criticality.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 HAMILL AND GO(cid:2)SEVA-POPSTOJANOVA: COMMON TRENDS IN SOFTWARE FAULT AND FAILURE DATA
 
@@ -1205,7 +1205,7 @@ available, the meaning of the data, our methods, and/or the
 meaning of our results, we turned to the developers for
 additional insights.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 494
 
@@ -1352,7 +1352,7 @@ or statistically tested before. Proving that a significant
 percentage of failures in large, complex software products
 are caused by nonlocalized faults has large software
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 HAMILL AND GO(cid:2)SEVA-POPSTOJANOVA: COMMON TRENDS IN SOFTWARE FAULT AND FAILURE DATA
 
@@ -1423,7 +1423,7 @@ The work presented in this paper suggests that there is a
 lot to learn from conducting detailed and rigorous analysis
 of software faults and failures. It also shows that some of
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 496
 
@@ -1611,6 +1611,6 @@ IEEE and a member of the ACM.
 . For more information on this or any other computing topic,
 please visit our Digital Library at www.computer.org/publications/dlib.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 10,2021 at 16:31:29 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:05 UTC from IEEE Xplore.  Restrictions apply. 
 
 

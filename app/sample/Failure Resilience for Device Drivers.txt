@@ -127,7 +127,7 @@ Microkernel
 Figure 1: Architecture of our failure-resilient operating sys-
 tem that can recover from malfunctioning device drivers.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007In this paper, we focus on the post-mortem recov-
 ery procedure that allows the system to continue nor-
@@ -242,7 +242,7 @@ These techniques are complementary to our approach,
 since our user-mode servers and drivers can be imple-
 mented in a programming language of choice.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 20073 FAILURE MODEL
 
@@ -359,7 +359,7 @@ nel calls. For device drivers, the same restrictions ap-
 ply, and in addition, we restrict access to I/O ports, IRQ
 lines, and device memory such as the video memory.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 20075 RECOVERY PROCEDURE
 
@@ -474,7 +474,7 @@ covery steps taken. For example, consider the generic
 policy script in Fig. 2. Lines 1–4 process the arguments
 passed by the reincarnation server. Then, lines 6–10
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007agenericrecoveryscript
 
@@ -639,7 +639,7 @@ needed to recover from failures in stateful components,
 such as servers, are present. Transparent recovery of
 servers is part of our future work.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 20076 DRIVER RECOVERY SCHEMES
 
@@ -796,7 +796,7 @@ be conﬁgured with a dedicated RAM disk to provide trusted storage for
 crucial data, such as the driver binaries, the shell, and policy scripts.
 We have written a small 450-line RAM disk driver for this purpose.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007End User
 
@@ -966,7 +966,7 @@ ence being a small performance degradation as shown
 in Fig. 7. To verify that the data integrity was preserved,
 we compared the MD5 checksums of the received data
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007the original ﬁle. The mean recovery time for the Real-
 Tek 8139 driver failures is 0.48 sec, which is, in part,
@@ -1176,7 +1176,7 @@ script [2]. Fig. 9 summarizes the results.
 
 Fortunately, the changes required to deal with driver
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007failures are both very limited and local. The reincarna-
 tion server and service utility’s logic to dynamically start
@@ -1334,7 +1334,7 @@ tel Technology Journal, 10(3), Aug. 2006.
 
 April 2003. Available Online.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007[3] P. T. Barham, B. Dragovic, K. Fraser, S. Hand, T. L. Harris,
 A. Ho, R. Neugebauer, I. Pratt, and A. Warﬁeld. Xen and the
@@ -1520,6 +1520,6 @@ G. Necula, and E. Brewer. SafeDrive: Safe and Recoverable Ex-
 tensions Using Language-Based Techniques. In Proc. 7th Symp.
 on Oper. Sys. Design and Impl., pages 45–60, Nov. 2006.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:18:20 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:02:49 UTC from IEEE Xplore.  Restrictions apply. 
 
 37th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'07)0-7695-2855-4/07 $20.00  © 2007

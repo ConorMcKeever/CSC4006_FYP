@@ -119,7 +119,7 @@ opposed to the complex and overfitted quality prediction
 models. Consequently, the results can provide a theoretical
 foundation and empirical guidance to help software
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 0098-5589/09/$25.00 (cid:2) 2009 IEEE
 
@@ -275,7 +275,7 @@ Similar observations were later commonly called Goldilock’s
 conjecture, which appeared as a U-shaped curve on a plot
 showing size (on the x-axis) against defect density (on the
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 KORU ET AL.: AN INVESTIGATION INTO THE FUNCTIONAL FORM OF THE SIZE-DEFECT RELATIONSHIP FOR SOFTWARE MODULES
 
@@ -417,7 +417,7 @@ measurement values in the data set will remain small.
 Fig. 1 presents empirical evidence for the existence of
 these concerns. Fig. 1a shows the cumulative number of
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 296
 
@@ -552,7 +552,7 @@ follows:
 (cid:3) is the regression coefficient for xiðtÞ and (cid:2)0ðtÞ is an
 unspecified nonnegative function of time called the baseline
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 KORU ET AL.: AN INVESTIGATION INTO THE FUNCTIONAL FORM OF THE SIZE-DEFECT RELATIONSHIP FOR SOFTWARE MODULES
 
@@ -675,7 +675,7 @@ here are defect fixes. Each new class introduced to the system
 during our observation period is followed till the observation
 period ends or the class gets deleted. Modifications made
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 298
 
@@ -805,7 +805,7 @@ this class starts. A corrective change happens at time 100,
 represented by a 1 in the corresponding cell of the event
 column. This corrective change increases size to 300 LOC.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 KORU ET AL.: AN INVESTIGATION INTO THE FUNCTIONAL FORM OF THE SIZE-DEFECT RELATIONSHIP FOR SOFTWARE MODULES
 
@@ -869,7 +869,7 @@ satisfied when the logarithmic transform of size is used.
 This means that there is no statistical evidence for the
 nonlinearity of the log-size and log-hazard relationship. As
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 300
 
@@ -976,7 +976,7 @@ The detailed equation to calculate RDP and its deriva-
 tion are presented in Appendix B. Note that this equation
 can be used for any two portfolios of modules.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 KORU ET AL.: AN INVESTIGATION INTO THE FUNCTIONAL FORM OF THE SIZE-DEFECT RELATIONSHIP FOR SOFTWARE MODULES
 
@@ -1116,7 +1116,7 @@ baseline hazard, which is cancelled out when one is
 interested in the relative hazard. Therefore, Cox modeling
 is appropriate in this context when some factors are
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 302
 
@@ -1222,7 +1222,7 @@ for
 Counting Processes: A Large Sample Study,” Annals of Statistics,
 vol. 10, pp. 1100-1120, 1982.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 KORU ET AL.: AN INVESTIGATION INTO THE FUNCTIONAL FORM OF THE SIZE-DEFECT RELATIONSHIP FOR SOFTWARE MODULES
 
@@ -1464,7 +1464,7 @@ Legacy Software System,” Annals of Software Eng., vol. 1, pp. 95-
 
 [59]
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 304
 
@@ -1558,6 +1558,6 @@ curation, ontology, and biological text mining.
 . For more information on this or any other computing topic,
 please visit our Digital Library at www.computer.org/publications/dlib.
 
-Authorized licensed use limited to: Queens University Belfast. Downloaded on April 12,2021 at 09:17:45 UTC from IEEE Xplore.  Restrictions apply. 
+Authorized licensed use limited to: Queens University Belfast. Downloaded on May 09,2021 at 16:05:27 UTC from IEEE Xplore.  Restrictions apply. 
 
 

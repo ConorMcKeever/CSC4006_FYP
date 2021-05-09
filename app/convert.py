@@ -5,7 +5,7 @@ from pdfminer.pdfpage import PDFPage
 from io import StringIO
 import os
 
-def convert_pdf_to_txt(path, dest):
+def convertPdf(path, dest):
 
     pagenums = set()
     output = StringIO()
@@ -16,7 +16,7 @@ def convert_pdf_to_txt(path, dest):
 
     try:
         f = open(dest + '/' + path + '.txt', "x")
-        infile = open('pdf/' +path+'.pdf', 'rb')
+        infile = open('BasiliPost/' +path+'.pdf', 'rb')
         for page in PDFPage.get_pages(infile, pagenums):
             interpreter.process_page(page)
         infile.close()

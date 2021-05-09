@@ -1,0 +1,3153 @@
+The Impact of Ideology on Effectiveness in Open Source Software Development Teams 
+
+Author(s): Katherine J. Stewart and Sanjay Gosain 
+
+Source: MIS Quarterly, Jun., 2006, Vol. 30, No. 2 (Jun., 2006), pp. 291-314  
+
+Published by: Management Information Systems Research Center, University of 
+Minnesota
+
+ 
+
+Stable URL: http://www.jstor.com/stable/25148732
+
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide 
+range of content in a trusted digital archive. We use information technology and tools to increase productivity and 
+facilitate new forms of scholarship. For more information about JSTOR, please contact support@jstor.org. 
+ 
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at 
+https://about.jstor.org/terms
+
+Management Information Systems Research Center, University of Minnesota is collaborating 
+with JSTOR to digitize, preserve and extend access to MIS Quarterly
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Qjarterly
+
+ The Impact of Ideology on Effectiveness in Open
+ Source Software Development Teams1 2
+
+ By: Katherine J. Stewart
+
+ Department of Decision and Information
+
+ Technologies
+
+ R. H. Smith School of Business
+
+ University of Maryland
+ College Park, MD 20742
+ U.S.A.
+ kstewart@rhsmith.umd.edu
+
+ Sanjay Gosain
+ Department of Decision and Information
+
+ Technologies
+
+ R. H. Smith School of Business
+
+ University of Maryland
+ College Park, MD 20742
+ U.S.A.
+ sgosain@rhsmith.umd.edu
+
+ Abstract
+
+ The emerging work on understanding open source software
+ has questioned what leads to effectiveness in OSS develop
+ ment teams in the absence of formal controls, and it has
+ pointed to the importance of ideology. This paper develops
+
+ a framework of the OSS community ideology (including
+ specific norms, beliefs, and values) and a theoretical model to
+ show how adherence to components of the ideology impacts
+ effectiveness in OSS teams. The model is based on the idea
+ that the tenets of the OSS ideology motivate behaviors that
+ enhance cognitive trust and communication quality and
+ encourage identification with the project team, which
+ enhances affective trust. Trust and communication in turn
+ impact OSS team effectiveness. The research considers two
+ kinds of effectiveness in OSS teams: the attraction and reten
+ tion of developer input and the generation of project outputs.
+ Hypotheses regarding antecedents to each are developed.
+ Hypotheses are tested using survey and objective data on OSS
+ projects. Results support the main thesis that OSS team
+ members' adherence to the tenets of the OSS community
+ ideology impacts OSS team effectiveness and reveal that
+ different components impact effectiveness in different ways.
+ Of particular interest is the finding that adherence to some
+ ideological components was beneficial to the effectiveness of
+ the team in terms of attracting and retaining input, but
+ detrimental to the output of the team. Theoretical and
+ practical implications are discussed.
+
+ Keywords: Open source software, trust, ideology, com
+ munication, virtual teams
+
+ V. Sambamurthy was the accepting senior editor for this paper. Vivek
+ Choudhury was the associate editor. Brian Butler, Catherine Ridings, and
+ Youngjin Yoo served as reviewers.
+
+ Introduction
+
+ 2
+ An earlier version of this paper was presented in the research-in-progress
+ track at the 22nd International Conference on Information Systems, December
+ 2001. The first author's work on this project was partly supported by the
+ National Science Foundation Award IIS-0347376. Any opinions, findings,
+ and conclusions or recommendations expressed in this material are those of
+ the authors and do not necessarily represent the views of the National
+ Science Foundation.
+
+ While the practices associated with open source software
+ (OSS) development have been in use for decades, recent years
+ have seen a surge of interest in OSS across developers,
+ businesses, governments, and researchers. Tens of thousands
+ of projects have been registered on Sourceforge, a website
+ devoted to supporting OSS development (http://www.
+
+ MIS Quarterly Vol. 30 No. 2, pp. 291-314/June 2006 291
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ sourceforge.net), and many large companies have become
+ involved in OSS.3 Similarly, government institutions have
+ begun trying to create effective policy with regard to open
+ source software and development practices.4 As the phenom
+ enon of OSS has grown, researchers in many fields ranging
+ from sociology to computer science, economics, and infor
+ mation systems have started studying it, and a rich base of
+
+ literature has begun to appear.
+
+ This literature often views OSS teams as kinds of virtual
+
+ teams or organizations (Crowston and Scozzi 2002; Gallivan
+ 2001; Malone and Laubacher 1998; Markus et al. 2000), but
+ with some unique aspects. OSS teams are often composed of
+ volunteers working without financial remuneration directly
+ tied to their contributions, and their output (e.g., source code)
+ is generally made available to any interested users with little
+ or no charge. Further, these teams usually work without the
+
+ formal a priori requirements that tend to be used to guide and
+ evaluate commercial software development efforts (Scacchi
+ 2002). These unique aspects of OSS have led many to
+ question why developers contribute (Hars and Ou 2002) and
+ how their dispersed efforts are controlled in order to result in
+ viable outputs (Gallivan 2001).
+
+ Answers to these questions may lie, in part, in another unique
+ feature of OSS development: the ideology of the OSS devel
+ opment community. Researchers and developers have iden
+ tified ideological tenets associated with the open source
+ development community in which OSS teams function, and
+ several have suggested that it may be the ideology that facili
+
+ tates team effectiveness in the absence of traditional organi
+ zational incentives and controls (Bergquist and Ljungberg
+ 2001; Markus et al. 2000; Raymond 2001). This research
+ investigates that proposition by identifying the key ideo
+ logical tenets of the OSS community and examining means
+ by which they may facilitate three important outcomes related
+ to OSS team effectiveness: attraction and retention of devel
+
+ opers to projects, devotion of effort by project developers,
+ and the completion of recognized work tasks. The basic
+ thesis underlying the study is that OSS team members'
+ adherence to the tenets of the overarching OSS community
+ ideology may have a positive effect on these outcomes
+ because the ideology fosters trust and good communication
+ practices by encouraging behaviors and orientations that are
+ beneficial to the team's work.
+
+ IBM contributed code fixes and features to Apache (Ljungberg 2000). Dell,
+ HP, and Oracle support versions of their products for the Linux platform
+ (Gallivan2001).
+
+ A number of third world countries, for example, are proposing to use
+ GNU/Linux for low cost computing platforms (http://www.linuxjoumal.com/
+ article.php?sid=6049).
+
+ 292 MIS Quarterly Vol. 30 No. 2/June 2006
+
+ The next section provides a brief discussion of the nature of
+ ideology and the role it plays in OSS teams. The paper then
+ summarizes the main tenets of the OSS ideology and discusses
+ the relevance of the three aforementioned effectiveness
+ outcomes in OSS teams. This discussion is used as the basis
+
+ for developing hypotheses regarding the effects of a teams'
+ adherence to these particular ideological tenets on team
+ members' motivations and behaviors relevant to the effective
+ ness of the team. The methods section describes how the
+
+ model was tested by combining survey and public data on OSS
+ projects. The discussion section summarizes the results and
+ outlines implications, limitations, and contributions of the
+ research.
+
+ OSS Ideology and OSS
+ Team Effectiveness HI^HHHHHHH
+
+ There are norms common to nearly all
+ mature, sustained open source projects
+
+ (Bretthauer 2002, p. 3)
+
+ [Open source movements are] loosely
+ coupled communities kept together by
+ strong common values
+
+ (Ljungberg 2000, p. 208)
+
+ Contributors...are motivated by the per
+ sonal benefit of using an improved software
+ product and by social values such as
+ altruism, reputation, and ideology
+
+ (Markus et al. 2000, p. 14)
+
+ As the quotations demonstrate, the ideology associated with
+ OSS development has been widely suggested as a lynchpin in
+ enabling OSS efforts. We employ Trice and Beyer's (1993, p.
+ 33) definition of ideology as "shared, relatively coherently
+ interrelated sets of emotionally charged beliefs, values, and
+ norms that bind some people together and help them make
+ sense of their worlds." Beliefs refer to understandings of
+ causal relationships, values refer to preferences for some
+ behaviors or outcomes over others, and norms refer to
+ behavioral expectations (Trice and Beyer 1993).
+
+ Although ideology is by definition shared, adherence to a
+ particular ideological tenet may vary across subgroups.
+ Ideology is an aspect of culture (Trice and Beyer 1993). Just
+ as the ideology of an organizational culture is influenced by
+ the larger national culture in which it exists (Hofstede 1980;
+ Hofstede et al. 1990), organizational subunits may have their
+ own unique subcultures, varying in their ideological content.
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Open source developers have often been said to constitute a
+ community, identifiable by its common ideology (Ljungberg
+ 2000). At the same time, subgroups are formed around pro
+
+ jects within that community, and such subgroups may vary in
+ the extent to which they conform to the overarching com
+ munity ideology. Ljungberg (2000, p. 210) suggests that
+ commitment to the ideology varies widely across developers:
+ "At one end of the spectrum there is great zeal.. .at the other
+
+ overarching OSS ideology7. The identification of the tenets of
+ OSS ideology draws upon socio-political ideological discourse
+ analysis, which proposes that ideologies are both developed
+ and expressed in language and communication and may be
+ "uncovered" by close reading (van Dijk 1995, p. 135). Table 1
+ summarizes the norms, beliefs, and values uncovered in the
+ review and provides a quote to illustrate each one.
+ Identification of norms, beliefs, and values was limited to
+
+ end there is no big deal about the ideology."
+
+ those that are widely claimed to be held in the community, not
+
+ In settings such as OSS development where behavior may be
+ hard to observe and it is not feasible to institute formal con
+
+ trols, ideology may be important as the vehicle of clan control
+ (Barker 1993). Rather than dictating specific actions or
+ manipulating tangible rewards, clan control occurs when
+ shared understandings define appropriate ways to behave and
+ respond to situations in the group (Kirsch 1997; Ouchi 1979).
+ In order for it to result in positive team outcomes, ideology
+ should motivate behaviors and responses that are likely to be
+
+ productive for the team, constrain opportunistic behavior, and
+
+ apply in a broad variety of situations to orient team members.
+ Below we first identify norms, beliefs, and values of the
+ larger OSS community and then discuss how these norms,
+ beliefs, and values influence developers' motivations to pro
+ duce behavior that enhances the effectiveness of an OSS
+
+ project team.
+
+ Content of the OSS Ideology
+
+ We took a two-pronged approach to understanding the
+ content of the OSS community ideology by deriving norms,
+ beliefs, and values from both narratives of the open-source
+
+ community including commentaries by icons such as Richard
+ Stallman5 and Eric Raymond6 as well as prior research by
+ academics and practitioners (Bretthauer 2002; Elliott and
+ Scacchi 2003; Feller and Fitzgerald 2002; Gosain 2003;
+ Lerner and Tirole 2002; Ljungberg 2000; Markus et al.
+ 2000). The narratives have been shaped by community
+ members' input over time, making them representative of the
+
+ Richard Stallman is the founder of the Gnu Project, launched in 1984, to
+ develop the free operating system GNU. He is also founder of the Free
+ Software Foundation and creator of the copyleft concept in software
+ licensing. The free software adherents are considered especially
+ ideologically zealous.
+
+ Eric Raymond has been an influential member of many OSS projects, and
+ he is the author of several papers, including "The Cathedral and the Bazaar,"
+ which influenced Netscape's decision to get involved in OSS, and "The
+ Halloween Documents," which presents a critique of Microsoft's response
+ to OSS.
+
+ including those that are specific only to one or a small subset
+ of projects. Similar to other settings, these ideological tenets
+ provide a "general cultural repertoire" from which teams may
+
+ select those that best realize their goals and interests and use
+ them as building blocks for team ideology (van Dijk 1995, p.
+ 138). Table 1 is thus proposed as a preliminary framework,
+ not one that necessarily encompasses all norms, beliefs, and
+ values that may be relevant in any particular OSS project.
+
+ Effectiveness in OSS Development Teams
+
+ As with the study of commercial software development con
+ texts, it is important in the open source context to consider a
+ multidimensional view of team effectiveness (Crowston et al.
+ 2003). We consider two aspects of OSS project effectiveness:
+ the extent to which a project attracts input from the develop
+ ment community and the extent to which it produces obser
+ vable outputs such as the addition of new features to the
+ software or the fixing of software bugs. While commercial
+ projects have employees paid and directed though formalized
+ mechanisms, a critical step in becoming effective in an OSS
+ project is to attract developers and motivate their input to the
+ project (Mockus et al. 2002; Sturmer 2005; von Krogh et al.
+ 2003). Without people donating their efforts voluntarily, an
+ OSS project has little chance of success, thus the amount of
+ input to a project (i.e., how many people devote how much
+ effort) is an important aspect of effectiveness. The number of
+ developers that have been attracted and retained to work on the
+ team (team size) and an estimate of the amount of effort those
+ developers have devoted to the team are the two constructs
+ related to an OSS team's input effectiveness used in this study.
+
+ Given that meeting budgets and requirements may not be
+ relevant in OSS (Scacchi 2002), more appropriate indicators
+ of outcome success may be those related to the ongoing pro
+ ductivity of the team. Software development teams rely on
+ change management systems to organize and track their
+ development work, with actual changes to code being asso
+
+ See, for example, http://www.catb.org/~esr/writings/cathedral
+
+ bazaar/cathedral-bazaar/arO 1 s 16.html.
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 293
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Table 1. Tenets of Open Source Ideology
+
+ OSS Norms Illustrative Quotes from Open Source Narratives
+
+ 1. Forking?there is a norm "...'forking' almost never happens. Splits in major projects have been rare, and
+
+ against forking a project, which always accompanied by re-labeling and a large volume of public self-justification. It is
+ refers to splitting the project clear that, in such cases as the GNU Emacs/XEmacs split, or the gcc/egcs split, or
+ into two or more projects the various fissionings of the BSD splinter groups, that the splitters felt they were
+ developed separately going against a fairly powerful community norm." (Raymond 1998)
+
+ 2. Distribution?there is a norm "The taboos of a culture throw its norms into sharp relief....Distributing changes to a
+
+ against distributing code project without the cooperation of the moderators is frowned upon, except in special
+ changes without going through cases like essentially trivial porting fixes." (Raymond 1998)
+ the proper channels
+
+ 3. Named Credit?there is a norm "Removing a person's name from a project history, credits or maintainer list is
+ against removing someone's absolutely not done without the person's explicit consent." (Raymond 1998)
+ name from a project without
+ that person's consent
+
+ OSS Beliefs Illustrative Quotes from Open Source Narratives
+
+ 4. Code Quality?open source "Perhaps in the end the open-source culture will triumph not because cooperation is
+ development methods produce morally right or software 'hoarding' is morally wrong...but simply because the closed
+ better code than closed source source world cannot win an evolutionary arms race with open-source communities
+
+ that can put orders of magnitude more skilled time into a problem." (Raymond 1998)
+
+ 5. Software Freedom?outcomes "Restrictions on the distribution and modification of the program cannot facilitate its
+ are better when code is freely use. They can only interfere. So the effect can only be negative." (Stallman 1992)
+ available
+
+ 6. Information "I believe that all generally useful information should be free. By 'free' I am not
+
+ Freedom?outcomes are better referring to price, but rather to the freedom to copy the information and to adapt it to
+ when information is freely one's own uses. When information is generally useful, redistributing it makes
+
+ available humanity wealthier no matter who is distributing and no matter who is receiving."
+
+ (Stallman quoted in Denning 1990)
+
+ 7. Bug fixing?the more people "Given a large enough beta-tester and co-developer base, almost every problem will
+ working on the code, the more be characterized quickly and the fix obvious to someone. Or, less formally, 'Given
+ quickly bugs will be found and enough eyeballs, all bugs are shallow.'" (Raymond 1998)
+ fixed
+
+ 8. Practicality?practical work is "In reading things from Linus in the past, he does seem to value working code much
+ more useful than theoretical more than complaints or rants or high-level descriptions. Show me the code, I think
+ discussion he said. Find a way to make it work and make it work." (Kuwabara 1999)
+
+ 9. Status Attainment?status is "When you play the hacker* game, you learn to keep score primarily by what other
+
+ achieved through community hackers think of your skill (this is why you aren't really a hacker until other hackers
+ recognition_consistently call you one)." (Raymond 2003)_
+
+ *While the term "hacker" has a pejorative connotation in popular usage, it conveys a positive identity in the OSS community.
+
+ 294 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Table 1. Tenets of Open Source Ideology (continued)
+
+ OSS Values Illustrative Quotes from Open Source Narratives
+
+ 10. Sharing ?sharing information "Programmers have the duty to encourage others to share, redistribute, study, and
+
+ is important improve the software we write." (Stallman 1992)
+
+ 11. Helping?aiding others is "To behave like a hacker, you have to believe that the thinking time of other hackers
+
+ important is precious?so much so that it's almost a moral duty for you to share information,
+
+ solve problems and then give the solutions away just so other hackers can solve new
+ problems instead of having to perpetually re-address old ones." (Raymond 2003)
+
+ 12. Technical "But be aware that you won't reach the skill level of a hacker or even merely a
+
+ knowledge?technical programmer if you only know one or two languages?you need to learn how to think
+ knowledge is highly valued about programming problems in a general way, independent of any one language.
+
+ To be a real hacker, you need to get to the point where you can learn a new
+ language in days by relating what's in the manual to what you already know. This
+ means you should learn several very different languages." (Raymond 2003)
+
+ 13. Learning? there is a value on "[A hacker is] a person who enjoys exploring the details of programmable systems
+
+ learning for its own sake and how to stretch their capabilities, as opposed to most users, who prefer to larn
+ only the minimum necessary." (Raymond 2003)
+
+ 14. Cooperation?voluntary "We must start sending the message that a good citizen is one who cooperates when
+ cooperation is important appropriate, not one who is successful at taking from others. I hope that the free
+ software movement will contribute to this: at least in one area, we will replace the
+
+ jungle with a more efficient system which encourages and runs on voluntary
+ cooperation." (Stallman 1992)
+
+ 15. Reputation?reputation gained "For examined in this way, it is quite clear that the society of open-source hackers is
+
+ by participating in open source in fact a gift culture. Within it, there is no serious shortage of the 'survival
+ projects is valuable necessities'?disk space, network bandwidth, computing power. Software is freely
+ shared. This abundance creates a situation in which the only available measure of
+
+ _competitive success is reputation among one's peers." (Raymond 1998)_^^^
+
+ ciated with a basic unit of work called a modification request.
+ Studies of software development in distributed contexts
+ (Herbsleb and Mockus 2003) and analyses of OSS projects
+ such as Apache and Mozilla (Mockus et al. 2002) have used
+ responses to modification requests as indicators of work
+ accomplishment. The extent to which the team completes
+ identified work tasks {task completion) is the output effective
+ ness construct used in this research.
+
+ The next section first develops hypotheses regarding ante
+ cedents to the input effectiveness of an OSS team and then
+ focuses on hypotheses regarding the output effectiveness of
+ the team. The theoretical development focuses on the role of
+ shared OSS norms, beliefs, and values in enhancing devel
+ opers' identification with the team and their motivation to
+ behave in ways that are beneficial to OSS team effectiveness
+
+ outcomes. The essential argument is that in teams that adhere
+
+ to the OSS ideological tenets identified in Table 1, individuals
+ develop a stronger sense of identification with the team and
+ their behavior is more predictable and helpful. This creates a
+
+ connection between adherence to the ideological tenets, the
+ level of trust, and the quality of communication within the
+ team. Trust and communication in turn enhance team effec
+
+ tiveness. The proposed relationships are depicted fully in
+ Figure 1.
+
+ Theory Development and
+ Hypotheses ^^^^^^^_^^_^^^^H
+
+ There are many reasons that potential developers may be
+ attracted to an OSS project, join and remain involved in an
+ OSS project, and voluntarily devote their efforts to working
+ on the project. These include their assessments of the likely
+ usefulness of the project software, potential reputational
+ benefits from project involvement, and the extent to which
+ involvement in the project brings psychological or emotional
+ benefits (Hars and Ou 2002). All of these factors may be
+ affected by the level of trust that exists in the OSS team.
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 295
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ ( ~00w . \ U4n ^/uomrriunicationN f Output-Task >,
+ ( OSSVaues r? H'? ?-K rs ,-* )- H9 - ( rv^^t; )
+ V y\ V Quality y V Completion 7
+ \ ^v f
+
+ \ ^
+
+ { ~r,r> k, ^ \ \?r Affective >, ??
+ ( OSS Norms k, H6 -V-*t Trust Jv
+
+ - \ \ - *'\ /---x
+
+ /y <p ^^^ /Input: Team Size\
+
+ v \ "^Vand Team Effort J
+
+ f \ ^t Cognitive \^<^
+ ( OSS Beliefs )- H4 -#1 Trust Jr
+
+ Figure 1. Research Model
+
+ Trust as an Antecedent to OSS
+ Team Input Effectiveness
+
+ Trust has been viewed as "the extent to which a person is
+
+ confident in, and willing to act on the basis of, the words,
+ actions, and decisions of another" (McAllister 1995, p. 25),
+ and this definition has been generalized to the level of a team
+
+ ongoing harmony (Holmes and Rempel 1989). For example,
+
+ the following extract from developer archives of the Jakarta
+ POI project demonstrates how an experienced member
+ responded positively (with an offer of mentorship and en
+ couragement to increase efforts) to a negative behavior on the
+
+ part of an inexperienced member (missing a deadline).
+
+ (Jarvenpaa et al. 1998). This view of trust is appropriate in
+ the setting of OSS teams because the value of one member's
+ contributions depends in part on the efforts and contributions
+ of others (e.g., insofar as code contributed by different
+ members must function together). Also, the overall value of
+
+ [name removed] So did you meet your deadline? I
+ hope you are still alive to read this :-)....can help
+ you meet your next deadline if you give 100% of
+ your work time to HWPF. I don't know if this is
+ possible because I don't know what else you're
+ working on. I can assign you enough work to keep
+ you busy all day, every day. I need your total com
+ mitment. Did you ever see the Karate Kid? I will be
+
+ the software to a developer is contingent on the contributions
+ of others and the decisions made regarding how those con
+ tributions are combined. Similarly, the words, actions, and
+ decisions of others may affect the emotional and psycho
+ logical consequences that an individual experiences from
+ participation. Prior work on virtual teams has shown that low
+ levels of trust may be associated with decreases in project
+
+ like Mr. Miagi and you will be like Daniel-son.
+
+ participation and contribution among team members (Jarven
+ paa and Leidner 1999), and that OSS projects may have high
+ levels of turnover (von Krogh et al. 2003).
+
+ Interactions such as these may not only benefit the team by
+
+ retaining and motivating existing members, but, because this
+ communication can be observed by potential members who
+ have not yet joined the team, the positive affective climate
+ demonstrated may actually help to attract new developers.
+ Potential new members can see by reading such communi
+ cations that current team members provide a supportive atmo
+
+ McAllister (1995) argues that affective and cognitive com
+ ponents of trust are important. Affective trust stems from
+ emotional attachment between a trustor and a trust target and
+ may, therefore, be most relevant to potential developers'
+ psychological and emotional reasons for joining, staying with,
+
+ sphere, and that new members may receive opportunities for
+ mentoring. Von Krogh et al. (2003) show that individuals ob
+ serve and participate in public project communication forums
+ prior to becoming members of an OSS project development
+ team, supporting the contention that the climate in the team
+ may be an antecedent to the growth of team membership.
+
+ and contributing to OSS teams. Affective trust is persistent,
+ leading to the discounting of events that are contrary to
+
+ 296 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Hypothesis 1: Affective trust among OSS team members
+ will have a positive effect on the team's input effective
+ ness by increasing (1) team size and (2) team effort.
+
+ versions of projects, which may reduce reputational benefits
+ to contributors by decreasing the audience for each fork
+ (Kogut and Metiu 2001).
+
+ Cognitive trust relies on a rational assessment of the target by
+ the trustor (McAllister 1995), and such assessments may
+ relate to the evaluation of competence of the trust target as
+
+ well as the probability of opportunistic behavior by the target.
+
+ Thus cognitive trust may be most important to the utility and
+
+ reputation motivations for developers to join, stay with, and
+ exert efforts on OSS projects. These motivations may be
+ affected because the usefulness of an OSS product to one
+ developer depends in part on the inputs of other developers.
+ If a contributor has high cognitive trust in other team mem
+ bers, then he will expect those inputs to be useful and the
+ project to sustain ongoing success, thereby making it more
+ worthwhile to devote his efforts to the project. A contributor
+ will not want to waste effort on a project that he thinks is
+ going to fail because such a project is not likely to be useful
+ to him in the future nor to enhance his reputation. Because of
+ the public nature of OSS team interactions and outputs,
+ cognitive trustworthiness may be assessed by both current
+ members and potential members. In addition to increasing the
+
+ estimate of the utility likely to result from contributing to an
+ OSS team, cognitive trust also reduces the perceived need for
+ and thus the expenditure of effort on monitoring and defen
+ sive behaviors (McAllister 1995). Reducing behaviors that
+ are not directly productive should free more resources to be
+ devoted to the team's tasks.
+
+ Hypothesis 2: Cognitive trust among OSS team members
+ will have a positive effect on the team's input effective
+ ness by increasing (1) team size and (2) team effort.
+
+ Impacts of OSS Norms, Beliefs, and
+ Values on Trust in OSS Teams
+
+ Cognitive trust relies on rational assessments of competence
+ and behavior and may develop through the prediction process
+ when a trustor is able to forecast that a target will behave in
+ a desirable fashion (Doney and Cannon 1997). OSS norms,
+ beliefs, and values support the predictability of behavior that
+ will be beneficial to team members and the assessment of
+
+ others as competent. Shared norms in general tend to result
+ in behavior patterns that are relatively stable and expected by
+ a team's members (Bettenhausen and Murnighan 1991). In
+ the case of OSS, norms are designed to protect developers'
+ interests by assuring they get credit for their work (named
+ credit norm) and maximizing the value of that work (forking
+
+ norms). The forking norm minimizes the hazard of competing
+
+ Shared beliefs provide a kind of mutual knowledge about
+ cause-effect relationships (Hardin and Higgins 1996), which
+ enables rational assessment of other team members' behaviors
+
+ based on an understanding of the reasoning driving these
+ behaviors. The OSS beliefs about bug fixing, practicality, and
+
+ status attainment are shared beliefs about how and why better
+ outcomes are obtained from open source community prac
+ tices. These beliefs guide the specific means by which OSS
+ work is conducted, and in some cases may provide an
+ explanation for behaviors enacted by team members that
+ might otherwise be interpreted negatively. For example,
+ when a developer submits code with defects for peer review,
+
+ instead of interpreting this as an indication that the developer
+
+ is not competent to fix the bugs, it may be interpreted in light
+
+ of the common understanding that allowing multiple others to
+ help fix bugs is more efficient. Sharing beliefs about OSS
+ processes and their associated outcomes is, therefore, likely
+
+ to result in developers having greater cognitive trust in the
+
+ ability of others.
+
+ OSS values may also enhance cognitive trust by leading
+ members to perform behaviors that are evaluated by others as
+ indicative of competence and ability. When team members
+ adhere to the values of attaining technical knowledge, learn
+
+ ing, and enhancing their reputations, they will act in ways that
+ will increase their knowledge and competence. When they
+ also adhere to the values of helping, sharing, and cooperating,
+ they will provide to each other evidence of that knowledge
+ and competence. Adhering to these values will also allow
+ contributors to predict how others will respond to their
+ requests. Because predictability and assessment of the ability
+
+ of others are at the root of cognitive trust, subscribing to these
+ OSS values should enhance cognitive trust in the team.
+
+ Hypothesis 3: An OSS teams' members' adherence to the
+ norms of the OSS community will have a positive effect
+ on cognitive trust among the team's members.
+
+ Hypothesis 4: An OSS team's members' adherence to the
+ beliefs of the OSS community will have a positive effect
+ on cognitive trust among the team's members.
+
+ Hypothesis 5: An OSS team's members' adherence to the
+ values of the OSS community will have a positive effect
+ on cognitive trust among the team's members.
+
+ While cognitive trust relies on rational assessments of others,
+ affective trust rests on emotional attachments to others. Such
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 297
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ emotional attachments may be created and enhanced via
+ group identification (Bagozzi and Dholakia 2002; Taj fei
+ 1978), and group norms and values have been highlighted as
+ important to forming positive group identification in virtual
+ settings (Dholakia et al. 2004). Dholakia et al. argue that
+ norms are important to identification in virtual settings
+ because they tend to be most accessible or inferable based on
+ the group's archived communication and understanding them
+ will facilitate potential members' categorization of themselves
+ as part of the group. Postmes et al. (2000) point out that in
+ order to have a positive effect, the group's norms must be
+ congruent with individual's motivations. As explained above,
+ the OSS norms are consistent with reputation and utility
+ based motivations of OSS developers. Thus adherence to the
+ OSS norms may be expected to enhance identification with
+
+ the group and thereby the emotional attachment that underlies
+ affective trust.
+
+ Values may drive identification with virtual groups because
+
+ when a member or potential member finds that her values are
+ congruent with those of others in the group, she is more likely
+
+ to categorize herself as a member of the group (Bagozzi and
+ Dholakia 2002). Dholakia et al. found that values related to
+ individual instrumental purposes such as giving and receiving
+ information in a virtual group had a positive effect on identi
+ fication with the group. In OSS, the values related to tech
+
+ nical knowledge, learning, and reputation all focus attention
+ on common personal instrumental goals of contributors.
+
+ Hypothesis 6: An OSS team's members' adherence to the
+ norms of the OSS community will have a positive effect
+ on affective trust among the team's members.
+
+ Hypothesis 7: An OSS team's members' adherence to the
+ values of the OSS community will have a positive effect
+ on affective trust among the team's members.
+
+ Antecedents to OSS Team
+ Output Effectiveness
+
+ Likewise, the more effort that the team members devote to the
+
+ project, the greater the number of tasks they will be able to
+ complete.
+
+ Hypothesis 8: OSS project (1) team size and (2) team effort
+ will have a positive effect on the team's level of task
+ completion.
+
+ In addition to being a function of the input to a team, the
+ extent to which an OSS team achieves high levels of task
+ completion may be influenced by the quality of communi
+ cation in the team. Globally distributed software development
+ teams have been found to face significant communication
+ related challenges (Montoya-Weiss et al. 2001), yet com
+ munication is essential for coordinating work among team
+ members (Ancona and Caldwell 1992).
+
+ Communication in OSS Teams
+
+ Because software development is socially complex and
+ communication-intensive, requiring precise communication
+ for tasks such as requirements elicitation and project coordi
+ nation, communication breakdowns are likely to occur
+ (Carmel 1999). Poor communication can create task overlaps
+ and duplication of effort, making code integration more
+ difficult. The importance of timely and relevant communi
+ cation has been recognized by some in the OSS community,
+ as demonstrated in the following excerpt from the Mozilla
+
+ Web site (http://www.mozilla.org/get-involved.html):
+
+ Whenever you begin work on something that's more
+ than a day's work, we strongly recommend that you
+ let people know about it. Publicizing your efforts
+ lets others know what you're working on so they can
+ coordinate their work with yours, offer help, and
+
+ avoid duplicating your work. It opens your work up
+ for peer review, and provides an archive so the same
+ issues don't need to be repeated. Also, if someone
+ else is working on the same thing, they can let you
+ know and save you a lot of work.
+
+ Input-process-outcome models of team work (Ilgen et al.
+ 2005; Martins et al. 2004) imply that OSS team output
+ effectiveness is likely to be influenced by the effectiveness of
+
+ the team in attracting and retaining input. Prior research has
+ indicated that OSS developers may tend to specialize by
+ working on small parts of an overall project (Koch and
+ Schneider 2000; von Krogh et al. 2003). In this case, having
+ a larger pool of developers implies a larger pool of available
+
+ specializations and a greater chance that the skills and interest
+ needed for completing a variety of tasks will be available.
+
+ As this excerpt implies, it is not only the amount of communi
+
+ cation, but its timeliness and helpfulness that are important to
+ outcomes in OSS work. Previous work on communication in
+
+ virtual teams also implies that it is not just the amount but the
+ quality of communication that is important to outcomes.
+ Communication is most likely to enhance team effectiveness
+
+ if it is timely, helpful, and relevant to the task at hand (Jarven
+ paa and Leidner 1999), which we refer to as being of high
+ quality.
+
+ 298 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Hypothesis 9: Quality of communication among an OSS
+ team's members will have a positive effect on the team's
+ level of task completion.
+
+ While the importance of communication to effectiveness is
+ well established, the means by which quality communication
+ may be achieved in OSS teams is not. Although the review
+ presented in Table 1 did not uncover overarching OSS com
+ munity norms or beliefs directly related to the quality of
+ communication, there are several values that directly bear on
+ communication practices in OSS development. The more
+ participants value learning, building their technical knowl
+
+ edge, and enhancing their reputation, the more likely they
+ should be to exchange useful information with each other.
+ Shared OSS values will enhance quality of communication
+ because the more team members value being helpful and
+ cooperating, the more attentive they will be to providing
+ timely and pertinent replies to each other's queries. Thus the
+ values listed in Table 1 should serve to focus team members
+
+ on communicating useful information in a timely manner.
+
+ Hypothesis 10: An OSS team's members' adherence to the
+ values of the OSS community will have a positive effect
+ on the quality of communication among the team's
+ members.
+
+ Methods {^ ^^^ B
+
+ The unit of analysis is an OSS development team working on
+ a specific software application. Several approaches have been
+ suggested to measure team-level constructs?assessing indi
+ vidual perceptions as a representation of team beliefs (e.g.,
+ Crocker and Luhtanen 1990), aggregation of individual
+ assessments (Guzzo et al. 1993), and team discussion to arrive
+ at a common assessment (Gibson et al. 2000). Unfortunately,
+ none of these approaches are ideal for assessing team level
+ attributes (Bar-Tal 2000; Gibson et al. 2000). Given the
+ practical difficulty of accessing all members of OSS teams,
+ we used a key informant approach (Seidler 1974) combined
+ with collection of publicly available project data from the
+ Sourceforge website.
+
+ Using key informants to collect data about larger social
+ entities is a common practice in organizational research (see
+ Nelson and Cooprider (1996) at the department level, Capron
+ and Hulland (1999) at the firm level, and Sparrowe et al.
+ (2001) at the team level). The use of key informants requires
+ a deliberate strategy to access respondents that possess special
+ qualifications pertinent to the research such as status,
+ experience, or specialized knowledge (Segars and Grover
+ 1998). Research on the effectiveness of software develop
+ ment projects typically elicits project-level data from project
+ managers (e.g., Ethiraj et al. 2005; Gopal et al. 2003). In the
+ F/OSS domain, project administrators represent an equivalent
+
+ role that is best suited to providing details of a project. Thus
+ we targeted project administrators, as they are positioned to
+ be most familiar with the teams' internal dynamics, activities,
+ and accomplishments. Also, because founders and key
+ leaders shape organizational ideology (Hofstede et al. 1990),
+ such individuals may be better suited to report on the ideology
+ of their teams than other individual members.
+
+ Most studies of OSS to-date have focused on case studies of
+
+ the largest, most well-known projects such as Linux and
+ Apache (e.g., Gallivan 2001; Mockus et al. 2002). While
+ these projects are interesting and important, they may not be
+ representative of the majority of OSS projects, which have
+
+ Data Collection
+
+ attained much lower levels of participation and prominence
+ (Krishnamurthy 2002). One of the goals in this research was
+ to collect data on a larger set of projects that may be more
+ representative of the wider population of open source
+ development efforts. To do this, we collected data related to
+ OSS projects hosted on Sourceforge (www.sourceforge.net).
+ Sourceforge's mission is to enrich the open source community
+ by providing a centralized infrastructure for developers to
+ control and manage OSS development. As of April 2005,
+ Sourceforge hosted more than 98,000 projects and more than
+ 1 million registered users. In addition to hosting a large
+ segment of the population of OSS projects, Sourceforge
+ provides these projects with a standard technology toolset,
+ thereby reducing variance in team effectiveness that may be
+
+ Data was collected using two surveys and from the Source
+ forge Web site. The first survey included open-ended ques
+ tions asking project administrators about their projects, teams,
+ and development efforts. Administrators of 48 Sourceforge
+ projects were contacted using e-mail; 18 administrators com
+ pleted the questionnaire. The qualitative data collected on
+ this survey was then used to develop the wording of closed
+ ended ideology items to be included on a second survey,
+ which also measured trust and communication for hypothesis
+ testing.
+
+ due to differences in technology used to support workflow,
+ code distribution, versioning, etc.
+
+ A different set of projects was targeted for the second survey.
+ We selected projects from two categories on Sourceforge:
+ communications (BBS, chat, and ICQ) and multimedia (audio,
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 299
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ video, and graphics 3D rendering). We limited the sample to
+ two similar domains to control for differences across projects
+ in very different product categories. After selecting cate
+ gories, we ensured that the projects had some activity in the
+ past week in terms of contributions to the code repository;
+ requests for bug-fixes, support, patches or features; or in
+ terms of page views. This was done to ensure that the sample
+ included ongoing projects that had not been abandoned by
+ their developers. Finally, projects were required to have at
+ least four developers to be included in the study because the
+ model is concerned with team processes and dynamics. In
+ total, 150 projects met all criteria. A subset was randomly
+ selected to pilot test the survey. For the pilot test, respondents
+ were asked to complete all Likert scale items and answer
+ open-ended questions, asking if any of the items were unclear,
+ if they had problems understanding or answering any
+ questions, or if there were ways the survey itself could be
+ improved. Sixteen administrators responded, and none of
+ them indicated any problems in the survey. Personalized
+ invitations were sent to the remaining project administrators
+
+ in the sample requesting their participation.
+
+ Participants were offered a chance to win a $100 lottery as
+ well as an opportunity to be informed of the results. Because
+ many individuals are involved in multiple open source pro
+ jects, the survey instructed administrators involved with
+ multiple projects to respond with reference to the software
+ project with which they were most involved. This resulted in
+ seven respondents reporting on projects not in the communi
+ cations or multimedia categories. These seven projects
+ focused on providing software to support other functional
+ applications, therefore they were categorized as utility appli
+ cations. In all, 51 administrators responded to the survey.
+ After ANOVAs confirmed that the pilot test respondents did
+ not differ significantly on any of the outcome measures from
+
+ the respondents in the second round, the two sets of responses
+ were merged for analysis, resulting in a sample size of 67 (an
+ overall response rate of 44.7 percent).
+
+ Operationalization of Constructs
+
+ Ideology, Trust, and Communication
+
+ We followed Hofstede et al. (1990) by first elaborating speci
+ fic values, norms, and beliefs (listed in Table 1) and then
+
+ crafting Likert scale items to quantitatively measure the extent
+ to which individuals felt each ideological tenet was adhered
+ to in his or her team. In order to maintain a manageable
+ survey length, and because there are no prior empirical
+ investigations of OSS ideology upon which to draw, one item
+
+ 300 MIS Quarterly Vol. 30 No. 2/June 2006
+
+ was created to represent each norm, belief, and value.
+ Exploratory factor analysis was used to assess the extent to
+ which these items loaded onto underlying constructs repre
+ senting adherence to sets of norms, beliefs, and values.
+
+ Scales from earlier studies were adapted to measure cognitive
+ trust and affective trust (McAllister 1995). The scales were
+
+ reworded to reflect the change from the original inter-personal
+ level to a team-level assessment (Ammeter 2000). We drew
+ upon the work of Jarvenpaa and Leidner (1999) to create
+ Likert scale items measuring the administrator's perception of
+ the quality of communication in the team. All scale items are
+ included in the appendix.
+
+ Team Effectiveness
+
+ Team size was measured as the number of developers asso
+ ciated with the project. Team effort was measured as an
+ estimate by the project administrator of the total number of
+ work weeks devoted to the project. The Sourceforge site
+ tracks the number of requests for bug fixes, patches, support,
+ and new features on each project as well as the number of
+ such requests that have an uncompleted (open) status. We
+ calculated task completion as the percentage of tasks
+ completed: (total requests - requests open)/total requests x
+ 100, or zero for projects with no task requests. This opera
+ tionalization is in line with other studies of software teams
+
+ that use change requests as a measure of software work
+ accomplishment (Herbsleb and Mockus 2003). Because it
+ includes requests for features in addition to requests for
+ changes to existing code, the task completion measure is rele
+ vant even at relatively early stages of project development.
+
+ Control Variables
+
+ All of these measures are likely to be a function of how long
+ the project has been in existence, therefore project age
+ (number of months since project inception as reported by the
+ administrator) was used as a control variable. Both input and
+ output measures of effectiveness may be a function of the
+ development stage of the project because, for example,
+ projects in earlier stages may be less certain to provide utility,
+
+ reducing motivations for input and projects in the later stages
+ may have defined roles to more efficiently handle task
+ requests. Therefore the development stage of the project
+ (reported on Sourceforge) was used as a control variable in
+ the model. Development stage ranges from 1 for projects in
+ the planning stage to 6 for projects that have reached a mature
+ state. McAllister (1995) argued and demonstrated that cogni
+ tive trust is an antecedent to affective trust, therefore a path
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ between cognitive trust and affective trust was included in the
+
+ model. Team effort may be partially a function of the number
+
+ of team members, therefore a path was included to control for
+ the effect of team size on team effort.
+
+ single scale and for closely related constructs together) and
+ following guidelines regarding an acceptable observation-to
+ item ratio of approximately 5 to 1 (Stevens 1996).
+
+ Analysis
+
+ Data were analyzed in two stages. Because survey items were
+ developed or adapted for the study, they were first subjected
+ to an exploratory factor analysis. This allowed assessment of
+ the extent to which the OSS values, norms, and beliefs may
+
+ represent deeper underlying constructs or may be effectively
+ independent of one another. Past studies have suggested the
+ use of factor-analytic procedures to gauge the best represen
+
+ tation of the underlying correlational structure of measures of
+ ideological viewpoints (see Tetlock 2000). In the second
+ stage of the analysis measurement properties were further
+ assessed and hypotheses were tested using the partial least
+ squares (PLS) approach. PLS was used because it is more
+ appropriate than alternatives, such as LISREL, when sample
+ sizes are small and models are complex, the goal of the
+ research is explaining variance, and measures are not well
+ established (Fornell and Bookstein 1982; Gefen et al. 2000).
+
+ Results ^ ^ I^HHH^^HHHBH
+
+ Descriptive statistics and correlations among constructs are
+
+ shown in Table 2. Because data was obtained on projects in
+ three different categories (35 multimedia, 25 communications,
+ and 7 utilities) we conducted ANOVAs to determine whether
+ the projects were significantly different on variables of
+ interest across categories. Analysis of variance tests did not
+ show a significant difference in mean values of any of the
+ dependent variables across the categories, thus the three sets
+ of projects were pooled for analysis (p = .065 for team size,
+ p = .516 for team effort, p = .885 for task completion).
+
+ Factor Analyses
+
+ Harman's one factor test provided no evidence of a common
+ method problem (the largest factor accounted for less than 25
+ percent of the overall variance). Given the constraints of the
+ sample size relative to the number of items measured, we
+ followed other recent work (see Kirsch et al. 2002) and con
+ ducted factor analyses on subsets of items to assess conver
+
+ Two analyses were run, one including survey items related to
+ affective trust, cognitive trust, and communication quality, a
+ second including survey items related to norms, beliefs, and
+ values. Principal components analysis with varimax rotation
+ was used. Stevens (1996) recommends using items with
+ factor loadings above 0.40 for interpretation purposes. Fol
+ lowing this guideline, three items aimed at assessing cognitive
+
+ trust, one item aimed at assessing affective trust, and one item
+ aimed at the communication quality scale were dropped.
+ After items were dropped, the remaining affective trust,
+ cognitive trust, and communication quality items all loaded
+ highly on the expected factor with acceptable cross-loadings
+ (see Table 2).
+
+ The factor analysis of the ideology items was exploratory in
+ that there was no prior work to suggest an a priori grouping
+ of the items. Instead, the analysis was used to determine
+ whether they should be treated as representing a single
+ coherent set or multiple constructs. The analysis including all
+ ideology items indicated that beliefs and values tended to load
+
+ together onto different factors, but no two of the items repre
+ senting norms loaded on the same factor. Each norm loaded
+
+ highly on a different factor seemingly indicating that they
+ may represent relatively independent rules for behavior. This
+ would be in keeping with van Dijk's (1995) assertion that
+ groups may, to some extent, pick and choose tenets from the
+
+ larger organizational ideology in which they function. Norms
+ were, therefore, treated separately in subsequent analyses.
+
+ Having removed norms, the factor analysis was rerun to
+ examine beliefs and values. The item representing the value
+ of practice over theory did not load highly on any factor and
+ was dropped. Remaining items loaded clearly onto four
+ factors, two representing values and two representing beliefs.
+ For values, the three items reflecting cooperation, sharing,
+ and helping loaded on one factor and the three items focusing
+ on learning, expanding technical knowledge, and enhancing
+ reputation loaded on a second factor. Because the first set of
+ values all focus on interaction among team members, we
+ labeled this factor collaborative values. Because the second
+
+ set focus on individual goals associated with participating in
+ OSS, we labeled these individual values. The split of the
+ values into these two factors is consistent with the distinction
+
+ between collectivistic and individualistic dimensions that has
+
+ been recognized in past work on employee values in organi
+ zations (see Moorman and Blakely 1995). Beliefs also loaded
+
+ gent and divergent validity. Items were grouped into analyses
+ based on their expected loading (i.e., keeping all items for a
+
+ onto two factors. These were beliefs about better quality out
+
+ comes resulting from the processes used in OSS development
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 301
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ o I I co
+
+ I Helping | .042 | .006 | .116 | .854
+
+ 15. Project Age (1) 25.97 23.91 - 0.19 0.27 0.06 -0.03 -0.05 0.01 -0.05 -0.13 0.16 0.00 -0.08 0.62 0.09 0.36
+
+ 14. Development Stage (1) 4.02~ 1.31 - 0.15 0.07 0.19~-0.06 "ooo"-0.03 -0.04 0.12 0.07 0.14 0.00 0.33 0.24 1.00 ??
+
+ 11. Team Size (1)_8.25 14.74 - ~OlT 0.12 0.00 -0.07 """u~To" -0.13 "ooT" 0.03 0.17 0.25 1.00 |
+
+ Item I 1 I 2 I 3 I Item I 1 I 2 I 3 I 4
+
+ 12. Team Effort (1)_ 197.94 306.95 - 0.19 0.34~ 0.12 "a0_" -0.27 ^OzT -0.11 -0.13 0.26 0.07 0.22 1.00 ^
+
+ 13. Task Completion (1) 42.33^34.55 ~" - 0.33-0.20 O.Oo" 0.10 0.16 0.07 -0.05 0.16 0.06 0.10 0.08 0.20 1.00 |
+
+ Team size is the number of developers, team effort was an estimate of work weeks devoted to the project, task completion is a percentage, development stage is on a 1 to 6 scale,
+
+ *Values on the diagonal are the square-root of the average variance extracted for each construct (AVE). Variables 1 through 10 were measured using seven-point Likert scale items.
+
+ I I Std. I Reli- I I I I I I I I I I I I I I ?
+
+ Affective Trust 3_IIMIB -461 -?56 Status Attainment_.767_.014_.216_-.357
+
+ 10. Cognitive trust (3) 5.47 " 1.07 ^89~ 0.48 "ooi" 0.11 -0.27 0.37 -0.07 0.58 " 0.22 0.50 ' 0.85 |
+
+ Cognitive Trust 3_.187 .769 .143 Learning_-.073_.045_1808_.272
+
+ Cognitive Trust 2_.133 .826 .290 Technical Knowledge_.209_-.389 .446_.365
+
+ Affective Trust 4_JIMHP 175 .388 Software Freedom_-_301_.868_.161_-.026
+
+ Cognitive Trust 1_.266 .714 .331 Information Freedom_467_.707 -.137_.125
+
+ ? 8. Individual Values (3)_5.98 0.76 .76 0.28 -0.21 0.02 0.06 0.23 -0.03 0.45 0.72_ g
+
+ c 7. Collaborative Values (3) 6.18 073 ^5 0.43 -0.12 -0.02 -0.20 0.35 0.11 0~81 2"
+
+ ^ 6. Freedom beliefs (2) 5.49 1.20 .79 -0.07 0.04 -0.12 -0.04 0.44 0.82 <f
+
+ | Construct (# items) Mean Dev. ability 1 2 3 4 5 6 7 8 9 10 11 12 13 14 g>
+
+ Communication Quality 3_-.093 .340 .787 Sharing_?5()__396__D06_.670
+
+ ? 9. Affective trust (4)_5.18 1.07 .88 0.32 0.19 0.19 -0.23 0.21 0.11 0.53 0.35 0.77 ?
+
+ Communication Quality 1_.282 .052 .847 Reputation_J26_1063_1859_.000
+
+ Communication Quality 2_.069 .334 .790 Cooperation_XXX)_-.095__398_.727
+
+ Affective Trust 1_IIHHI^ -.018 .275 Code Quality_.609_J07_?03_.308
+
+ Affective Trust 2_gggg^lm .258 -.157 Bug Fixing_:698_.055_-.002_.234
+
+ | 5. Process Beliefs (3) 4.95 1.17 .69 0.19 -0.11 -0.04 0.03 0.69 ?
+
+ 10 Table 2. Descriptive Statistics and Correlations among Constructs* |
+
+ ? 4. Named credit Norm (1) 2.22 1.74 - 0.02 0.00 0.02 L00 S.
+
+ ?? 1. Communication Quality (3) 5.84 0.94 .90 0.86 _ 8
+
+ ^ 3. Distribution Norm (1) 4.85 1.60 - -0.04 0.00 L00 1
+
+ O ___^_Q
+
+ ? 2. Forking Norm (1)_4.48 1.64 - -0.01 L00 |
+
+ Table 3. Factor Analysis Loadings
+
+ and project age is in months.
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ (code quality, bug fixing, status attainment) and beliefs
+ regarding the benefits of freedom to outcomes in OSS devel
+ opment (software freedom, information freedom). These are
+ labeled process beliefs and freedom beliefs respectively.
+
+ In the final analyses (see Table 3), all items loaded most
+ highly on their respective factors and loaded less highly on
+ other factors. In two cases where loadings were above 0.4 on
+ alternate factors, the items loaded at least 0.6 on the expected
+ factor and at least 0.2 higher on the main versus the cross
+ loaded factor. Given that the cross-loadings in the factor
+ analysis results are in line with prior work (e.g., Agarwal and
+ Karahanna 2000), that the items did clearly load most highly
+ on a single factor, and that deleting them would reduce the
+ reliability of the scales, we retained these items. The wording
+ of all items, including those deleted, is shown in the appendix.
+
+ PLS Measurement Model
+
+ While the factor analysis results provide evidence of
+ convergent and divergent validity, in the PLS methodology
+ (see Agarwal and Karahanna 2000), divergent validity is
+ typically assessed using the average variance extracted (i.e.,
+ the average variance shared between a construct and its
+ measures, AVE). The square root of this measure should be
+ greater than the variance shared between the construct and
+ other constructs in the model (Fornell and Larcker 1981).
+ Table 2 shows that this is the case. The table also displays the
+ composite reliability, which is calculated as explained in
+ Agarwal and Karahanna (2000). Although reliability for
+ process beliefs was slightly low at 0.69, all other scales were
+ well above the typical threshold of 0.7.
+
+ The results of the PLS analysis are shown in Figure 2 and
+ Table 4. The path coefficients in the model were assessed
+ using the jackknife routine. To allow for the possibility of
+ effects other than those hypothesized, we tested a saturated
+ model, including paths from all independent variables to each
+ of the measures of effectiveness. To present an uncluttered
+ picture, control variables and insignificant paths are omitted
+ from the figure. The coefficients for all variables and paths
+ are displayed in Table 4. Table 5 summarizes the results of
+ all hypothesis tests.
+
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ addition to identifying how tenets of the ideology were
+ grouped into components and which components of the
+ ideology had a positive effect, the analysis revealed some
+ unanticipated findings regarding negative results from
+ adherence to some ideological components. This section
+ synthesizes the findings and theoretical implications with
+ regard to the content and structure of the OSS ideology, the
+ positive effects of components of the ideology, and the
+ negative effects of ideological components. Practical
+ implications are then considered. The paper concludes with
+ a summary of limitations, contributions, and implications for
+ future research.
+
+ Structure and Impact of the OSS Ideology
+
+ Table 1 identified several norms, beliefs, and values
+ associated with the OSS community. Exploratory factor
+ analysis indicated that these were grouped into a smaller
+ number of components. These were collaborative values
+ (helping, sharing, cooperation), individual values (learning,
+ technical knowledge, reputation), OSS process beliefs (bugs
+ fixing, code quality, status attainment), and beliefs regarding
+ the importance of freedom to outcomes in OSS (free
+ information, free software). Results showed that norms
+ (forking, named credit, and distribution) were adopted
+ independently by OSS teams rather than forming into larger
+ components.
+
+ With the exception of the distribution norm, each of the
+ ideological components played a significant role in
+ determining effectiveness in the OSS teams studied. For
+ collaborative values, individual values, the forking norm, the
+ named credit norm, and process beliefs, the overall pattern of
+ results supported the arguments in the paper that these
+ ideological components are important to effectiveness
+ because of the positive impacts they have on trust and
+ communication quality. However, two sets of negative
+ effects were also revealed. First, freedom beliefs were shown
+ to have only negative effects. Second, collaborative values
+ and the forking norm had negative effects on task completion
+ in addition to the positive effects they had on trust and
+ communication quality. The next section discusses positive
+ effects on OSS team effectiveness and the subsequent section
+ focuses on interpreting the negative effects.
+
+ Discussion ^^ H^^HHHHM
+
+ Results supported the main thesis of the paper that adherence
+ to the ideological tenets of the open source community are
+ important to the effectiveness of OSS development teams by
+ supporting trust and communication quality in the teams. In
+
+ One conclusion that can be drawn from the study is that
+ affective trust was the main driver of the input effectiveness
+ of OSS teams in both size and effort. There were two ways
+
+ Drivers of OSS Team Effectiveness
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 303
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ OSS Values
+
+ /( Collaborative \\^ 0.39* _ ( Communication >v
+ / I Values /\V^^^^^^ \^ Quality ^^/\^
+
+ \ /^-^X / \ ** '?'34* ^-^ \
+ \ / Individual r"-r-^^\ ^^^ ^^^^^^--^^X -~~~\
+ VV Values J J "\~ - ?-26* __^\. _ ^^^^^/Output Task >v
+
+ X^-^/ \ ^^Affective^N ^Jy^mpletion^
+
+ OSS Norms / < ^^ ** \ , A <y
+ v-r^^ iwiino s ^ ^^^ NJnput
+
+ t4 \ ^ / (C Team ) (jea \)
+ ^^^ >[ Cognitive ) J'
+
+ y<(' / \K^S*e^^^
+
+ ^ // /
+
+ / / s ^
+
+ OSS Beliefs / / /
+
+ / f Process X\ / /
+ I I Beliefs ) \ / /
+
+ \ f Freedom y /-'
+ \ V Beliefs J J
+
+ Figure 2. Structural Model
+
+ 304 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Table 4. Structural Model
+
+ Path Path
+ Coefficients Coefficients
+
+ Communication Quality (R2 = 0.28) Team Size (R2 = 0.16)
+
+ Forking Norm 0.02 Communication Quality 0.09
+
+ Distribution Norm -0.06 Forking Norm 0.10
+ Named Credit Norm (r) 0.09 Distribution Norm -0.06
+ Process Beliefs 0.11 Named Credit Norm (r) -0.05
+ Freedom Beliefs -0.16* Process Beliefs 0.14
+ Collaborative Values 0.39 Freedom Beliefs -0.17
+ Individual Values 0.10 Collaborative Values -0.28
+
+ Project Age 0.23** Individual Values -0.01
+
+ Cognitive Trust 0.21
+ Affective Trust 0.18*
+
+ Project Age -0.15
+ Development Stage -0.02
+
+ Affective Trust (R2 = 0.49) Team Effort (R2 = 0.62)
+ Forking Norm 0.22** Communication Quality 0.05
+
+ Distribution Norm 0.17 Forking Norm 0.08
+ Named Credit Norm (r) -0.11 Distribution Norm -0.02
+ Process Beliefs -0.07 Named Credit Norm (r) 0.10
+ Freedom Beliefs 0.14 Process Beliefs -0.19
+ Collaborative Values 0.28* Freedom Beliefs -0.18**
+ Individual Values 0.26 Collaborative Values -0.08
+
+ Project Age 0.27* Individual Values -0.11
+ 0.13* Cognitive Trust 0.00
+
+ Affective Trust 0.28**
+ Team Size 0.21
+
+ Project Age 0.49**
+ Development Stage 0.13*
+ Cognitive Trust (R2 = 0.48 Task Completion (R2 = 0.33)
+
+ Forking Norm 0.12 Communication Quality 0.34**
+
+ Distribution Norm 0.11 Forking Norm -0.29**
+ Named Credit Norm (r) -0.18* Distribution Norm -0.04
+ Process Beliefs 0.35*** Named Credit Norm (r) 0.03
+ Freedom Beliefs -0.28*** Process Beliefs 0.15
+ Collaborative Values 0.49 Freedom Beliefs 0.17
+ Individual Values -0.06 Collaborative Values -0.34*
+
+ Project Age -0.01 Individual Values 0.13
+
+ Cognitive Trust 0.04
+ Affective Trust 0.01
+ Team Size -0.03
+ Team Effort 0.35**
+ Project Age -0.16
+
+ _Development Stage_0.13_
+
+ ***p < 0.001; **p < 0.01; *p < 0.05
+ (r) reverse-coded item
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 305
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Table 5. Results of Hypothesis Tests
+ Hypothesis Result
+ H1a. Affective Trust -4 Team Size Supported
+ H1 b. Affective Trust -4 Team Effort Supported
+ H2a. Cognitive Trust -4 Team Size Not supported
+ H2b. Cognitive Trust -4 Team Effort Not supported
+ H3. OSS Norms -4 Cognitive Trust Supported for Named Credit Norm only
+ H4. OSS Beliefs -4 Cognitive Trust Supported for Process Beliefs; contradicted for Freedom Beliefs
+ H5. OSS Values -4 Cognitive Trust Supported for Collaborative Values only
+ H6. OSS Norms -4 Affective Trust Supported for Forking Norm only
+ H7. OSS Values -4 Affective Trust Supported
+ H8a. Team Size -4 Task Completion Not supported
+ H8b. Team Effort -4 Task Completion Supported
+ H9. Communication Quality -4 Task Completion Supported
+
+ H10. OSS Values -4 Communication Quality Supported for Collaborative Values only
+
+ ideology supported affective trust. Collaborative values,
+ individual values, and the forking norm had direct effects on
+
+ affective trust, supporting arguments regarding the enhancing
+ effect that these may have on identification with the team.
+
+ One reason the forking norm impacted affective trust and the
+
+ other norms did not may be that this norm effectively creates
+ a barrier to exit from the team because it forbids starting a
+ second team using the same code base. Groups that are less
+ permeable (in this case, difficult to leave) have been shown to
+ be perceived as stronger social units, which enhances
+ identification (Lickel et al. 2000). The other norms focus on
+ behavior within the team rather than keeping the team
+ together. Of these, the naming norm may be most directly
+ relevant to cognitive trust because the naming norm is most
+ directly tied to protecting individuals' interests, and assess
+ ments of trust tend to focus on expected individual outcomes
+
+ from interaction. The distribution norm, by contrast, protects
+
+ the interests of the project as a whole.
+
+ Results showed that cognitive trust was a significant ante
+ cedent to affective trust, providing the second path through
+ which ideological components had a positive impact. The
+ fact that cognitive trust acted through affective trust rather
+ than having a direct effect on team size or effort may indicate
+ that potential utility or reputation benefits alone are not
+ enough to drive participation; developers may only devote
+ their efforts to a project if affective feelings in the group are
+ also positive.
+
+ As hypothesized, both team effort and communication quality
+ drove the output effectiveness measure, task completion. The
+
+ absence of an effect of team size on task completion failed to
+ support the reasoning that having a greater number of devel
+ opers available to complete tasks will result in greater output
+ effectiveness on this measure. There may be at least two
+ possible reasons that this relationship did not hold. First, it
+ could be that teams with more members did not in fact have
+
+ a wider range of expertise available but rather they included
+ members with essentially overlapping areas of knowledge.
+ Second, large teams may consume substantial resources to
+ manage social interaction and enable coordination, and they
+ may be prone to social loafing (Guzzo and Dickson 1996).
+
+ Detractors from OSS Team Effectiveness
+
+ In addition to the positive effects of collaborative values and
+ the forking norm discussed above, these also had direct
+ negative effects on task completion. Both could be a result of
+ these ideological components imposing a "consensus-building
+ cost." If team members believe that forking is acceptable
+ (i.e., they go against the norm), they may be less likely to care
+ about avoiding conflict or building consensus. As a result, in
+ situations involving conflicting ideas, these teams maybe less
+ likely to wait to build consensus before closing a request.
+ Instead, requests can be dealt with immediately with the
+ option for disagreeing members to potentially fork the project.
+ This explanation is suggested by comments from a manager
+ for a Microsoft product that has been open-sourced, wherein
+ he suggests that forking, despite its downside, provides a
+ "safety valve" for developers if conflicts arise (Mensching
+ 2004).
+
+ 306 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Similarly, the more a team subscribes to collaborative values,
+ the more they focus on attending to the needs of team
+ members, which may detract from a focus on the task. Rather
+
+ than closing task requests quickly, the team may spend time
+
+ trying to build consensus on how requests should be handled,
+
+ and they may leave requests open until agreement is reached.
+ Our overall interpretation is that there may be a trade-off
+ involved in fostering these ideological components: the posi
+
+ tive affective trust built by these components helps to make
+ the group membership valuable to developers and encourage
+
+ their input; however, task completion is slowed because of the
+ increased desire to build consensus before tasks are closed.
+
+ While most ideological components had some positive
+ effects, freedom beliefs had only negative effects. Higher
+ levels of adherence to these beliefs negatively impacted
+ communication quality, cognitive trust, and team effort. One
+
+ explanation for this pattern of effects may lie in the fact that
+
+ the strength of such beliefs has been seen as a differentiating
+ factor among members of the broader community. Richard
+
+ Stallman notes that developers who subscribe strongly to the
+ freedom beliefs also believe that "non-free software is a social
+
+ problem and free software is the solution."8 These beliefs
+
+ may, therefore, drive individuals to participate more broadly
+
+ by spreading their effort across multiple projects, reducing
+ their contribution to any one. That is, those who believe
+ strongly in freedom as a crucial aspect of software devel
+ opment may be driven more by a desire to act as agents of
+
+ social change than they are by the desire to further the objec
+
+ tives of a particular project. This could lead to reduced effort
+ for the project. Because members' attention is spread across
+
+ many projects, the timing of their participation in any one
+
+ may also be less predictable, thereby reducing cognitive trust
+ and communication quality.
+
+ In summary, there appear to be two ways that ideological
+ adherence can detract from the effectiveness outcomes
+
+ studied. Collaborative values and adherence to the forking
+ norm may overemphasize the importance of acting only after
+
+ the group is in agreement, thereby solidifying dedication to
+ the group but slowing progress in task completion.
+ Adherence to the freedom beliefs may overemphasize parti
+
+ cipation in the larger OSS community rather than a particular
+ OSS team project, leading members to spread their efforts
+ over more projects.
+
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Limitations and Future Research
+
+ The analyses revealed several unexpected results including
+ negative effects of some ideological components. Above, we
+ presented some possible explanations for these patterns of
+ results; however, the data does not allow us to test those
+ explanations. Future research is needed to explore the
+ mediating mechanisms between these ideological components
+ and their outcomes.
+
+ Identification of Ideological Tenets
+
+ While Table 1 represents a more comprehensive framework
+ of the OSS ideology than has been developed elsewhere, it
+ has some limitations. Because ideological tenets may some
+ times remain unexpressed (van Dijk 1995), there could be
+ other important ideological tenets that were not revealed by
+ the review of OSS discourse. More thorough research is
+ needed to refine and validate this initial ideological frame
+ work. A further limitation is related to the measurement of
+
+ adherence to ideological components. Single items to mea
+ sure agreement with each norm, value, and belief were
+ created. Exploratory factor analysis was used to uncover the
+ interrelationships among the norms, values, and beliefs.
+ Future work may use this as a basis for developing and vali
+ dating more comprehensive scales to measure the ideological
+ components identified. Conclusions regarding the structure
+ of the OSS ideology based on this study must be regarded
+ with caution until they can be confirmed or refined by future
+ work.
+
+ Data Collection and Measurement
+
+ While the theoretical development argues for the causal
+ nature of the relationships empirically examined, the research
+ methodology does not allow us to establish temporal pre
+ cedence. For example, trust could influence team members'
+ perceptions of the extent to which they share common ideo
+ logical views. However, norm formation has been reported to
+ take place early (Bettenhausen and Murnighan 1985), while
+ trust has generally been argued to develop over time (e.g.,
+ Doney and Cannon 1997). Ideology is seen to constitute the
+
+ environment in which attitudes are formed (Scarbrough 1990).
+ Further, since developers are drawn from the larger OSS
+ community, they have likely been exposed to the OSS
+ ideology before joining a team, thus reverse causality seems
+ unlikely in this case.
+
+ The sample was limited to projects that had at least four team
+ members because of the focus on team level constructs. This
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 307
+
+ http://www.gnu.org/philosophy/free-software-for-freedom.html.
+
+ led to exclusion of projects that had very low levels of effec
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ tiveness in terms of attracting and retaining participants, and
+ may thereby limit the generalizeability of results to such
+ teams. Collecting measures of multiple constructs through the
+ survey raises the possibility of common methods bias.
+ Results showed sufficient discriminant validity, and drawing
+ measures of effectiveness from Sourceforge helps to limit this
+ concern. In gathering the survey data, project administrators
+ were used as key informants because they were in a position
+ to report on how the team functions as a whole and to have
+
+ the most significant impact on the teams' dynamics (thus their
+
+ perceptions may be of greater interest than the perceptions of
+ other individual team members). While these respondents
+ were able to tell us about the teams, perceptions may vary
+ across team members, and administrators may tend to have an
+ upwardly biased view of desirable qualities such as trust.
+ Factors related to difficulties in observation or assessment
+
+ may also distort the judgment of key informants (Bagozzi et
+ al. 1991). Though it is not uncommon for research on soft
+ ware development to use project managers as key informants
+ (Ethiraj et al. 2005; Gopal et al. 2003), we hope future studies
+ will be able to elicit broader participation from team
+ members.
+
+ The measure of task completion overcomes known problems
+
+ with other indicators of software project performance such as
+ lines of code (von Hippie and von Krogh 2003). However
+ this and the other measures of team effectiveness did not take
+
+ into account any specific evaluation of quality. For example,
+ it is possible teams could report tasks as having been com
+ pleted without their having been completed in an appropriate
+ manner. Also, the timing of data collection could be impor
+ tant because task identification and completion may follow
+ cycles related to new software releases. We hope that future
+ efforts might seek more discriminating measures of OSS team
+ effectiveness and incorporate more dynamic models to
+ capture effects of the timing of key events in projects.
+
+ Other Antecedents to Effectiveness
+
+ This study sought to add to the literature on open source
+ development by examining ideology and related social
+ psychological antecedents to effectiveness. While results
+ indicated these are important factors, they do not provide the
+ complete picture. Although some variance due to other
+ factors was controlled for (by limiting the sample), the model
+ did not include structural, technical, socio-cognitive, or eco
+
+ nomic factors that past studies have implied may be important
+ (Crowston and Kammerer 1998; Faraj and Sproull 2000;
+ Lerner and Tirole 2002). For example, all of the sampled
+ projects used the same technical toolset provided by Source
+ forge. Projects that use other toolsets to conduct their work
+
+ 308 MIS Quarterly Vol. 30 No. 2/June 2006
+
+ may face different challenges, and variance in outcomes due
+
+ to differing technical platforms may be an interesting area for
+ future work. Similarly, role specialization and differentiation
+ in teams may be helpful in dealing with task complexity and
+ could be particularly important to understand how these fac
+
+ tors impact effectiveness because of the potentially dynamic
+ nature of team membership (von Krogh et al. 2003). Because
+ members may come and go at will, clear role specification
+ could be especially important to developing swift trust among
+ members (Meyerson et al. 1996). It may be interesting for
+ future work to consider these sets of factors in concert and
+
+ assess how they may interact with one another in determining
+ OSS team outcomes.
+
+ Practical Implications
+
+ In addition to the research implications discussed above,
+ results have several implications for organizations interested
+ in utilizing OSS development practices or adopting OSS soft
+ ware and for the administrators of OSS projects. Scarbrough
+ (1990) proposes that ideologies are analogous to maps speci
+ fying the terrain (e.g., belief systems), destinations (e.g.,
+ values), and signposts (e.g., norms) that orient actors. Identi
+ fication of the main ideological components in OSS teams and
+ the different means by which they affect outcomes provides
+ a preliminary map for organizations wishing to leverage or
+ understand OSS software development. This may be valuable
+ to organizations because those interacting with the community
+ are more likely to be successful if they are perceived as
+ understanding and being sympathetic to the community's
+ beliefs, values, and norms, and because it provides insight to
+ guide specific decisions.
+
+ Many corporations have begun attempting to leverage open
+ source development teams to produce software. Sun Micro
+ systems, for example, set up the OpenOffice.org site to
+ enhance Sun's Star Office suite. This study suggests that
+ corporations wishing to attract the work of open source devel
+ opers may benefit most by nurturing individual values, the
+ named credit norm, and process beliefs as these factors were
+
+ found to have positive effects leading to input measures with
+ out any simultaneous negative effects. While encouraging
+ collaborative values and adherence to the forking norm may
+ also result in increased input, and collaborative norms espe
+ cially are important to fostering quality communication,
+ organizations should be aware of the potential trap posed by
+ coinciding negative effects on task completion. Organizations
+ or project administrators may wish to investigate ways to
+ mitigate these negative effects, perhaps by instituting policies
+ to limit the amount of time spent building consensus before
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ action is taken or by setting target deadlines for tasks to be
+ handled.
+
+ Beyond providing guidance on what factors may enhance the
+ effectiveness measures included in the study, the results point
+
+ to the fact that organizations and project administrators may
+ benefit from concentrating on multiple outcomes. Lots of
+ attention had been paid to the size of OSS development teams
+ and the importance of attracting developers to an OSS project
+ (see Krishnamurthy 2002; von Krogh et al. 2003). However
+ the study results suggest that large team sizes may not
+ increase other outcomes of interest in that team size did not
+
+ have a significant effect on either effort or task completion.
+ Administrators should be aware that simply attracting
+ developers may not guarantee the project will succeed in
+ other ways.
+
+ The measure of task completion corresponds closely to
+ practitioners' concerns about OSS in that responsiveness to
+ support and change requirements (e.g., security patches) are
+ two of the most frequently cited concerns of IT professionals
+ considering using OSS (Golden 2003). By providing some
+ understanding of the factors that influence the responsiveness
+ of an OSS project team to these concerns, the results of the
+ study may better enable organizations to evaluate a particular
+ OSS software product. For example, organizations may wish
+ to assess the extent to which the team developing the software
+
+ they are interested in adheres to particular components of OSS
+ ideology linked to task completion because results indicate
+ such teams may be more responsive to requests made by the
+ organization.
+
+ Finally, it remains to be seen whether the implications for
+ OSS projects may be applied to closed source development
+ contexts. However, these results should encourage
+ researchers and managers to explore whether more traditional
+ software development projects may benefit by, for example,
+ instituting some form of the named credit norm or by
+ selecting team members who subscribe to the individual
+ values prevalent in the OSS community.
+
+ mining effectiveness (Gallivan 2001; Ljungberg 2000). For
+ all the discussion of these issues, there has been no compre
+ hensive elaboration of what constitutes OSS ideology, and
+ little empirical data has been brought to bear on examining
+ antecedents of OSS team effectiveness. This paper has added
+
+ to the literature by developing a framework of the main tenets
+ of the OSS ideology and suggesting which tenets may be
+ grouped to form relevant sets of values and beliefs that tend
+ to coincide in teams. The study provided initial empirical
+ evidence that some shared ideological components have a
+ positive impact on team effectiveness by enhancing trust and
+ communication quality, while some have negative effects by
+ either reducing input to the team or by reducing task
+ completion. We hope that these findings encourage other
+ researchers to delve more deeply into the varying roles that
+ ideology plays in OSS projects.
+
+ Acknowledgments
+
+ We thank the senior editor on the manuscript, V. Samba
+ murthy, the associate editor, and the reviewers for their many
+ insightful suggestions on earlier versions of this paper. We
+ also thank Ritu Agarwal, Marc-David Seidel, and Paul Zantek
+ for helpful comments. The first author's work on this
+ research was partially supported by National Science
+ Foundation award IIS-0347376. Any opinions, findings, and
+ conclusions or recommendations expressed in this material
+ are those of the authors and do not necessarily represent the
+ views of the National Science Foundation.
+
+ References
+
+ Agarwal, R., and Karahanna, E. "Time Flies When You Are Having
+
+ Fun: Cognitive Absorption and Beliefs About Information Tech
+
+ nology Usage," MIS Quarterly (24:4), 2000, pp. 665-694.
+
+ Ammeter, A. P. Determinants of Interpersonal Trust in Workgroup
+
+ Relationships, unpublished doctoral thesis, University of Texas,
+ Austin, 2000.
+
+ Ancona, D. G., and Caldwell, D. F. "Demography and Design:
+
+ Conclusion ^ .. - -H
+
+ Predictors of New Product Team Performance," Organization
+ Science (3:3), 1992, pp. 321-341.
+
+ Bagozzi, R. P., and Dholakia, U. M. "Intentional Social Action in
+
+ The emerging work on understanding open source software
+ has argued for the importance of understanding what leads to
+ effectiveness in OSS development (Crowston and Scozzi
+ 2002; Ghosh 2002), has pointed to ideology and communi
+ cation as probable factors in impacting effectiveness (see
+ Elliott and Scacchi 2003; Markus et al. 2000), and has
+ presented conflicting opinions about the role of trust in deter
+
+ Virtual Communities," Journal of Interactive Marketing (16:2),
+ 2002, pp. 2-21.
+
+ Bagozzi, R. P., Yi, Y., and Phillips, L. W. "Assessing Construct
+ Validity in Organizational Research," Administrative Science
+
+ Bar-Tal, D. Shared Beliefs in a Society: Social Psychological
+
+ Analysis, Sage Publications, Thousand Oaks, CA, 2000.
+
+ Quarterly (36:3), 1991, pp. 421-438.
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 309
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Barker, J. R. "Tightening the Iron Cage: Concertive Control in
+ Self-Managing Teams," Administrative Science Quarterly (38:3),
+ 1993, pp. 321-341.
+
+ Bergquist, M., and Ljungberg, J. "The Power of Gifts: Organizing
+ Social Relationships in Open Source Communities," Information
+ Systems Journal (11:4), 2001, pp. 305-320.
+
+ in the Software Services Industry," Strategic Management
+ Journal (26:1), 2005, pp. 25-45.
+
+ Faraj, S., and Sproull, L. "Coordinating Expertise in Software
+ Development Teams," Management Science (46:12), 2000, pp.
+ 1554-1568.
+
+ Feller, J., and Fitzgerald, B. Understanding Open Source Software
+
+ Bettenhausen, K. L., and Mumighan, J. K. "The Development of an
+
+ Development, Addison-Wesley, London, 2002.
+
+ Intragroup Norm and the Effects of Interpersonal and Structural
+
+ Challenges," Administrative Science Quarterly (36:1), 1991, pp.
+ 20-35.
+
+ Bettenhausen, K. L., and Mumighan, J. K. "The Emergence of
+
+ Norms in Competitive Decision-Making Groups," Administrative
+ Science Quarterly (30:3), 1985, pp. 318-335.
+
+ Bretthauer, D. "Open Source Software: A History," Information
+
+ Technology and Libraries (21:1), 2002, pp. 3-11.
+
+ Capron, L., and Hulland, J. "Redeployment of Brands, Sales Forces,
+
+ and General Marketing Management Expertise Following Hori
+ zontal Acquisitions: A Resource-Based View," Journal of
+ Marketing (63:2), 1999, pp. 41-54.
+
+ Carmel, E. Global Software Teams: Collaborating across Borders
+ and Time Zones, Prentice Hall, Upper Saddle River, NJ, 1999.
+
+ Crocker, J., and Luhtanen, R. "Collective Self-Esteem and in-Group
+ Bias," Journal of Personality and Social Psychology (58:1),
+ 1990, pp. 60-47.
+
+ Crowston, K., Annabi, H., and Howison, J. "Defining Open Source
+ Software Project Success," in Proceedings of the 24th Inter
+ national Conference on Information Systems, S. T. March, A.
+ Massey, and J. I. DeGross (eds.), Seattle, WA, 2003, pp. 327
+ 340.
+
+ Mind in Software Requirements Development," IBM Systems
+ Journal (37:2), 1998, pp. 227-246.
+
+ Crowston, K., and Scozzi, B. "Open Source Software Projects as
+ Virtual Organizations: Competency Rallying for Software
+ Development," IEE Proceedings Software (149:1), 2002, pp.
+ 3-17.
+
+ Denning, D. E. "Concerning Hackers Who Break into Computer
+ Systems," in Proceedings of the 13th National Computer Security
+ Conference, Washington, DC, October 1-4, 1990, pp. 653-664
+ (available online at http://www.cpsr.org/prevsite/cpsr/privacy/
+
+ crime/denning.hackers .html).
+
+ Dholakia, U. M., Bagozzi, R. P., and Pearo, L. K. "A Social
+
+ Influence Model of Consumer Participation in Network- and
+ Small-Group-Based Virtual Communities," International Journal
+ of Research in Marketing (21:3), 2004, pp. 241-263.
+
+ Doney, P. M., and Cannon, J. P. "An Examination of the Nature of
+ Trust in Buyer-Seller Relationships," Journal of Marketing
+ (61:2), 1997, pp. 35-51.
+
+ Elliott, M. S., and Scacchi, W. "Free Software Developers as an
+ Occupational Community: Resolving Conflicts and Fostering
+ Collaboration," in Proceedings of the ACM International
+ Conference Supporting Group Work, Sanibel Island, FL,
+ November 2003, pp. 21-30.
+
+ Ethiraj, S. K., Kale, P., Krishnan, M. S., and Singh, J. V. "Where
+ Do Capabilities Come from and How Do They Matter? A Study
+
+ 310 MIS Quarterly Vol. 30 No. 2/June 2006
+
+ Fornell, C, and Bookstein, F. L. "Two Structural Equation Models:
+ Lisrel and PLS Applied to Consumer Exit-Voice Theory,"
+ Journal of Marketing Research (19:4), 1982, pp. 440-452.
+
+ Fornell, C, and Larcker, D. F. "Evaluating Structural Equation
+ Models with Unobservable Variables and Measurement Error,"
+
+ Journal of Marketing Research (18), February 1981, pp. 39-50.
+ Gallivan, M. J. "Striking a Balance Between Trust and Control in
+ a Virtual Organization: A Content Analysis of Open Source
+ Software Case Studies," Information Systems Journal (11:4),
+ 2001, pp. 277-304.
+
+ Gefen, D., Straub, D., and Boudreau, M.-C. "Structural Equation
+ Modeling and Regression: Guidelines for Research Practice,"
+ Communications of the AIS (4), 2000, Article 7.
+
+ Ghosh, R. A. "Free/Libre Open Source Software: Survey and
+
+ Study," paper presented to the Workshop on Advancing the
+ Research Agenda on Free/Open Source Software, Brussels,
+ October 14,2002 (available online at http://www.infonomics.nl/
+
+ FLOSS/report/workshopreport.htm).
+
+ Gibson, C. B., Randel, A. E., and Earley, P. C. "Understanding
+ Group Efficacy: An Empirical Test of Multiple Assessment
+ Methods," Group & Organization Management (25:1), 2000, pp.
+ 67-97.
+
+ Boston, 2004.
+
+ Gopal, A., Sivaramakrishnan, K., Krishnan, M. S., and
+ Mukhopadhyay, T. "Contracts in Offshore Software Develop
+ ment: An Empirical Analysis," Management Science (49:12),
+ 2003, pp. 1671-1683.
+
+ Gosain, S. "Looking through a Window on Open Source Culture:
+ Lessons for Community Infrastructure Design," Systemes
+ d'Information et Management (8:1), 2003, pp. 11-42.
+
+ Guzzo, R. A., and Dickson, M. W. "Teams in Organizations:
+
+ Recent Research on Performance and Effectiveness," in Annual
+
+ Review of Psychology, J. T. Spence, J. M. Darley, and D. J.
+ Foss (eds.), Annual Reviews Inc., Palo Alto, CA, 1996, pp.
+ 307-338.
+
+ Guzzo, R. A., Yost, P. R, Campbell, R. J., and Shea, G. P.
+ "Potency in Groups: Articulating a Construct," British Journal
+ of Social Psychology (32:1), 1993, pp. 87-106.
+
+ Hardin, C, and Higgins, E. T. "Shared Reality: How Social Verifi
+
+ cation Makes the Subjective Objective," in Handbook of
+ Motivation and Cognition, R. M. Sorrentino and E. T. Higgins
+
+ (eds.), Guilford Press, New York, 1996, pp. 28-84.
+
+ Hars, A., and Ou, S. "Working for Free? Motivations for Parti
+
+ cipating in Open Source Projects," International Journal of
+ Electronic Commerce (6:3), 2002, pp. 25-39.
+
+ Herbsleb, J. D., and Mockus, A. "An Empirical Study of Speed and
+ Communication in Globally-Distributed Software Development,"
+
+ Crowston, K., and Kammerer, E. E. "Coordination and Collective
+
+ Golden, B. Succeeding with Open Source, Addison-Wesley,
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ IEEE Transactions on Software Engineering (29:6), 2003, pp.
+ 1-14.
+
+ Hofstede, G. Culture's Consequences, Sage Publications, Beverly
+
+ Hills, CA, 1980.
+
+ Hofstede, G., Neuijen, B., Ohayv, D. D., and Sanders, G. "Mea
+ suring Organizational Cultures: A Qualitative and Quantitative
+ Study across Twenty Cases," Administrative Science Quarterly
+ (35:2), 1990, pp. 286-316.
+
+ Holmes, J. G., and Rempel, J. K. "Trust in Close Relationships," in
+ Close Relationships, C. Henrick (ed.), Sage Publications,
+ Newbury Park, CA, 1989, pp. 187-202.
+
+ Ilgen, D. R., Hollenbeck, J. R., Johnson, M., and Jundt, D. "Teams
+
+ in Organizations: From Input-Process-Output Models to IMOI
+ Models," Annual Review of Psychology (56:1), 2005, pp.
+ 517-543.
+
+ Jarvenpaa, S., Knoll, K, and Leidner, D. "Is Anybody Out There?
+
+ Antecedents of Trust in Global Virtual Teams," Journal of
+ Management Information Systems (14:4), 1998, pp. 29-64.
+
+ Jarvenpaa, S., and Leidner, D. "Communication and Trust in Global
+
+ Virtual Teams," Organization Science (10:6), 1999, pp. 791-815.
+
+ Kirsch, L. J. "Portfolios of Control Modes and IS Project Manage
+ ment," Information Systems Research (8:3), 1997, pp. 215-239.
+ Kirsch, L. J., Sambamurthy, V., Ko, D.-G., and Purvis, R .L.
+ "Controlling Information Systems Development Projects: The
+ View from the Client," Management Science (48:4), 2002, pp.
+ 484-498.
+
+ Koch, S., and Schneider, G. "Results from Software Engineering
+ Research into Open Source Development Projects Using Public
+ Data," Diskussion zum Tagigkeitsfeld Informationverarbeitung
+ und Informationswirtschaft (22), 2000, pp. 1-16.
+
+ Kogut, B., and Metiu, A. "Open Source Software Development and
+ Distributed Innovation," Oxford Review of Economic Policy
+ (17:2), 2001, pp. 248-264.
+
+ Krishnamurthy, S. "Cave or Community? An Empirical Examina
+
+ tion of 100 Mature Open Source Projects," First Monday (7:6),
+
+ 2002 (available online at http://www.firstmonday.org/issues/
+
+ issue7_6/krishnamurthy/index.html).
+
+ Kuwabara, K. "Linux: A Bazaar at the Edge of Chaos," First
+
+ Monday, 1999 (available online at http://www.firstmonday.org/
+
+ issues/issue5_3/kuwabara).
+
+ Source," Journal of Industrial Economics (50:2), 2002, pp.
+ 197-234.
+
+ Lickel, B., Hamilton, D. L., Wieczorkowska, G., Lewis, A.,
+ Sherman, S. J., and Uhles, A. N. "Varieties of Groups and the
+ Perception of Group Entitativity," Journal of Personality and
+ Social Psychology (78), 2000, pp. 223-246.
+
+ Ljungberg, J. "Open Source Movements as a Model for Organi
+ zing," European Journal of Information Systems (9:4), 2000, pp.
+ 208-216.
+
+ Malone, T. W., and Laubacher, R. J. "The Dawn of the E-Lance
+
+ Economy," Harvard Business Review (76:5), 1998, pp. 144-152.
+ Markus, M. L., Manville, B., and Agres, C. E. "What Makes a
+ Virtual Organization Work?," Sloan Management Review (42:1),
+ Fall 2000, pp. 13-26.
+
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Martins, L. L., Gilson, L. L., and Maynard, M. T. "Virtual Teams:
+
+ What Do We Know and Where Do We Go from Here?," Journal
+ of Management (30:6), 2004, pp. 805-835.
+
+ McAllister, D. J. "Affect- and Cognition-Based Trust as Founda
+ tions for Interpersonal Cooperation in Organizations," Academy
+ of Management Journal (38:1), 1995, pp. 24-59.
+
+ Mensching, R. "Interview with Rob Mensching of Microsoft's Wix
+ Project," O'Reilly OSDir.com, April 21, 2004 (available online
+ at http://osdir.com/Article380.phtml).
+
+ Meyerson, D., Weick, K, and Kramer, R. M. "Swift Trust and
+ Temporary Groups," in Trust in Organizations, R. M. Kramer
+ and T. R. Tyler (eds.), Sage Publications, Thousand Oaks, CA,
+ 1996, pp. 166-195.
+
+ Mockus, A., Fielding, R. T., and Herbsleb, J. D. "Two Case Studies
+ of Open Source Software Development: Apache and Mozilla,"
+ ACM Transactions on Software Engineering and Methodology
+ (11:3), 2002, pp. 309-346.
+
+ Montoya-Weiss, M. M., Massey, A. P., and Song, M. "Getting It
+ Together: Temporal Coordination and Conflict Management in
+
+ Global Virtual Teams," Academy of Management Journal (44:6),
+ 2001, pp. 1251-1262.
+
+ Moorman, R. H, and Blakely, G. L. "Individualism-Collectivism
+ as an Individual Difference Predictor of Organizational Citizen
+ ship Behaviors," Journal of Organizational Behavior (16:2),
+ 1995, pp. 127-142.
+
+ Nelson, K. M., and Cooprider, J. G. "The Contribution of Shared
+ Knowledge to Is Group Performance," MIS Quarterly (20:4),
+
+ 1996, pp. 409-432.
+
+ Ouchi, W. G. "A Conceptual Framework for the Design of Organi
+ zational Control Mechanisms," Management Science (25:9),
+ 1979, pp. 833-848.
+
+ Postmes, T., Spears, R., and Lea, M. "The Formation of Group
+ Norms in Computer-Mediated Communication," Human Com
+ munication Research (26:3), 2000, pp. 341-371.
+
+ Raymond, E. S. "The Cathedral and the Bazaar," First Monday
+ (3:3), 1998 (available online at http;//www.firstmonday.org/
+ issues/issue3_3/raymond/).
+
+ Raymond, E. S. "Homesteading the Noosphere," First Monday
+ (3:10), 1998 (available online at http;//www.firstmonday.org/
+ issues/issue3_10/raymond/index.html).
+
+ at http://www.catb.org/~esr/faqs/hacker-howto.html; version
+ 1.33).
+
+ Raymond, E. S. (ed.). "The Jargon File," December 29, 2003
+
+ (available online at http://www.catb.org/jargon/; version 4.4.7).
+ Scacchi, W. "Understanding the Requirements for Developing
+ Open Source Software Systems," IEE Proceedings on Software
+ (149:1), 2002, pp. 24-39.
+
+ Scarbrough, E. "Attitudes, Social Representations, and Ideology,"
+ in The Social Psychology of Widespread Beliefs, C. Fraser and
+ G. Gaskell (eds.), Oxford University Press, Oxford, UK, 1990,
+ pp. 99-117.
+
+ Segars, A. H, and Grover, V. "Strategic Information Systems
+ Planning Success: An Investigation of the Construct and its
+ Measurement," MIS Quarterly (22:2), 1998, pp. 139-163.
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 311
+
+ Lemer, J., and Tirole, J. "Some Simple Economics of Open
+
+ Raymond, E. S. "How to Become a Hacker," 2001 (available online
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Seidler, J. "On Using Informants: A Technique for Collecting
+ Quantitative Data and Controlling Measurement Data in Organi
+ zation Analysis," American Sociological Review (39:12), 1974,
+ pp. 816-831.
+
+ Sparrowe, R. T., Liden, R. C, Wayne, S. J., and Kraimer, M. L.
+ "Social Networks and the Performance of Individuals and
+
+ van Dijk, T. A. "Ideological Discourse Analysis," New Courant (4),
+
+ 1995, pp. 135-161.
+
+ Von Hippie, E., and Von Krogh, G. "Open Source Software and the
+ Private-Collective Innovation Model: Issues for Organization
+ Science," Organization Science (14:2), 2003, pp. 209-223.
+ von Krogh, G., Spaeth, S., and Lakhani, K. R. "Community,
+
+ Groups," Academy of Management Journal (44:2), 2001, pp.
+ 316-325.
+
+ Joining, and Specialization in Open Source Software Innovation:
+ A Case Study," (32:7), 2003, pp. 1217.
+
+ Stallman "Why Software Should Be Free," April 24,1992 (available
+
+ online at http://www.gnu.org/philosophy/shouldbefree.html).
+
+ Stevens, J. Applied Multivariate Statistics for the Social Sciences,
+
+ Lawrence Erlbaum Associates, Mahwah, NJ, 1996.
+
+ Sturmer, M. "Open Source Community Building," unpublished
+ paper, University of Bern Institute of Information Systems, 2005
+ (available online at http://opensource.mit.edu/papers/
+ sturmer.pdf).
+
+ Tajfel, H. "Social Categorization, Social Identity, and Social
+
+ Comparison.," in Differentiation between Social Groups, H.
+ Tajfel (ed.), Academic Press, London, 1978, pp. 61-76.
+
+ Tetlock, P. E. "Cognitive Biases and Organizational Correctives:
+ Do Both Disease and Cure Depend on the Politics of the
+ Beholder?," Administrative Science Quarterly (45:2), 2000, pp.
+ 293-328.
+
+ Trice, H. M., and Beyer, J. M. The Cultures of Work Organizations,
+
+ Prentice Hall, Englewood Cliffs, NJ, 1993.
+
+ About the Authors
+
+ Katherine J. Stewart is an assistant professor of information
+ systems at the R. H. Smith School of Business, University of
+ Maryland at College Park. She received her Ph.D. from the
+ University of Texas at Austin in 2000. Her current research focuses
+
+ primarily on trust in virtual settings and organizational issues related
+
+ to the development of open source software.
+
+ Sanjay Gosain is an assistant professor of information systems at
+ the R. H. Smith School of Business, University of Maryland at
+ College Park. He received his Ph.D. from the University of
+ Southern California in 2000. His current research focuses primarily
+ on issues related to the development of open source software and
+
+ design of IT infrastructure.
+
+ 312 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Appendix
+ Scales jgggggggjgjjj^gg^
+
+ Communication Quality
+
+ Think about the communication among participants in this project. Please use the following scale to rate how frequently each kind of
+ communication occurs:
+
+ 1 = never; 2 = very infrequently; 3 = infrequently; 4 = sometimes; 5 = frequently; 6 = very frequently; 7 = all the time
+
+ 1. People on this team answer each other's questions in a timely manner.
+ 2. Team members' responses to each other's questions are correct and useful.
+ 3. People on this team answer each other's questions in a thoughtful manner.
+ 4. There is a long lag time between someone asking a question and someone else on the team responding*. [Item dropped]
+
+ Open Source Ideology
+
+ Please indicate the extent to which the values, beliefs, and norms of the group are represented by each of the following statements:
+ 1 = strongly disagree; 2 = disagree; 3 = disagree somewhat; 4 = neither agree nor disagree; 5 = agree somewhat; 6 = agree; 7 = strongly agree
+
+ OSS Norms
+ 1. Members of this group think that it is wrong to fork a project.
+
+ 2. Members of this group believe it is inappropriate to distribute code changes without going through the proper channels.
+ 3. Members of this group think it is OK to remove someone's name from a project without that person's consent.*
+
+ OSS Beliefs
+ 1. Members of this group believe that the best code wins out in the end.
+ 2. Members of this group believe free software is better than commercial software.
+ 3. Members of this group think information should be free.
+
+ 4. Members of this group believe that with enough people working on a project, any bug can be quickly found and fixed.
+ 5. Members of this project think that practice is better than theory. [Item dropped]
+ 6. Members of this group believe that you only become a hacker when others call you a hacker.
+
+ OSS Values
+ 1. Members of this group value sharing knowledge.
+ 2. Members of this group believe in helping others.
+ 3. Members of this group place great value on technical knowledge.
+ 4. Members of this group are driven by a desire to learn new things.
+ 5. Members of this group think cooperation is important.
+ 6. Members of this group value the reputation they gain by participating in open source projects.
+
+ Affective Trust
+
+ Each of the statements below refers to how the participants in your project feel about each other. Please indicate the extent to which you agree
+ or disagree with each statement about the group using the following scale:
+
+ 1 = strongly disagree; 2 = disagree; 3 = disagree somewhat; 4 = neither agree nor disagree; 5 = agree somewhat; 6 = agree; 7 = strongly agree
+
+ 1. Members of the team have made considerable emotional investments in our working relationships.
+ 2. Members of the team have a sharing relationship with each other. We can freely share our ideas, feelings, and hopes.
+ 3. On this team we can talk freely with each other about difficulties we are having and know that others will want to listen.
+ 4. Members of the team would feel a sense of loss we could no longer work together.
+ 5. If a member for this group shared problems with other members, they would respond constructively and caringly. [Item dropped]
+
+ Reverse Coded Items
+
+ MIS Quarterly Vol. 30 No. 2/June 2006 313
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+ Stewart & Gosain/lmpact of Ideology in OSS Development Teams
+
+ Cognitive Trust
+
+ Each of the statements below refers to how the participants in your project feel about each other. Please indicate the extent to which you agree
+ or disagree with each statement about the group using the following scale:
+ 1 = strongly disagree; 2 = disagree; 3 = disagree somewhat; 4 = neither agree nor disagree; 5 = agree somewhat; 6 = agree; 7 = strongly agree
+
+ 1. Members of the team know that everyone on the team approaches their work with professionalism and dedication.
+ 2. Given the track records of the team members, we see no reason to doubt each other's competence and preparation for a job.
+ 3. Members of the team believe they will be able to rely on other members of the team not to make a job more difficult by careless work.
+ 4. Members of the team are concerned with monitoring each other's work*. [Item dropped]
+ 5. Members of the team believe that other members should be trusted and respected as coworkers. [Item dropped]
+ 6. Members of the team consider each other to be trustworthy. [Item dropped]
+
+ *Reverse Coded Items
+
+ 314 MIS Quarterly Vol. 30 No. 2/June 2006
+
+This content downloaded from 
+
+(cid:0)86.147.135.150 on Fri, 07 May 2021 23:44:47 UTC(cid:0)
+
+(cid:0) 
+
+All use subject to https://about.jstor.org/terms
+
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+(cid:0)
+
